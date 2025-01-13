@@ -1,0 +1,179 @@
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+    [data-aos-delay] {
+      transition-delay: 0 !important;
+    }
+  }
+
+  /* logo */
+  @media (max-width: 320px) {
+    #header .logo {
+        width: 5rem;
+      }
+      
+    #header .logo img {
+        max-height: 5px;
+      }
+      
+  }
+  @media (max-width: 375px) {
+    #header .logo {
+        width: 10rem;
+      }
+      
+    #header .logo img {
+        max-height: 20px;
+      }
+  }
+
+
+  /* get started button */
+  @media (max-width: 992px) {
+    .get-started-btn {
+      margin: 0 15px 0 0;
+      padding: 6px 18px;
+    }
+  }
+
+/* Default state (for larger screens) */
+
+
+/* mobile viewport (max-width: 640px) */
+@media (max-width: 767px) {
+  .logo {
+    width: 11rem;
+  }
+  .toggle-sm-nav {
+    display: block;
+  }
+  .nav-link-style {
+    display: none;
+  }
+  .default-nav {
+    display: none;
+  }
+}
+
+/* tablet viewport (max-width: 768px) */
+@media (min-width: 768px) {
+  .toggle-sm-nav {
+    display: none;
+  }
+  .logo {
+    width: 13rem;
+  }
+  .nav-link-style {
+    display: flex;
+  }
+  .default-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+  
+  .navbar .dropdown ul {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 46rem;
+    height: 300px;
+    /* margin-right: -36rem !important; */
+    left: 5rem;
+    /* right: 10rem; */
+    top: calc(100% + 30px);
+    margin: 1rem -32rem 0  !important;
+  }
+}
+
+
+  /* desktop viewport */
+  @media (max-width: 1366px) {
+    .navbar .dropdown .dropdown ul {
+      left: -90%;
+    }
+  
+    .navbar .dropdown .dropdown:hover>ul {
+      left: -100%;
+    }
+  }
+
+  /* hero section */
+  @media (max-width: 768px) {
+    #hero {
+      text-align: center;
+      padding-top: 58px;
+    }
+  
+    #hero h1 {
+      font-size: 28px;
+    }
+  
+    #hero h2 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    
+  }
+  
+  @media (max-height: 500px) {
+    #hero {
+      height: 120vh;
+    }
+  }
+
+  /* about */
+  @media (max-width: 1200px) {
+    .about .content {
+      padding-right: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about {
+      text-align: center;
+    }
+  }
+
+  /* tab */
+  @media (max-width: 768px) {
+    .tabs .nav-link i {
+      padding: 0;
+      line-height: 1;
+      font-size: 36px;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .tabs .nav-link {
+      padding: 15px;
+    }
+  
+    .tabs .nav-link i {
+      font-size: 24px;
+    }
+  }
+
+  /* footer */
+  @media (min-width: 768px) {
+    .col-sm-8r {
+        width: 12.5%;
+        float: left;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .col-md-8r {
+        width: 12.5%;
+        float: left;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .col-lg-8r {
+        width: 12.5%;
+        float: left;
+    }
+  }

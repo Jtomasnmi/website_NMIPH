@@ -1,0 +1,14 @@
+Id,Name,Shape Library,Page ID,Contained By,Group,Line Source,Line Destination,Source Arrow,Destination Arrow,Status,Text Area 1,Text Area 2,Comments
+1,Document,,,,,,,,,Draft,AppDFD,,
+2,Page,,,,,,,,,,Page 1,,
+3,Rounded Rectangle Container,Flowchart Shapes/Containers,2,,,,,,,,,,
+4,Rectangle Container,Flowchart Shapes/Containers,2,,,,,,,,,,
+5,MinimalTextBlock,Standard,2,3,,,,,,,User,,
+6,MinimalTextBlock,Standard,2,4,,,,,,,Windows System Restore Automation (Console Application),,
+7,DividerBlock,,2,4,,,,,,,,,
+8,Rectangle,Geometric Shapes,2,,,,,,,,User PC/ Machine,,
+9,DividerBlock,,2,,,,,,,,,,
+10,DividerBlock,,2,,,,,,,,,,
+11,DividerBlock,,2,,,,,,,,,,
+12,Line,,2,,,3,4,None,Arrow,,Run/ Execute  - via remote using a cmd or running it as administrator - via Kaseya agent procedure,,
+13,Line,,2,,,4,8,None,Arrow,,Run/ Execute silently to a Machine,(Machine will automatically restart and apply a system restore),
