@@ -28,6 +28,23 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+/* scrollbar style */
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #c0c0c0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 4px #708090; 
+  border-radius: 2px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4b4b4b; 
+  border-radius: 5px;
+}
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -166,10 +183,12 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 15px;
-  font-weight: 450;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: normal;
   white-space: nowrap;
   transition: 0.3s;
+  color: #6c757d;
 }
 
 .navbar a i,
@@ -183,7 +202,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color:  #38B6FF;
+  color:  #0059b3;
 }
 
 
@@ -191,15 +210,11 @@ h6 {
   display: flex;
   align-items: center;
   position: absolute;
-  padding: 10px;
   z-index: 99;
   opacity: 0;
   visibility: hidden;
-  background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 
 
@@ -342,7 +357,7 @@ h6 {
   background: url("../img/nmi-banner6.png") top center no-repeat;
   background-size: cover;
   position: relative;
-  padding-top: 82px;
+  
 }
 
 #hero:before {
@@ -364,7 +379,6 @@ h6 {
 
 #hero h2 {
   color: #fff;
-  margin: 10px 0 0 0;
   font-size: 24px;
 }
 
@@ -379,8 +393,7 @@ h6 {
   transition: 0.5s;
   margin-top: 30px;
   color: #fff;
-  background: #38B6FF;
-  border: 2px solid #38B6FF;
+  border: 1px solid #fff;
 }
 
 #hero .btn-get-started:hover {
@@ -2123,7 +2136,8 @@ section {
   }
 
   .solutions{
-    min-width: 11rem !important;
+    min-width: 10rem !important;
+    height: 11rem !important;
   }
 
   /* .navbar-ul-dist{
@@ -2186,7 +2200,7 @@ section {
   border: 1px solid #ffffff; 
   width: 10rem; 
   height: 9rem; 
-  margin: 0.5rem 0.5rem 0.5rem 0.5rem; 
+  margin: 0.5rem; 
   border-radius: 0.5rem;
 }
 
@@ -2257,6 +2271,10 @@ section {
   color: #fff;
   text-align: center;
   font-size: 12px;
+}
+
+.md-lg-subnav-header {
+  background-color: #0073e6;
 }
 
 
