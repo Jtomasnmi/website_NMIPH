@@ -13,18 +13,18 @@ body {
   height: 13rem;
   margin-top: 2rem;
   border-radius: 0.5rem;
-  max-width: 75.8rem !important;
-  width: 75.8rem !important;
-  margin-left: -3.4rem !important;
+  max-width: 76rem !important;
+  /* width: 75.8rem !important; */
+  /* margin-left: -3.4rem !important; */
   background: url(http://localhost/PROJECTS/NMIPH_WEBSITE/assets/img/nmi-k-365/k365-cta-bg.jpg) no-repeat center center;
   box-shadow: 0 4px 30px rgba(79, 195, 247, .22);
 }
 
-.k-365-panel-content{
+/* .k-365-panel-content{
   width: 10rem; 
   height: 9rem; 
   margin: 1.6rem 0.7rem 0.7rem 3.6rem; 
-}
+} */
 
 .k-365-panel-content-2{
   width: 45rem; 
@@ -39,31 +39,18 @@ body {
 }
 
 .k-365-explore-btn{
-  border-color: #ffb300 !important;
-  background-color: #ffb300 !important;
-  color: #212529 !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
-  font-size: 1rem;
-  display: inline-block;
-  border: 1px solid transparent;
-  vertical-align: middle;
-  text-align: center;
-  white-space: nowrap;
-  font-weight: 700;
+  width: 10rem !important;
+  font-size: 12px;
+  display: flex !important;
+  justify-content: center !important;
   font-family: "Raleway", sans-serif;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  padding: .625rem 2rem;
-  font-size: .875rem;
-  line-height: 1.2;
-  -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .k-365-content{
   content:url("http://localhost/PROJECTS/NMIPH_WEBSITE/assets/img/nmi-k-365/logo-kaseya-365-white.svg");
+  width: 6rem;
+  margin-left: .3rem;
+  margin-top: .5rem;
 }
 
 .k-365-modal-bg{
@@ -163,7 +150,7 @@ h2, .h2 {
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: .5rem;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -177,9 +164,6 @@ h1, h2, h3, h4, h5, h6 {
   box-sizing: border-box;
 }
 
-p {
-  margin-top: 0;
-}
 
 .vsa-text-gradient.reverse {
   background: linear-gradient(110deg, #0277bd 25%, #4fc3f7 75%);

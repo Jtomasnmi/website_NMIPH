@@ -86,9 +86,9 @@
     // </header>';
     echo
     '<header id="header" class="sticky-top bg-light">
-        <div class="container d-flex align-items-center justify-content-around ps-3 pe-4 py-3">
+        <div class="container d-flex align-items-center justify-content-between ps-3 pe-4 py-3">
             <img src="assets/img/logo-1.png" class="logo"/>
-            <div class="d-flex align-items-center justify-center-start gap-4">
+            <div class="d-flex align-items-center justify-center-start gap-2">
                 <nav id="navbar" class="navbar">
                     <ul class="default-nav navbar-ul-dist">
                         <li class="nav-link-style"><a class="scrollto" href="#hero">Home</a></li>
@@ -98,39 +98,47 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button">
                                 Solution
                             </a>
-                            <ul class="dropdown-menu d-block bg-info remove-radius">
-                                <div class=" pt-3 pb-2 ">
-                                    <p class="text-center">IT Completes seven product suites solve the IT & Security problems of IT Pros everywhere.</p>
-                                </div>
-                                <div class="row row-cols-3 align-items-center pb-4 bg-light">
-                                    <li class="col d-flex flex-column align-items-center gap-2 p-2 ">
-                                        <img src="assets/img/nmi_solutions/menu-icon-1.svg" width="45rem" height="45rem"/>
-                                        <label class="font-sub-nav">RMM & Endpoint Management</label>
-                                    </li>
-                                    <li class="col d-flex flex-column align-items-center gap-2 p-2">
-                                        <img src="assets/img/nmi_solutions/menu-icon-2.svg" width="45rem" height="45rem"/>
-                                        <label class="font-sub-nav">Security</label>
-                                    </li>
-                                    <li class="col d-flex flex-column align-items-center gap-2 p-2">
-                                        <img src="assets/img/nmi_solutions/menu-icon-3.svg" width="45rem" height="45rem"/>
-                                        <label class="font-sub-nav">Backup & DR</label>
-                                    </li>
-                                    <li class="col d-flex flex-column align-items-center gap-2 p-2">
-                                        <img src="assets/img/nmi_solutions/menu-icon-4.svg" width="45rem" height="45rem"/>
-                                        <label class="font-sub-nav">Audit</label>
-                                    </li>
-                                    <li class="col d-flex flex-column align-items-center gap-2 p-2">
-                                        <img src="assets/img/nmi_solutions/menu-icon-5.svg" width="45rem" height="45rem"/>
-                                        <label class="font-sub-nav">Compliance</label>
-                                    </li>
-                                    <li class="col d-flex flex-column align-items-center gap-2 p-2">
-                                        <img src="assets/img/nmi_solutions/menu-icon-6.svg" width="45rem" height="45rem"/>
-                                        <label class="font-sub-nav">Service Desk</label>
-                                    </li>
-                                    <li class="col d-flex flex-column align-items-center gap-2 p-2">
-                                        <img src="assets/img/nmi_solutions/menu-icon-7.svg" width="45rem" height="45rem"/>
-                                        <label class="font-sub-nav">IT Documentation</label>
-                                    </li>
+                            <ul class="dropdown-menu d-block remove-radius">
+                                <div class="bg-info">
+                                    <div class="pt-3">
+                                        <p class="text-center fs-6 fw-semibold">IT Completes seven product suites solve the IT & Security problems of IT Pros everywhere.</p>
+                                    </div>
+                                    <div class="row pt-4 pb-4 bg-light scroll-sub-nav">
+                                        <div class="col-4">
+                                            <li class="d-flex flex-column align-items-center gap-2 p-2 ">
+                                                <img src="assets/img/nmi_solutions/menu-icon-1.svg" width="45rem" height="45rem"/>
+                                                <label class="font-sub-nav">RMM & Endpoint Management</label>
+                                            </li>
+                                            <li class="d-flex flex-column align-items-center gap-2 p-2">
+                                                <img src="assets/img/nmi_solutions/menu-icon-2.svg" width="45rem" height="45rem"/>
+                                                <label class="font-sub-nav">Security</label>
+                                            </li>
+                                            <li class="d-flex flex-column align-items-center gap-2 p-2">
+                                                <img src="assets/img/nmi_solutions/menu-icon-3.svg" width="50rem" height="50rem"/>
+                                                <label class="font-sub-nav">Backup & DR</label>
+                                            </li>
+                                        </div>
+                                        <div class="col-4 border border-top-0 border-bottom-0">
+                                            <li class="d-flex flex-column align-items-center gap-2 p-2">
+                                                <img src="assets/img/nmi_solutions/menu-icon-4.svg" width="50rem" height="50rem"/>
+                                                <label class="font-sub-nav">Audit</label>
+                                            </li>
+                                            <li class="d-flex flex-column align-items-center gap-2 p-2">
+                                                <img src="assets/img/nmi_solutions/menu-icon-5.svg" width="50rem" height="50rem"/>
+                                                <label class="font-sub-nav">Compliance</label>
+                                            </li>
+                                        </div>
+                                        <div class="col-4">
+                                            <li class="d-flex flex-column align-items-center gap-2 p-2">
+                                                <img src="assets/img/nmi_solutions/menu-icon-6.svg" width="50rem" height="50rem"/>
+                                                <label class="font-sub-nav">Service Desk</label>
+                                            </li>
+                                            <li class="d-flex flex-column align-items-center gap-2 p-2">
+                                                <img src="assets/img/nmi_solutions/menu-icon-7.svg" width="50rem" height="50rem"/>
+                                                <label class="font-sub-nav">IT Documentation</label>
+                                            </li>
+                                        </div>
+                                    </div>
                                 </div>
                             </ul>
                         </li>
