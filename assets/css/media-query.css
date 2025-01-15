@@ -22,26 +22,29 @@
       display: none;
     }
     .k-banner-txt{
-      font-size: 15px;
+      font-size: 13px;
+      font-weight: bold;
       text-align: left;
      }
+     .k-banner-alignment {
+      display: block;
+     }
+     .solution-grid{
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      grid-template-columns: 1;
+      margin-top: 2rem;
+     }
+    .solution-card{
+      padding: 2rem;
+      margin: 1rem 3.5rem;
+    }
+    .k-banner-txtdiv{
+      width: 15rem;
+      padding: 1rem;
+    }
   }
-
-/* mobile viewport lg */
-/* @media (min-width: 767px) {
-  .logo {
-    width: 10rem;
-  }
-  .toggle-sm-nav {
-    display: block;
-  }
-  .nav-link-style {
-    display: none;
-  }
-  .default-nav {
-    display: none;
-  }
-} */
 
 /* tablet viewport (max-width: 768px) */
 @media (min-width: 768px) {
@@ -60,7 +63,6 @@
     gap: 1rem;
     padding-top: 1rem;
   }
-  
   .navbar .dropdown ul {
     display: flex;
     align-items: center;
@@ -78,15 +80,61 @@
     overflow-y: auto;
     overflow-x: hidden;
   }
+  .k-365-content{
+    width: 8rem;
+  }
+  .k-banner-alignment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+  .k-banner-txt{
+    font-size: 18px;
+    margin-top: 1.5rem;
+    font-weight: bold;
+   }
+  .k-banner-txtdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 21rem;
+  }
+  .solution-grid{
+    justify-content: center;
+      align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+   }
+  .solution-card{
+    padding: 1rem 0;
+    margin: 1rem;
+  }
+  .k-365-panel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+  }
 }
 
-  /* desktop viewport */
+  /* desktop viewport*/
   @media (min-width: 1020px) {
+    .k-banner-txtdiv{
+      width: 35rem;
+    }
+    .solution-grid{
+      grid-template-columns: repeat(4, 1fr);
+     }
+     .k-365-panel{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 1rem;
+    }
   }
 
   @media (min-width: 1280px) {
     .logo {
-      width: 14rem;
+      width: 15rem;
     }
     .nav-link-style {
       display: flex;
@@ -104,7 +152,27 @@
       overflow-y: auto;
       overflow-x: hidden;
     }
+    .k-banner-txt{
+      font-size: 20px;
+      margin-top: 1.5rem;
+      font-weight: bold;
+     }
+    .k-banner-txtdiv{
+      width: 45rem;
+    }
+    .solution-grid{
+      grid-template-columns: repeat(7, 1fr);
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+     }
+     .solution-card{
+      padding: 2rem;
+      height: 8rem;
+      margin: 0;
+    }
   }
+
   @media (max-width: 1366px) {
     .navbar .dropdown .dropdown ul {
       left: -90%;
