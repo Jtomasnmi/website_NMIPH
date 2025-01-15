@@ -10,12 +10,13 @@ body {
 }
  
  .k-365-panel{
-  height: 13rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin: auto;
   margin-top: 2rem;
   border-radius: 0.5rem;
-  max-width: 76rem !important;
-  /* width: 75.8rem !important; */
-  /* margin-left: -3.4rem !important; */
   background: url(http://localhost/PROJECTS/NMIPH_WEBSITE/assets/img/nmi-k-365/k365-cta-bg.jpg) no-repeat center center;
   box-shadow: 0 4px 30px rgba(79, 195, 247, .22);
 }
@@ -39,17 +40,16 @@ body {
 }
 
 .k-365-explore-btn{
-  width: 10rem !important;
+  width: 9rem !important;
   font-size: 12px;
-  display: flex !important;
+  font-weight: 500;
   justify-content: center !important;
   font-family: "Raleway", sans-serif;
 }
 
 .k-365-content{
   content:url("http://localhost/PROJECTS/NMIPH_WEBSITE/assets/img/nmi-k-365/logo-kaseya-365-white.svg");
-  width: 6rem;
-  margin-left: .3rem;
+  width: 7rem;
   margin-top: .5rem;
 }
 

@@ -28,6 +28,10 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+.container-fluid {
+  padding: 0 4rem !important;
+}
+
 /* scrollbar style */
 ::-webkit-scrollbar {
   width: 5px;
@@ -2136,8 +2140,15 @@ section {
   }
 
   .solutions{
-    min-width: 10rem !important;
+    min-width: 11rem !important;
     height: 11rem !important;
+  }
+  .solution-card{
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   /* .navbar-ul-dist{
@@ -2206,7 +2217,7 @@ section {
 
 .solutions-div-two{
   color: #ffffff !important; 
-  font-size: 12px; 
+  font-size: 12px;
   cursor: pointer;
 }
 /* ==============================
