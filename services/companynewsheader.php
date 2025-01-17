@@ -16,9 +16,9 @@
                         ,Description NHDescription
                         ,SubDescription NHSubDescription 
                       FROM $this->table";
-                      
+
             $result = $this->db_conn->RunBaseQuery($query);
             return $result;
         }
-    }   
+    }
 ?>

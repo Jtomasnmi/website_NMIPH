@@ -85,10 +85,10 @@
     //     </div>
     // </header>';
     echo
-    '<header id="header" class="sticky-top bg-light">
-        <div class="container d-flex align-items-center justify-content-between ps-3 pe-4 py-3">
+    '<header id="header" class="sticky-top bg-white">
+        <div class="container d-flex align-items-center justify-content-between ps-3 pe-3 py-2">
             <img src="assets/img/logo-1.png" class="logo"/>
-            <div class="d-flex align-items-center justify-center-start gap-2">
+            <div class="d-flex align-items-center justify-center-start gap-3">
                 <nav id="navbar" class="navbar">
                     <ul class="default-nav navbar-ul-dist">
                         <li class="nav-link-style"><a class="scrollto" href="#hero">Home</a></li>
@@ -107,7 +107,7 @@
                                         <div class="col-4">
                                             <li class="d-flex flex-column align-items-center gap-2 p-2 ">
                                                 <img src="assets/img/nmi_solutions/menu-icon-1.svg" width="45rem" height="45rem"/>
-                                                <label class="font-sub-nav">RMM & Endpoint Management</label>
+                                                <label class="font-sub-nav">Endpoint Management</label>
                                             </li>
                                             <li class="d-flex flex-column align-items-center gap-2 p-2">
                                                 <img src="assets/img/nmi_solutions/menu-icon-2.svg" width="45rem" height="45rem"/>
@@ -145,8 +145,10 @@
                         <li class="nav-link-style"><a class="scrollto" href="#contact">Contact Us</a></li>
                     </ul>
                 </nav>
-                <a href="#about" class="btn btn-info get-start-btn scrollto">Get A Demo</a>
-                <i class="toggle-sm-nav fs-5 bi bi-list" role="button" data-bs-toggle="modal" data-bs-target="#smallNavModal"></i>
+                <div class="d-flex justify-content-center align-items-center gap-1">
+                    <a href="#about" class="btn btn-info get-start-btn scrollto">Get A Demo</a>
+                    <i class="toggle-sm-nav fs-5 bi bi-list" role="button" data-bs-toggle="modal" data-bs-target="#smallNavModal"></i>
+                </div>
             </div>
         </div>
     </header>';
@@ -189,7 +191,7 @@
                                 <div class="row row-cols-2">
                                     <div class="d-flex flex-column align-items-center gap-2 p-2">
                                         <img src="assets/img/nmi_solutions/menu-icon-1.svg" width="50rem" height="50rem"/>
-                                        <label class="font-sub-nav">RMM & Endpoint Management</label>
+                                        <label class="font-sub-nav">Endpoint Management</label>
                                     </div>
                                     <div class="d-flex flex-column align-items-center gap-2 p-2">
                                         <img src="assets/img/nmi_solutions/menu-icon-2.svg" width="50rem" height="50rem"/>

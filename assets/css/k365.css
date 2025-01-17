@@ -21,6 +21,11 @@ body {
   box-shadow: 0 4px 30px rgba(79, 195, 247, .22);
 }
 
+.k-365-txt{
+  text-align: center;
+  color: #fff;
+}
+
 /* .k-365-panel-content{
   width: 10rem; 
   height: 9rem; 

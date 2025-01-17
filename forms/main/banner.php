@@ -107,20 +107,20 @@
         <div data-aos="zoom-out" data-aos-delay="100">
             <div class="container">
                 <div class="row">
-                <div class="col-xl-12 text-center">
-                    <h2>Purpose-Built and Efficient I.T. and Security Platform to</h2>
-                    <h1>IMPROVE I.T. LIVES</h1>  
-                    <a href="#about" class="btn-get-started scrollto">Request A Free Demo ></a>
+                    <div class="col-xl-12 text-center">
+                        <h2>Purpose-Built and Efficient I.T. and Security Platform to</h2>
+                        <h1>IMPROVE I.T. LIVES</h1>  
+                        <a href="#about" class="btn-get-started scrollto">Request A Free Demo ></a>
+                    </div>
                 </div>
-            </div>
-                <div class="row">
+                <div class="row mt-3">
                     <div id="k365-selector"></div>
                 </div>
                 <div class="solution-grid">
                     <div class="col">
                         <div class="zoom border rounder-sm rounded-3 solution-card">
                             <img src="assets/img/nmi_solutions/menu-icon-1.svg" width="60rem" height="60rem"/> 
-                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">RMM & Endpoint Management</a></label>
+                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">Endpoint Management</a></label>
                         </div>
                     </div>
                     <div class="col">

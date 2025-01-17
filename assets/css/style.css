@@ -145,6 +145,8 @@ h6 {
   --bs-btn-padding-x: .5rem; 
   --bs-btn-font-size: .75rem;
   color: #fff;
+  border-radius: 0% !important;
+  padding: .5rem;
 }
 
 .get-start-btn:hover {
@@ -187,7 +189,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: normal;
   white-space: nowrap;
@@ -395,7 +397,7 @@ h6 {
   padding: 10px 30px;
   /* border-radius: 4px;  */
   transition: 0.5s;
-  margin-top: 30px;
+  margin: 10px;
   color: #fff;
   border: 1px solid #fff;
 }
@@ -418,18 +420,19 @@ section {
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   position: relative;
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
-  /* margin-bottom: 20px; */
+  margin-bottom: 15px;
   padding-bottom: 20px;
   position: relative;
 }
+
 
 .section-title h6 {
   font-size: 20px;
@@ -457,8 +460,16 @@ section {
   margin-bottom: 0;
 }
 
+/* .section-bg {
+  padding: 100px 0 120px 0;
+  color: #fff;
+  rotate: 360deg;
+  background: #0C2A41;
+  position: relative;
+} */
 .section-bg {
-  padding: 120px 0;
+  padding-top: 40px;
+  /* padding: 120px 0; */
   color: #fff;
 }
 
@@ -466,13 +477,14 @@ section {
   content: "";
   /* background: #1b1b1b;  */
   background: #0C2A41;
+  border-top: 2px solid #0059b3;
   /* background: linear-gradient(90deg, #0761af 0%, #4fc3f7 100%) !important; */
   position: absolute;
-  bottom: 60px;
-  top: 60px;
+  bottom: 1px;
+  top: 10px;
   left: 0;
   right: 0;
-  transform: skewY(-3deg);
+  /* transform: skewY(-2deg); */
 }
 /*--------------------------------------------------------------
 # Breadcrumbs
@@ -558,21 +570,33 @@ section {
   z-index: 10;
 }
 
-.about .content {
-  padding: 30px 30px 30px 0;
+.about-grid .col-span-1 .content {
+  margin-top: 2rem;
+}
+.about-grid .col-span-1 .content p{
+  text-align: justify;
+  font-size: 16px;
+}
+.about-grid .col-span-1 .content .about-btn{
+  color: #fff !important;
+  border-radius: 0% !important;
+  margin-top: 1rem !important;
+}
+.about-grid .col-span-2 .sub-content .content i{
+  font-size: 40px;
+  color: #38B6FF;
+}
+.about-grid .col-span-2 .sub-content .content h4{
+  font-size: 25px;
+}
+.about-grid .col-span-2 .sub-content .content p{
+  font-size: 16px;
+  text-align: center;
 }
 
-.about .content h3 {
-  font-weight: 700;
-  font-size: 34px;
-  margin-bottom: 30px;
-}
 
-.about .content p {
-  margin-bottom: 30px;
-}
 
-.about .content .about-btn {
+/* .about .news-content-alignment .content .about-btn {
   padding: 8px 30px 9px 30px;
   color: #fff;
   border-radius: 50px;
@@ -580,9 +604,17 @@ section {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 13px;
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
   border: 2px solid #38B6FF;
+  margin-top: 3rem;
+} */
+.about .news-content-alignment .content .about-btn {
+  display: flex;
+  justify-content: center;
+  color: #fff !important;
+  margin-top: 3rem;
 }
 
 .about .content .about-btn i {
@@ -595,20 +627,22 @@ section {
   /* background: #e03a3c; */
 }
 
-.about .icon-boxes .icon-box {
-  margin-top: 30px;
-}
-
-.about .icon-boxes .icon-box i {
+/* .about .icon-boxes .icon-box i {
   font-size: 40px;
   color: #38B6FF;
   margin-bottom: 10px;
-}
+} */
 
-.about .icon-boxes .icon-box h4 {
+/* .about .icon-boxes .content p {
+  text-align: justify;
+  font-size: 16px;
+  margin-bottom: 30px;
+} */
+
+.about .icon-boxes .content h4 {
   font-size: 20px;
   font-weight: 700;
-  margin: 0 0 10px 0;
+  /* margin: 0 0 10px 0; */
 }
 
 .about .icon-boxes .icon-box p {
@@ -754,7 +788,51 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services .icon-box {
+.services .services-grid{
+  position: relative;
+  padding: 0 1rem;
+}
+.services .section-title{
+  padding: 0 1rem;
+}
+.services .section-title p{
+  margin-top: 3rem;
+  text-align: left;
+}
+.services .services-grid{
+  margin-top: 3rem;
+  display: grid;
+  gap: .5rem;
+}
+.services .services-grid .icon-box{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 1rem;
+  height: 15rem;
+  padding: 1rem;
+}
+.services .services-grid .icon-box .icon-label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.services .services-grid .icon-box p{
+  text-align: center;
+  font-size: 15px;
+}
+.services .services-grid .icon-box .icon-label i{
+  font-size: 30px;
+  color: #38B6FF;
+}
+.services .services-grid .icon-box .icon-label h4{
+  font-size: 22px;
+}
+.services .services-grid .icon-box ul li{
+  list-style: square; 
+}
+/* .services .icon-box {
   margin-bottom: 20px;
   padding: 30px;
   border-radius: 1rem;
@@ -762,15 +840,15 @@ section {
   background: #0C2A41;
   transition: 0.3s;
   position: relative;
-}
+} */
 
 /* .services .icon-box:hover {
   background: #2b2b2b;
 } */
 
-.services .icon-box i {
+/* .services .icon-box i {
   float: left;
-  /* color: #e03a3c; */
+  color: #e03a3c;
   color: #38B6FF;
   font-size: 40px;
   line-height: 0;
@@ -786,13 +864,13 @@ section {
 .services .icon-box h4 a {
   color: #fff;
   transition: 0.3s;
-}
+} */
 
 /* .services .icon-box h4 a:hover {
   text-decoration: underline;
 } */
 
-.services .icon-box .icon-box:hover h4 a {
+/* .services .icon-box .icon-box:hover h4 a {
   color: #e03a3c;
 }
 
@@ -809,7 +887,7 @@ section {
 
 .services-comp{
   height: 13rem;
-}
+} */
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
@@ -1309,6 +1387,12 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.contact-grid{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
 .contact .info-box {
   color: #444444;
   text-align: center;
@@ -1341,7 +1425,7 @@ section {
 }
 
 .contact .php-email-form {
-  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+  /* box-shadow: 0 0 30px rgba(58, 65, 71, 0.6); */
   padding: 30px;
   border-radius: 4px;
 }
@@ -2139,10 +2223,10 @@ section {
     margin: 0.1rem;
   }
 
-  .solutions{
+  /* .solutions{
     min-width: 11rem !important;
     height: 11rem !important;
-  }
+  } */
   .solution-card{
     border-radius: .5rem;
     display: flex;
@@ -2216,7 +2300,7 @@ section {
 }
 
 .solutions-div-two{
-  color: #ffffff !important; 
+  color: #ffffff !important;
   font-size: 12px;
   cursor: pointer;
 }
