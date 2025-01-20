@@ -73,10 +73,12 @@
     }
 
     let elementPos = select(el).offsetTop
+    
     window.scrollTo({
       top: elementPos - offset,
       behavior: 'smooth'
     })
+    
   }
 
   /**
@@ -136,7 +138,6 @@
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
       e.preventDefault()
-
       let navbar = select('#navbar')
       if (navbar.classList.contains('navbar-mobile')) {
         navbar.classList.remove('navbar-mobile')
@@ -145,7 +146,11 @@
         navbarToggle.classList.toggle('bi-x')
       }
       scrollto(this.hash)
+      // this method used to display the active tab in the url since we have preventDefault
+      history.pushState(null, null, this.hash);
+      
     }
+    
   }, true)
 
   /**

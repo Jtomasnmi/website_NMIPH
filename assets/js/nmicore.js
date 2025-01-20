@@ -56,7 +56,7 @@ var NMICore = (function () {
                                     }
 
                                     if(key === constant.KeyChecker.fdDescription){                 
-                                        $("#" + appendElementId).append($('<li>').addClass("bx bx-chevron-right").text(array[i]));      
+                                        $("#" + appendElementId).append($('<li>').addClass("bi bi-arrow-return-right").text(array[i]));      
                                     }                                                     
                                 });                                                                         
                             }else{
