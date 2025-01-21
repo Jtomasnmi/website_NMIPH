@@ -147,7 +147,7 @@
                 </nav>
                 <div class="d-flex justify-content-center align-items-center gap-1">
                     <a href="#about" class="btn btn-info get-start-btn scrollto">Get A Demo</a>
-                    <i class="toggle-sm-nav fs-5 bi bi-list" role="button" data-bs-toggle="modal" data-bs-target="#smallNavModal"></i>
+                    <i id="toggleSmNav" class="toggle-sm-nav fs-5 bi bi-list" role="button" data-bs-toggle="modal" data-bs-target="#smallNavModal"></i>
                 </div>
             </div>
         </div>
@@ -156,24 +156,24 @@
     // mobile viewport tab
     echo
     '
-    <div class="modal" id="smallNavModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal" id="smallNavModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
                     <img src="assets/img/nmi-logo2.png" class="logo ms-1 "/>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                   </div>
+                </div>
                 <div class="modal-body">
                 <ul class="container d-flex flex-column gap-1 py-2">
-                    <li class="d-flex align-items-center gap-3 hover-sm-nav">
+                    <li class="d-flex align-items-center gap-3 hover-sm-nav" id="mobileTab">
                         <i class="bi bi-house-fill fs-4 sm-nav-icon"></i>
-                        <a class=" scrollto fs-6 fw-medium sm-nav-icon" href="#hero">Home</a>
+                        <a class=" scrollto fs-6 fw-medium sm-nav-icon"  href="#hero">Home</a>
                     </li>
-                    <li class="d-flex align-items-center gap-3 hover-sm-nav">
+                    <li class="d-flex align-items-center gap-3 hover-sm-nav" id="mobileTab">
                         <i class="bi bi-megaphone-fill fs-4 sm-nav-icon"></i>
                         <a class=" scrollto fs-6 fw-medium sm-nav-icon" href="#about">News</a>
                     </li>
-                    <li class="d-flex align-items-center gap-3 hover-sm-nav">
+                    <li class="d-flex align-items-center gap-3 hover-sm-nav" id="mobileTab">
                         <i class="bi bi-building-fill fs-4 sm-nav-icon"></i>
                         <a class=" scrollto fs-6 fw-medium sm-nav-icon" href="#about">Company</a>
                     </li>
@@ -189,31 +189,31 @@
                             <p class="sub-nav-label">IT Completes seven product suites solve the IT & <span class="mobile-sub-navlabel">Security problems of IT Pros everywhere.</span></p>
                             <div class="container text-center">
                                 <div class="row row-cols-2">
-                                    <div class="d-flex flex-column align-items-center gap-2 p-2">
+                                    <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/menu-icon-1.svg" width="50rem" height="50rem"/>
                                         <label class="font-sub-nav">Endpoint Management</label>
                                     </div>
-                                    <div class="d-flex flex-column align-items-center gap-2 p-2">
+                                    <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/menu-icon-2.svg" width="50rem" height="50rem"/>
                                         <label class="font-sub-nav">Security</label>
                                     </div>
-                                    <div class="d-flex flex-column align-items-center gap-2 p-2">
+                                    <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/menu-icon-3.svg" width="50rem" height="50rem"/>
                                         <label class="font-sub-nav">Backup & DR</label>
                                     </div>
-                                    <div class="d-flex flex-column align-items-center gap-2 p-2">
+                                    <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/menu-icon-4.svg" width="50rem" height="50rem"/>
                                         <label class="font-sub-nav">Audit</label>
                                     </div>
-                                    <div class="d-flex flex-column align-items-center gap-2 p-2">
+                                    <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/menu-icon-5.svg" width="50rem" height="50rem"/>
                                         <label class="font-sub-nav">Compliance</label>
                                     </div>
-                                    <div class="d-flex flex-column align-items-center gap-2 p-2">
+                                    <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/menu-icon-6.svg" width="50rem" height="50rem"/>
                                         <label class="font-sub-nav">Service Desk</label>
                                     </div>
-                                    <div class="d-flex flex-column align-items-center gap-2 p-2">
+                                    <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/menu-icon-7.svg" width="50rem" height="50rem"/>
                                         <label class="font-sub-nav">IT Documentation</label>
                                     </div>
@@ -221,7 +221,7 @@
                             </div>
                         </div>
                     </div>
-                    <li class="d-flex align-items-center gap-3 hover-sm-nav">
+                    <li class="d-flex align-items-center gap-3 hover-sm-nav" id="mobileTab">
                         <i class="bi bi-chat-dots-fill fs-4 sm-nav-icon"></i>
                         <a class=" scrollto fs-6 fw-medium sm-nav-icon" href="#contact">Contact Us</a>
                     </li>

@@ -126,37 +126,37 @@
                     <div class="col">
                         <div class="zoom border rounder-sm rounded-3 solution-card">
                             <img src="assets/img/nmi_solutions/menu-icon-2.svg" width="60rem" height="60rem"/> 
-                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">Security</a></label>
+                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#security-modal">Security</a></label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="zoom border rounder-sm rounded-3 solution-card">
                             <img src="assets/img/nmi_solutions/menu-icon-3.svg" width="60rem" height="60rem"/> 
-                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">Backup & DR</a></label>
+                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#backup-dr-modal">Backup & DR</a></label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="zoom border rounder-sm rounded-3 solution-card">
                             <img src="assets/img/nmi_solutions/menu-icon-4.svg" width="60rem" height="60rem"/> 
-                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">Audit</a></label>
+                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#audit-modal">Audit</a></label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="zoom border rounder-sm rounded-3 solution-card">
                             <img src="assets/img/nmi_solutions/menu-icon-5.svg" width="60rem" height="60rem"/> 
-                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">Compliance</a></label>
+                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#compliance-modal">Compliance</a></label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="zoom border rounder-sm rounded-3 solution-card">
                             <img src="assets/img/nmi_solutions/menu-icon-6.svg" width="60rem" height="60rem"/> 
-                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">Service Desk</a></label>
+                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#servicedesk-modal">Service Desk</a></label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="zoom border rounder-sm rounded-3 solution-card">
                             <img src="assets/img/nmi_solutions/menu-icon-7.svg" width="60rem" height="60rem"/> 
-                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">IT Documentation</a></label>
+                            <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#it-documentation-modal">IT Documentation</a></label>
                         </div>
                     </div>
                 </div>

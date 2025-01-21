@@ -199,6 +199,11 @@
       justify-content: space-between;
       align-items: start;
     }
+    .rmm .rmm-content p{
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 20px;
+    }
   }
 
   @media (min-width: 1280px) {

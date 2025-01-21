@@ -2431,6 +2431,44 @@ section {
   background-color: #0073e6;
 }
 
+/* solutions/service offered each modal */
+.rmm .modal-header{
+  background-color: #0059b3;
+}
 
+.rmm .rmm-content{
+  margin-top: 1rem;
+}
+
+.rmm .rmm-content hr{
+  width: 5rem;
+  height:2px;
+  border-width:0;
+  color:#38B6FF;
+  opacity: 100%;
+  background-color:#38B6FF;
+}
+.rmm .rmm-content p{
+  text-align: justify;
+  margin-top: 2rem;
+  font-size: 18px;
+}
+
+.rmm .rmm-content .rmm-below-content{
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.rmm .rmm-content .rmm-below-content h3{
+  text-align: center;
+}
+.rmm .rmm-content .rmm-below-content .fst-italic{
+  text-align: center;
+  margin-top: -3px;
+}
+.rmm .rmm-content .rmm-below-content p{
+  font-size: 16px;
+}
 
 
