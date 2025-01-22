@@ -148,7 +148,15 @@
     align-items: center;
     gap: 2rem;
   }
-  
+  .rmm .rmm-below-content{
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .rmm .rmm-below-content .rmm-img{
+    margin: 5rem .5rem;
+  }
 }
 
   /* desktop viewport*/
@@ -199,10 +207,13 @@
       justify-content: space-between;
       align-items: start;
     }
-    .rmm .rmm-content p{
+    .rmm-txt-j-c{
       text-align: center;
-      margin-top: 2rem;
-      font-size: 20px;
+    }
+    .rmm .rmm-below-content .rmm-img{
+      padding: 1rem .5rem;
+      margin-top: 0;
+      height: 20rem;
     }
   }
 

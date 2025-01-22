@@ -567,3 +567,29 @@ ol, ul, dl {
   }
 }
 
+.k365-modal .k365-header{
+  display:  flex;
+  align-items: center;
+  gap: 1rem;
+  color: #49aedd;
+}
+.k365-modal .modal-body{
+  padding: 0 !important;
+}
+.k365-modal .k365-body{
+  padding: 2rem;
+}
+.k365-section1{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+/* .k365-section1 img{
+  aspect-ratio: auto;
+  object-fit: contain;
+  width: 15rem;
+} */
+.k365-modal .k365-body .btn-warning{
+  font-family: "Raleway", sans-serif !important;
+}

@@ -2432,15 +2432,14 @@ section {
 }
 
 /* solutions/service offered each modal */
+
+/* ------ RMM & ENDPOINT MANAGEMENT ----- */
 .rmm .modal-header{
   background-color: #0059b3;
 }
 
-.rmm .rmm-content{
-  margin-top: 1rem;
-}
 
-.rmm .rmm-content hr{
+hr{
   width: 5rem;
   height:2px;
   border-width:0;
@@ -2448,27 +2447,59 @@ section {
   opacity: 100%;
   background-color:#38B6FF;
 }
-.rmm .rmm-content p{
+.rmm-txt-j-c{
   text-align: justify;
   margin-top: 2rem;
   font-size: 18px;
 }
+.rmm-txt-j-l{
+  margin-top: 1.5rem;
+  text-align: justify;
+}
 
-.rmm .rmm-content .rmm-below-content{
+.rmm .rmm-below-content{
   margin-top: 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2.5rem;
 }
-.rmm .rmm-content .rmm-below-content h3{
-  text-align: center;
-}
-.rmm .rmm-content .rmm-below-content .fst-italic{
-  text-align: center;
-  margin-top: -3px;
-}
-.rmm .rmm-content .rmm-below-content p{
+.rmm .rmm-below-content p{
   font-size: 16px;
 }
+.rmm .rmm-below-content .rmm-img{
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border: 1px solid #c4c4c4;
+  border-radius: .5rem;
+}
 
+/* --- SECURITY --- */
+.security .modal-header{
+  background-color: #515151;
+}
 
+/* --- Backup & DR --- */
+.backup-dr .modal-header{
+  background-color: rgb(33, 197, 197);
+}
+
+/* --- audit --- */
+.audit .modal-header{
+  background-color: rgb(230, 115, 8);
+}
+
+/* --- compliance --- */
+.compliance .modal-header{
+  background-color: #169b54;
+}
+
+/* --- service desk --- */
+.service-d .modal-header{
+  background-color: #5a7da0;
+}
+
+/* --- it documentation --- */
+.it-doc .modal-header{
+  background-color: rgb(194, 126, 154);
+}
