@@ -6,7 +6,7 @@ var NMICore = (function () {
                 if (!dto) {
                     dto = dataPost;
                 }
-                
+
             $.ajax({
                 method: methodType,
                 url: _urls[0],
@@ -20,13 +20,13 @@ var NMICore = (function () {
                         url: _urls[1],
                         dataType: "html",
                         data: dto[1],
-                        success: function(){
-                            // if(data){
-                            //     toastr.success(constant.Message.dropMsgSuccess);
-                            //     fnClearFieldValue(formId);
-                            // }    
-                            toastr.success(constant.Message.dropMsgSuccess);
-                            fnClearFieldValue(formId);
+                        success: function(data){
+                            if(data){
+                                toastr.success(constant.Message.dropMsgSuccess);
+                                fnClearFieldValue(formId);
+                            }    
+                            // toastr.success(constant.Message.dropMsgSuccess);
+                            // fnClearFieldValue(formId);
                         },
                         error: function () {
                             toastr.error(constant.Message.dropMsgError);

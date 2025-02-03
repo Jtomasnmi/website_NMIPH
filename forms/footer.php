@@ -75,7 +75,7 @@
                 </div>
             </div>
             <div class="footer-end">
-                <div>
+                <div class="copyright">
                     <p>Copyright &copy; [CopyrightYear] Network Manager Improving I.T. lives. All Rights Reserved</p>
                 </div>
                 <div class="social-links ">

@@ -78,14 +78,32 @@
   <script src="assets/js/nmi-helper.js"></script>
   <script src="assets/js/nmi-page-helper.js"></script>
   <script src="assets/js/nmicore.js"></script>
+  <script src="assets/js/nmi-component-helper.js"></script>
   <script src="assets/js/transaction/insert-data.js"></script>
   <script src="assets/js/transaction/get-data.js"></script>
 
   <script>
      webHelper.init();
-     modalPageHelper.init();   
+     modalPageHelper.init(); 
      insertData.init();
      getData.init();
+     componentFunction.init();
+
+     $(document).ready(function(){
+       
+          console.log("test");
+
+          let value =  '_automationEdr';
+
+          $('<div>', {
+            id: value,
+          }).appendTo('#k365AutomationEDR-selector')
+
+          $("#" + value).load("k365-automation-tabs/" + value + ".html");
+        
+        
+     });
+     
   </script>
 </body>
 </html>

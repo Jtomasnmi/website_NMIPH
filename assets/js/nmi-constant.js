@@ -72,6 +72,49 @@ let constant = function(){
     let appendedElementTag = {
         li: "li"
     };
+    
+
+    const k365IncludeTabs = [
+        {
+            id: "#pills-manage",
+            label: "pills-manage-tab",
+            img: "assets/img/nmi-k-365/k365-manage.png",
+            iconClass: "bi-person-fill-gear",
+            title: "Manage",
+            description: 
+            `Streamline IT management with advanced remote monitoring and maintenance solutions. These tools simplify IT operations by offering comprehensive oversight of endpoints, networks, and cloud services. 
+            With real-time monitoring, automated tasks, and efficient troubleshooting, our solutions enable proactive issue resolution, minimizing downtime and maintaining peak performance.
+            
+            Explore intuitive dashboards and reporting for a clear view of your IT landscape, reducing operational costs and bolstering security, all while enhancing end-user support and service.
+            `
+        },
+        {
+            id: "#pills-secure",
+            label: "pills-secure-tab",
+            img: "assets/img/nmi-k-365/k365-secure.png",
+            iconClass: "bi-lock-fill",
+            title: "Secure",
+            description: 
+            `Streamline IT management with advanced remote monitoring and maintenance solutions. These tools simplify IT operations by offering comprehensive oversight of endpoints, networks, and cloud services. 
+            With real-time monitoring, automated tasks, and efficient troubleshooting, our solutions enable proactive issue resolution, minimizing downtime and maintaining peak performance.
+            
+            Explore intuitive dashboards and reporting for a clear view of your IT landscape, reducing operational costs and bolstering security, all while enhancing end-user support and service.
+            `
+        },
+        {
+            id: "#pills-backup",
+            label: "pills-backup-tab",
+            img: "assets/img/nmi-k-365/k365-backup.png",
+            iconClass: "bi-cloud-arrow-up-fill",
+            title: "Backup",
+            description: 
+            `Streamline IT management with advanced remote monitoring and maintenance solutions. These tools simplify IT operations by offering comprehensive oversight of endpoints, networks, and cloud services. 
+            With real-time monitoring, automated tasks, and efficient troubleshooting, our solutions enable proactive issue resolution, minimizing downtime and maintaining peak performance.
+            
+            Explore intuitive dashboards and reporting for a clear view of your IT landscape, reducing operational costs and bolstering security, all while enhancing end-user support and service.
+            `
+        },
+    ]
 
     return {
         MapPosition: mapPosition,
@@ -86,6 +129,7 @@ let constant = function(){
         HtmlTagList: htmlTagList,
         KeyChecker: keyChecker,
         AppendElementIds: appendElementIds,
-        AppendElementTag:  appendedElementTag
+        AppendElementTag:  appendedElementTag,
+        K365IncludeTabs: k365IncludeTabs
     }
 }();

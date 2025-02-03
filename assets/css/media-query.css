@@ -157,6 +157,81 @@
   .rmm .rmm-below-content .rmm-img{
     margin: 5rem .5rem;
   }
+  .k365-section1 h2{
+    font-size: 30px;
+  }
+  .k365-section2{
+    position: absolute;
+    margin-top: -5rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .k365-section2 .card{
+    border: 0px !important;
+  }
+  .k365-section3{
+    margin-top: 12rem;
+  }
+  .k365-section3 .section-cont{
+    gap: 0;
+  }
+  .k365-section3 .section-cont .ring-bg{
+    background: url(http://localhost/PROJECTS/NMIPH_WEBSITE/assets/img/nmi-k-365/logo-kaseya-365-ring.svg) no-repeat center center;
+    grid-column: span 2;
+    margin-top: 3rem;
+  }
+  .k365-section3 .section-cont .ring-bg .card-ring-bg{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    grid-template-rows: auto auto;
+    gap: 3rem;
+    margin-top: 1rem;
+  }
+  
+  .k365-section3 .section-cont .ring-bg .card-ring-bg .card {
+    border: 0;
+    box-shadow: 0px 10px 8px 0px rgba(87, 192, 237, .46) !important;
+  }
+  .k365-section3 .section-cont .ring-bg .card-ring-bg .card:last-child {
+    grid-column: 1 / span 2;
+    margin: 0 10rem;
+  }
+  .k365-section3-new{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    /* padding: 2rem; */
+  }
+  .k365-section3-new .card a{
+    font-size: 10px;
+  }
+  .k365-section3-new .card h3{
+    font-size: 16px;
+  }
+   .k365-section3-new .card p{
+    font-size: 14px;
+  }
+  .k365-includes .nav{
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+  .tab-banner-sm{
+    background-color: rgba(49, 93, 179, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    height: 25%;
+  }
 }
 
   /* desktop viewport*/
@@ -215,6 +290,98 @@
       margin-top: 0;
       height: 20rem;
     }
+    .k365-section1{
+    display: grid;
+      /* justify-content: center;
+      align-items: center;
+      gap: 4.5rem;
+      margin: 0 3rem; */
+    grid-template-columns: repeat(4, 1fr);
+    }
+    .k365-section1 h2{
+      text-align: left;
+      font-size: 40px;
+    }
+    .k365-section1 p{
+      text-align: left;
+    }
+    .sub-section1{
+      grid-column: span 3;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+    .k365-section2{
+      position: absolute;
+      padding: 0 5rem;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .k365-section3{
+      margin-top: 1rem;
+    }
+    .k365-section3 .section-cont{
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+
+    }
+    .k365-section3 .section-cont .ring-bg .card-ring-bg{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      grid-template-rows: auto auto;
+      gap: 1.5rem;
+    }
+    .k-365-modal-bg{
+      margin-top: 0;
+    }
+    .k365-section3-new{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      /* padding: 2rem; */
+    }
+    .k365-section3-new .card a{
+      font-size: 12px;
+    }
+    .k365-section3-new .card h3{
+      font-size: 20px;
+    }
+     .k365-section3-new .card p{
+      font-size: 15px;
+    }
+    .tab-content .pills-content{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .tab-content .pills-content .secure-tab-perks{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .5rem;
+    }
+    /* .automation-content{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+    #automation-segmentedTab .nav{
+      display: flex !important;
+      flex-wrap: wrap !important;
+      overflow-x: auto;
+      gap: 1rem;
+    } */
   }
 
   @media (min-width: 1280px) {
@@ -280,6 +447,12 @@
     .about-grid .col-span-2 .sub-content{
       display: grid;
       gap: 2rem;
+    }
+    .k365-section2 .card{
+      width: 18rem !important;
+      height: 10rem !important;
+      border: 0px !important;
+      box-shadow: 0px 2px 8px 0px rgba(87, 192, 237, .46) !important;
     }
   }
 

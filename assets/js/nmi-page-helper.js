@@ -11,11 +11,17 @@ let modalPageHelper = function(){
                     ];
 
     let init = function(){
-       $.when(initModalPage()).done(function(){
-          GetInitTabPage();
-       });
+      loadEvent();
+    };
 
-       initPartialPage();
+    let loadEvent = function(){
+      $.when(initModalPage()).done(function(){
+        GetInitTabPage();
+      });
+        
+      initModalPage();
+      initPartialPage();
+      initK365ChildTabAutomation();
     };
 
     async function initModalPage(){   
@@ -56,10 +62,22 @@ let modalPageHelper = function(){
         // )();
       });
       // $(window ).on("load", function() {
-      //     $("#tabs").load("modals/_tabs.html");  
-      //     $("#tabs2").load("modals/_tabs.html");  
+      //     $("#tabs").load("modals/_tabs.html");
+      //     $("#tabs2").load("modals/_tabs.html");
       // });
     };
+
+    async function initK365ChildTabAutomation() {
+        $(function() {
+          let value =  '_automationEdr';
+
+          $('<div>', {
+            id: value,
+          }).appendTo('#k365AutomationEDR-selector')
+
+          $("#" + value).load("k365-automation-tabs/" + value + ".html");
+        });
+    }
 
     // async function GetTabModalPage(){
     //   $(window ).on("load", function() {
