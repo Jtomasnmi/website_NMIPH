@@ -1,6 +1,7 @@
 var NMICore = (function () {
     var NMICore_Ajax = (function () {
         var post = function (formId, methodType, _urls, dto){
+            
             var dataPost = $('#' + formId).serialize();
                 if (!dto) {
                     dto = dataPost;
@@ -11,10 +12,9 @@ var NMICore = (function () {
                 url: _urls[0],
                 dataType: "html",
                 data: dto[0],
-                success: function(response){    
+                success: function(response){
                     let clientdetaild = response;
                     dto[1]['clientdetailid'] = clientdetaild;
-
                     $.ajax({
                         method: methodType,
                         url: _urls[1],
@@ -23,8 +23,10 @@ var NMICore = (function () {
                         success: function(data){
                             if(data){
                                 toastr.success(constant.Message.dropMsgSuccess);
-                                fnClearFieldValue(formId);  
-                            }                                                              
+                                fnClearFieldValue(formId);
+                            }    
+                            // toastr.success(constant.Message.dropMsgSuccess);
+                            // fnClearFieldValue(formId);
                         },
                         error: function () {
                             toastr.error(constant.Message.dropMsgError);
@@ -56,7 +58,7 @@ var NMICore = (function () {
                                     }
 
                                     if(key === constant.KeyChecker.fdDescription){                 
-                                        $("#" + appendElementId).append($('<li>').addClass("bx bx-chevron-right").text(array[i]));      
+                                        $("#" + appendElementId).append($('<li>').addClass("bi bi-arrow-return-right").text(array[i]));      
                                     }                                                     
                                 });                                                                         
                             }else{

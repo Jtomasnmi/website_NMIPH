@@ -73,10 +73,12 @@
     }
 
     let elementPos = select(el).offsetTop
+    
     window.scrollTo({
       top: elementPos - offset,
       behavior: 'smooth'
     })
+    
   }
 
   /**
@@ -86,7 +88,7 @@
   if (selectHeader) {
     const headerScrolled = () => {
       if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled')
+        selectHeader.classList.add('header-scrolled')  
       } else {
         selectHeader.classList.remove('header-scrolled')
       }
@@ -114,21 +116,41 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
+  // on('click', '.mobile-nav-toggle', function(e) {
+  //   select('#navbar').classList.toggle('navbar-mobile')
+  //   this.classList.toggle('bi-list')
+  //   this.classList.toggle('bi-x')
+  // })
 
   /**
    * Mobile nav dropdowns activate
    */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
+  // on('click', '.navbar .dropdown > a', function(e) {
+  //   if (select('#navbar').classList.contains('navbar-mobile')) {
+  //     e.preventDefault()
+  //     this.nextElementSibling.classList.toggle('dropdown-active')
+  //   }
+  // }, true)
+
+  // mobile nav function when tab is click
+  const smNavList = document.querySelectorAll('#mobileTab')
+  const smNavbar = new bootstrap.Modal('#smallNavModal')
+
+  smNavList.forEach(function(el){
+    el.onclick = function(e){
+      smNavbar.hide()
+      history.pushState(null, null, this.hash);
     }
-  }, true)
+  })
+
+// hide the sm navbar when 768 viewport reach
+  window.onresize = function() {
+    if (window.innerWidth > 768) {
+      smNavbar.hide();
+    } else {
+      smNavbar.show();
+    }
+  };
 
   /**
    * Scrool with ofset on links with a class name .scrollto
@@ -136,7 +158,6 @@
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
       e.preventDefault()
-
       let navbar = select('#navbar')
       if (navbar.classList.contains('navbar-mobile')) {
         navbar.classList.remove('navbar-mobile')
@@ -145,7 +166,11 @@
         navbarToggle.classList.toggle('bi-x')
       }
       scrollto(this.hash)
+      // this method used to display the active tab in the url since we have preventDefault
+      history.pushState(null, null, this.hash);
+      
     }
+    
   }, true)
 
   /**
@@ -289,10 +314,12 @@
       mirror: false
     })
   });
-
   /**
    * Initiate Pure Counter 
    */
   new PureCounter();
-
+  
+  
 })()
+
+

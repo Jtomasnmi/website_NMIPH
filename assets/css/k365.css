@@ -21,6 +21,11 @@ body {
   box-shadow: 0 4px 30px rgba(79, 195, 247, .22);
 }
 
+.k-365-txt{
+  text-align: center;
+  color: #fff;
+}
+
 /* .k-365-panel-content{
   width: 10rem; 
   height: 9rem; 
@@ -58,8 +63,8 @@ body {
   background-repeat: repeat;
   background-position: right bottom;
   background-size: cover;
-  background-image: url(http://localhost/PROJECTS/NMIPH_WEBSITE/assets/img/nmi-k-365/k365-hero-bg.jpg);
-  margin-top: -1em;
+  background-image: url(https://www.kaseya.com/wp-content/uploads/2024/10/k365-endpoint-hero-bg.png);
+  margin-top: -3rem;
 }
 
 .k365-product-props .k365-product-props-bg {
@@ -126,7 +131,7 @@ h4, .h4 {
 }
 
 .lead {
-  font-size: 1.25rem;
+  font-size: 17px;
   font-weight: 300;
 }
 
@@ -248,7 +253,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 } */
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .k365-why .prop:nth-child(1) {
       left: -6rem;
       top: 1rem;
@@ -259,7 +264,7 @@ h1, h2, h3, h4, h5, h6 {
       position: absolute;
       max-width: 325px;
   }
-}
+} */
 
 .k365-why .prop {
   color: #193e62;
@@ -293,7 +298,23 @@ h1, h2, h3, h4, h5, h6 {
   left: -2.5em;
 }
 
-.k365-includes .nav{
+#includes .k365-includes{
+  background-color: #ecf6ff;
+}
+
+.k365-includes .btn-group{
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+}
+.k365-includes .btn-group {
+  position: relative !important;
+  display: inline-flex !important;
+;
+  vertical-align: middle;
+}
+
+/* .k365-includes .nav{
   -ms-flex-direction:column;
   flex-direction:column;
   width:fit-content;
@@ -339,7 +360,7 @@ h1, h2, h3, h4, h5, h6 {
   border:1px solid #2fce21;
   background:rgba(47,206,33,.15);
   color:#2fce21
-}
+} */
 
 .button-kaseya-dkblue {
   border-color: #0277bd;
@@ -416,7 +437,7 @@ a {
   text-align: inherit;
 }
 
-@media (min-width:768px){
+/* @media (min-width:768px){
   .k365-includes .nav{
       -ms-flex-direction:row;
       flex-direction:row;
@@ -427,7 +448,7 @@ a {
   .k365-includes .nav .nav-item .nav-link{
       min-width:190px
   }
-}
+} */
 
 .mb-0, .my-0 {
   margin-bottom: 0 !important;
@@ -561,4 +582,290 @@ ol, ul, dl {
       max-width: 33.3333333333%;
   }
 }
+/* .k365-modal section{
+  position: unset;
+} */
 
+.k365-modal .k365-header{
+  display:  flex;
+  align-items: center;
+  gap: 1rem;
+  color: #49aedd;
+}
+.k365-modal .modal-body{
+  padding: 0 !important;
+}
+/* .k365-modal .k365-body{
+  padding: 2rem;
+} */
+.k365-section1{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.k365-section1 h2{
+  font-size: 25px;
+  text-align: center;
+}
+.k365-section1 p{
+  text-align: center;
+}
+.sub-section1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.k365-modal .k365-body .btn-warning{
+  font-family: "Raleway", sans-serif !important;
+}
+
+/* d-flex justify-content-center align-items-center gap-2 */
+.k365-section2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.k365-section2 .card{
+  width: 18rem !important;
+  height: 10rem !important;
+  border: 0px !important;
+  box-shadow: 0px 2px 8px 0px rgba(87, 192, 237, .46) !important;
+}
+.k365-section2 .card p{
+  color: #193e62;
+  font-weight: 400;
+}
+/* k365-section2 changes */
+.k365-section2-new{
+  position: sticky !important;
+  top: -.1rem !important;
+  padding: 10px 0 !important;
+  background-color: #275d83;
+  z-index: 2;
+}
+
+.k365-section3{
+  margin-top: -3rem;
+}
+.k365-section3 .section-cont{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+.k365-section3 .section-cont h2{
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.k365-section3 .section-cont .section3-desc{
+  text-align: justify;
+}
+
+.k365-section3 .section-cont .ring-bg .card-ring-bg{
+  display: grid;
+  justify-content: center;
+  grid-template-rows: auto auto;
+  gap: 2rem;
+}
+
+.k365-section3 .section-cont .ring-bg .card-ring-bg .card {
+  border: 0;
+  box-shadow: 0px 2px 8px 0px rgba(87, 192, 237, .46) !important;
+}
+
+.k-365-panel-content-3 .section3-desc{
+  text-align: center;
+}
+
+/* new section three due to changes from kaseya */
+.k365-section3-new .card{
+  border: 0;
+  box-shadow: 0px 2px 8px 0px rgba(87, 192, 237, .46) !important;
+  border-radius: 0 !important;
+}
+.k365-section3-new .card a{
+ font-size: 12px;
+ border-bottom: 1px solid #0277bd;
+}
+.k365-section3-new .card .card-footer{
+  background-color: #fff !important;
+  border-top: 0 !important;
+ }
+.k365-section3-new{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+.k365-includes .tab-area{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.k365-includes .nav{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+.k365-includes .nav{
+  padding: .5rem;
+  border-radius: 2rem !important;
+  background-color: #fff !important;
+}
+
+#segmentedTab .nav-pills .nav-link, .nav-pills .show>.nav-link{
+  color: #027bc1 !important;
+  border-radius: 2rem !important;
+}
+#segmentedTab .nav-pills .nav-link span, .nav-pills .show>.nav-link{
+  color: #000 !important;
+}
+
+#segmentedTab .nav-pills .nav-link.active span{
+  color: #fff !important;
+}
+#segmentedTab .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  background-color: #01c6be !important;
+  color: #fff !important;
+}
+.tab-content .pills-content{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+.tab-content .pills-content .secure-tab-perks{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: .5rem;
+}
+.tab-content .pills-content h5{
+  font-size: 15px;
+  font-weight: bold;
+}
+.tab-content .pills-content p{
+  font-size: 15px;
+}
+.tab-content .pills-content .tag{
+  font-size: 12px;
+}
+.tab-banner-sm{
+  background-color: rgba(49, 93, 179, 0.06);
+  display: block;
+  padding: 1rem;
+  height: 25%;
+}
+
+/* automation section */
+/* #automation-segmentedTab .nav-pills{
+  display: flex !important;
+  flex-direction: column;
+  gap: 1rem;
+}
+#automation-segmentedTab .nav-pills .nav-link{
+  min-width: 20rem !important;
+  padding: 1rem;
+  border-radius: 0;
+}
+#automation-segmentedTab .nav-pills .nav-item p{
+  margin: 0 !important;
+  color: #138ec7;
+  font-weight: 500;
+  font-size: 15px;
+}
+#automation-segmentedTab .nav-pills .nav-link, .nav-pills .show>.nav-link{
+  background-color: rgba(255,255,255,.1) !important;
+}
+#automation-segmentedTab .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  border-left: 5px solid #027bc1;
+} */
+  .automation-section{
+  background-color: #0b233a !important;
+ }
+
+.automation-content{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.5rem;
+  margin-top: 2rem;
+ }
+
+#automation-segmentedTab .nav{
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  gap: 1rem;
+}
+/* scrollbar style */
+#automation-segmentedTab .nav::-webkit-scrollbar{
+  height: 2px;
+  background-color: transparent;
+}
+
+#automation-segmentedTab .nav-pills .nav-link{
+  min-width: 15rem !important;
+  padding: .5rem;
+  border-radius: 0;
+}
+#automation-segmentedTab .nav-pills .nav-item p{
+  margin: 0 !important;
+  color: #138ec7;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: left;
+}
+#automation-segmentedTab .nav-pills .nav-link, .nav-pills .show>.nav-link{
+  background-color: rgba(255,255,255,.1) !important;
+}
+#automation-segmentedTab .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  border-left: 5px solid #027bc1;
+}
+
+/* k365 badge */
+.text-bg-primary{
+  color: #138ec7 !important;
+  background-color: #c8eeff !important;
+}
+.text-bg-success{
+  color: #1d773b !important;
+  background-color: #b5ecc7 !important;
+}
+
+/* .k365-section3 .section-cont{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+.k365-section3 .section-cont .ring-bg{
+  background: url(http://localhost/PROJECTS/NMIPH_WEBSITE/assets/img/nmi-k-365/logo-kaseya-365-ring.svg) no-repeat center center;
+  grid-column: span 2;
+}
+
+.k365-section3 .section-cont .ring-bg .card-ring-bg{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  grid-template-rows: auto auto;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+.k365-section3 .section-cont .ring-bg .card-ring-bg .card {
+  border: 0;
+  box-shadow: 0px 10px 8px 0px rgba(87, 192, 237, .46) !important;
+}
+.k365-section3 .section-cont .ring-bg .card-ring-bg .card:last-child {
+  grid-column: 1 / span 2;
+  margin: 0 11rem;
+} */

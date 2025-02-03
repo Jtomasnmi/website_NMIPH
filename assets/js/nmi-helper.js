@@ -59,6 +59,6 @@ let webHelper = function(){
     }
 
     return{
-        init: init
+       init: init
     };
 }();
