@@ -87,22 +87,7 @@
      modalPageHelper.init(); 
      insertData.init();
      getData.init();
-     componentFunction.init();
-
-     $(document).ready(function(){
-       
-          console.log("test");
-
-          let value =  '_automationEdr';
-
-          $('<div>', {
-            id: value,
-          }).appendTo('#k365AutomationEDR-selector')
-
-          $("#" + value).load("k365-automation-tabs/" + value + ".html");
-        
-        
-     });
+    //  componentFunction.init();
      
   </script>
 </body>

@@ -838,6 +838,27 @@ ol, ul, dl {
   color: #1d773b !important;
   background-color: #b5ecc7 !important;
 }
+#k365Section4 ul{
+  padding-left: 0;
+}
+#k365Section4 .subscription-content{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#k365Section4 .card{
+  border: 0;
+  box-shadow: 0px 2px 18px 0px rgba(90, 97, 100, 0.46) !important;
+}
+#k365Section4 .pro-subs{
+  background-color: #0b233a;
+  background-repeat: repeat;
+  background-position: right bottom;
+  background-size: cover;
+  background-image: url(https://www.kaseya.com/wp-content/uploads/2024/06/k365-hero-bg.jpg);
+}
+/* d-flex justify-content-center align-item-center gap-4 */
+
 
 /* .k365-section3 .section-cont{
   position: relative;
