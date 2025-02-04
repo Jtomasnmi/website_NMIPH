@@ -10,18 +10,53 @@ let modalPageHelper = function(){
                       "k365-content-mod"
                     ];
 
+    let automationProp = [
+      {
+        id: "_automationEdr",
+        tab: "pills-edr-tab",
+      },
+      {
+        id: "_automationEvents",
+        tab: "pills-events-tab",
+      },
+      {
+        id: "_automationPolicy",
+        tab: "pills-policy-tab",
+      },
+      {
+        id: "_automationPatching",
+        tab: "pills-patching-tab",
+      },
+      {
+        id: "_automationBackIns",
+        tab: "pills-backIns-tab",
+      },
+      {
+        id: "_automationRocketcyber",
+        tab: "pills-rocketCyber-tab",
+      },
+      {
+        id: "_automationHealthStatus",
+        tab: "pills-healthStatus-tab",
+      },
+    ]
+
     let init = function(){
       loadEvent();
+      clickEvent();
     };
-
+  
     let loadEvent = function(){
       $.when(initModalPage()).done(function(){
         GetInitTabPage();
       });
         
-      initModalPage();
       initPartialPage();
       initK365ChildTabAutomation();
+    };
+  
+    let clickEvent = function(){
+      click365AutomationTab();
     };
 
     async function initModalPage(){   
@@ -68,23 +103,38 @@ let modalPageHelper = function(){
     };
 
     async function initK365ChildTabAutomation() {
-        $(function() {
-          let value =  '_automationEdr';
+        $(window).on("load",function(){
+          
+          automationProp.map(({id, _}, i) => {
+            let div = $('<div>', {
+                          id: id,
+                        }).appendTo('#k365AutomationEDR-selector');
 
-          $('<div>', {
-            id: value,
-          }).appendTo('#k365AutomationEDR-selector')
-
-          $("#" + value).load("k365-automation-tabs/" + value + ".html");
+            if (i === 0) 
+              div.attr("hidden", false);
+            else 
+              div.attr("hidden", true);
+            
+            $("#" + id).load("k365-automation-tabs/" + id + ".html");
+          });
         });
-    }
+    };
 
-    // async function GetTabModalPage(){
-    //   $(window ).on("load", function() {
-    //     $("#tabs").load("modals/_tabs.html");  
-    //     $("#tabs2").load("modals/_tabs.html");  
-    //   });
-    // }
+    async function click365AutomationTab(){
+        $(function() {
+            automationProp.map(({id, tab}, i) => {
+                $('#' + tab).click(function(){
+                  let active = automationProp.find(
+                  ({id, _}, i) => {
+                    return !$('#' + id).is(':hidden');
+                  });
+
+                  $('#' + active.id).attr('hidden', true);
+                  $('#' + id).attr('hidden', false);
+                });
+            });
+        });
+    };
 
     return{
         init: init

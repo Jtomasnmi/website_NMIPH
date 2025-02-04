@@ -232,6 +232,12 @@
     padding: 1rem;
     height: 25%;
   }
+  #k365Section4 .subscription-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4rem;
+  }
 }
 
   /* desktop viewport*/
@@ -370,18 +376,28 @@
       grid-template-columns: repeat(2, 1fr);
       gap: .5rem;
     }
-    /* .automation-content{
+    .automation-content{
       display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 0.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      gap: 1rem;
       margin-top: 2rem;
     }
     #automation-segmentedTab .nav{
       display: flex !important;
       flex-wrap: wrap !important;
       overflow-x: auto;
-      gap: 1rem;
-    } */
+      /* gap: 1rem; */
+    }
+    #automation-segmentedTab .tab-content{
+      grid-column: span 2;
+
+    }
+    #automation-segmentedTab .nav-pills .nav-link{
+      min-width: 20rem !important;
+      padding: .5rem;
+      border-radius: 0;
+    }
   }
 
   @media (min-width: 1280px) {
