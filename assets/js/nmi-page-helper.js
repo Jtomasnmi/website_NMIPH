@@ -1,3 +1,4 @@
+
 let modalPageHelper = function(){
     let solutions = [
                       "rmm-endpoint-mod",
@@ -7,7 +8,8 @@ let modalPageHelper = function(){
                       "compliance-mod",
                       "servicedesk-mod",
                       "it-documentation-mod",
-                      "k365-content-mod"
+                      "k365-content-mod",
+                      "k365-user-mod"
                     ];
 
     let automationProp = [
@@ -52,14 +54,18 @@ let modalPageHelper = function(){
       });
         
       initPartialPage();
-      initK365ChildTabAutomation();
+      initK365ChildTabAutomation();    
+      hoverTooltip();
+      appendOnId();
+      renderK365onBoardTbl();
+      
     };
   
     let clickEvent = function(){
       click365AutomationTab();
     };
 
-    async function initModalPage(){   
+    async function initModalPage(){
         $.each(solutions, function(index, value){
           $('<div>', {
             id: value,
@@ -72,11 +78,12 @@ let modalPageHelper = function(){
 
     async function initPartialPage(){
         let value =  'k365-partial';
-        $('<div>', {
-          id: value,
-        }).appendTo('#k365-selector');
-
-        $("#" + value).load("partials/_" + value.replace("-partial",".html"));
+        
+          $('<div>', {
+            id: value,
+          }).appendTo('#k365-selector');
+  
+          $("#" + value).load("partials/_" + value.replace("-partial",".html"));
     };
 
     async function GetInitTabPage(){
@@ -104,16 +111,11 @@ let modalPageHelper = function(){
 
     async function initK365ChildTabAutomation() {
         $(window).on("load",function(){
-          
           automationProp.map(({id, _}, i) => {
-            let div = $('<div>', {
-                          id: id,
-                        }).appendTo('#k365AutomationEDR-selector');
+            let div = $('<div>', { id: id })
+            .appendTo('#k365AutomationEDR-selector');
 
-            if (i === 0) 
-              div.attr("hidden", false);
-            else 
-              div.attr("hidden", true);
+            i === 0 ? div.attr("hidden", false) : div.attr("hidden", true);
             
             $("#" + id).load("k365-automation-tabs/" + id + ".html");
           });
@@ -124,17 +126,46 @@ let modalPageHelper = function(){
         $(function() {
             automationProp.map(({id, tab}, i) => {
                 $('#' + tab).click(function(){
-                  let active = automationProp.find(
-                  ({id, _}, i) => {
+                  let active = automationProp.find(({id, _}, i) => {
                     return !$('#' + id).is(':hidden');
                   });
 
                   $('#' + active.id).attr('hidden', true);
                   $('#' + id).attr('hidden', false);
-                });
+                }); 
             });
         });
     };
+
+    async function hoverTooltip(){
+        $(function(){
+          let tooltips = $('[data-bs-toggle="tooltip"]')
+        return [...tooltips].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        })
+    }
+
+    async function renderK365onBoardTbl() {
+      $(window).on('load', function(){
+        let id = "onBoardingTbl";
+        $("#" + id).load("table/_k365-onboardingtbl.html");
+      })
+    }
+
+    async function appendOnId() {
+      $(function(){
+        $('#endpoint-k365-selector').append(svgSrc.K365Endpoint.banner);
+        $('#user-k365-selector').append(svgSrc.K365User.banner);
+        $('#user-circle-logo').append(svgSrc.K365User.circleLogo);
+        $('#preventTab').append(svgSrc.K365User.tabSvgPrevent);
+        $('#respondTab').append(svgSrc.K365User.tabSvgRespond);
+        $('#recoverTab').append(svgSrc.K365User.tabSvgRecover);
+        $('#preventBoxImg').append(svgSrc.K365User.preventBoxImg);
+        $('#respondBoxImg').append(svgSrc.K365User.respondBoxImg);
+        $('#recoverBoxImg').append(svgSrc.K365User.recoverBoxImg);
+        $('#k365BlueGreen').append(svgSrc.K365User.k365BlueGreen);
+        $('#k365CircleSubs').append(svgSrc.K365User.k365CircleSubs);
+      });
+    }
 
     return{
         init: init

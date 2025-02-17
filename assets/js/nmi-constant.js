@@ -115,6 +115,50 @@ let constant = function(){
             `
         },
     ]
+    const k365OnboardingCard = [
+        {
+            title: "Dedicated Project Manager",
+            desc: "Single Project Manager for accountability and escalations",
+            pro: `<i class="bi bi-check"></i>`,
+            qck: `<i class="bi bi-check"></i>`
+        },
+        {
+            title: "Self Guided Enablement in Product",
+            desc: "In Product implementation walkthrough steps and videos",
+            pro: `<i class="bi bi-check"></i>`,
+            qck: `<i class="bi bi-check"></i>`
+        },
+        {
+            title: "Integration Coverage",
+            desc: "Integration coverage on all components via Group and Consulting sessions",
+            pro: `<i class="bi bi-check"></i>`,
+            qck: `<i class="bi bi-check"></i>`
+        },
+        {
+            title: "Post Implementation Technical Account Review",
+            desc: "Dedicated 30 minute review sessions to address quick questions or understand needs for additional services",
+            pro: `<i class="bi bi-check"></i>`,
+            qck: `<i class="bi bi-check"></i>`
+        },
+        {
+            title: "Interactive Group Sessions on each Component",
+            desc: "Quickly available live onboarding group sessions with available Q&A",
+            pro: `<i class="bi bi-check"></i>`,
+            qck: `<i class="bi bi-check"></i>`
+        },
+        {
+            title: "SME Consultant led sessions",
+            desc: "Kaseya Endpoint Certified Expert for your consulting engagements",
+            pro: `<i class="bi bi-check"></i>`,
+            qck: `<i class="bi bi-check"></i>`
+        },
+        {
+            title: "Certified Administrator Course",
+            desc: "Kaseya University Course focused on Kaseya 365 Integrations",
+            pro: `<i class="bi bi-check"></i>`,
+            qck: `<i class="bi bi-check"></i>`
+        },
+    ]
 
     return {
         MapPosition: mapPosition,
@@ -130,6 +174,7 @@ let constant = function(){
         KeyChecker: keyChecker,
         AppendElementIds: appendElementIds,
         AppendElementTag:  appendedElementTag,
-        K365IncludeTabs: k365IncludeTabs
+        K365IncludeTabs: k365IncludeTabs,
+        K365OnboardingCard: k365OnboardingCard
     }
 }();

@@ -813,6 +813,7 @@ section {
   border-radius: 1rem;
   height: 15rem;
   padding: 1rem;
+  overflow-y: auto;
 }
 .services .services-grid .icon-box .icon-label{
   display: flex;
