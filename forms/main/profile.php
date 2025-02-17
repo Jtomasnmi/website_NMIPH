@@ -33,7 +33,7 @@
 //             </form>
 //         </section>';
 echo 
-'<section id="services" class="services section-bg"> 
+'<section id="services" class="services section-bg">
     <form id="frmCompanyProfileDetailForm" role="form">
         <div class="container" data-aos="fade-up">
             <div class="section-title">

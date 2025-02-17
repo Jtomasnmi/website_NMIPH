@@ -4,70 +4,39 @@ let componentFunction = function(){
     };
 
     const loadEvent = () => {
-        createSegmentedTab();
+        renderK365Card();
     };
 
-    const segmentedTabHeader = (index, iconClass, title, label, id) => {
-        // create the li tag
-        const tabItem = document.createElement('li')
-        tabItem.classList.add('nav-item')
-        tabItem.setAttribute('role', 'presentation')
 
-        // create button of tab
-        const tabItemBtn = document.createElement('button')
+    const k365Card = (title, desc, pro, qck) => {
 
-        // first index is default active
-        if (index === 0) {
-            tabItemBtn.setAttribute('aria-selected', 'true')
-            tabItemBtn.classList.add('active')
-        }
+    const card = $(`<div class="card onboarding-card mb-2">
+            <div class="card-body d-grid align-items-center gap-2">
+                <div class="d-flex justify-content-between">
+                    <h5 class="fw-bold">${title}</h5>
+                    <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" 
+                        data-bs-placement="right" data-bs-title="${desc}">
+                        <i class="bi bi-question-circle txt-blue"></i>
+                    </span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="txt-blue">Quickstart <span class="text-white fw-bold">${pro}</span></p>
+                    <p class="txt-blue">PRO <span class="text-white fw-bold">${qck}</span></p>
+                </div>
+            </div>
+        </div>`);
 
-        // must be in loop (refactor)
-        tabItemBtn.classList.add('nav-link')
-        tabItemBtn.setAttribute('id', label)
-        tabItemBtn.setAttribute('data-bs-toggle', 'pill')
-        tabItemBtn.setAttribute('data-bs-target', id)
-        tabItemBtn.setAttribute('role', 'tab')
-        tabItemBtn.setAttribute('aria-controls', 'pills-manage')
-
-        // create icon tab
-        const icon = document.createElement('i')
-        icon.classList.add('fs-6', 'bi', iconClass)
-
-        // craete span tag
-        const span = document.createElement('span')
-        span.classList.add('ms-1')
-        span.textContent = title
-
-        tabItemBtn.appendChild(icon)
-        tabItemBtn.appendChild(span)
-        tabItem.appendChild(tabItemBtn)
-
-        return tabItem
+        return card;
     }
 
-    const segmentedTabContent = () => {
-        
-    }
-
-    const createSegmentedTab = function() {
-        // create the ul or container of the tab
-        const tabBase = document.createElement('ul')
-        tabBase.classList.add('nav', 'nav-pills', 'mb-3')
-        tabBase.setAttribute('id', 'pills-tab')
-        tabBase.setAttribute('role', 'tablist')
-
-        const tabItems = constant.K365IncludeTabs.map(({
-            iconClass, title, label, id
-        }, i) => {
-            return segmentedTabHeader(i, iconClass, title, label, id)
+    const renderK365Card = () => {
+        let dataCard = constant.K365OnboardingCard.map(({title, desc, pro, qck}, i) => {
+            return k365Card(title, desc, pro, qck)
         })
         
-        tabItems.forEach((node) => tabBase.appendChild(node))
-        
-        // $(document).on('shown.bs.modal', '#k365-content-modal', function(){
-        //     $("#segmentedTab").append(tabBase)
-        // })
+        $(function(){
+            $('#card-k365').append(dataCard)
+        })
     }
 
     return {

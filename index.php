@@ -81,14 +81,15 @@
   <script src="assets/js/nmi-component-helper.js"></script>
   <script src="assets/js/transaction/insert-data.js"></script>
   <script src="assets/js/transaction/get-data.js"></script>
+  <script src="assets/svg/nmi-svg-constant.js"></script>
+
 
   <script>
      webHelper.init();
      modalPageHelper.init(); 
      insertData.init();
      getData.init();
-    //  componentFunction.init();
-     
+     componentFunction.init();
   </script>
 </body>
 </html>

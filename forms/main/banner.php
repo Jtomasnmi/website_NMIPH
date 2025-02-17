@@ -113,10 +113,7 @@
                         <a href="#about" class="btn-get-started scrollto">Request A Free Demo ></a>
                     </div>
                 </div>
-                <div class="row mt-3">
-                    <div id="k365-selector"></div>
-                </div>
-                <div class="solution-grid">
+                <div class="solution-grid mt-3">
                     <div class="col">
                         <div class="zoom border rounder-sm rounded-3 solution-card">
                             <img src="assets/img/nmi_solutions/menu-icon-1.svg" width="60rem" height="60rem"/> 
@@ -159,6 +156,9 @@
                             <label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="#it-documentation-modal">IT Documentation</a></label>
                         </div>
                     </div>
+                </div>
+                <div class="row mt-3">
+                    <div id="k365-selector"></div>
                 </div>
             </div>
         </div>
