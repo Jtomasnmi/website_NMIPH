@@ -5,6 +5,7 @@ let componentFunction = function(){
 
     const loadEvent = () => {
         renderK365Card();
+        addHrColor();
     };
 
 
@@ -36,6 +37,14 @@ let componentFunction = function(){
         
         $(function(){
             $('#card-k365').append(dataCard)
+        })
+    }
+    
+    const addHrColor = () => {
+        $(function(){
+            constant.HrSolutionColor.map((sol, i) => {
+                $(sol.id).css("background-color", sol.color);
+            });
         })
     }
 

@@ -159,6 +159,17 @@ let constant = function(){
             qck: `<i class="bi bi-check"></i>`
         },
     ]
+    const hrSolutionColor = [
+        {
+            id: "#rmm-sol, .hr-rmm-color",
+            color: "#0059b3"
+        },
+        {
+            id: "#security-sol, .hr-sec-color",
+            color: "#515151"
+        },
+
+    ]
 
     return {
         MapPosition: mapPosition,
@@ -175,6 +186,7 @@ let constant = function(){
         AppendElementIds: appendElementIds,
         AppendElementTag:  appendedElementTag,
         K365IncludeTabs: k365IncludeTabs,
-        K365OnboardingCard: k365OnboardingCard
+        K365OnboardingCard: k365OnboardingCard,
+        HrSolutionColor: hrSolutionColor
     }
 }();

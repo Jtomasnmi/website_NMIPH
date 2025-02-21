@@ -139,8 +139,10 @@ let modalPageHelper = function(){
 
     async function hoverTooltip(){
         $(function(){
-          let tooltips = $('[data-bs-toggle="tooltip"]')
-        return [...tooltips].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+          $('.k365-banner-modals').click(function(){
+            let tooltips = $('[data-bs-toggle="tooltip"]')  
+          return [...tooltips].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+          })
         })
     }
 
