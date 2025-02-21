@@ -894,7 +894,7 @@ ol, ul, dl {
 #automation-segmentedTab .nav-pills .nav-link{
   min-width: 15rem !important;
   padding: .5rem;
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 #automation-segmentedTab .nav-pills .nav-item p{
   margin: 0 !important;

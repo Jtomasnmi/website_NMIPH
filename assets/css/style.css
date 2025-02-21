@@ -815,23 +815,42 @@ section {
   padding: 1rem;
   overflow-y: auto;
 }
-.services .services-grid .icon-box .icon-label{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.services .services-grid .card{
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  border: 1px solid #fff !important;
+  color: #fff;
 }
-.services .services-grid .icon-box p{
+.services .services-grid .card-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-bottom: 0 !important;
+}
+
+.services .services-grid .card-body{
+  height: 10rem !important;
+  overflow-y: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.services .services-grid .card-footer{
+  border-top: 0 !important;
+}
+.services .services-grid p{
   text-align: center;
   font-size: 15px;
 }
-.services .services-grid .icon-box .icon-label i{
+.services .services-grid i{
   font-size: 30px;
   color: #38B6FF;
 }
-.services .services-grid .icon-box .icon-label h4{
+.services .services-grid h4{
   font-size: 22px;
 }
-.services .services-grid .icon-box ul li{
+.services .services-grid ul li{
   list-style: square; 
 }
 /* .services .icon-box {
@@ -2130,6 +2149,7 @@ section {
   display: grid;
   align-items: center;
   margin-top: 2rem;
+  gap: 1rem;
 }
 #footer .footer-top .footer-end p{
   margin-top: .2rem;
@@ -2175,7 +2195,7 @@ section {
   padding: 10px 0;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: .3rem;
 }
 
 #footer .footer-top .footer-links ul li:first-child {
@@ -2284,7 +2304,7 @@ section {
     height: 11rem !important;
   } */
   .solution-card{
-    border-radius: .5rem;
+    /* border-radius: .5rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;

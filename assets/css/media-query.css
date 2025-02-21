@@ -112,7 +112,7 @@
     height: 300px;
     left: 5rem;
     top: calc(100% + 30px);
-    margin: 1rem -32rem 0  !important;
+    margin: 1.5rem -32rem 0  !important;
   }
   .scroll-sub-nav {
     width: 45.9rem;
@@ -283,7 +283,7 @@
     padding: 2rem;
   }
   .solution-content .solution-img img{
-    width: 20rem;
+    width: 25rem;
   }
   #solutions-card-alignment .card-body{
     height: 10rem;
@@ -356,6 +356,10 @@
       display: flex;
       justify-content: space-between;
       align-items: start;
+    }
+    #footer .footer-top .end{
+      display: flex;
+      justify-content: end;
     }
     .rmm-txt-j-c{
       text-align: center;

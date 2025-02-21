@@ -142,15 +142,15 @@ let modalPageHelper = function(){
           $('.k365-banner-modals').click(function(){
             let tooltips = $('[data-bs-toggle="tooltip"]')  
           return [...tooltips].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-          })
-        })
+          });
+        });
     }
 
     async function renderK365onBoardTbl() {
       $(window).on('load', function(){
         let id = "onBoardingTbl";
         $("#" + id).load("table/_k365-onboardingtbl.html");
-      })
+      });
     }
 
     async function appendOnId() {
