@@ -72,6 +72,14 @@ let constant = function(){
     let appendedElementTag = {
         li: "li"
     };
+
+    const footerNav = [
+        "#solutions",
+        "#news",
+        "#company",
+        "#privacy-policy",
+        "#terms-conditions"
+    ]
     
 
     const k365IncludeTabs = [
@@ -159,6 +167,202 @@ let constant = function(){
             qck: `<i class="bi bi-check"></i>`
         },
     ]
+    const hrSolutionColor = [
+        {
+            id: "#rmm-sol",
+            color: "#0059b3"
+        },
+        {
+            id: "#security-sol",
+            color: "#000000"
+        },
+        {
+            id: "#backup-sol",
+            color: "#1eafaf"
+        },
+        {
+            id: "#audit-sol",
+            color: "#cf6605"
+        },
+        {
+            id: "#compliance-sol",
+            color: "#049547"
+        },
+        {
+            id: "#service-sol",
+            color: "#4e6d8d"
+        },
+        {
+            id: "#itdocs-sol",
+            color: "#b34975"
+        },
+
+    ]
+
+    const rmmSolution = {
+        selector: ".rmm-card",
+        video: {
+            source: "https://www.youtube.com/embed/DgbZjmzF_t8?si=pOwI_IKB4TTjw5Tz",
+            title: "The Pillar of the Platform",
+            desc: "VSA from Kaseya is purpose-built to respond to the growth in endpoints. Designed to save time and boost tasks, Kaseya VSA unites functions like endpoint management with the rest of your IT workflow. Rather than a siloed tool within a sea of solutions from different vendors, with different interfaces, and different technologies, Kaseya’s Suite ties together everything you need to get IT done."
+        },
+        card: [
+            {
+                title: "COMPREHENSIVE",
+                description: "Manage all your endpoints, regardless of type, through a single pane of glass- one unified interface."
+            },
+            {
+                title: "AFFORDABLE",
+                description: "Get the benefits of 3 IT TOOLS in ONE SOLUTION; Monitor, Patch, and Automate with Kaseya’s straightforward and cost-effective peer-to-peer integration."
+            },
+            {
+                title: "INTEGRATED",
+                description: "Connect directly with other Kaseya Solutions, allowing you to update, backup, and oversee your systems and networks in one uninterrupted workflow."
+            },
+        ]
+    }
+    const securitySolution = {
+        selector: ".security-card",
+        video: {
+            source: "https://www.youtube.com/embed/c7_D9MTUNmg?si=NALFCz_kfgreIEl1",
+            title: "Secure from All Sides",
+            desc: "From comprehensive Dark Web Monitoring, anti-phishing systems, and internal threat detection-have an intelligent security stack that provides a complete blanket of protection. All unified and integrated into a single platform for easier threat mitigation and interference."
+        },
+        card: [
+            {
+                title: "ACCOUNTABLE",
+                description: "Deflect new cyberattacks through an updated and integrated security suite that not only guarantees your security but complies to the global cybersecurity standards HIPAA, PCI-DSS, CJIS, FFIECC, and other data privacy rules."
+            },
+            {
+                title: "INNOVATIVE",
+                description: "Almost 90% of security breaches are caused by human error. Keep your I.T. Teams sharp and vigilant with comprehensive security awareness trainings, simulation kits, and tech updates on the latest cyber news and cybercrime trends."
+            },
+            {
+                title: "INTELLIGENT",
+                description: "Through Kaseya’s AI-powered data analyzing system, create a reliable record of trusted email profiles and further detect and flag any malicious emails"
+            },
+        ]
+    }
+    const backupSolution = {
+        selector: ".backup-card",
+        video: {
+            source: "https://www.youtube.com/embed/pAW532D4ft4?si=ZeepZoFZMwwakY56",
+            title: "All-Around Data Protection",
+            desc: "Kaseya’s Unified Backup Suites covers local and cloud backup to ensure that the entire spectrum of business operations is protected both on-premises with the appliance, or in the cloud. Get the benefit of a complete disaster recovery plan, catered to your needs."
+        },
+        card: [
+            {
+                title: "SCALABLE",
+                description: "Protect data ranging from 2 TB – 2 EB and manage appliances at multiple locations from a single intuitive user interface have three flexible options for data management; from cloud-based, on-premises, to application-based data recovery, we have options tailored to fit your enterprise needs."
+            },
+            {
+                title: "RESET",
+                description: "Build your best security practice by having a fresh, reliable backup. Stay compliant, overcome security breaches, or simply maintain business through the help of Kaseya’s backup and recovery solutions that gives you the option of having a rewind button."
+            },
+            {
+                title: "RELIABLE",
+                description: "Maximize your uptime and instantly recover your backups using an appliance-based solution that minimizes downtime. With automated backup testing, ensure that your backups will be ready when disaster strikes."
+            },
+        ]
+    }
+    const auditSolution = {
+        selector: ".audit-card",
+        video: {
+            source: "https://www.youtube.com/embed/_IMq_BQgayY?si=9aShMl9xrRBQgMWU",
+            title: "Complete Visibility",
+            desc: "Kaseya’s Network Detective is the industry-leading IT assessment tool that goes way beyond just network discovery and documentation. Complete Visibility provides real “value-added intelligence” to your IT Assessments. Our suites compare multiple data points to uncover hard-to-detect issues, measure risk, provide recommended fixes, and track remediation progress."
+        },
+        card: [
+            {
+                title: "SCAN",
+                description: "Gain 100% visibility on all your assets and get progressive status reports that easily translate into easy-to-understand tables and graphs showing monthly improvements to their network."
+            },
+            {
+                title: "DISCOVER",
+                description: "Uncover all hidden threats or possible risks before it hits your system and create a workflow that easily addresses all perimeters of your security."
+            },
+            {
+                title: "ENFORCE",
+                description: "Administer security drills more easily with a reliable scanning and assessment tool. Target and resolve potential risks at its root, never waste time on false threats and redundant security alerts"
+            },
+        ]
+    }
+    const complianceSolution = {
+        selector: ".compliance-card",
+        video: {
+            source: "https://www.youtube.com/embed/JgqTK6-Igok?si=oi8dTvYSCWxSlExR",
+            title: "Automatic Compliance",
+            desc: "Kaseya Compliance Suite and Kaseya Compliance Manager simplifies identification, reporting, and consistency of compliance protocols- from HIPAA, GDPR, NIST, and other regulations."
+        },
+        card: [
+            {
+                title: "AUTOMATED",
+                description: "Through scanning both public and internal environments, determine and meet compliance requirements and perform automated compliance assessments with ease."
+            },
+            {
+                title: "FOOLPROOF",
+                description: "Maintain and prove compliance easily with the built-in Compliance Manager feature that will help you rest easy knowing that your consumer data is safe and secured without any risk."
+            },
+            {
+                title: "SIMPLE",
+                description: "Through the web-based management portal, and built-in compliance document generation, audit and document compliance from a single pane of glass."
+            },
+        ]
+    }
+    const servicedeskSolution = {
+        selector: ".service-card",
+        video: {
+            source: "https://www.youtube.com/embed/I6WEnqf9pFw?si=akBoqrrvyJEkxbzL",
+            title: "Visibility Across Your Entire Business",
+            desc: "Centralize business operations and make data-driven decisions to improve service, productivity and profitability with open-architecture and APIs. Enable tight integration with 200+ industry-leading tools to maximize business efficiency while eliminating human error."
+        },
+        card: [
+            {
+                title: "EFFICIENT",
+                description: "Get powerful analytics and intuitive dashboards provide actionable business insights for every role."
+            },
+            {
+                title: "INTUITIVE",
+                description: "Open-architecture and APIs enable tight integration with 200+ industry-leading tools to maximize business efficiency."
+            },
+            {
+                title: "INTEGRATED",
+                description: "Run your entire business, from ticketing, project management, quoting to billing, and more, all in a modern and intuitive platform."
+            },
+        ]
+    }
+    const itdocsSolution = {
+        selector: ".itdocs-card",
+        video: {
+            source: "https://www.youtube.com/embed/UPNnscQvdhY?si=3oPCip6QmyMqyaA8",
+            title: "IT Glue Remembers Everything",
+            desc: "IT Glue is integrated deeply across the entire VSA Platform, so you can get the information that you need, when you need it, without having to leave other tasks that you are trying to complete."
+        },
+        card: [
+            {
+                title: "DOCUMENT",
+                description: "Effectively record all SSLs, passwords, and patches with effective documentations with an immutable audit trail and password management engine, fully integrated and linked with all your accounts and transactions"
+            },
+            {
+                title: "SECURE",
+                description: "With globally accredited SOC 2 compliance granted by the American Institute of CPAs (AICPA), guaranteed to implement the five trust service principles—security, availability, processing integrity, confidentiality, and privacy, you can have confidence in the security of your information and documentation."
+            },
+            {
+                title: "LINKED",
+                description: "We’ve integrated IT Glue deeply across our entire platform, so you can get the information you need, when and where you need it, without having to leave the task you’re trying to complete."
+            },
+        ]
+    }
+
+    const nmiSolution = [
+        rmmSolution,
+        securitySolution,
+        backupSolution,
+        auditSolution,
+        complianceSolution,
+        servicedeskSolution,
+        itdocsSolution
+    ]
 
     return {
         MapPosition: mapPosition,
@@ -175,6 +379,9 @@ let constant = function(){
         AppendElementIds: appendElementIds,
         AppendElementTag:  appendedElementTag,
         K365IncludeTabs: k365IncludeTabs,
-        K365OnboardingCard: k365OnboardingCard
+        K365OnboardingCard: k365OnboardingCard,
+        HrSolutionColor: hrSolutionColor,
+        NmiSolution: nmiSolution,
+        FooterNav: footerNav
     }
 }();

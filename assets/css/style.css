@@ -212,6 +212,10 @@ h6 {
   color:  #0059b3;
 }
 
+.footer-li:hover{
+  color: #0059b3;
+  cursor: pointer;
+}
 
 .navbar .dropdown ul {
   display: flex;
@@ -815,23 +819,42 @@ section {
   padding: 1rem;
   overflow-y: auto;
 }
-.services .services-grid .icon-box .icon-label{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.services .services-grid .card{
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  border: 1px solid #fff !important;
+  color: #fff;
 }
-.services .services-grid .icon-box p{
+.services .services-grid .card-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-bottom: 0 !important;
+}
+
+.services .services-grid .card-body{
+  height: 10rem !important;
+  overflow-y: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.services .services-grid .card-footer{
+  border-top: 0 !important;
+}
+.services .services-grid p{
   text-align: center;
   font-size: 15px;
 }
-.services .services-grid .icon-box .icon-label i{
+.services .services-grid i{
   font-size: 30px;
   color: #38B6FF;
 }
-.services .services-grid .icon-box .icon-label h4{
+.services .services-grid h4{
   font-size: 22px;
 }
-.services .services-grid .icon-box ul li{
+.services .services-grid ul li{
   list-style: square; 
 }
 /* .services .icon-box {
@@ -2130,6 +2153,7 @@ section {
   display: grid;
   align-items: center;
   margin-top: 2rem;
+  gap: 1rem;
 }
 #footer .footer-top .footer-end p{
   margin-top: .2rem;
@@ -2172,10 +2196,10 @@ section {
 }
 
 #footer .footer-top .footer-links ul li {
-  padding: 10px 0;
+  padding: 5px 0;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: .3rem;
 }
 
 #footer .footer-top .footer-links ul li:first-child {
@@ -2192,6 +2216,9 @@ section {
 #footer .footer-top .footer-links ul a:hover {
   text-decoration: none;
   color: #fff;
+}
+#footer .footer-top .footer-links ul li p {
+  margin-bottom: 0 !important;
 }
 
 #footer .footer-newsletter {
@@ -2284,7 +2311,7 @@ section {
     height: 11rem !important;
   } */
   .solution-card{
-    border-radius: .5rem;
+    /* border-radius: .5rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2440,14 +2467,13 @@ section {
 }
 
 
-hr{
-  width: 5rem;
+.hr-title{
+  width: 8rem;
   height:2px;
   border-width:0;
-  color:#38B6FF;
   opacity: 100%;
-  background-color:#38B6FF;
 }
+
 .rmm-txt-j-c{
   text-align: justify;
   margin-top: 2rem;
@@ -2458,21 +2484,15 @@ hr{
   text-align: justify;
 }
 
-.rmm .rmm-below-content{
+.solution-content{
   margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 2.5rem;
+  gap: 1rem;
+  
 }
-.rmm .rmm-below-content p{
+.solution-content p{
   font-size: 16px;
-}
-.rmm .rmm-below-content .rmm-img{
-  display: flex;
-  justify-content: center;
-  padding: 1rem 2rem;
-  border: 1px solid #c4c4c4;
-  border-radius: .5rem;
 }
 
 /* --- SECURITY --- */
@@ -2503,4 +2523,57 @@ hr{
 /* --- it documentation --- */
 .it-doc .modal-header{
   background-color: rgb(194, 126, 154);
+}
+
+.solution-heading{
+  display: block;
+}
+
+.solution-figure{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18rem;
+}
+
+.solution-alignment{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#solutions-card-alignment .card{
+  border-radius: 0 !important;
+  /* box-shadow: 0px 2px 8px 0px rgba(61, 61, 61, 0.46); */
+}
+#solutions-card-alignment .card-header{
+  background-color: transparent !important;
+  border-bottom: 0 !important;
+}
+#solutions-card-alignment .card-body p{
+  font-size: 15px !important;
+}
+#solutions-card-alignment .card-footer{
+  background-color: transparent !important;
+  border-top: 0 !important;
+}
+
+.solution-video{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#privacy-policy-mod p{
+  margin-bottom: 0 !important;
+}
+ol li{
+  list-style: decimal;
+}
+#privacy-policy-mod ul li{
+  list-style: disc;
+}
+#terms-conditions-mod ul li{
+  list-style: disc;
 }

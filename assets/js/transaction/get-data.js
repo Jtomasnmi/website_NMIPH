@@ -50,9 +50,10 @@ let getData = function(){
 
     async function getFooterHeader() {
         NMICore.Ajax.Get(constant.Url.footerHeader
-                        ,null
-                        ,null
-                        ,null);
+            ,null
+            ,null
+            ,null);
+    
     };
 
     async function getFooterDetail() {
