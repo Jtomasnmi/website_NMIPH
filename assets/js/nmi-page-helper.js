@@ -11,6 +11,10 @@ let modalPageHelper = function(){
                       "k365-content-mod",
                       "k365-user-mod"
                     ];
+    let FooterInformation = [
+      'privacy-policy',
+      'terms-conditions',
+    ]
 
     let automationProp = [
       {
@@ -58,6 +62,8 @@ let modalPageHelper = function(){
       hoverTooltip();
       appendOnId();
       renderK365onBoardTbl();
+      initFooterModal();
+      footerNavClass();
       
     };
   
@@ -76,6 +82,12 @@ let modalPageHelper = function(){
         });
     };
 
+    async function initFooterModal(){
+      $.each(FooterInformation, function(index, info){
+        $('<div>').appendTo('#modal-container').load("modals/footer-modal/_" + info + ".html");
+      })
+    };
+
     async function initPartialPage(){
         let value =  'k365-partial';
         
@@ -89,24 +101,13 @@ let modalPageHelper = function(){
     async function GetInitTabPage(){
       $.each(solutions, function(index, value){       
         value = value.replace("mod","tab");
-        
+
         $('<div>', {
           id: value,
         }).appendTo('#tab-selector');
 
         $("#" + value.replace("tab","mod")).find("#" + value).load("modals/_tabs.html");
-        // $("#" + value).load("modals/_tabs.html");
-        // $("#" + value.replace("tab","modal > ") + "#" + value).load("modals/_tabs.html");
-        // (
-        //   async() => {
-        //     await GetInitTabPage();
-        //   }
-        // )();
       });
-      // $(window ).on("load", function() {
-      //     $("#tabs").load("modals/_tabs.html");
-      //     $("#tabs2").load("modals/_tabs.html");
-      // });
     };
 
     async function initK365ChildTabAutomation() {
@@ -116,7 +117,7 @@ let modalPageHelper = function(){
             .appendTo('#k365AutomationEDR-selector');
 
             i === 0 ? div.attr("hidden", false) : div.attr("hidden", true);
-            
+
             $("#" + id).load("k365-automation-tabs/" + id + ".html");
           });
         });
@@ -140,7 +141,7 @@ let modalPageHelper = function(){
     async function hoverTooltip(){
         $(function(){
           $('.k365-banner-modals').click(function(){
-            let tooltips = $('[data-bs-toggle="tooltip"]')  
+            let tooltips = $('[data-bs-toggle="tooltip"]')
           return [...tooltips].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
           });
         });
@@ -167,6 +168,12 @@ let modalPageHelper = function(){
         $('#k365BlueGreen').append(svgSrc.K365User.k365BlueGreen);
         $('#k365CircleSubs').append(svgSrc.K365User.k365CircleSubs);
       });
+    }
+
+    async function footerNavClass() {
+      $(function(){
+        $(".footer-inf").addClass("bi bi-arrow-return-right footer-li");
+      })
     }
 
     return{

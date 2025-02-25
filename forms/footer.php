@@ -42,5 +42,9 @@
                 </div>
             </div>
         </div>
-    </div>';
+    </div>
+
+    <div id="modal-container">
+    </div>
+';
 ?>

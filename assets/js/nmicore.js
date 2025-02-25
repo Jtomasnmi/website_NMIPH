@@ -50,17 +50,19 @@ var NMICore = (function () {
 
                         $.each(data, function(key,value) {
                             if(((key === keyChecker) && (keyChecker !== null)) && (value.indexOf(',') != -1)) {
-                                var array = value.split(",");                                   
+                                var array = value.split(",");                               
                                 
                                 $.each(array,function(i){         
                                     if(key === constant.KeyChecker.dCoreValues){
                                         $("#" + appendElementId).append($('<' + appendedElementTag + '>').text(array[i]));
                                     }
 
-                                    if(key === constant.KeyChecker.fdDescription){                 
-                                        $("#" + appendElementId).append($('<li>').addClass("bi bi-arrow-return-right").text(array[i]));      
-                                    }                                                     
-                                });                                                                         
+                                    if(key === constant.KeyChecker.fdDescription){
+                                        $("#" + appendElementId)
+                                        .append($(`<li class="footer-inf" data-bs-toggle="modal" data-bs-target="${constant.FooterNav[i]}">`)
+                                        .text(array[i]));
+                                    }                   
+                                });                                  
                             }else{
                                 $("[name=" + "'c-" + key + "']").text(value);                                       
                             } 

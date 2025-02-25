@@ -72,6 +72,14 @@ let constant = function(){
     let appendedElementTag = {
         li: "li"
     };
+
+    const footerNav = [
+        "#solutions",
+        "#news",
+        "#company",
+        "#privacy-policy",
+        "#terms-conditions"
+    ]
     
 
     const k365IncludeTabs = [
@@ -373,6 +381,7 @@ let constant = function(){
         K365IncludeTabs: k365IncludeTabs,
         K365OnboardingCard: k365OnboardingCard,
         HrSolutionColor: hrSolutionColor,
-        NmiSolution: nmiSolution
+        NmiSolution: nmiSolution,
+        FooterNav: footerNav
     }
 }();
