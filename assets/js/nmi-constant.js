@@ -54,6 +54,15 @@ let constant = function(){
         dCoreValueList: "DCoreValueList",
         fdDescriptionList: "FDDescriptionList"
     };
+    let solutions = [
+        "rmm-endpoint-mod",
+        "security-mod",
+        "backup-dr-mod",
+        "audit-mod",
+        "compliance-mod",
+        "servicedesk-mod",
+        "it-documentation-mod",
+      ];
 
     const htmlTagList = [
         "h2",
@@ -382,6 +391,7 @@ let constant = function(){
         K365OnboardingCard: k365OnboardingCard,
         HrSolutionColor: hrSolutionColor,
         NmiSolution: nmiSolution,
-        FooterNav: footerNav
+        FooterNav: footerNav,
+        Solutions: solutions
     }
 }();

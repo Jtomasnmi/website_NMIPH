@@ -1,16 +1,5 @@
 
 let modalPageHelper = function(){
-    let solutions = [
-                      "rmm-endpoint-mod",
-                      "security-mod",
-                      "backup-dr-mod",
-                      "audit-mod",
-                      "compliance-mod",
-                      "servicedesk-mod",
-                      "it-documentation-mod",
-                      "k365-content-mod",
-                      "k365-user-mod"
-                    ];
     let FooterInformation = [
       'privacy-policy',
       'terms-conditions',
@@ -72,7 +61,7 @@ let modalPageHelper = function(){
     };
 
     async function initModalPage(){
-        $.each(solutions, function(index, value){
+        $.each(constant.Solutions, function(index, value){
           $('<div>', {
             id: value,
           }).appendTo('#parent-selector');
@@ -99,15 +88,15 @@ let modalPageHelper = function(){
     };
 
     async function GetInitTabPage(){
-      $.each(solutions, function(index, value){       
-        value = value.replace("mod","tab");
+      // $.each(constant.Solutions, function(index, value){
+      //   value = value.replace("mod","tab");
 
-        $('<div>', {
-          id: value,
-        }).appendTo('#tab-selector');
+      //   $('<div>', {
+      //     id: value,
+      //   }).appendTo('#tab-selector');
 
-        $("#" + value.replace("tab","mod")).find("#" + value).load("modals/_tabs.html");
-      });
+      //   $("#" + value.replace("tab","mod")).find("#" + value).load("modals/_tabs.html");
+      // });
     };
 
     async function initK365ChildTabAutomation() {
