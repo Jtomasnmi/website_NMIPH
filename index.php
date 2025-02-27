@@ -77,6 +77,7 @@
   <script src="assets/js/nmi-constant.js"></script>
   <script src="assets/js/nmi-helper.js"></script>
   <script src="assets/js/nmi-page-helper.js"></script>
+  <script src="assets/js/nmi-tab-helper.js"></script>
   <script src="assets/js/nmicore.js"></script>
   <script src="assets/js/nmi-component-helper.js"></script>
   <script src="assets/js/transaction/insert-data.js"></script>
@@ -86,7 +87,8 @@
 
   <script>
      webHelper.init();
-     modalPageHelper.init(); 
+     modalPageHelper.init();
+     tabPageHelper.init();
      insertData.init();
      getData.init();
      componentFunction.init();

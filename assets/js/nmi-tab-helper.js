@@ -1,27 +1,33 @@
 let tabPageHelper = function(){
-    let solutions = [
-                      "rmm-endpoint-tab",
-                      "security-tab",
-                      "backup-dr-tab",
-                      "audit-tab",
-                      "compliance-tab",
-                      "servicedesk-tab",
-                      "it-documentation-tab"
-                    ];
-
     let init = function(){
         clickTabPage();
     };
 
-    async function clickTabPage(){   
-        $("a[data-bs-target='#rmm-endpoint-modal']").click(function() {
-            $('<section>', {
-                id: "rmm-endpoint-tab",
-                class: "tabs"
-            }).appendTo("tab-selector");        
-                $("#rmm-endpoint-tab").load("modals/_tabs.html");  
-          
-        });
+    async function clickTabPage(){
+        $(function(){
+            // $('<section>', {id: "tabs"})
+            // .appendTo(
+            //     $.each(constant.Solutions, function(index, value){
+            //         let val = value.replace("-mod", "-modal")
+            //         `div #${val} #tab-selector`
+            //     })
+            // )
+            // $().load("modals/_tabs.html");
+            $.each(constant.Solutions, function(index, value){
+                value = value.replace("mod", "modal")
+                let selector = "div #".concat(value).concat(" #tab-selector")
+                
+                $('<section>').appendTo(selector).load("modals/_tabs.html")
+            })
+        })
+        // $("a[data-bs-target='#rmm-endpoint-modal']").click(function() {
+        //     $('<section>', {
+        //         id: "rmm-endpoint-tab",
+        //         class: "tabs"
+        //     }).appendTo("#tab-selector");
+        //         $("#rmm-endpoint-tab").load("modals/_tabs.html");
+
+        // });
 
         // $.each(solutions, function(index, value){
         //     $('<section>', {
