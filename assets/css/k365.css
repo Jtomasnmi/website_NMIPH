@@ -1009,6 +1009,7 @@ ol, ul, dl {
   background-color: rgba(255, 255, 255, .06) !important;
   color: #fff;
   overflow: hidden;
+  border-radius: 0 !important;
 }
 
 .subscription-content-user .card{

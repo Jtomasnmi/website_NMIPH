@@ -12,12 +12,15 @@ let tabPageHelper = function(){
             //         `div #${val} #tab-selector`
             //     })
             // )
-            // $().load("modals/_tabs.html");
+
             $.each(constant.Solutions, function(index, value){
-                value = value.replace("mod", "modal")
-                let selector = "div #".concat(value).concat(" #tab-selector")
-                
-                $('<section>').appendTo(selector).load("modals/_tabs.html")
+                 if (!value.includes("k365")) {
+                    value = value.replace("mod", "modal")
+                    let selector = "div #".concat(value).concat(" #tab-selector")
+
+                    $('<section>').appendTo(selector).load("modals/_tabs.html")
+                 }
+                 
             })
         })
         // $("a[data-bs-target='#rmm-endpoint-modal']").click(function() {

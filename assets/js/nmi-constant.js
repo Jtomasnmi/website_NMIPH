@@ -62,6 +62,8 @@ let constant = function(){
         "compliance-mod",
         "servicedesk-mod",
         "it-documentation-mod",
+        "k365-content-mod",
+        "k365-user-mod"
       ];
 
     const htmlTagList = [
@@ -363,6 +365,23 @@ let constant = function(){
         ]
     }
 
+    const k365EndpointUserBanner = [
+        {
+            logoSelector: "endpoint-k365-selector",
+            title: "Kaseya 365 Endpoint",
+            desc: "Everything Needed to Manage, Secure and Backup Endpoints",
+            btnLabel: "Explore Kaseya 365 Endpoint",
+            targetModal: "k365-content-modal"
+        },
+        {
+            logoSelector: "user-k365-selector",
+            title: "Kaseya 365 User",
+            desc: "Everything Needed to Manage, Secure and Backup Endpoints",
+            btnLabel: "Explore Kaseya 365 User",
+            targetModal: "k365-user-modal"
+        }
+    ]
+
     const nmiSolution = [
         rmmSolution,
         securitySolution,
@@ -392,6 +411,7 @@ let constant = function(){
         HrSolutionColor: hrSolutionColor,
         NmiSolution: nmiSolution,
         FooterNav: footerNav,
-        Solutions: solutions
+        Solutions: solutions,
+        K365EndpointUserBanner: k365EndpointUserBanner
     }
 }();

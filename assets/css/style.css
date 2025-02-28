@@ -205,11 +205,17 @@ h6 {
   margin-left: 5px;
 }
 
-.navbar a:hover,
+/* .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
   color:  #0059b3;
+} */
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color:  #38B6FF;
 }
 
 .footer-li:hover{
@@ -2346,6 +2352,13 @@ section {
 
 .p-cont{
   text-align: justify;
+}
+
+#cookies .btn{
+  border-radius: 0 !important;
+  color: #fff;
+  float: right;
+background-color: #38B6FF !important;
 }
 
 .btn-cookies{

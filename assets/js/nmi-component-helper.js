@@ -8,6 +8,7 @@ let componentFunction = function(){
         renderSolutionCard();
         renderSolutionVideo();
         addColor();
+        initK365BannerCard();
     };
 
 
@@ -107,6 +108,39 @@ let componentFunction = function(){
                 
                 $(vidSelector).append(videoData);
             })
+        });
+    }
+    
+    const k365BannerCard = (logoSelector, title, desc, btnLabel, targetModal) => {
+        const card = '<div class="card">' +
+                        '<div class="card-body">' +
+                            '<div class="d-block d-lg-flex align-items-center gap-4">' +
+                                '<div id="'+logoSelector+'" class="d-none d-lg-block banner-color endpoint-color"></div>' +
+                                '<div class="">' +
+                                    '<h5 class="raleway-font">' + title + '</h5>'+
+                                    '<p>' + desc + '</p>'+
+                                    '<button class="btn btn-primary btn-sm k365-banner-modals" data-bs-toggle="modal" data-bs-target="#'+targetModal+'">' + btnLabel + '</button>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>';
+        return card;
+    }
+
+    const initK365BannerCard = () => {
+        $(function(){
+            $.each(constant.K365EndpointUserBanner, function(index, value){
+                const cardData = k365BannerCard(
+                    value.logoSelector,
+                    value.title,
+                    value.desc,
+                    value.btnLabel,
+                    value.targetModal       
+                );
+                console.log(cardData);
+                
+                $("#kaseya365").append(cardData);
+            });
         });
     }
 

@@ -87,11 +87,11 @@
 
   <script>
      webHelper.init();
+     componentFunction.init();
      modalPageHelper.init();
      tabPageHelper.init();
      insertData.init();
      getData.init();
-     componentFunction.init();
   </script>
 </body>
 </html>

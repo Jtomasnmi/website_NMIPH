@@ -88,15 +88,15 @@ let modalPageHelper = function(){
     };
 
     async function GetInitTabPage(){
-      // $.each(constant.Solutions, function(index, value){
-      //   value = value.replace("mod","tab");
+      $.each(constant.Solutions, function(index, value){
+        value = value.replace("mod","tab");
 
-      //   $('<div>', {
-      //     id: value,
-      //   }).appendTo('#tab-selector');
+        $('<div>', {
+          id: value,
+        }).appendTo('#tab-selector');
 
-      //   $("#" + value.replace("tab","mod")).find("#" + value).load("modals/_tabs.html");
-      // });
+        $("#" + value.replace("tab","mod")).find("#" + value).load("modals/_tabs.html");
+      });
     };
 
     async function initK365ChildTabAutomation() {
@@ -145,6 +145,7 @@ let modalPageHelper = function(){
 
     async function appendOnId() {
       $(function(){
+        
         $('#endpoint-k365-selector').append(svgSrc.K365Endpoint.banner);
         $('#user-k365-selector').append(svgSrc.K365User.banner);
         $('#user-circle-logo').append(svgSrc.K365User.circleLogo);
