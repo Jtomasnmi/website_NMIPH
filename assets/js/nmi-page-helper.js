@@ -36,6 +36,53 @@ let modalPageHelper = function(){
       },
     ]
 
+    let svgAssets = [
+      {
+        id: "#endpoint-k365-selector",
+        svg: svgSrc.K365Endpoint.banner
+      },
+      {
+        id: "#user-k365-selector",
+        svg: svgSrc.K365User.banner
+      },
+      {
+        id: "#user-circle-logo",
+        svg: svgSrc.K365User.circleLogo
+      },
+      {
+        id: "#preventTab",
+        svg: svgSrc.K365User.tabSvgPrevent
+      },
+      {
+        id: "#respondTab",
+        svg: svgSrc.K365User.tabSvgRespond
+      },
+      {
+        id: "#recoverTab",
+        svg: svgSrc.K365User.tabSvgRecover
+      },
+      {
+        id: "#preventBoxImg",
+        svg: svgSrc.K365User.preventBoxImg
+      },
+      {
+        id: "#respondBoxImg",
+        svg: svgSrc.K365User.respondBoxImg
+      },
+      {
+        id: "#recoverBoxImg",
+        svg: svgSrc.K365User.recoverBoxImg
+      },
+      {
+        id: "#k365BlueGreen",
+        svg: svgSrc.K365User.k365BlueGreen
+      },
+      {
+        id: "#k365CircleSubs",
+        svg: svgSrc.K365User.k365CircleSubs
+      },
+    ];
+
     let init = function(){
       loadEvent();
       clickEvent();
@@ -46,13 +93,14 @@ let modalPageHelper = function(){
         GetInitTabPage();
       });
         
-      initPartialPage();
+      // initPartialPage();
       initK365ChildTabAutomation();    
       hoverTooltip();
       appendOnId();
       renderK365onBoardTbl();
       initFooterModal();
       footerNavClass();
+      appendColorKaseyaBanner();
       
     };
   
@@ -77,15 +125,15 @@ let modalPageHelper = function(){
       })
     };
 
-    async function initPartialPage(){
-        let value =  'k365-partial';
-        
-          $('<div>', {
-            id: value,
-          }).appendTo('#k365-selector');
-  
-          $("#" + value).load("partials/_" + value.replace("-partial",".html"));
-    };
+    // function initPartialPage(){
+    //     let value =  'k365-partial';
+
+    //       $('<div>', {
+    //         id: value,
+    //       }).appendTo('#k365-selector');
+
+    //       $("#" + value).load("partials/_" + value.replace("-partial",".html"));
+    // };
 
     async function GetInitTabPage(){
       $.each(constant.Solutions, function(index, value){
@@ -112,18 +160,18 @@ let modalPageHelper = function(){
         });
     };
 
-    async function click365AutomationTab(){
+    function click365AutomationTab(){
         $(function() {
-            automationProp.map(({id, tab}, i) => {
-                $('#' + tab).click(function(){
-                  let active = automationProp.find(({id, _}, i) => {
-                    return !$('#' + id).is(':hidden');
-                  });
+          $.each(automationProp, function(index, value){
+            $('#' + value.tab).click(function(){
+              let active = automationProp.find(({id, _}, i) => {
+                return !$('#' + id).is(':hidden');
+              });
 
-                  $('#' + active.id).attr('hidden', true);
-                  $('#' + id).attr('hidden', false);
-                }); 
+              $('#' + active.id).attr('hidden', true);
+              $('#' + value.id).attr('hidden', false);
             });
+          });
         });
     };
 
@@ -144,27 +192,26 @@ let modalPageHelper = function(){
     }
 
     async function appendOnId() {
-      $(function(){
-        
-        $('#endpoint-k365-selector').append(svgSrc.K365Endpoint.banner);
-        $('#user-k365-selector').append(svgSrc.K365User.banner);
-        $('#user-circle-logo').append(svgSrc.K365User.circleLogo);
-        $('#preventTab').append(svgSrc.K365User.tabSvgPrevent);
-        $('#respondTab').append(svgSrc.K365User.tabSvgRespond);
-        $('#recoverTab').append(svgSrc.K365User.tabSvgRecover);
-        $('#preventBoxImg').append(svgSrc.K365User.preventBoxImg);
-        $('#respondBoxImg').append(svgSrc.K365User.respondBoxImg);
-        $('#recoverBoxImg').append(svgSrc.K365User.recoverBoxImg);
-        $('#k365BlueGreen').append(svgSrc.K365User.k365BlueGreen);
-        $('#k365CircleSubs').append(svgSrc.K365User.k365CircleSubs);
+      $(window).on('load', function(){
+        $.each(svgAssets, function(index, value){
+          $(value.id).append(value.svg);
+        });
       });
     }
 
     async function footerNavClass() {
-      $(function(){
+      $(window).on('load', function(){
         $(".footer-inf").addClass("bi bi-arrow-return-right footer-li");
-      })
+      });
     }
+    
+    const appendColorKaseyaBanner = () => {
+      $(window).on('load', function(){
+        $.each(constant.K365EndpointUserBanner, function(index, value){
+          $("#kaseya365 #".concat(value.logoSelector).concat(" figure")).css("background-image", value.svgColor);
+      });
+      })
+  }
 
     return{
         init: init

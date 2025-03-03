@@ -112,7 +112,7 @@
     height: 300px;
     left: 5rem;
     top: calc(100% + 30px);
-    margin: 1.5rem -32rem 0  !important;
+    margin: 1.5rem -19.8rem 0  !important;
   }
   .scroll-sub-nav {
     width: 45.9rem;
@@ -490,18 +490,8 @@
       -webkit-filter: drop-shadow(0px 0px 60px #4fc3f7) blur(10px);
       filter: drop-shadow(0px 0px 60px #4fc3f7) blur(10px);
     }
-    #kaseya365 .endpoint-color figure{
+    #kaseya365 figure{
       position: relative;
-      background-image: radial-gradient(40% 40% at 75% 12%,#5cc0ec 0%,rgba(92,236,205,0) 100%),radial-gradient(59.56% 57% at 49.45% 50.47%,rgba(1,198,190,0) 65%,rgba(1,198,190,.9) 100%) !important;
-      padding: 4.5rem;
-      border-radius: 50%;
-      margin-bottom: 2rem;
-      background: #0b233a;
-      width: 15rem;
-    }
-    #kaseya365 .user-color figure{
-      position: relative;
-      background-image: radial-gradient(40% 40% at 75% 12%,#5ceca4,rgba(118,236,92,0) 100%),radial-gradient(59.56% 57% at 49.45% 50.47%,rgba(133,232,28,0) 65%,rgba(133,232,28,.9) 100%) !important;
       padding: 4.5rem;
       border-radius: 50%;
       margin-bottom: 2rem;
@@ -652,7 +642,7 @@
     .btn-auto-user{
       width: 22rem;
     }
-    #kaseya365 .endpoint-color figure{
+    /* #kaseya365 .endpoint-color figure{
       position: relative;
       background-image: radial-gradient(40% 40% at 75% 12%,#5cc0ec 0%,rgba(92,236,205,0) 100%),radial-gradient(59.56% 57% at 49.45% 50.47%,rgba(1,198,190,0) 65%,rgba(1,198,190,.9) 100%) !important;
       padding: 4.5rem;
@@ -660,14 +650,13 @@
       margin-bottom: 2rem;
       background: #0b233a;
       width: 16rem;
-    }
-    #kaseya365 .user-color figure{
+    } */
+    #kaseya365 figure{
       position: relative;
-      background-image: radial-gradient(40% 40% at 75% 12%,#5ceca4,rgba(118,236,92,0) 100%),radial-gradient(59.56% 57% at 49.45% 50.47%,rgba(133,232,28,0) 65%,rgba(133,232,28,.9) 100%) !important;
       padding: 4.5rem;
       border-radius: 50%;
       margin-bottom: 2rem;
-      background: #0b233a;
+      /* background: #0b233a; */
       width: 16rem;
     }
   }
