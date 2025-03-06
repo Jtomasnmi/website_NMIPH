@@ -1,6 +1,7 @@
 let tabPageHelper = function(){
     let init = function(){
         clickTabPage();
+        
     };
 
     async function clickTabPage(){
@@ -20,7 +21,6 @@ let tabPageHelper = function(){
 
                     $('<section>').appendTo(selector).load("modals/_tabs.html")
                  }
-                 
             })
         })
         // $("a[data-bs-target='#rmm-endpoint-modal']").click(function() {

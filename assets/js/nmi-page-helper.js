@@ -92,13 +92,12 @@ let modalPageHelper = function(){
       $.when(initModalPage()).done(function(){
         GetInitTabPage();
       });
-        
-      // initPartialPage();
-      initK365ChildTabAutomation();    
+
+      loadK365ChildTabAutomation();
       hoverTooltip();
       appendOnId();
-      renderK365onBoardTbl();
-      initFooterModal();
+      loadK365onBoardTbl();
+      loadFooterModal();
       footerNavClass();
       appendColorKaseyaBanner();
       
@@ -119,35 +118,21 @@ let modalPageHelper = function(){
         });
     };
 
-    async function initFooterModal(){
+    async function loadFooterModal(){
       $.each(FooterInformation, function(index, info){
         $('<div>').appendTo('#modal-container').load("modals/footer-modal/_" + info + ".html");
       })
     };
 
-    // function initPartialPage(){
-    //     let value =  'k365-partial';
-
-    //       $('<div>', {
-    //         id: value,
-    //       }).appendTo('#k365-selector');
-
-    //       $("#" + value).load("partials/_" + value.replace("-partial",".html"));
-    // };
-
     async function GetInitTabPage(){
       $.each(constant.Solutions, function(index, value){
         value = value.replace("mod","tab");
-
-        $('<div>', {
-          id: value,
-        }).appendTo('#tab-selector');
 
         $("#" + value.replace("tab","mod")).find("#" + value).load("modals/_tabs.html");
       });
     };
 
-    async function initK365ChildTabAutomation() {
+    async function loadK365ChildTabAutomation() {
         $(window).on("load",function(){
           automationProp.map(({id, _}, i) => {
             let div = $('<div>', { id: id })
@@ -184,7 +169,7 @@ let modalPageHelper = function(){
         });
     }
 
-    async function renderK365onBoardTbl() {
+    async function loadK365onBoardTbl() {
       $(window).on('load', function(){
         let id = "onBoardingTbl";
         $("#" + id).load("table/_k365-onboardingtbl.html");
@@ -210,7 +195,7 @@ let modalPageHelper = function(){
         $.each(constant.K365EndpointUserBanner, function(index, value){
           $("#kaseya365 #".concat(value.logoSelector).concat(" figure")).css("background-image", value.svgColor);
       });
-      })
+      });
   }
 
     return{

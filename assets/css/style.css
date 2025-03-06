@@ -174,7 +174,7 @@ h6 {
 
 .navbar ul {
   margin: 0;
-  padding: 0;
+  padding: 0rem;
   display: flex;
   list-style: none;
   align-items: center;
@@ -190,12 +190,12 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: normal;
+  font-size: 15px;
+  font-weight: 450;
   white-space: nowrap;
   transition: 0.3s;
-  color: #6c757d;
+  color: #9199aa;
+  line-height: 1.25rem;
 }
 
 .navbar a i,
@@ -1470,7 +1470,7 @@ section {
 
 .contact .php-email-form {
   /* box-shadow: 0 0 30px rgba(58, 65, 71, 0.6); */
-  padding: 30px 1rem;
+  padding: 0px 1rem;
   border-radius: 4px;
 }
 
@@ -1554,7 +1554,6 @@ section {
 .contact .php-email-form textarea {
   box-shadow: none;
   font-size: 14px;
-  border-radius: .25rem !important;
 }
 
 .contact .php-email-form input:focus,
@@ -1572,12 +1571,11 @@ section {
 
 .contact .php-email-form button[type=submit] {
   /* background: #e03a3c; */
-  background: #38B6FF;
   border: 0;
-  padding: 10px 32px;
+  padding: 10px 40px;
   color: #fff;
   transition: 0.4s;
-  /* border-radius: 4px; */
+  border-radius: 0px !important;
 }
 
 .contact .php-email-form button[type=submit]:hover {
@@ -2455,6 +2453,7 @@ background-color: #38B6FF !important;
 /* mobile viewport subnav text */
 .font-sub-nav {
   font-size: 12px;
+  cursor: pointer;
 }
 
 /* mobile-sub-navlabel */
@@ -2604,4 +2603,16 @@ ol li{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+}
+
+#tab-selector, section{
+  padding: 25px 0 !important;
+}
+
+.kaseya365-banners{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  margin-top: .75rem;
 }

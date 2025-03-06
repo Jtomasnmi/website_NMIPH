@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div id="banner-solution-selector" class="solution-grid mt-3"></div>
-                <div id="kaseya365" class="d-block d-md-flex align-items-center gap-2 mt-2"></div>
+                <div id="kaseya365" class="kaseya365-banners"></div>
                 <div class="row mt-3">
                     <div id="k365-selector"></div>
                 </div>

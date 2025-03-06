@@ -949,36 +949,36 @@ ol, ul, dl {
 .onboarding-section{
   background-color: #0b233a !important;
 }
-#onboarding .onboarding-title{
+.onboarding-section .onboarding-title{
   font-size: 30px;
   font-weight: normal;
   text-align: center;
   color: #fff;
 }
 
-#onboarding .onboarding-content{
+.onboarding-section .onboarding-content{
   font-size: 18px;
   color: #fff;
   text-align: center;
 }
 
-#onboarding .onboarding-tbl .table>:not(caption)>*>* {
+.onboarding-section .onboarding-tbl .table>:not(caption)>*>* {
   background-color: transparent !important;
 }
-#onboarding .onboarding-tbl .table thead tr{
+.onboarding-section .onboarding-tbl .table thead tr{
   background-color: #0B243C !important;
 }
-#onboarding .onboarding-tbl .table thead tr th{
+.onboarding-section .onboarding-tbl .table thead tr th{
   padding: 1rem;
   color: #4fc3f7;
 }
-#onboarding .onboarding-tbl .table tbody tr td{
+.onboarding-section .onboarding-tbl .table tbody tr td{
   padding: 1rem;
 }
-#onboarding .onboarding-tbl p{
+.onboarding-section .onboarding-tbl p{
   margin-bottom: 0;
 }
-#onboarding .table-dark.table-striped tbody tr:nth-of-type(odd) {
+.onboarding-section .table-dark.table-striped tbody tr:nth-of-type(odd) {
   background-color: rgba(255, 255, 255, .1) !important;
 }
 .table-striped>tbody>tr:nth-of-type(odd)>* {
@@ -986,22 +986,22 @@ ol, ul, dl {
   border: 1px solid transparent !important;
 }
 
-#onboarding .table-dark{
+.onboarding-section .table-dark{
   --bs-table-border-color: transparent !important;
 }  
 
-#onboarding .onboarding-tbl{
+.onboarding-section .onboarding-tbl{
   background-color: rgba(255, 255, 255, .1) !important;
   padding: 1rem !important;
 }
-#onboarding .txt-blue{
+.onboarding-section .txt-blue{
   color: #4fc3f7;
 }
-#onboarding .card{
+.onboarding-section .card{
   --bs-card-bg: rgba(255, 255, 255, .1) !important;
   color: #fff !important;
 }
-#onboarding .onboarding-card p{
+.onboarding-section .onboarding-card p{
   margin-bottom: 0;
 }
 
@@ -1026,6 +1026,10 @@ ol, ul, dl {
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+}
+
+.k365-banner-modals{
+  border-radius: 0 !important;
 }
 
 /* .tooltip-inner {

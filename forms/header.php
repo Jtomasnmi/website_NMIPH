@@ -105,35 +105,35 @@
                                         <div class="col-4">
                                             <li class="d-flex flex-column align-items-center gap-2 p-2 ">
                                                 <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-1.svg" width="45rem" height="45rem"/>
-                                                <label class="font-sub-nav">Endpoint Management</label>
+                                                <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">Endpoint Management</label>
                                             </li>
                                             <li class="d-flex flex-column align-items-center gap-2 p-2">
                                                 <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-2.svg" width="45rem" height="45rem"/>
-                                                <label class="font-sub-nav">Security</label>
+                                                <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#security-modal">Security</label>
                                             </li>
                                             <li class="d-flex flex-column align-items-center gap-2 p-2">
                                                 <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-3.svg" width="50rem" height="50rem"/>
-                                                <label class="font-sub-nav">Backup & DR</label>
+                                                <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#backup-dr-modal">Backup & DR</label>
                                             </li>
                                         </div>
                                         <div class="col-4 border border-top-0 border-bottom-0">
                                             <li class="d-flex flex-column align-items-center gap-2 p-2">
                                                 <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-4.svg" width="50rem" height="50rem"/>
-                                                <label class="font-sub-nav">Audit</label>
+                                                <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#audit-modal">Audit</label>
                                             </li>
                                             <li class="d-flex flex-column align-items-center gap-2 p-2">
                                                 <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-5.svg" width="50rem" height="50rem"/>
-                                                <label class="font-sub-nav">Compliance</label>
+                                                <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#compliance-modal">Compliance</label>
                                             </li>
                                         </div>
                                         <div class="col-4">
                                             <li class="d-flex flex-column align-items-center gap-2 p-2">
                                                 <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-6.svg" width="50rem" height="50rem"/>
-                                                <label class="font-sub-nav">Service Desk</label>
+                                                <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#servicedesk-modal">Service Desk</label>
                                             </li>
                                             <li class="d-flex flex-column align-items-center gap-2 p-2">
                                                 <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-7.svg" width="50rem" height="50rem"/>
-                                                <label class="font-sub-nav">IT Documentation</label>
+                                                <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#it-documentation-modal">IT Documentation</label>
                                             </li>
                                         </div>
                                     </div>
@@ -191,31 +191,31 @@
                                 <div class="row row-cols-2">
                                     <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-1.svg" width="50rem" height="50rem"/>
-                                        <label class="font-sub-nav">Endpoint Management</label>
+                                        <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">Endpoint Management</label>
                                     </div>
                                     <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-2.svg" width="50rem" height="50rem"/>
-                                        <label class="font-sub-nav">Security</label>
+                                        <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#security-modal">Security</label>
                                     </div>
                                     <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-3.svg" width="50rem" height="50rem"/>
-                                        <label class="font-sub-nav">Backup & DR</label>
+                                        <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#backup-dr-modal">Backup & DR</label>
                                     </div>
                                     <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-4.svg" width="50rem" height="50rem"/>
-                                        <label class="font-sub-nav">Audit</label>
+                                        <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#audit-modal">Audit</label>
                                     </div>
                                     <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-5.svg" width="50rem" height="50rem"/>
-                                        <label class="font-sub-nav">Compliance</label>
+                                        <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#compliance-modal">Compliance</label>
                                     </div>
                                     <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-6.svg" width="50rem" height="50rem"/>
-                                        <label class="font-sub-nav">Service Desk</label>
+                                        <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#servicedesk-modal">Service Desk</label>
                                     </div>
                                     <div class="d-flex flex-column align-items-center gap-2 p-2" id="mobileTab">
                                         <img src="assets/img/nmi_solutions/Solutions-Menu/menu-icon-7.svg" width="50rem" height="50rem"/>
-                                        <label class="font-sub-nav">IT Documentation</label>
+                                        <label class="font-sub-nav" data-bs-toggle="modal" data-bs-target="#it-documentation-modal">IT Documentation</label>
                                     </div>
                                 </div>
                             </div>
