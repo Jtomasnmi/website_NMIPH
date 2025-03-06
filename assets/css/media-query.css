@@ -625,10 +625,7 @@
       height: 8rem;
       margin: 0rem;
     }
-    .k-365-panel{
-      gap: 2rem;
-      margin: 0;
-    }
+            
     .k-365-desc{
       display: flex;
       flex-direction: row;
