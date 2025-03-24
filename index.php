@@ -42,6 +42,8 @@
       <?php include 'forms/main/news.php';?>
     <!-- ======= Profile Section ======= -->
       <?php include 'forms/main/profile.php';?>
+    <!-- ======= Careers Section ======= -->
+      <?php include 'forms/main/careers.php';?>
     <!-- ======= Contact Section ======= -->
       <?php include 'forms/main/contact.php';?>
     <!-- ======= Cookies ======= -->

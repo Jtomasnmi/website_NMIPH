@@ -142,6 +142,7 @@
                         </li>
                         <li class="nav-link-style"><a class="scrollto" href="#news">News</a></li>
                         <li class="nav-link-style"><a class="scrollto" href="#about-us">About Us</a></li>
+                        <li class="nav-link-style"><a class="scrollto" href="#careers">Careers</a></li>
                         <li class="nav-link-style"><a class="scrollto" href="#contact">Contact Us</a></li>
                     </ul>
                 </nav>
@@ -168,14 +169,6 @@
                     <li class="d-flex align-items-center gap-3 hover-sm-nav" id="mobileTab">
                         <i class="bi bi-house-fill fs-4 sm-nav-icon"></i>
                         <a class=" scrollto fs-6 fw-medium sm-nav-icon"  href="#hero">Home</a>
-                    </li>
-                    <li class="d-flex align-items-center gap-3 hover-sm-nav" id="mobileTab">
-                        <i class="bi bi-megaphone-fill fs-4 sm-nav-icon"></i>
-                        <a class=" scrollto fs-6 fw-medium sm-nav-icon" href="#news">News</a>
-                    </li>
-                    <li class="d-flex align-items-center gap-3 hover-sm-nav" id="mobileTab">
-                        <i class="bi bi-building-fill fs-4 sm-nav-icon"></i>
-                        <a class=" scrollto fs-6 fw-medium sm-nav-icon" href="#about-us">About Us</a>
                     </li>
                     <li class="d-flex align-items-center justify-content-between hover-sm-nav" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false">
                         <div class="d-flex align-items-center gap-3">
@@ -222,6 +215,18 @@
                         </div>
                     </div>
                     <li class="d-flex align-items-center gap-3 hover-sm-nav" id="mobileTab">
+                        <i class="bi bi-megaphone-fill fs-4 sm-nav-icon"></i>
+                        <a class=" scrollto fs-6 fw-medium sm-nav-icon" href="#news">News</a>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 hover-sm-nav" id="mobileTab">
+                        <i class="bi bi-building-fill fs-4 sm-nav-icon"></i>
+                        <a class=" scrollto fs-6 fw-medium sm-nav-icon" href="#about-us">About Us</a>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 hover-sm-nav" id="mobileTab">
+                        <i class="bi bi-suitcase-lg-fill fs-4 sm-nav-icon"></i>
+                        <a class=" scrollto fs-6 fw-medium sm-nav-icon" href="#careers">Careers</a>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 hover-sm-nav" id="mobileTab">
                         <i class="bi bi-chat-dots-fill fs-4 sm-nav-icon"></i>
                         <a class=" scrollto fs-6 fw-medium sm-nav-icon" href="#contact">Contact Us</a>
                     </li>
@@ -233,3 +238,11 @@
     </div>
     ';
 ?>
+<!-- lg-nav -->
+<!-- <li class="nav-link-style"><a class="scrollto" href="#careers">Careers</a></li> -->
+
+<!-- sm nav -->
+<!-- <li class="d-flex align-items-center gap-3 hover-sm-nav" id="mobileTab">
+    <i class="bi bi-suitcase-lg-fill fs-4 sm-nav-icon"></i>
+    <a class=" scrollto fs-6 fw-medium sm-nav-icon" href="#careers">Careers</a>
+</li> -->
