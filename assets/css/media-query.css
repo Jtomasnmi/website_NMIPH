@@ -599,6 +599,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
+  .contact-map {
+    width: 600;
+    height: 329;
+  }
 }
 
 @media (min-width: 1280px) {

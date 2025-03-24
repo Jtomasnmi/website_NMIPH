@@ -1420,10 +1420,7 @@ section {
 
 .contact-grid {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  justify-content: center;
-  gap: 1rem;
+  padding: 0 1rem;
 }
 .contact .info-box {
   color: #444444;
@@ -1456,10 +1453,13 @@ section {
   margin-bottom: 0;
 }
 
-.contact .php-email-form {
-  /* box-shadow: 0 0 30px rgba(58, 65, 71, 0.6); */
+/* .php-email-form {
   padding: 0px 1rem;
   border-radius: 4px;
+} */
+
+.contact .php-email-form {
+  margin-top: 2rem;
 }
 
 .contact .php-email-form .input-grid {
