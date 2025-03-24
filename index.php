@@ -42,6 +42,8 @@
       <?php include 'forms/main/news.php';?>
     <!-- ======= Profile Section ======= -->
       <?php include 'forms/main/profile.php';?>
+    <!-- ======= Careers Section ======= -->
+      <?php include 'forms/main/careers.php';?>
     <!-- ======= Contact Section ======= -->
       <?php include 'forms/main/contact.php';?>
     <!-- ======= Cookies ======= -->
@@ -72,26 +74,27 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  
+
   <!-- External JS-->
   <script src="assets/js/nmi-constant.js"></script>
+  <script src="assets/svg/nmi-svg-constant.js"></script>
   <script src="assets/js/nmi-helper.js"></script>
+  <script src="assets/js/nmi-component-helper.js"></script>
   <script src="assets/js/nmi-page-helper.js"></script>
   <script src="assets/js/nmi-tab-helper.js"></script>
+  <script src="assets/js/nmi-init-page-helper.js"></script>
   <script src="assets/js/nmicore.js"></script>
-  <script src="assets/js/nmi-component-helper.js"></script>
   <script src="assets/js/transaction/insert-data.js"></script>
   <script src="assets/js/transaction/get-data.js"></script>
-  <script src="assets/svg/nmi-svg-constant.js"></script>
 
 
   <script>
      webHelper.init();
      modalPageHelper.init();
+     initPageHelper.init();
      tabPageHelper.init();
      insertData.init();
      getData.init();
-     componentFunction.init();
   </script>
 </body>
 </html>

@@ -112,7 +112,7 @@
     height: 300px;
     left: 5rem;
     top: calc(100% + 30px);
-    margin: 1.5rem -32rem 0  !important;
+    margin: 1.5rem -25.5rem 0  !important;
   }
   .scroll-sub-nav {
     width: 45.9rem;
@@ -319,6 +319,16 @@
     .k-banner-txtdiv{
       width: 35rem;
     }
+    .navbar .dropdown ul {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      width: 46rem;
+      height: 300px;
+      left: 5rem;
+      top: calc(100% + 30px);
+      margin: 1.5rem -24rem 0  !important;
+    }
     .solution-grid{
       grid-template-columns: repeat(4, 1fr);
      }
@@ -490,18 +500,8 @@
       -webkit-filter: drop-shadow(0px 0px 60px #4fc3f7) blur(10px);
       filter: drop-shadow(0px 0px 60px #4fc3f7) blur(10px);
     }
-    #kaseya365 .endpoint-color figure{
+    #kaseya365 figure{
       position: relative;
-      background-image: radial-gradient(40% 40% at 75% 12%,#5cc0ec 0%,rgba(92,236,205,0) 100%),radial-gradient(59.56% 57% at 49.45% 50.47%,rgba(1,198,190,0) 65%,rgba(1,198,190,.9) 100%) !important;
-      padding: 4.5rem;
-      border-radius: 50%;
-      margin-bottom: 2rem;
-      background: #0b233a;
-      width: 15rem;
-    }
-    #kaseya365 .user-color figure{
-      position: relative;
-      background-image: radial-gradient(40% 40% at 75% 12%,#5ceca4,rgba(118,236,92,0) 100%),radial-gradient(59.56% 57% at 49.45% 50.47%,rgba(133,232,28,0) 65%,rgba(133,232,28,.9) 100%) !important;
       padding: 4.5rem;
       border-radius: 50%;
       margin-bottom: 2rem;
@@ -567,7 +567,7 @@
       border-radius: 0 !important;
       /* box-shadow: 0px 2px 8px 0px rgba(61, 61, 61, 0.46); */
     }
-    
+
     .solution-mid-content{
       box-shadow: 0px 2px 8px 0px rgba(61, 61, 61, 0.46);
       padding: 1.5rem;
@@ -577,6 +577,11 @@
       grid-template-columns: repeat(8, 1fr);
       gap: 1rem;
     }
+    .kaseya365-banners{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .75rem;
+    }
   }
 
   @media (min-width: 1280px) {
@@ -585,6 +590,16 @@
     }
     .nav-link-style {
       display: flex;
+    }
+    .navbar .dropdown ul {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      width: 46rem;
+      height: 300px;
+      left: 5rem;
+      top: calc(100% + 30px);
+      margin: 1.5rem -19rem 0  !important;
     }
     .default-nav {
       display: flex;
@@ -610,10 +625,7 @@
       height: 8rem;
       margin: 0rem;
     }
-    .k-365-panel{
-      gap: 2rem;
-      margin: 0;
-    }
+            
     .k-365-desc{
       display: flex;
       flex-direction: row;
@@ -652,7 +664,7 @@
     .btn-auto-user{
       width: 22rem;
     }
-    #kaseya365 .endpoint-color figure{
+    /* #kaseya365 .endpoint-color figure{
       position: relative;
       background-image: radial-gradient(40% 40% at 75% 12%,#5cc0ec 0%,rgba(92,236,205,0) 100%),radial-gradient(59.56% 57% at 49.45% 50.47%,rgba(1,198,190,0) 65%,rgba(1,198,190,.9) 100%) !important;
       padding: 4.5rem;
@@ -660,25 +672,27 @@
       margin-bottom: 2rem;
       background: #0b233a;
       width: 16rem;
-    }
-    #kaseya365 .user-color figure{
+    } */
+    #kaseya365 figure{
       position: relative;
-      background-image: radial-gradient(40% 40% at 75% 12%,#5ceca4,rgba(118,236,92,0) 100%),radial-gradient(59.56% 57% at 49.45% 50.47%,rgba(133,232,28,0) 65%,rgba(133,232,28,.9) 100%) !important;
       padding: 4.5rem;
       border-radius: 50%;
       margin-bottom: 2rem;
-      background: #0b233a;
+      /* background: #0b233a; */
       width: 16rem;
     }
   }
 
-  @media (max-width: 1366px) {
+  @media (max-width: 1281px) {
     .navbar .dropdown .dropdown ul {
       left: -90%;
     }
   
     .navbar .dropdown .dropdown:hover>ul {
       left: -100%;
+    }
+    .navbar .dropdown ul {
+      margin: 1.5rem -21.7rem 0  !important;
     }
   }
 

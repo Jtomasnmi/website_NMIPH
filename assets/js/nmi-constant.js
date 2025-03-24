@@ -62,6 +62,8 @@ let constant = function(){
         "compliance-mod",
         "servicedesk-mod",
         "it-documentation-mod",
+        "k365-content-mod",
+        "k365-user-mod"
       ];
 
     const htmlTagList = [
@@ -211,7 +213,8 @@ let constant = function(){
     const rmmSolution = {
         selector: ".rmm-card",
         video: {
-            source: "https://www.youtube.com/embed/DgbZjmzF_t8?si=pOwI_IKB4TTjw5Tz",
+            thumb: "assets/img/nmi_solutions/Solutions-Thumbnail/rmm-thumb.jpg",
+            source: "assets/videos/rmm.mp4",
             title: "The Pillar of the Platform",
             desc: "VSA from Kaseya is purpose-built to respond to the growth in endpoints. Designed to save time and boost tasks, Kaseya VSA unites functions like endpoint management with the rest of your IT workflow. Rather than a siloed tool within a sea of solutions from different vendors, with different interfaces, and different technologies, Kaseya’s Suite ties together everything you need to get IT done."
         },
@@ -233,7 +236,8 @@ let constant = function(){
     const securitySolution = {
         selector: ".security-card",
         video: {
-            source: "https://www.youtube.com/embed/c7_D9MTUNmg?si=NALFCz_kfgreIEl1",
+            thumb: "assets/img/nmi_solutions/Solutions-Thumbnail/security-thumb.jpg",
+            source: "assets/videos/security.mp4",
             title: "Secure from All Sides",
             desc: "From comprehensive Dark Web Monitoring, anti-phishing systems, and internal threat detection-have an intelligent security stack that provides a complete blanket of protection. All unified and integrated into a single platform for easier threat mitigation and interference."
         },
@@ -255,7 +259,8 @@ let constant = function(){
     const backupSolution = {
         selector: ".backup-card",
         video: {
-            source: "https://www.youtube.com/embed/pAW532D4ft4?si=ZeepZoFZMwwakY56",
+            thumb: "assets/img/nmi_solutions/Solutions-Thumbnail/backupdr-thumb.jpg",
+            source: "assets/videos/backup.mp4",
             title: "All-Around Data Protection",
             desc: "Kaseya’s Unified Backup Suites covers local and cloud backup to ensure that the entire spectrum of business operations is protected both on-premises with the appliance, or in the cloud. Get the benefit of a complete disaster recovery plan, catered to your needs."
         },
@@ -277,7 +282,8 @@ let constant = function(){
     const auditSolution = {
         selector: ".audit-card",
         video: {
-            source: "https://www.youtube.com/embed/_IMq_BQgayY?si=9aShMl9xrRBQgMWU",
+            thumb: "assets/img/nmi_solutions/Solutions-Thumbnail/audit-thumb.jpg",
+            source: "assets/videos/audit.mp4",
             title: "Complete Visibility",
             desc: "Kaseya’s Network Detective is the industry-leading IT assessment tool that goes way beyond just network discovery and documentation. Complete Visibility provides real “value-added intelligence” to your IT Assessments. Our suites compare multiple data points to uncover hard-to-detect issues, measure risk, provide recommended fixes, and track remediation progress."
         },
@@ -299,7 +305,8 @@ let constant = function(){
     const complianceSolution = {
         selector: ".compliance-card",
         video: {
-            source: "https://www.youtube.com/embed/JgqTK6-Igok?si=oi8dTvYSCWxSlExR",
+            thumb: "assets/img/nmi_solutions/Solutions-Thumbnail/compliance-thumb.jpg",
+            source: "assets/videos/compliance.mp4",
             title: "Automatic Compliance",
             desc: "Kaseya Compliance Suite and Kaseya Compliance Manager simplifies identification, reporting, and consistency of compliance protocols- from HIPAA, GDPR, NIST, and other regulations."
         },
@@ -321,7 +328,8 @@ let constant = function(){
     const servicedeskSolution = {
         selector: ".service-card",
         video: {
-            source: "https://www.youtube.com/embed/I6WEnqf9pFw?si=akBoqrrvyJEkxbzL",
+            thumb: "assets/img/nmi_solutions/Solutions-Thumbnail/servicedesk-thumb.jpg",
+            source: "assets/videos/servicedesk.mp4",
             title: "Visibility Across Your Entire Business",
             desc: "Centralize business operations and make data-driven decisions to improve service, productivity and profitability with open-architecture and APIs. Enable tight integration with 200+ industry-leading tools to maximize business efficiency while eliminating human error."
         },
@@ -343,7 +351,8 @@ let constant = function(){
     const itdocsSolution = {
         selector: ".itdocs-card",
         video: {
-            source: "https://www.youtube.com/embed/UPNnscQvdhY?si=3oPCip6QmyMqyaA8",
+            thumb: "assets/img/nmi_solutions/Solutions-Thumbnail/itdocs-thumb.jpg",
+            source: "assets/videos/itdocs.mp4",
             title: "IT Glue Remembers Everything",
             desc: "IT Glue is integrated deeply across the entire VSA Platform, so you can get the information that you need, when you need it, without having to leave other tasks that you are trying to complete."
         },
@@ -363,6 +372,25 @@ let constant = function(){
         ]
     }
 
+    const k365EndpointUserBanner = [
+        {
+            logoSelector: "endpoint-k365-selector",
+            title: "Kaseya 365 Endpoint",
+            desc: "Everything Needed to Manage, Secure and Backup Endpoints",
+            btnLabel: "Explore Kaseya 365 Endpoint",
+            targetModal: "k365-content-modal",
+            svgColor: "radial-gradient(40% 40% at 75% 12%,#5cc0ec 0%,rgba(92,236,205,0) 100%),radial-gradient(59.56% 57% at 49.45% 50.47%,rgba(1,198,190,0) 65%,rgba(1,198,190,.9) 100%)"
+        },
+        {
+            logoSelector: "user-k365-selector",
+            title: "Kaseya 365 User",
+            desc: "Everything Needed to Manage, Secure and Backup Endpoints",
+            btnLabel: "Explore Kaseya 365 User",
+            targetModal: "k365-user-modal",
+            svgColor: "radial-gradient(40% 40% at 75% 12%,#5ceca4,rgba(118,236,92,0) 100%),radial-gradient(59.56% 57% at 49.45% 50.47%,rgba(133,232,28,0) 65%,rgba(133,232,28,.9) 100%)"
+        }
+    ];
+
     const nmiSolution = [
         rmmSolution,
         securitySolution,
@@ -371,7 +399,45 @@ let constant = function(){
         complianceSolution,
         servicedeskSolution,
         itdocsSolution
-    ]
+    ];
+
+    let solutionsBanner = [
+        {
+            img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-1.svg",
+            targetModal: "#rmm-endpoint-modal",
+            label: "Endpoint Management"
+        },
+        {
+            img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-2.svg",
+            targetModal: "#security-modal",
+            label: "Security"
+        },
+        {
+            img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-3.svg",
+            targetModal: "#backup-dr-modal",
+            label: "Backup & DR"
+        },
+        {
+            img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-4.svg",
+            targetModal: "#audit-modal",
+            label: "Audit"
+        },
+        {
+            img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-5.svg",
+            targetModal: "#compliance-modal",
+            label: "Compliance"
+        },
+        {
+            img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-6.svg",
+            targetModal: "#servicedesk-modal",
+            label: "Service Desk"
+        },
+        {
+            img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-7.svg",
+            targetModal: "#it-documentation-modal",
+            label: "IT Documentation"
+        },
+    ];
 
     return {
         MapPosition: mapPosition,
@@ -392,6 +458,8 @@ let constant = function(){
         HrSolutionColor: hrSolutionColor,
         NmiSolution: nmiSolution,
         FooterNav: footerNav,
-        Solutions: solutions
+        Solutions: solutions,
+        K365EndpointUserBanner: k365EndpointUserBanner,
+        SolutionsBanner: solutionsBanner
     }
 }();

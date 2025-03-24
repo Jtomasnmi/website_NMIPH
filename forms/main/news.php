@@ -45,7 +45,7 @@
     //     </form>
     // </section>';
     echo
-    '<section id="about" class="about section-bg">
+    '<section id="news" class="about section-bg">
             <form id="frmCompanyNewsDetailForm" role="form">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title">
