@@ -1098,6 +1098,9 @@ dl {
   border-radius: 0 !important;
 }
 
+#k365-card-btn {
+  width: 15rem !important;
+}
 /* .tooltip-inner {
   background-color: #1f4569 !important;
 } */
