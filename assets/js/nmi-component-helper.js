@@ -85,7 +85,7 @@ let componentFunction = (function () {
         "<p>" +
         desc +
         "</p>" +
-        '<button class="btn btn-primary btn-sm k365-banner-modals raleway-font" data-bs-toggle="modal" data-bs-target="#' +
+        '<button id="k365-card-btn" class="btn btn-primary btn-sm k365-banner-modals raleway-font" data-bs-toggle="modal" data-bs-target="#' +
         targetModal +
         '">' +
         btnLabel +
