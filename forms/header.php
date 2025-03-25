@@ -147,7 +147,7 @@
                     </ul>
                 </nav>
                 <div class="d-flex justify-content-center align-items-center gap-1">
-                    <a href="#about" class="btn btn-info get-start-btn scrollto">Get A Demo</a>
+                    <button id="get-demo-btn" class="btn btn-info get-start-btn scrollto" data-bs-toggle="modal" data-bs-target="#get-a-demo">Get A Demo</button>
                     <i id="toggleSmNav" class="toggle-sm-nav fs-5 bi bi-list" role="button" data-bs-toggle="modal" data-bs-target="#smallNavModal"></i>
                 </div>
             </div>
