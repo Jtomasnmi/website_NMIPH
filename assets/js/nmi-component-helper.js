@@ -114,11 +114,45 @@ let componentFunction = (function () {
     );
   };
 
+  const getDemoCard = (icon, title, description) => {
+    return $(
+      '<div class="d-flex align-items-center gap-3">' +
+        '<div class="d-flex justify-content-center get-demo-icon">' +
+        '<i class="' +
+        icon +
+        ' fs-3"></i>' +
+        "</div>" +
+        "<div>" +
+        "<h6>" +
+        title +
+        "</h6>" +
+        '<p class="text-sm fw-light mb-0 txt-justify">' +
+        description +
+        "</p>" +
+        "</div>" +
+        "</div>"
+    );
+  };
+
+  const selectOption = (option) => {
+    return $(
+      '<select class="form-select" aria-label="Default select example">' +
+        "<option selected>Select...</option>" +
+        '<option value="' +
+        option +
+        '">' +
+        option +
+        "</option>" +
+        "</select>"
+    );
+  };
+
   return {
     k365Card: k365Card,
     solutionCard: solutionCard,
     solutionVideo: solutionVideo,
     k365BannerCard: k365BannerCard,
     solutionsBanner: solutionsBanner,
+    getDemoCard: getDemoCard,
   };
 })();
