@@ -12,6 +12,8 @@ let initPageHelper = (function () {
     initSolutionsBanner();
     initWhyKaseyaCard();
     initWhatHappenNextCard();
+    initSelectProductOption();
+    addOptionalSelect();
   };
 
   const initK365Card = () => {
@@ -130,6 +132,58 @@ let initPageHelper = (function () {
       });
     });
   };
+
+  const initSelectProductOption = () => {
+    $(window).on("load", function () {
+      $.each(constant.SelectOptionId, function (index, value) {
+        let selectComponent = componentFunction.SelectOption(
+          value.subProdId,
+          value.label
+        );
+        $("#" + value.parentId).append(selectComponent);
+
+        return false;
+      });
+    });
+
+    // $(window).on("load", function () {
+    //   $(constant.SelectOptionId.solutionOptionValue).change(function () {
+    //     let selectedOption = $(
+    //       constant.SelectOptionId.solutionOptionValue
+    //     ).val();
+
+    //     alert(selectedOption);
+    //   });
+    // });
+    // $.each(constant.GetDemoSolution, function (index, value) {
+    //   $.each(constant.getDemoCard, function (index, value) {
+    //     let options = componentFunction.SelectOption(value.name);
+    //   });
+    // $(constant.SelectOptionId[0]).append(
+    //   '<option value="' + value.name + '">' + value.name + "</option>"
+    // );
+    // });
+  };
+  async function addOptionalSelect() {
+    let b = constant.SelectOptionId[0].subProdId;
+
+    // $.each(constant.SelectOptionId.slice(1), function (i, value) {
+    $(window).on("load", function () {
+      $("#".concat(b)).change(function () {
+        let val = $("#".concat(b)).val();
+        if (val === "Security") {
+          $.each(constant.SelectOptionId.slice(1), function (i, value) {
+            let selectComponent = componentFunction.SelectOption(
+              value.subProdId,
+              value.label
+            );
+            $("#" + value.parentId).append(selectComponent);
+          });
+        }
+      });
+    });
+    // });
+  }
 
   return {
     init: init,

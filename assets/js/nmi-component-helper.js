@@ -134,15 +134,15 @@ let componentFunction = (function () {
     );
   };
 
-  const selectOption = (option) => {
+  const selectOption = (id, label) => {
     return $(
-      '<select class="form-select" aria-label="Default select example">' +
-        "<option selected>Select...</option>" +
-        '<option value="' +
-        option +
-        '">' +
-        option +
-        "</option>" +
+      '<label class="form-label text-dark text-xs fw-bold">' +
+        label +
+        '<span class="text-danger"> *</span></label>' +
+        '<select id="' +
+        id +
+        '" class="form-select" aria-label="Default select example" >' +
+        "<option selected>Select..</option>" +
         "</select>"
     );
   };
@@ -154,5 +154,6 @@ let componentFunction = (function () {
     k365BannerCard: k365BannerCard,
     solutionsBanner: solutionsBanner,
     getDemoCard: getDemoCard,
+    SelectOption: selectOption,
   };
 })();

@@ -1,84 +1,4 @@
 let modalPageHelper = (function () {
-  let FooterInformation = ["privacy-policy", "terms-conditions"];
-
-  let automationProp = [
-    {
-      id: "_automationEdr",
-      tab: "pills-edr-tab",
-    },
-    {
-      id: "_automationEvents",
-      tab: "pills-events-tab",
-    },
-    {
-      id: "_automationPolicy",
-      tab: "pills-policy-tab",
-    },
-    {
-      id: "_automationPatching",
-      tab: "pills-patching-tab",
-    },
-    {
-      id: "_automationBackIns",
-      tab: "pills-backIns-tab",
-    },
-    {
-      id: "_automationRocketcyber",
-      tab: "pills-rocketCyber-tab",
-    },
-    {
-      id: "_automationHealthStatus",
-      tab: "pills-healthStatus-tab",
-    },
-  ];
-
-  let svgAssets = [
-    {
-      id: "#endpoint-k365-selector",
-      svg: svgSrc.K365Endpoint.banner,
-    },
-    {
-      id: "#user-k365-selector",
-      svg: svgSrc.K365User.banner,
-    },
-    {
-      id: "#user-circle-logo",
-      svg: svgSrc.K365User.circleLogo,
-    },
-    {
-      id: "#preventTab",
-      svg: svgSrc.K365User.tabSvgPrevent,
-    },
-    {
-      id: "#respondTab",
-      svg: svgSrc.K365User.tabSvgRespond,
-    },
-    {
-      id: "#recoverTab",
-      svg: svgSrc.K365User.tabSvgRecover,
-    },
-    {
-      id: "#preventBoxImg",
-      svg: svgSrc.K365User.preventBoxImg,
-    },
-    {
-      id: "#respondBoxImg",
-      svg: svgSrc.K365User.respondBoxImg,
-    },
-    {
-      id: "#recoverBoxImg",
-      svg: svgSrc.K365User.recoverBoxImg,
-    },
-    {
-      id: "#k365BlueGreen",
-      svg: svgSrc.K365User.k365BlueGreen,
-    },
-    {
-      id: "#k365CircleSubs",
-      svg: svgSrc.K365User.k365CircleSubs,
-    },
-  ];
-
   let init = function () {
     loadEvent();
     clickEvent();
@@ -95,6 +15,7 @@ let modalPageHelper = (function () {
     loadK365onBoardTbl();
     loadFooterModal();
     footerNavClass();
+    addSelectOption();
     appendColorKaseyaBanner();
   };
 
@@ -103,7 +24,7 @@ let modalPageHelper = (function () {
   };
 
   async function initModalPage() {
-    $.each(constant.Solutions, function (index, value) {
+    $.each(constant.Solutions, function (i, value) {
       $("<div>", {
         id: value,
       }).appendTo("#parent-selector");
@@ -113,7 +34,7 @@ let modalPageHelper = (function () {
   }
 
   async function loadFooterModal() {
-    $.each(FooterInformation, function (index, info) {
+    $.each(constant.FooterInformation, function (i, info) {
       $("<div>")
         .appendTo("#modal-container")
         .load("modals/footer-modal/_" + info + ".html");
@@ -121,7 +42,7 @@ let modalPageHelper = (function () {
   }
 
   async function GetInitTabPage() {
-    $.each(constant.Solutions, function (index, value) {
+    $.each(constant.Solutions, function (i, value) {
       value = value.replace("mod", "tab");
 
       $("#" + value.replace("tab", "mod"))
@@ -132,7 +53,7 @@ let modalPageHelper = (function () {
 
   async function loadK365ChildTabAutomation() {
     $(window).on("load", function () {
-      automationProp.map(({ id, _ }, i) => {
+      constant.AutomationProp.map(({ id, _ }, i) => {
         let div = $("<div>", { id: id }).appendTo(
           "#k365AutomationEDR-selector"
         );
@@ -146,9 +67,9 @@ let modalPageHelper = (function () {
 
   function click365AutomationTab() {
     $(function () {
-      $.each(automationProp, function (index, value) {
+      $.each(constant.AutomationProp, function (i, value) {
         $("#" + value.tab).click(function () {
-          let active = automationProp.find(({ id, _ }, i) => {
+          let active = constant.AutomationProp.find(({ id, _ }, i) => {
             return !$("#" + id).is(":hidden");
           });
 
@@ -179,7 +100,7 @@ let modalPageHelper = (function () {
 
   async function appendOnId() {
     $(window).on("load", function () {
-      $.each(svgAssets, function (index, value) {
+      $.each(svgSrc.SvgAssets, function (i, value) {
         $(value.id).append(value.svg);
       });
     });
@@ -193,7 +114,7 @@ let modalPageHelper = (function () {
 
   const appendColorKaseyaBanner = () => {
     $(window).on("load", function () {
-      $.each(constant.K365EndpointUserBanner, function (index, value) {
+      $.each(constant.K365EndpointUserBanner, function (i, value) {
         $("#kaseya365 #".concat(value.logoSelector).concat(" figure")).css(
           "background-image",
           value.svgColor
@@ -201,6 +122,19 @@ let modalPageHelper = (function () {
       });
     });
   };
+
+  async function addSelectOption() {
+    $(window).on("load", function () {
+      $.each(constant.SelectOptionId, function (i, valueID) {
+        NMICore.AppendDataElement.AddSelectOption(
+          valueID.subProdId,
+          constant.GetDemoSolution
+        );
+
+        return false;
+      });
+    });
+  }
 
   return {
     init: init,

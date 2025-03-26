@@ -544,6 +544,52 @@ let constant = (function () {
     },
   ];
 
+  let automationProp = [
+    {
+      id: "_automationEdr",
+      tab: "pills-edr-tab",
+    },
+    {
+      id: "_automationEvents",
+      tab: "pills-events-tab",
+    },
+    {
+      id: "_automationPolicy",
+      tab: "pills-policy-tab",
+    },
+    {
+      id: "_automationPatching",
+      tab: "pills-patching-tab",
+    },
+    {
+      id: "_automationBackIns",
+      tab: "pills-backIns-tab",
+    },
+    {
+      id: "_automationRocketcyber",
+      tab: "pills-rocketCyber-tab",
+    },
+    {
+      id: "_automationHealthStatus",
+      tab: "pills-healthStatus-tab",
+    },
+  ];
+
+  let footerInformation = ["privacy-policy", "terms-conditions"];
+
+  let selectOptionId = [
+    {
+      parentId: "select-product-selector",
+      label: "Please identify which product suite you are interested in:",
+      subProdId: "product-select",
+    },
+    {
+      parentId: "select-sub-product-selector",
+      label: "Please identify your product interest",
+      subProdId: "sub-product-select",
+    },
+  ];
+
   return {
     MapPosition: mapPosition,
     MapTitle: mapTitle,
@@ -569,5 +615,8 @@ let constant = (function () {
     WhyKaseyaContent: whyKaseyaContent,
     WhatHappenNextContent: whatHappenNextContent,
     GetDemoSolution: getDemoSolution,
+    AutomationProp: automationProp,
+    FooterInformation: footerInformation,
+    SelectOptionId: selectOptionId,
   };
 })();
