@@ -14,6 +14,7 @@ let initPageHelper = (function () {
     initWhatHappenNextCard();
     initSelectProductOption();
     addOptionalSelect();
+    // destroyElement();
   };
 
   const initK365Card = () => {
@@ -141,48 +142,55 @@ let initPageHelper = (function () {
           value.label
         );
         $("#" + value.parentId).append(selectComponent);
-
         return false;
       });
     });
-
-    // $(window).on("load", function () {
-    //   $(constant.SelectOptionId.solutionOptionValue).change(function () {
-    //     let selectedOption = $(
-    //       constant.SelectOptionId.solutionOptionValue
-    //     ).val();
-
-    //     alert(selectedOption);
-    //   });
-    // });
-    // $.each(constant.GetDemoSolution, function (index, value) {
-    //   $.each(constant.getDemoCard, function (index, value) {
-    //     let options = componentFunction.SelectOption(value.name);
-    //   });
-    // $(constant.SelectOptionId[0]).append(
-    //   '<option value="' + value.name + '">' + value.name + "</option>"
-    // );
-    // });
   };
-  async function addOptionalSelect() {
-    let b = constant.SelectOptionId[0].subProdId;
 
-    // $.each(constant.SelectOptionId.slice(1), function (i, value) {
+  async function addOptionalSelect() {
+    let mandatorySelect = constant.SelectOptionId[0].subProdId;
+    let test = constant.SelectOptionId[1].parentId;
+    let previousValue = "";
+    let thisValue = $("#".concat(mandatorySelect)).val();
+
     $(window).on("load", function () {
-      $("#".concat(b)).change(function () {
-        let val = $("#".concat(b)).val();
-        if (val === "Security") {
-          $.each(constant.SelectOptionId.slice(1), function (i, value) {
-            let selectComponent = componentFunction.SelectOption(
-              value.subProdId,
-              value.label
-            );
-            $("#" + value.parentId).append(selectComponent);
-          });
+      $("#".concat(mandatorySelect)).change(function () {
+        previousValue = thisValue;
+        thisValue = $(this).val();
+
+        let result = constant.GetDemoSolution.find(
+          (item, i) => thisValue === item.name
+        );
+
+        $.each(constant.SelectOptionId.slice(1), function (i, value) {
+          let selectComponent = componentFunction.SelectOption(
+            value.subProdId,
+            value.label
+          );
+          if (result.subProduct.length > 0) {
+            $("#".concat(value.parentId)).append(selectComponent);
+          }
+        });
+        var isValid = previousValue !== undefined ? false : true;
+        if (!isValid) {
+          if (previousValue !== thisValue) {
+            $("#".concat(test)).remove();
+          }
         }
       });
     });
-    // });
+  }
+  async function destroyElement() {
+    let mandatorySelect = constant.SelectOptionId[0].subProdId;
+    $(window).on("load", function (e) {
+      $("#".concat(mandatorySelect)).on("focus", function () {
+        e.preventDefault();
+        $.each(constant.SelectOptionId.slice(1), function (i, value) {
+          $("#".concat(value.parentId)).remove();
+        });
+        console.log("remove");
+      });
+    });
   }
 
   return {
