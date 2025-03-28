@@ -178,13 +178,21 @@ var NMICore = (function () {
     };
   })();
 
-  var NMICORE_AppendDataElement = (function () {
+  var NMICORE_ConfigDataElement = (function () {
     var addSelectOption = function (id, value) {
       $.each(value, function (index, item) {
         $("#".concat(id)).append(
           '<option value="' + item.name + '">' + item.name + "</option>"
         );
       });
+    };
+
+    var appendSelectElement = function () {
+      let isValid = data > 0 ? true : false;
+
+      if (isValid) {
+        $("#".concat(value.parentId)).append(selectComponent);
+      }
     };
 
     return {
@@ -224,7 +232,7 @@ var NMICore = (function () {
       IsObjectEmpty: NMICore_ObjectValidation.IsObjectEmpty,
     },
     AppendDataElement: {
-      AddSelectOption: NMICORE_AppendDataElement.AddSelectOption,
+      AddSelectOption: NMICORE_ConfigDataElement.AddSelectOption,
     },
   };
 })();

@@ -13,8 +13,7 @@ let initPageHelper = (function () {
     initWhyKaseyaCard();
     initWhatHappenNextCard();
     initSelectProductOption();
-    addOptionalSelect();
-    // destroyElement();
+    initOptionalSelect();
   };
 
   const initK365Card = () => {
@@ -136,59 +135,52 @@ let initPageHelper = (function () {
 
   const initSelectProductOption = () => {
     $(window).on("load", function () {
-      $.each(constant.SelectOptionId, function (index, value) {
-        let selectComponent = componentFunction.SelectOption(
-          value.subProdId,
-          value.label
-        );
-        $("#" + value.parentId).append(selectComponent);
-        return false;
-      });
+      let selectComponent = componentFunction.SelectOption(
+        constant.RequiredProductLabel.selectId,
+        constant.RequiredProductLabel.label
+      );
+      $("#".concat(constant.RequiredProductLabel.id)).append(selectComponent);
     });
   };
 
-  async function addOptionalSelect() {
-    let mandatorySelect = constant.SelectOptionId[0].subProdId;
-    let test = constant.SelectOptionId[1].parentId;
+  async function initOptionalSelect() {
     let previousValue = "";
-    let thisValue = $("#".concat(mandatorySelect)).val();
+    let thisValue = $("#".concat(constant.RequiredProductLabel.selectId)).val();
 
     $(window).on("load", function () {
-      $("#".concat(mandatorySelect)).change(function () {
+      $("#".concat(constant.RequiredProductLabel.selectId)).change(function () {
+        // tansfer value of thisValue to previousValue
         previousValue = thisValue;
         thisValue = $(this).val();
 
+        let isValid = typeof previousValue === "undefined" ? true : false;
+
+        // find if the this value have sub product
         let result = constant.GetDemoSolution.find(
           (item, i) => thisValue === item.name
         );
+
+        console.log(result);
 
         $.each(constant.SelectOptionId.slice(1), function (i, value) {
           let selectComponent = componentFunction.SelectOption(
             value.subProdId,
             value.label
           );
-          if (result.subProduct.length > 0) {
-            $("#".concat(value.parentId)).append(selectComponent);
+
+          if (isValid) {
+            if (result.subProduct.length > 0) {
+              $("#".concat(value.parentId)).append(selectComponent);
+            }
+          } else {
+            if (previousValue !== thisValue) {
+              $("#".concat(value.parentId)).empty();
+              if (result.subProduct.length > 0) {
+                $("#".concat(value.parentId)).append(selectComponent);
+              }
+            }
           }
         });
-        var isValid = previousValue !== undefined ? false : true;
-        if (!isValid) {
-          if (previousValue !== thisValue) {
-            $("#".concat(test)).remove();
-          }
-        }
-      });
-    });
-  }
-  async function destroyElement() {
-    let mandatorySelect = constant.SelectOptionId[0].subProdId;
-    $(window).on("load", function (e) {
-      $("#".concat(mandatorySelect)).on("focus", function () {
-        e.preventDefault();
-        $.each(constant.SelectOptionId.slice(1), function (i, value) {
-          $("#".concat(value.parentId)).remove();
-        });
-        console.log("remove");
       });
     });
   }

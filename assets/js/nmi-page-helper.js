@@ -125,14 +125,14 @@ let modalPageHelper = (function () {
 
   async function addSelectOption() {
     $(window).on("load", function () {
-      $.each(constant.SelectOptionId, function (i, valueID) {
-        NMICore.AppendDataElement.AddSelectOption(
-          valueID.subProdId,
-          constant.GetDemoSolution
-        );
+      const primaryProduct = constant.GetDemoSolution.filter(
+        (item, i) => item.isMainProduct
+      );
 
-        return false;
-      });
+      NMICore.AppendDataElement.AddSelectOption(
+        constant.RequiredProductLabel.selectId,
+        primaryProduct
+      );
     });
   }
 

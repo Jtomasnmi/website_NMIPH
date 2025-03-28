@@ -494,54 +494,184 @@ let constant = (function () {
     },
   ];
 
+  [{ fk: "" }];
+  // const getDemoSolution = [
+  //   {
+  //     name: "RMM/Endpoint Management",
+  //     subProduct: [
+  //       "Kaseya VSA",
+  //       "Datto RMM",
+  //       "Kaseya 365 Express",
+  //       "Kaseya 365 PRO",
+  //     ],
+  //   },
+  //   {
+  //     name: "Audit & Compliance",
+  //     subProduct: ["IT Risk Assessment", "IT Compliance"],
+  //   },
+  //   {
+  //     name: "Security",
+  //     subProduct: [
+  //       "Email Security",
+  //       "Security Awareness Training",
+  //       "Endpoint Detection & Response",
+  //       "Managed SOC",
+  //       "Networking Penetration Testing",
+  //       "Datto Antivirus",
+  //       "Kaseya 365 User",
+  //       "Saas Alerts",
+  //     ],
+  //   },
+  //   {
+  //     name: "Unified Backup",
+  //     subProduct: [],
+  //   },
+  //   {
+  //     name: "IT Operations",
+  //     subProduct: [
+  //       " IT Documentation",
+  //       "PSA/Service Desk",
+  //       "Billing & Collections",
+  //       "vCIO",
+  //     ],
+  //   },
+  //   {
+  //     name: "MSP Enablement",
+  //     subProduct: [],
+  //   },
+  //   {
+  //     name: "Networking",
+  //     subProduct: [],
+  //   },
+  // ];
   const getDemoSolution = [
     {
+      id: 1,
       name: "RMM/Endpoint Management",
-      subProduct: [
-        "Kaseya VSA",
-        "Datto RMM",
-        "Kaseya 365 Express",
-        "Kaseya 365 PRO",
-      ],
+      subProduct: [2, 3, 4, 5],
+      isMainProduct: true,
     },
     {
+      id: 2,
+      name: "Kaseya VSA",
+      subProduct: [],
+      isMainProduct: false,
+    },
+    {
+      id: 3,
+      name: "Datto RMM",
+      subProduct: [],
+      isMainProduct: false,
+    },
+    {
+      id: 4,
+      name: "Kaseya 365 Express",
+      subProduct: [],
+      isMainProduct: false,
+    },
+    {
+      id: 5,
+      name: "Kaseya 365 PRO",
+      subProduct: [],
+      isMainProduct: false,
+    },
+    {
+      id: 6,
       name: "Audit & Compliance",
-      subProduct: ["IT Risk Assessment", "IT Compliance"],
+      subProduct: [7, 8],
+      isMainProduct: true,
     },
     {
+      id: 7,
+      name: "IT Risk Assessment",
+      subProduct: [],
+
+      isMainProduct: false,
+    },
+    {
+      id: 8,
+      name: "IT Compliance",
+      subProduct: [],
+      isMainProduct: false,
+    },
+    {
+      id: 9,
       name: "Security",
-      subProduct: [
-        "Email Security",
-        "Security Awareness Training",
-        "Endpoint Detection & Response",
-        "Managed SOC",
-        "Networking Penetration Testing",
-        "Datto Antivirus",
-        "Kaseya 365 User",
-        "Saas Alerts",
-      ],
+      subProduct: [10, 11, 12, 13, 14, 15, 16, 17],
+      isMainProduct: true,
     },
     {
+      id: 10,
+      name: "Email Security",
+      subProduct: [],
+      isMainProduct: false,
+    },
+    {
+      id: 11,
+      name: "Security Awareness Training",
+      subProduct: [],
+      isMainProduct: false,
+    },
+    {
+      id: 12,
+      name: "Endpoint Detection & Response",
+      subProduct: [],
+      isMainProduct: false,
+    },
+    {
+      id: 13,
+      name: "Managed SOC",
+      subProduct: [],
+      isMainProduct: false,
+    },
+    {
+      id: 14,
+      name: "Networking Penetration Testing",
+      subProduct: [],
+      isMainProduct: false,
+    },
+    {
+      id: 15,
+      name: "Datto Antivirus",
+      subProduct: [],
+      isMainProduct: false,
+    },
+    {
+      id: 16,
+      name: "Kaseya 365 User",
+      subProduct: [],
+      isMainProduct: false,
+    },
+    {
+      id: 17,
+      name: "Saas Alerts",
+      subProduct: [],
+      isMainProduct: false,
+    },
+
+    {
+      id: 18,
       name: "Unified Backup",
       subProduct: [],
+      isMainProduct: true,
     },
     {
+      id: 19,
       name: "IT Operations",
-      subProduct: [
-        " IT Documentation",
-        "PSA/Service Desk",
-        "Billing & Collections",
-        "vCIO",
-      ],
+      subProduct: [20, 21, 22, 23],
+      isMainProduct: true,
     },
+    { id: 20, name: "IT Documentation", subProduct: [], isMainProduct: false },
+    { id: 21, name: "PSA/Service Desk", subProduct: [], isMainProduct: false },
     {
-      name: "MSP Enablement",
+      id: 22,
+      name: "Billing & Collections",
       subProduct: [],
+      isMainProduct: false,
     },
-    {
-      name: "Networking",
-      subProduct: [],
-    },
+    { id: 23, name: "vCIO", subProduct: [], isMainProduct: false },
+    { id: 24, name: "MSP Enablement", subProduct: [], isMainProduct: true },
+    { id: 25, name: "Networking", subProduct: [], isMainProduct: true },
   ];
 
   let automationProp = [
@@ -577,18 +707,16 @@ let constant = (function () {
 
   let footerInformation = ["privacy-policy", "terms-conditions"];
 
-  let selectOptionId = [
-    {
-      parentId: "select-product-selector",
-      label: "Please identify which product suite you are interested in:",
-      subProdId: "product-select",
-    },
-    {
-      parentId: "select-sub-product-selector",
-      label: "Please identify your product interest",
-      subProdId: "sub-product-select",
-    },
-  ];
+  let requiredProductLabel = {
+    id: "select-product-selector",
+    selectId: "main-select",
+    label: "Please identify which product suite you are interested in:",
+  };
+
+  let optionalProductLabel = {
+    id: "select-sub-product-selector",
+    label: "Please identify your product interest",
+  };
 
   return {
     MapPosition: mapPosition,
@@ -617,6 +745,7 @@ let constant = (function () {
     GetDemoSolution: getDemoSolution,
     AutomationProp: automationProp,
     FooterInformation: footerInformation,
-    SelectOptionId: selectOptionId,
+    RequiredProductLabel: requiredProductLabel,
+    OptionalProductLabel: optionalProductLabel,
   };
 })();
