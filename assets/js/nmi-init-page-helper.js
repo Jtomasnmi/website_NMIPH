@@ -12,6 +12,8 @@ let initPageHelper = (function () {
     initSolutionsBanner();
     initWhyKaseyaCard();
     initWhatHappenNextCard();
+    initSelectProductOption();
+    initOptionalSelect();
   };
 
   const initK365Card = () => {
@@ -130,6 +132,58 @@ let initPageHelper = (function () {
       });
     });
   };
+
+  const initSelectProductOption = () => {
+    $(window).on("load", function () {
+      let selectComponent = componentFunction.SelectOption(
+        constant.RequiredProductLabel.selectId,
+        constant.RequiredProductLabel.label
+      );
+      $("#".concat(constant.RequiredProductLabel.id)).append(selectComponent);
+    });
+  };
+
+  async function initOptionalSelect() {
+    let previousValue = "";
+    let thisValue = $("#".concat(constant.RequiredProductLabel.selectId)).val();
+
+    $(window).on("load", function () {
+      $("#".concat(constant.RequiredProductLabel.selectId)).change(function () {
+        // tansfer value of thisValue to previousValue
+        previousValue = thisValue;
+        thisValue = $(this).val();
+
+        let isValid = typeof previousValue === "undefined" ? true : false;
+
+        // find if the this value have sub product
+        let result = constant.GetDemoSolution.find(
+          (item, i) => thisValue === item.name
+        );
+
+        console.log(result);
+
+        $.each(constant.SelectOptionId.slice(1), function (i, value) {
+          let selectComponent = componentFunction.SelectOption(
+            value.subProdId,
+            value.label
+          );
+
+          if (isValid) {
+            if (result.subProduct.length > 0) {
+              $("#".concat(value.parentId)).append(selectComponent);
+            }
+          } else {
+            if (previousValue !== thisValue) {
+              $("#".concat(value.parentId)).empty();
+              if (result.subProduct.length > 0) {
+                $("#".concat(value.parentId)).append(selectComponent);
+              }
+            }
+          }
+        });
+      });
+    });
+  }
 
   return {
     init: init,
