@@ -554,13 +554,13 @@ let constant = (function () {
     {
       id: 2,
       name: "Kaseya VSA",
-      subProduct: [],
+      subProduct: [12, 13],
       isMainProduct: false,
     },
     {
       id: 3,
       name: "Datto RMM",
-      subProduct: [],
+      subProduct: [21],
       isMainProduct: false,
     },
     {
@@ -591,7 +591,7 @@ let constant = (function () {
     {
       id: 8,
       name: "IT Compliance",
-      subProduct: [],
+      subProduct: [11],
       isMainProduct: false,
     },
     {
@@ -615,7 +615,7 @@ let constant = (function () {
     {
       id: 12,
       name: "Endpoint Detection & Response",
-      subProduct: [],
+      subProduct: [20, 23],
       isMainProduct: false,
     },
     {
@@ -661,7 +661,12 @@ let constant = (function () {
       subProduct: [20, 21, 22, 23],
       isMainProduct: true,
     },
-    { id: 20, name: "IT Documentation", subProduct: [], isMainProduct: false },
+    {
+      id: 20,
+      name: "IT Documentation",
+      subProduct: [25],
+      isMainProduct: false,
+    },
     { id: 21, name: "PSA/Service Desk", subProduct: [], isMainProduct: false },
     {
       id: 22,
@@ -718,6 +723,24 @@ let constant = (function () {
     label: "Please identify your product interest",
   };
 
+  let certificateSrc = [
+    {
+      name: "certificate-1",
+      path: "assets/svg/demo-certificate-1.svg",
+      class: "certificateImg ratio ratio-1x1 object-fit-contain",
+    },
+    {
+      name: "certificate-2",
+      path: "assets/svg/demo-certificate-2.svg",
+      class: "certificateImg ratio ratio-1x1 object-fit-contain",
+    },
+    {
+      name: "certificate-3",
+      path: "assets/svg/demo-certificate-3.svg",
+      class: "certificateImg ratio ratio-1x1 object-fit-contain",
+    },
+  ];
+
   return {
     MapPosition: mapPosition,
     MapTitle: mapTitle,
@@ -747,5 +770,6 @@ let constant = (function () {
     FooterInformation: footerInformation,
     RequiredProductLabel: requiredProductLabel,
     OptionalProductLabel: optionalProductLabel,
+    CertificateSrc: certificateSrc,
   };
 })();

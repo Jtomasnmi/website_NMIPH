@@ -2606,11 +2606,13 @@ section {
 .get-demo .modal-body {
   background-color: #0c2a41 !important;
   color: #fff;
+  padding: 1rem 0rem 0rem;
 }
 
 .get-demo .get-demo-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 6rem;
 }
 
 .get-demo .get-demo-content .demo-sub-content {
@@ -2654,4 +2656,28 @@ section {
 
 .text-blue {
   color: #0073e6;
+}
+
+.certificates {
+  display: flex;
+  justify-content: center;
+  gap: 3.2rem;
+  margin-top: 4rem;
+  padding: 3rem;
+  background-color: #34495e !important;
+  border-top: 5px solid #0059b3;
+}
+
+.certificateImg {
+  width: 8rem;
+}
+
+.certificates-label {
+  width: 55%;
+  margin-left: 1rem;
+}
+
+.certificates-img-container {
+  display: flex;
+  gap: 2.5rem;
 }

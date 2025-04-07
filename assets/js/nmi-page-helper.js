@@ -17,6 +17,7 @@ let modalPageHelper = (function () {
     footerNavClass();
     addSelectOption();
     appendColorKaseyaBanner();
+    querySelectId();
   };
 
   let clickEvent = function () {
@@ -129,10 +130,24 @@ let modalPageHelper = (function () {
         (item, i) => item.isMainProduct
       );
 
+      console.log(primaryProduct);
+
       NMICore.AppendDataElement.AddSelectOption(
         constant.RequiredProductLabel.selectId,
         primaryProduct
       );
+    });
+  }
+
+  async function querySelectId() {
+    $(window).on("load", function () {
+      $(".get-demo .form-group").on("click", function (event) {
+        let value = event.target.id;
+
+        if (value === "main-select") {
+          let a = $("#select-sub-product-selector select").first().val();
+        }
+      });
     });
   }
 
