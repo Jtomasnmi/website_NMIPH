@@ -4,19 +4,20 @@ let initPageHelper = (function () {
   };
 
   const loadEvent = () => {
-    initK365Card();
-    initSolutionCard();
-    initSolutionVideo();
+    K365Card();
+    SolutionCard();
+    SolutionVideo();
     addColor();
-    initK365BannerCard();
-    initSolutionsBanner();
-    initWhyKaseyaCard();
-    initWhatHappenNextCard();
-    initSelectProductOption();
-    initOptionalSelect();
+    K365BannerCard();
+    SolutionsBanner();
+    WhyKaseyaCard();
+    WhatHappenNextCard();
+    SelectProductOption();
+    OptionalSelect();
+    AppendImgSrc();
   };
 
-  const initK365Card = () => {
+  const K365Card = () => {
     $(function () {
       let dataCard = constant.K365OnboardingCard.map(
         ({ title, desc, pro, qck }, i) => {
@@ -27,7 +28,7 @@ let initPageHelper = (function () {
     });
   };
 
-  const initSolutionCard = () => {
+  const SolutionCard = () => {
     $(function () {
       constant.NmiSolution.map((solution, i) => {
         let txtSelector = solution.selector
@@ -56,7 +57,7 @@ let initPageHelper = (function () {
     });
   };
 
-  const initSolutionVideo = () => {
+  const SolutionVideo = () => {
     $(function () {
       constant.NmiSolution.map((solution, i) => {
         let txtSelector = solution.selector
@@ -78,7 +79,7 @@ let initPageHelper = (function () {
     });
   };
 
-  const initK365BannerCard = () => {
+  const K365BannerCard = () => {
     $.each(constant.K365EndpointUserBanner, function (index, value) {
       const cardData = componentFunction.k365BannerCard(
         value.logoSelector,
@@ -92,7 +93,7 @@ let initPageHelper = (function () {
     });
   };
 
-  const initSolutionsBanner = () => {
+  const SolutionsBanner = () => {
     $(function () {
       $.each(constant.SolutionsBanner, function (index, value) {
         let solBanner = componentFunction.solutionsBanner(
@@ -106,7 +107,7 @@ let initPageHelper = (function () {
     });
   };
 
-  const initWhyKaseyaCard = () => {
+  const WhyKaseyaCard = () => {
     $(window).on("load", function () {
       $.each(constant.WhyKaseyaContent, function (index, value) {
         let whyKaseya = componentFunction.getDemoCard(
@@ -119,7 +120,7 @@ let initPageHelper = (function () {
       });
     });
   };
-  const initWhatHappenNextCard = () => {
+  const WhatHappenNextCard = () => {
     $(window).on("load", function () {
       $.each(constant.WhatHappenNextContent, function (index, value) {
         let whatnext = componentFunction.getDemoCard(
@@ -133,9 +134,10 @@ let initPageHelper = (function () {
     });
   };
 
-  const initSelectProductOption = () => {
+  const SelectProductOption = () => {
     $(window).on("load", function () {
-      let selectComponent = componentFunction.SelectOption(
+      let selectComponent = componentFunction.selectOption(
+        "",
         constant.RequiredProductLabel.selectId,
         constant.RequiredProductLabel.label
       );
@@ -143,44 +145,72 @@ let initPageHelper = (function () {
     });
   };
 
-  async function initOptionalSelect() {
-    let previousValue = "";
-    let thisValue = $("#".concat(constant.RequiredProductLabel.selectId)).val();
-
+  async function OptionalSelect() {
     $(window).on("load", function () {
-      $("#".concat(constant.RequiredProductLabel.selectId)).change(function () {
-        // tansfer value of thisValue to previousValue
-        previousValue = thisValue;
-        thisValue = $(this).val();
+      let selectedIdArr = [];
+      NMICore.AppendDataElement.AppendOnChange(
+        constant.RequiredProductLabel.selectId,
+        selectedIdArr
+      );
+      console.log(selectedIdArr);
+    });
+    // let previousValue = "";
+    // let thisValue = $("#".concat(constant.RequiredProductLabel.selectId)).val();
 
-        let isValid = typeof previousValue === "undefined" ? true : false;
+    // $(window).on("load", function () {
+    //   $("#".concat(constant.RequiredProductLabel.selectId)).change(function () {
+    //     // tansfer value of thisValue to previousValue
+    //     previousValue = thisValue;
+    //     thisValue = $(this).val();
 
-        // find if the this value have sub product
-        let result = constant.GetDemoSolution.find(
-          (item, i) => thisValue === item.name
+    //     // find if the this value have sub product
+    //     const result = constant.GetDemoSolution.find(
+    //       (item, i) => thisValue === item.name
+    //     );
+
+    //     const product = constant.GetDemoSolution.filter((item, i) =>
+    //       result.subProduct.includes(item.id)
+    //     );
+
+    //     const selectComponent = componentFunction.selectOption(
+    //       "-".concat(result.id),
+    //       result.id,
+    //       constant.OptionalProductLabel.label
+    //     );
+
+    //     const validateValue = NMICore.AppendDataElement.ValidateValueElement(
+    //       previousValue,
+    //       thisValue
+    //     );
+
+    //     const validateLength = NMICore.AppendDataElement.CheckDataLengthElement(
+    //       result.subProduct.length
+    //     );
+
+    //     if (validateValue && validateLength) {
+    //       NMICore.AppendDataElement.AddElement(
+    //         constant.OptionalProductLabel.id,
+    //         selectComponent
+    //       );
+
+    //       NMICore.AppendDataElement.AddSelectOption(result.id, product);
+    //     }
+
+    //     NMICore.AppendDataElement.RemoveElement(previousValue);
+    //   });
+    // });
+  }
+
+  async function AppendImgSrc() {
+    $(window).on("load", function () {
+      $.each(constant.CertificateSrc, function (i, value) {
+        let imgElement = componentFunction.imgElement(
+          value.path,
+          value.name,
+          value.class
         );
 
-        console.log(result);
-
-        $.each(constant.SelectOptionId.slice(1), function (i, value) {
-          let selectComponent = componentFunction.SelectOption(
-            value.subProdId,
-            value.label
-          );
-
-          if (isValid) {
-            if (result.subProduct.length > 0) {
-              $("#".concat(value.parentId)).append(selectComponent);
-            }
-          } else {
-            if (previousValue !== thisValue) {
-              $("#".concat(value.parentId)).empty();
-              if (result.subProduct.length > 0) {
-                $("#".concat(value.parentId)).append(selectComponent);
-              }
-            }
-          }
-        });
+        $("#certificates-selector").append(imgElement);
       });
     });
   }

@@ -134,16 +134,28 @@ let componentFunction = (function () {
     );
   };
 
-  const selectOption = (id, label) => {
+  const selectOption = (divId, id, label) => {
     return $(
-      '<label class="form-label text-dark text-xs fw-bold">' +
+      '<div id="' +
+        divId +
+        '" value="' +
+        divId +
+        '">' +
+        '<label class="form-label text-dark text-xs fw-bold">' +
         label +
         '<span class="text-danger"> *</span></label>' +
         '<select id="' +
         id +
         '" class="form-select" aria-label="Default select example" >' +
-        "<option selected>Select..</option>" +
-        "</select>"
+        '"<option value="" selected>Select..</option>"' +
+        "</select>" +
+        "</div>"
+    );
+  };
+
+  const imgElement = (src, name, className) => {
+    return $(
+      '<img src="' + src + '" alt="' + name + '" class="' + className + '"/>'
     );
   };
 
@@ -154,6 +166,7 @@ let componentFunction = (function () {
     k365BannerCard: k365BannerCard,
     solutionsBanner: solutionsBanner,
     getDemoCard: getDemoCard,
-    SelectOption: selectOption,
+    selectOption: selectOption,
+    imgElement: imgElement,
   };
 })();

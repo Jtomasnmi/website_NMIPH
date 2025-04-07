@@ -187,16 +187,189 @@ var NMICore = (function () {
       });
     };
 
-    var appendSelectElement = function () {
-      let isValid = data > 0 ? true : false;
+    var appendValidateSelectElement = function (
+      parentId,
+      childId,
+      isValid,
+      previousValue,
+      thisValue,
+      dataLength,
+      selectId,
+      component,
+      data
+    ) {
+      // $("#".concat(parentId)).change(function () {
+      let valid = typeof isValid === "undefined" ? true : false;
+      if (valid) {
+        if (dataLength > 0) {
+          $("#".concat(childId)).append(component);
+          NMICore.AppendDataElement.AddSelectOption(selectId, data);
+        }
+      } else {
+        if (previousValue !== thisValue) {
+          $("#".concat(constant.OptionalProductLabel.id)).empty();
+          if (dataLength > 0) {
+            $("#".concat(childId)).append(component);
+            NMICore.AppendDataElement.AddSelectOption(selectId, data);
+          }
+        }
+      }
+      // });
+    };
 
-      if (isValid) {
-        $("#".concat(value.parentId)).append(selectComponent);
+    var addElement = function (id, component) {
+      $("#".concat(id)).append(component);
+    };
+
+    var validateValueElement = function (prevValue, thisValue) {
+      let isValid = prevValue !== thisValue ? true : false;
+
+      return isValid;
+    };
+
+    var checkDataLengthElement = function (dataLength) {
+      let result = false;
+
+      if (dataLength > 0) {
+        result = true;
+      }
+
+      return result;
+    };
+
+    var appendOnChange = function (parentId) {
+      let previousValue = "";
+      let thisValue = $("#".concat(parentId)).val();
+
+      let count = $("#select-sub-product-selector div").length;
+      let counts = 0;
+      $("#".concat(parentId)).change(function (event) {
+        const targetId = event.target.id;
+
+        count = counts;
+        counts = $("#select-sub-product-selector div").length;
+
+        // tansfer value of thisValue to previousValue vice versa
+        previousValue = thisValue;
+        thisValue = $(this).val();
+
+        // find if the this value have sub product
+        const result = constant.GetDemoSolution.find(
+          (item, i) => thisValue === item.name
+        );
+
+        const product = constant.GetDemoSolution.filter((item, i) =>
+          result.subProduct.includes(item.id)
+        );
+
+        const selectComponent = componentFunction.selectOption(
+          "_".concat(result.id),
+          result.id,
+          constant.OptionalProductLabel.label
+        );
+
+        const validateValue = NMICore.AppendDataElement.ValidateValueElement(
+          previousValue,
+          thisValue
+        );
+
+        const validateLength = NMICore.AppendDataElement.CheckDataLengthElement(
+          result.subProduct.length
+        );
+
+        if (validateValue && validateLength) {
+          NMICore.AppendDataElement.AddElement(
+            constant.OptionalProductLabel.id,
+            selectComponent
+          );
+
+          NMICore.AppendDataElement.AddSelectOption(result.id, product);
+          NMICore.AppendDataElement.AppendOnChange(result.id);
+        }
+
+        NMICore.AppendDataElement.RemoveElement(
+          previousValue,
+          targetId,
+          counts
+        );
+      });
+    };
+
+    var removeElement = function (product, targetId, counts) {
+      console.log(counts);
+
+      if (product) {
+        let toRemove = constant.GetDemoSolution.find(
+          (item, i) => item.name === product
+        );
+
+        // console.log(targetId);
+
+        const id = $("#select-sub-product-selector, div").index(
+          "#_".concat(targetId)
+        );
+        // const id = $("#select-sub-product-selector _".concat(targetId)).val();
+        // console.log(id);
+
+        let indexToRemove = counts - id;
+
+        // if (counts > 1) {
+        $("#select-sub-product-selector div")
+          .slice(id + 1, counts)
+          .remove();
+        // }
+        // $("#_".concat(toRemove.id)).remove();
       }
     };
 
+    // var appendSelectElement = function (parentId) {
+    //   let previousValue = "";
+    //   let thisValue = $("#".concat(parentId)).val();
+
+    //   $("#".concat(parentId)).change(function () {
+    //     // tansfer value of thisValue to previousValue
+    //     previousValue = thisValue;
+    //     thisValue = $(this).val();
+
+    //     let isValid = previousValue === "" ? true : false;
+
+    //     // find if the this value have sub product
+    //     let result = constant.GetDemoSolution.find(
+    //       (item, i) => thisValue === item.name
+    //     );
+
+    //     let selectComponent = componentFunction.SelectOption(
+    //       result.id,
+    //       constant.OptionalProductLabel.label
+    //     );
+
+    //     if (isValid) {
+    //       if (result.subProduct.length > 0) {
+    //         $("#".concat(constant.OptionalProductLabel.id)).append(
+    //           selectComponent
+    //         );
+    //       }
+    //     } else {
+    //       if (previousValue !== thisValue) {
+    //         $("#".concat(constant.OptionalProductLabel.id)).empty();
+    //         if (result.subProduct.length > 0) {
+    //           $("#".concat(constant.OptionalProductLabel.id)).append(
+    //             selectComponent
+    //           );
+    //         }
+    //       }
+    //     }
+    //   });
+    // };
+
     return {
       AddSelectOption: addSelectOption,
+      AppendValidateSelectElement: appendValidateSelectElement,
+      AddElement: addElement,
+      ValidateValueElement: validateValueElement,
+      CheckDataLengthElement: checkDataLengthElement,
+      AppendOnChange: appendOnChange,
+      RemoveElement: removeElement,
     };
   })();
 
@@ -233,6 +406,15 @@ var NMICore = (function () {
     },
     AppendDataElement: {
       AddSelectOption: NMICORE_ConfigDataElement.AddSelectOption,
+      AppendValidateSelectElement:
+        NMICORE_ConfigDataElement.AppendValidateSelectElement,
+      AddElement: NMICORE_ConfigDataElement.AddElement,
+      VerifyElement: NMICORE_ConfigDataElement.VerifyElement,
+      DetectOnchange: NMICORE_ConfigDataElement.DetectOnchange,
+      RemoveElement: NMICORE_ConfigDataElement.RemoveElement,
+      ValidateValueElement: NMICORE_ConfigDataElement.ValidateValueElement,
+      CheckDataLengthElement: NMICORE_ConfigDataElement.CheckDataLengthElement,
+      AppendOnChange: NMICORE_ConfigDataElement.AppendOnChange,
     },
   };
 })();
