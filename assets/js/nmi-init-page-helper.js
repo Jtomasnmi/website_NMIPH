@@ -147,58 +147,10 @@ let initPageHelper = (function () {
 
   async function OptionalSelect() {
     $(window).on("load", function () {
-      let selectedIdArr = [];
       NMICore.AppendDataElement.AppendOnChange(
-        constant.RequiredProductLabel.selectId,
-        selectedIdArr
+        constant.RequiredProductLabel.selectId
       );
-      console.log(selectedIdArr);
     });
-    // let previousValue = "";
-    // let thisValue = $("#".concat(constant.RequiredProductLabel.selectId)).val();
-
-    // $(window).on("load", function () {
-    //   $("#".concat(constant.RequiredProductLabel.selectId)).change(function () {
-    //     // tansfer value of thisValue to previousValue
-    //     previousValue = thisValue;
-    //     thisValue = $(this).val();
-
-    //     // find if the this value have sub product
-    //     const result = constant.GetDemoSolution.find(
-    //       (item, i) => thisValue === item.name
-    //     );
-
-    //     const product = constant.GetDemoSolution.filter((item, i) =>
-    //       result.subProduct.includes(item.id)
-    //     );
-
-    //     const selectComponent = componentFunction.selectOption(
-    //       "-".concat(result.id),
-    //       result.id,
-    //       constant.OptionalProductLabel.label
-    //     );
-
-    //     const validateValue = NMICore.AppendDataElement.ValidateValueElement(
-    //       previousValue,
-    //       thisValue
-    //     );
-
-    //     const validateLength = NMICore.AppendDataElement.CheckDataLengthElement(
-    //       result.subProduct.length
-    //     );
-
-    //     if (validateValue && validateLength) {
-    //       NMICore.AppendDataElement.AddElement(
-    //         constant.OptionalProductLabel.id,
-    //         selectComponent
-    //       );
-
-    //       NMICore.AppendDataElement.AddSelectOption(result.id, product);
-    //     }
-
-    //     NMICore.AppendDataElement.RemoveElement(previousValue);
-    //   });
-    // });
   }
 
   async function AppendImgSrc() {

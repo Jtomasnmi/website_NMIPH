@@ -138,8 +138,6 @@ let componentFunction = (function () {
     return $(
       '<div id="' +
         divId +
-        '" value="' +
-        divId +
         '">' +
         '<label class="form-label text-dark text-xs fw-bold">' +
         label +
@@ -147,7 +145,7 @@ let componentFunction = (function () {
         '<select id="' +
         id +
         '" class="form-select" aria-label="Default select example" >' +
-        '"<option value="" selected>Select..</option>"' +
+        '"<option value="" selected disabled>Select..</option>"' +
         "</select>" +
         "</div>"
     );
@@ -156,6 +154,24 @@ let componentFunction = (function () {
   const imgElement = (src, name, className) => {
     return $(
       '<img src="' + src + '" alt="' + name + '" class="' + className + '"/>'
+    );
+  };
+
+  const checkBoxLabel = (className, desc, alias) => {
+    return $(
+      '<div id="' +
+        className +
+        '" class="form-check">' +
+        "<input " +
+        'class="form-check-input"' +
+        'type="checkbox"' +
+        ' value=""' +
+        'id="flexCheckDefault"' +
+        "/>" +
+        '<label class="form-check-label text-dark" for="flexCheckDefault">' +
+        desc.concat(" ").concat(alias) +
+        "</label>" +
+        "</div>"
     );
   };
 
@@ -168,5 +184,6 @@ let componentFunction = (function () {
     getDemoCard: getDemoCard,
     selectOption: selectOption,
     imgElement: imgElement,
+    CheckBoxLabel: checkBoxLabel,
   };
 })();

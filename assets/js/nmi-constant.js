@@ -494,189 +494,208 @@ let constant = (function () {
     },
   ];
 
-  [{ fk: "" }];
-  // const getDemoSolution = [
-  //   {
-  //     name: "RMM/Endpoint Management",
-  //     subProduct: [
-  //       "Kaseya VSA",
-  //       "Datto RMM",
-  //       "Kaseya 365 Express",
-  //       "Kaseya 365 PRO",
-  //     ],
-  //   },
-  //   {
-  //     name: "Audit & Compliance",
-  //     subProduct: ["IT Risk Assessment", "IT Compliance"],
-  //   },
-  //   {
-  //     name: "Security",
-  //     subProduct: [
-  //       "Email Security",
-  //       "Security Awareness Training",
-  //       "Endpoint Detection & Response",
-  //       "Managed SOC",
-  //       "Networking Penetration Testing",
-  //       "Datto Antivirus",
-  //       "Kaseya 365 User",
-  //       "Saas Alerts",
-  //     ],
-  //   },
-  //   {
-  //     name: "Unified Backup",
-  //     subProduct: [],
-  //   },
-  //   {
-  //     name: "IT Operations",
-  //     subProduct: [
-  //       " IT Documentation",
-  //       "PSA/Service Desk",
-  //       "Billing & Collections",
-  //       "vCIO",
-  //     ],
-  //   },
-  //   {
-  //     name: "MSP Enablement",
-  //     subProduct: [],
-  //   },
-  //   {
-  //     name: "Networking",
-  //     subProduct: [],
-  //   },
-  // ];
   const getDemoSolution = [
     {
       id: 1,
       name: "RMM/Endpoint Management",
       subProduct: [2, 3, 4, 5],
-      isMainProduct: true,
+      isParent: true,
+      alias: "",
     },
     {
       id: 2,
       name: "Kaseya VSA",
       subProduct: [12, 13],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
     {
       id: 3,
       name: "Datto RMM",
       subProduct: [21],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
     {
       id: 4,
       name: "Kaseya 365 Express",
       subProduct: [],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
     {
       id: 5,
       name: "Kaseya 365 PRO",
       subProduct: [],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
     {
       id: 6,
       name: "Audit & Compliance",
       subProduct: [7, 8],
-      isMainProduct: true,
+      isParent: true,
+      alias: "",
     },
     {
       id: 7,
       name: "IT Risk Assessment",
       subProduct: [],
 
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
     {
       id: 8,
       name: "IT Compliance",
       subProduct: [11],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
     {
       id: 9,
       name: "Security",
       subProduct: [10, 11, 12, 13, 14, 15, 16, 17],
-      isMainProduct: true,
+      isParent: true,
+      alias: "",
     },
     {
       id: 10,
       name: "Email Security",
       subProduct: [],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
     {
       id: 11,
       name: "Security Awareness Training",
       subProduct: [],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
     {
       id: 12,
       name: "Endpoint Detection & Response",
       subProduct: [20, 23],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
     {
       id: 13,
       name: "Managed SOC",
       subProduct: [],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
     {
       id: 14,
       name: "Networking Penetration Testing",
       subProduct: [],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
     {
       id: 15,
       name: "Datto Antivirus",
       subProduct: [],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
     {
       id: 16,
       name: "Kaseya 365 User",
       subProduct: [],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
     {
       id: 17,
       name: "Saas Alerts",
       subProduct: [],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
 
     {
       id: 18,
       name: "Unified Backup",
       subProduct: [],
-      isMainProduct: true,
+      isParent: true,
+      alias: "Unitrends",
     },
     {
       id: 19,
       name: "IT Operations",
       subProduct: [20, 21, 22, 23],
-      isMainProduct: true,
+      isParent: true,
+      alias: "",
     },
     {
       id: 20,
       name: "IT Documentation",
       subProduct: [25],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
-    { id: 21, name: "PSA/Service Desk", subProduct: [], isMainProduct: false },
+    {
+      id: 21,
+      name: "PSA/Service Desk",
+      subProduct: [],
+      isParent: false,
+      alias: "",
+    },
     {
       id: 22,
       name: "Billing & Collections",
       subProduct: [],
-      isMainProduct: false,
+      isParent: false,
+      alias: "",
     },
-    { id: 23, name: "vCIO", subProduct: [], isMainProduct: false },
-    { id: 24, name: "MSP Enablement", subProduct: [], isMainProduct: true },
-    { id: 25, name: "Networking", subProduct: [], isMainProduct: true },
+    { id: 23, name: "vCIO", subProduct: [], isParent: false, alias: "" },
+    {
+      id: 24,
+      name: "MSP Enablement",
+      subProduct: [26, 27, 28],
+      isParent: true,
+      alias: "",
+    },
+    {
+      id: 25,
+      name: "Networking",
+      subProduct: [],
+      isParent: true,
+      alias: "Datto",
+    },
+    { id: 26, name: "TruPeer", subProduct: [], isParent: false, alias: "" },
+    { id: 27, name: "myItProcess", subProduct: [], isParent: false, alias: "" },
+    {
+      id: 28,
+      name: "Powered Service Pro",
+      subProduct: [],
+      isParent: false,
+      alias: "",
+    },
+  ];
+
+  let endpointQtyManage = [
+    {
+      name: "0-100",
+    },
+    {
+      name: "101-250",
+    },
+    {
+      name: "251-500",
+    },
+    {
+      name: "501-1000",
+    },
+    {
+      name: "1001-2500",
+    },
+    {
+      name: "2501+",
+    },
   ];
 
   let automationProp = [
@@ -721,6 +740,18 @@ let constant = (function () {
   let optionalProductLabel = {
     id: "select-sub-product-selector",
     label: "Please identify your product interest",
+  };
+
+  let manageEndpointLabel = {
+    id: "extra-element-selector",
+    selectId: "extra-select",
+    label: "How many endpoints do you manage?",
+  };
+
+  let checkBoxLabel = {
+    id: "checkbox-container-selector",
+    className: "form-check",
+    description: "Yes, I agree to receive promotional emails from",
   };
 
   let certificateSrc = [
@@ -771,5 +802,8 @@ let constant = (function () {
     RequiredProductLabel: requiredProductLabel,
     OptionalProductLabel: optionalProductLabel,
     CertificateSrc: certificateSrc,
+    EndpointQtyManage: endpointQtyManage,
+    ManageEndpointLabel: manageEndpointLabel,
+    CheckBoxLabel: checkBoxLabel,
   };
 })();
