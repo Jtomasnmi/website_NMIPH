@@ -750,7 +750,6 @@ let constant = (function () {
 
   let checkBoxLabel = {
     id: "checkbox-container-selector",
-    className: "form-check",
     description: "Yes, I agree to receive promotional emails from",
   };
 

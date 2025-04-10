@@ -37,7 +37,7 @@
                 <div class="social-links">
                     <!-- <p style="margin-top: 0.4rem;">Info@www.nmiph.com</p>&emsp; -->
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Info@www.nmiph.com" class="email" target="_blank"><i class="bi bi-envelope"></i></a>
-                    <a href="https://www.facebook.com/NetworkManagerInc" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://www.facebook.com/people/NMI/61575203936004/" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
                     <a href="https://www.linkedin.com/company/nm-network-manager-sales-inc-/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
                 </div>
             </div>

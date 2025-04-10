@@ -126,7 +126,7 @@ let componentFunction = (function () {
         "<h6>" +
         title +
         "</h6>" +
-        '<p class="text-sm fw-light mb-0 txt-justify">' +
+        '<p class="text-sm fw-light mb-0">' +
         description +
         "</p>" +
         "</div>" +
@@ -157,10 +157,10 @@ let componentFunction = (function () {
     );
   };
 
-  const checkBoxLabel = (className, desc, alias) => {
+  const checkBoxLabel = (id, desc, alias) => {
     return $(
       '<div id="' +
-        className +
+        id +
         '" class="form-check">' +
         "<input " +
         'class="form-check-input"' +

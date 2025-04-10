@@ -253,7 +253,7 @@ var NMICore = (function () {
         );
 
         const selectCheckBox = componentFunction.CheckBoxLabel(
-          constant.CheckBoxLabel.className,
+          result.id,
           constant.CheckBoxLabel.description,
           result.alias
         );
@@ -290,28 +290,29 @@ var NMICore = (function () {
         NMICore.AppendDataElement.RemoveElement(
           previousValue,
           targetId,
-          counts,
-          result.alias
+          counts
         );
       });
     };
 
-    var removeElement = function (product, targetId, counts, alias) {
+    var removeElement = function (product, targetId, counts) {
       if (product) {
         const id = $(
           "#select-sub-product-selector #_".concat(targetId)
         ).index();
 
+        const withAliasId = constant.GetDemoSolution.find(
+          (v, i) => v.name === product
+        );
+
         $("#select-sub-product-selector div")
           .slice(id + 1, counts)
           .remove();
+
+        $("#".concat(withAliasId.id)).remove();
       }
       if (product === "RMM/Endpoint Management") {
         $("#_".concat(constant.ManageEndpointLabel.selectId)).remove();
-      }
-
-      if (alias) {
-        $("#".concat(constant.CheckBoxLabel.className)).remove();
       }
     };
 

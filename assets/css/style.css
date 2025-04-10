@@ -2611,28 +2611,31 @@ section {
 
 .get-demo .get-demo-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   margin-bottom: 6rem;
+  gap: 3rem;
 }
 
 .get-demo .get-demo-content .demo-sub-content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
 }
 .get-demo .get-demo-content .get-demo-icon {
   background-color: #0073e6;
   padding: 0.5rem;
 }
+.get-demo-content .container-fluid {
+  padding: 0rem;
+}
 
 .demo-content {
-  grid-column: span 2;
   margin: 0 1rem;
-  padding-right: 5rem;
+}
+.demo-form-container .demo-form {
+  background-color: #fff;
 }
 .demo-form {
-  grid-column: span 1;
-  background-color: #fff;
   padding: 1rem 2rem;
 }
 .demo-form form {
@@ -2660,10 +2663,11 @@ section {
 
 .certificates {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 3.2rem;
   margin-top: 4rem;
-  padding: 3rem;
+  padding: 3rem 0rem;
   background-color: #34495e !important;
   border-top: 5px solid #0059b3;
 }
@@ -2673,11 +2677,17 @@ section {
 }
 
 .certificates-label {
-  width: 55%;
-  margin-left: 1rem;
+  width: 100%;
+  padding: 0 1rem;
+  text-align: center;
+}
+.certificates-label h2 {
+  font-size: 23px;
 }
 
 .certificates-img-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 2.5rem;
 }
