@@ -1072,7 +1072,11 @@ dl {
 }
 
 #kaseya365 .card {
-  background-color: rgba(255, 255, 255, 0.06) !important;
+  background-color: transparent !important;
+  border: none;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+  /* box-shadow: 0 10px 15px -3px #0456aa, 0 4px 6px -4px #0456aa; */
   color: #fff;
   overflow: hidden;
   border-radius: 0 !important;
@@ -1100,6 +1104,13 @@ dl {
 
 #k365-card-btn {
   width: 15rem !important;
+  background-color: #012d6c;
+  color: #f6f6f6;
+}
+#k365-card-btn:hover {
+  width: 15rem !important;
+  background-color: #0456aa;
+  color: #f6f6f6;
 }
 /* .tooltip-inner {
   background-color: #1f4569 !important;

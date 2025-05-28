@@ -75,6 +75,7 @@ let constant = (function () {
 
   let appendedElementTag = {
     li: "li",
+    p: "p",
   };
 
   const footerNav = [
@@ -385,22 +386,51 @@ let constant = (function () {
 
   const k365EndpointUserBanner = [
     {
-      logoSelector: "endpoint-k365-selector",
-      title: "Kaseya 365 Endpoint",
-      desc: "Everything Needed to Manage, Secure and Backup Endpoints",
+      logo: "./assets/img/nmi-k-365/k365-endpoint.png",
+      desc: "The Complete Package For Your Endpoint",
       btnLabel: "Explore Kaseya 365 Endpoint",
       targetModal: "k365-content-modal",
-      svgColor:
-        "radial-gradient(40% 40% at 75% 12%,#5cc0ec 0%,rgba(92,236,205,0) 100%),radial-gradient(59.56% 57% at 49.45% 50.47%,rgba(1,198,190,0) 65%,rgba(1,198,190,.9) 100%)",
+      packages: [
+        "RMM",
+        "Patch Management",
+        "Endpoint Detection & Response",
+        "Anti Virus",
+        "Ransomeware Detection",
+        "Endpoint Backup",
+        "Manage Detection & Response",
+      ],
     },
     {
-      logoSelector: "user-k365-selector",
-      title: "Kaseya 365 User",
-      desc: "Everything Needed to Manage, Secure and Backup Endpoints",
+      logo: "./assets/img/nmi-k-365/k365-user.png",
+      desc: "Fortified Further Your Cyber Landscape",
       btnLabel: "Explore Kaseya 365 User",
       targetModal: "k365-user-modal",
-      svgColor:
-        "radial-gradient(40% 40% at 75% 12%,#5ceca4,rgba(118,236,92,0) 100%),radial-gradient(59.56% 57% at 49.45% 50.47%,rgba(133,232,28,0) 65%,rgba(133,232,28,.9) 100%)",
+      packages: [
+        "Anti-Phishing",
+        "User Awareness Training",
+        "User Susceptibility Testing",
+        "Dark Web  Monitoring",
+        "Saas Application Management",
+        "Saas Event Alerting",
+        "Automatic Saas Account Locking",
+        "Microsoft 365",
+        "Google Workplace Backup",
+      ],
+    },
+    {
+      logo: "./assets/img/nmi-k-365/k365-ops.png",
+      desc: "Top Performance Through AI-Driven Authomation",
+      btnLabel: "Explore Kaseya 365 Ops",
+      targetModal: "k365-ops-modal",
+      packages: [
+        "Professional Services Automation",
+        "Billing & Accounts Receivable",
+        "Qouting & Procurement",
+        "Network Discovery & Password Rotation",
+        "IT Collaboration",
+        "Quarterly Business Reviews",
+        "Executive Reports",
+      ],
     },
   ];
 
@@ -416,37 +446,37 @@ let constant = (function () {
 
   let solutionsBanner = [
     {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-1.svg",
+      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-1.png",
       targetModal: "#rmm-endpoint-modal",
       label: "Endpoint Management",
     },
     {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-2.svg",
+      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-2.png",
       targetModal: "#security-modal",
       label: "Security",
     },
     {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-3.svg",
+      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-3.png",
       targetModal: "#backup-dr-modal",
       label: "Backup & DR",
     },
     {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-4.svg",
+      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-4.png",
       targetModal: "#audit-modal",
       label: "Audit",
     },
     {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-5.svg",
+      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-5.png",
       targetModal: "#compliance-modal",
       label: "Compliance",
     },
     {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-6.svg",
+      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-6.png",
       targetModal: "#servicedesk-modal",
       label: "Service Desk",
     },
     {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-7.svg",
+      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-7.png",
       targetModal: "#it-documentation-modal",
       label: "IT Documentation",
     },

@@ -25,6 +25,10 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/toastr/css/toastr.min.css" rel="stylesheet">
+
+  <!-- Huge Icon -->
+  <!-- <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css" /> -->
+   <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
   
 
   <!-- Template Main CSS File -->
@@ -43,7 +47,7 @@
     <!-- ======= Profile Section ======= -->
       <?php include 'forms/main/profile.php';?>
     <!-- ======= Careers Section ======= -->
-      <?php include 'forms/main/careers.php';?>
+      <!-- <?php include 'forms/main/careers.php';?> -->
     <!-- ======= Contact Section ======= -->
       <?php include 'forms/main/contact.php';?>
     <!-- ======= Cookies ======= -->

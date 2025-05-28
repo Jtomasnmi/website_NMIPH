@@ -70,22 +70,36 @@ let componentFunction = (function () {
     );
   };
 
-  const k365BannerCard = (logoSelector, title, desc, btnLabel, targetModal) => {
+  const k365BannerCard = (
+    id,
+    packageSelector,
+    src,
+    desc,
+    btnLabel,
+    targetModal
+  ) => {
     return $(
-      '<div class="card">' +
+      '<div id="' +
+        id +
+        '" class="position-relative">' +
+        '<div class="card" style="height: 35rem">' +
         '<div class="card-body">' +
-        '<div class="d-block d-lg-flex align-items-center gap-4">' +
-        '<div id="' +
-        logoSelector +
-        '" class="d-none d-lg-block banner-color"></div>' +
-        '<div class="">' +
-        '<h5 class="raleway-font">' +
-        title +
-        "</h5>" +
-        "<p>" +
+        '<p class="kaseya365-title">' +
         desc +
         "</p>" +
-        '<button id="k365-card-btn" class="btn btn-primary btn-sm k365-banner-modals raleway-font" data-bs-toggle="modal" data-bs-target="#' +
+        '<div class="d-flex justify-content-center">' +
+        '<img src="' +
+        src +
+        '" class="ratio ratio-1x1 w-50"/>' +
+        "</div>" +
+        '<div id="' +
+        packageSelector +
+        '" class="kaseya-package-grid">' +
+        "</div>" +
+        "</div>" +
+        '<div class="card-footer">' +
+        '<div class="d-flex justify-content-center">' +
+        '<button id="k365-card-btn" class="btn btn-sm k365-banner-modals raleway-font" data-bs-toggle="modal" data-bs-target="#' +
         targetModal +
         '">' +
         btnLabel +
@@ -99,17 +113,15 @@ let componentFunction = (function () {
 
   const solutionsBanner = (img, targetModal, label) => {
     return $(
-      '<div class="col">' +
-        '<div class="zoom border solution-card">' +
-        "<img src=" +
-        img +
-        ' width="60rem" height="60rem"/>' +
-        '<label><a class="solutions-div-two" data-bs-toggle="modal" data-bs-target="' +
+      '<div class="zoom solution-card" data-bs-toggle="modal" data-bs-target="' +
         targetModal +
         '">' +
+        "<img src=" +
+        img +
+        ' class="ratio ratio-4x3 w-50"/>' +
+        '<label><a class="solutions-div-two">' +
         label +
         "</a></label>" +
-        "</div>" +
         "</div>"
     );
   };

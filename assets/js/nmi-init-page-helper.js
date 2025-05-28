@@ -81,14 +81,15 @@ let initPageHelper = (function () {
 
   const K365BannerCard = () => {
     $.each(constant.K365EndpointUserBanner, function (index, value) {
+      let packageSelector = value.targetModal.concat(index);
       const cardData = componentFunction.k365BannerCard(
-        value.logoSelector,
-        value.title,
+        index + 1,
+        packageSelector,
+        value.logo,
         value.desc,
         value.btnLabel,
         value.targetModal
       );
-
       $("#kaseya365").append(cardData);
     });
   };

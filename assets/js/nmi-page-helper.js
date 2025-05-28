@@ -17,6 +17,10 @@ let modalPageHelper = (function () {
     footerNavClass();
     addSelectOption();
     appendColorKaseyaBanner();
+    // createCircle();
+    AddTitleLineStyle();
+    AddKaseyaPackage();
+    appendKaseya365HrCard();
   };
 
   let clickEvent = function () {
@@ -115,10 +119,9 @@ let modalPageHelper = (function () {
   const appendColorKaseyaBanner = () => {
     $(window).on("load", function () {
       $.each(constant.K365EndpointUserBanner, function (i, value) {
-        $("#kaseya365 #".concat(value.logoSelector).concat(" figure")).css(
-          "background-image",
-          value.svgColor
-        );
+        $(
+          "#kaseya365 #".concat(value.logoSelector).concat(" figure svg g")
+        ).attr("fill", "#f6f6f6");
       });
     });
   };
@@ -133,6 +136,37 @@ let modalPageHelper = (function () {
         constant.RequiredProductLabel.selectId,
         primaryProduct
       );
+    });
+  }
+
+  async function AddTitleLineStyle() {
+    $(window).on("load", function () {
+      $(".section-title").append(
+        $('<hr class="hr-main hr-blue">').css("width", "17rem")
+      );
+    });
+  }
+
+  async function AddKaseyaPackage() {
+    $(window).on("load", function () {
+      $.each(constant.K365EndpointUserBanner, function (i, value) {
+        let packageSelector = value.targetModal.concat(i);
+        $.each(value.packages, function (i, package) {
+          $("#".concat(packageSelector)).append("<p>" + package + "</p>");
+        });
+      });
+    });
+  }
+
+  async function appendKaseya365HrCard() {
+    $(window).on("load", function () {
+      $.each(constant.K365EndpointUserBanner, function (i) {
+        if (i + 1 < $(constant.K365EndpointUserBanner).length) {
+          $("#".concat(i + 1)).append(
+            '<hr class="hr-main hr-vertical hr-orange">'
+          );
+        }
+      });
     });
   }
 
