@@ -42,10 +42,13 @@
   <!-- ======= Banner Section ======= -->
       <?php include 'forms/main/banner.php';?>
   <main id="main">
+    <!-- ======= Product Section ======= -->
+      <?php include 'forms/main/platform.php';?>
+    <!-- ======= Solution Section ======= -->
+      <?php include 'forms/main/solutions.php';?>
     <!-- ======= News Section ======= -->
-      <?php include 'forms/main/news.php';?>
+      <!-- <?php include 'forms/main/news.php';?> -->
     <!-- ======= Profile Section ======= -->
-      <?php include 'forms/main/profile.php';?>
     <!-- ======= Careers Section ======= -->
       <!-- <?php include 'forms/main/careers.php';?> -->
     <!-- ======= Contact Section ======= -->

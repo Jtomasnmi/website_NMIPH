@@ -98,7 +98,7 @@ let initPageHelper = (function () {
     $(function () {
       $.each(constant.SolutionsBanner, function (index, value) {
         let solBanner = componentFunction.solutionsBanner(
-          value.img,
+          value.description,
           value.targetModal,
           value.label
         );

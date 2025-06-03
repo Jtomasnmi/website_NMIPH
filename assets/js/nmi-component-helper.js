@@ -82,7 +82,7 @@ let componentFunction = (function () {
       '<div id="' +
         id +
         '" class="position-relative">' +
-        '<div class="card" style="height: 35rem">' +
+        '<div class="card">' +
         '<div class="card-body">' +
         '<p class="kaseya365-title">' +
         desc +
@@ -90,7 +90,7 @@ let componentFunction = (function () {
         '<div class="d-flex justify-content-center">' +
         '<img src="' +
         src +
-        '" class="ratio ratio-1x1 w-50"/>' +
+        '" class="ratio ratio-1x1 img-width"/>' +
         "</div>" +
         '<div id="' +
         packageSelector +
@@ -111,17 +111,22 @@ let componentFunction = (function () {
     );
   };
 
-  const solutionsBanner = (img, targetModal, label) => {
+  const solutionsBanner = (description, targetModal, label) => {
     return $(
-      '<div class="zoom solution-card" data-bs-toggle="modal" data-bs-target="' +
-        targetModal +
-        '">' +
-        "<img src=" +
-        img +
-        ' class="ratio ratio-4x3 w-50"/>' +
-        '<label><a class="solutions-div-two">' +
+      '<div class="card h-100">' +
+        '<div class="card-body px-3">' +
+        '<div class="solution-card-content">' +
+        '<h5 class="text-white mb-0 solution-label">' +
         label +
-        "</a></label>" +
+        "</h5>" +
+        '<p class="solution-description">' +
+        description +
+        "</p>" +
+        '<div><i class="hgi hgi-stroke hgi-arrow-right-01 solution-sm-icon" data-bs-toggle="modal" data-bs-target="' +
+        targetModal +
+        '"></i></div>' +
+        "</div>" +
+        "</div>" +
         "</div>"
     );
   };

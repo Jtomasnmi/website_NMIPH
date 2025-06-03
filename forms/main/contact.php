@@ -2,15 +2,15 @@
     echo 
     '<section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2 class="gradient-title">Contact Us</h2>
+            <div>
+                <h2 class="section-label text-blue-1">Contact Us</h2>
+                <p class="section-description">We’re here to help you simplify IT management for IT teams that cover every piece of technology a modern business needs to function. Utilize your IT tools more efficiently with software solutions that help you take the complexities out of IT.
+                Speak with one of our solution engineers and let’s explore how NMI can help you intelligently solve your technology challenges.</p>
             </div>
-            <p>We’re here to help you simplify IT management for IT teams that cover every piece of technology a modern business needs to function. Utilize your IT tools more efficiently with software solutions that help you take the complexities out of IT.
-            <br><br>Speak with one of our solution engineers and let’s explore how NMI can help you intelligently solve your technology challenges.</p>
             <div class="contact-grid">
                 <div>
                     <form id="frmClientContactRegistrationForm" method="post" role="form" class="contact-panel php-email-form">
-                        <h6>Drop us a message</h6>
+                        <h6 class="text-blue-1">Drop us a message</h6>
                         <div id="grpClientDetail">
                             <div class="input-grid">
                                 <div class="col form-group">
@@ -62,25 +62,33 @@
                 </div>
                 <div>
                     <form id="frmCompanyDetailForm" role="form" class="contact-panel php-email-form">
-                        <h6>General Information</h6>
+                        <h6 class="text-blue-1">General Information</h6>
                         <div class="">
                             <div class="contact-icon-aligment">
-                                <i class="hgi hgi-stroke hgi-location-01"></i>
+                                <div>
+                                    <i class="hgi hgi-stroke hgi-location-01"></i>
+                                </div>
                                 <p name="c-Address"> </p>
                             </div>
                             <div class="contact-icon-aligment">
-                                <i class="hgi hgi-stroke hgi-contact-02"></i>
+                                <div>
+                                    <i class="hgi hgi-stroke hgi-contact-02"></i>
+                                </div>
                                 <p name="c-ContactNo"> </p>
                             </div>
                             <div class="contact-icon-aligment">
-                                <i class="hgi hgi-stroke hgi-mail-01"></i>
+                                <div>
+                                    <i class="hgi hgi-stroke hgi-mail-01"></i>
+                                </div>
                                 <p name="c-EmailAddress"> </p>
                             </div>
                         </div>
                         <div class="mt-4">
                             <h6 class="pull-left">Office Hours</h6>
                             <div class="contact-icon-aligment">
-                                <i class="hgi hgi-stroke hgi-clock-01"></i>
+                                <div>
+                                    <i class="hgi hgi-stroke hgi-clock-01"></i>
+                                </div>
                                 <p name="c-OfficeHours"> </p>
                             </div>
                         </div>

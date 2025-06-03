@@ -160,13 +160,15 @@ let modalPageHelper = (function () {
 
   async function appendKaseya365HrCard() {
     $(window).on("load", function () {
-      $.each(constant.K365EndpointUserBanner, function (i) {
-        if (i + 1 < $(constant.K365EndpointUserBanner).length) {
-          $("#".concat(i + 1)).append(
-            '<hr class="hr-main hr-vertical hr-orange">'
-          );
-        }
-      });
+      if ($(window).width() > 1023) {
+        $.each(constant.K365EndpointUserBanner, function (i) {
+          if (i + 1 < $(constant.K365EndpointUserBanner).length) {
+            $("#".concat(i + 1)).append(
+              '<hr class="hr-main hr-vertical hr-orange">'
+            );
+          }
+        });
+      }
     });
   }
 

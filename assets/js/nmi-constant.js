@@ -446,39 +446,40 @@ let constant = (function () {
 
   let solutionsBanner = [
     {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-1.png",
       targetModal: "#rmm-endpoint-modal",
       label: "Endpoint Management",
+      description:
+        "Take control of your IT environment from anywhere with intuitive solutions that adapt to your needs.",
     },
     {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-2.png",
+      targetModal: "#backup-dr-modal",
+      label: "Backup And Recovery",
+      description:
+        "Protect your data effortlessly, regardless of where it lives",
+    },
+    {
       targetModal: "#security-modal",
       label: "Security",
+      description:
+        "Protect your organization with layered security across cloud, endpoints, networks and users in a single solution.",
     },
     {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-3.png",
-      targetModal: "#backup-dr-modal",
-      label: "Backup & DR",
+      targetModal: "#it-risk-modal",
+      label: "IT Risk Management",
+      description:
+        "Protect your organization with layered security across cloud, endpoints, networks and users in a single solution.",
     },
     {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-4.png",
-      targetModal: "#audit-modal",
-      label: "Audit",
+      targetModal: "#networking-modal",
+      label: "Networking",
+      description:
+        "Provide seamless connectivity, reduce downtime and keep your team productive.",
     },
     {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-5.png",
-      targetModal: "#compliance-modal",
-      label: "Compliance",
-    },
-    {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-6.png",
-      targetModal: "#servicedesk-modal",
-      label: "Service Desk",
-    },
-    {
-      img: "assets/img/nmi_solutions/Solutions-Menu/menu-icon-7.png",
-      targetModal: "#it-documentation-modal",
-      label: "IT Documentation",
+      targetModal: "#It-Operation-modal",
+      label: "IT Operations",
+      description:
+        "Automate workflows, optimize service delivery and streamline the entire quote-to-cash process to reduce friction and boost productivity.",
     },
   ];
 

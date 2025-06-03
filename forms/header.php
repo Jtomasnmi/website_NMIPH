@@ -154,40 +154,30 @@
     // </header>';
     echo '<header id="header" class="w-100">
             <div class="container d-flex align-items-center justify-content-between ps-3 pe-3 py-2">
-                <img src="assets/img/logo/NMILogo2025White.png" class="logo ratio ratio-4x3"/>
+                <img src="assets/img/logo/NMILogo2025WhiteOrange.png" class="logo ratio ratio-4x3"/>
                 <div class="d-flex align-items-center gap-3">
                     <nav id="navbar" class="navbar">
                         <ul class="default-nav navbar-ul-dist">
                             <li class="nav-link-style"><a class="scrollto" href="#hero">Home</a></li>
-                            <li class="nav-link-style dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button">
-                                    Solutions
-                                </a>
-                                <ul class="dropdown-menu box-dropdown d-block remove-radius">
-                                    <div class="container px-4">
-                                        <h4 class="text-lg text-blue-1 mb-0 solution-nav">Featured Solutions</h4>
-                                        <div class="d-flex flex-column gap-2 mt-4">
-                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">Endpoint Management</p>
-                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#security-modal">Security</p>
-                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#backup-dr-modal">Backup & DR</p>
-                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#audit-modal">Audit</p>
-                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#compliance-modal">Compliance</p>
-                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#servicedesk-modal">Service Desk</p>
-                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#it-documentation-modal">IT Documentation</p>
-                                        </div>
-                                    </div>
-                                </ul>
-                            </li>
-                            <li class="nav-link-style"><a class="scrollto" href="#news">News</a></li>
-                            <li class="nav-link-style"><a class="scrollto" href="#about-us">About Us</a></li>
+                            <li class="nav-link-style"><a class="scrollto" href="#platform">Platform</a></li>
+                            <li class="nav-link-style"><a class="scrollto" href="#solutions">Solutions</a></li>
                             <li class="nav-link-style"><a class="scrollto" href="#contact">Contact Us</a></li>
+                            <li><button id="get-demo-btn" class="btn get-start-btn scrollto" data-bs-toggle="modal" data-bs-target="#get-a-demo">Get A Demo</button>
+                    </li>
                         </ul>
                     </nav>
                 </div>
                 <div class="d-flex align-items-center gap-4">
-                    <button id="get-demo-btn" class="btn get-start-btn scrollto" data-bs-toggle="modal" data-bs-target="#get-a-demo">Get A Demo</button>
+                    <div class="dropdown-center toggle-md">
+                        <i class="hgi hgi-stroke hgi-menu-07 about-us-nav" id="nav-dropdown" data-bs-toggle="dropdown"></i>
+                        <div class="dropdown-menu" aria-labelledby="nav-dropdown">
+                            <a class="dropdown-item sub-navigation-item text-blue-1" href="#">News</a>
+                            <a class="dropdown-item sub-navigation-item text-blue-1" href="#">About Us</a>
+                        </div>
+                    </div>
                     <i id="toggleSmNav" class="hgi hgi-stroke hgi-menu-01 toggle-sm-nav" data-bs-toggle="modal" data-bs-target="#smallNavModal"></i>
                 </div>
+                
             </div>
     </header>';
 
@@ -198,7 +188,7 @@
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content sm-nav-collapse">
                 <div class="modal-header">
-                    <img src="assets/img/logo/NMILogo2025White.png" class="logo ms-1 "/>
+                    <img src="assets/img/logo/NMILogo2025WhiteOrange.png" class="logo ms-1 "/>
                     <i class="hgi hgi-stroke hgi-cancel-01 btn-close-nav" data-bs-dismiss="modal" aria-label="Close"></i>
                 </div>
                 <div class="modal-body">
@@ -207,31 +197,18 @@
                         <div><i class="hgi hgi-stroke hgi-home-01 sm-nav-icon"></i></div>
                         <a class="scrollto nav-sm-label" href="#hero">Home</a>
                     </li>
-                    <li class="d-flex align-items-center justify-content-between" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false">
-                        <div class="d-flex align-items-center gap-3">
-                            <div><i class="hgi hgi-stroke hgi-bulb sm-nav-icon"></i></div>
-                            <a class="scrollto nav-sm-label" href="#services">Solutions</a>
-                        </div>
-                        <i class="hgi hgi-stroke hgi-sharp hgi-arrow-down-01 nav-dropdown-icon"></i>
+                    <li class="d-flex align-items-center gap-3" id="mobileTab">
+                        <div><i class="hgi hgi-stroke hgi-git-merge sm-nav-icon"></i></div>
+                        <a class="scrollto nav-sm-label" href="#products">Products</a>
                     </li>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            <div class="container">
-                                <div class="container px-4">
-                                    <h4 class="text-lg text-blue-1 mb-0 solution-nav mt-0">Featured Solutions</h4>
-                                    <div class="d-flex flex-column gap-2 mt-4">
-                                        <p class="hypertext" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">Endpoint Management</p>
-                                        <p class="hypertext" data-bs-toggle="modal" data-bs-target="#security-modal">Security</p>
-                                        <p class="hypertext" data-bs-toggle="modal" data-bs-target="#backup-dr-modal">Backup & DR</p>
-                                        <p class="hypertext" data-bs-toggle="modal" data-bs-target="#audit-modal">Audit</p>
-                                        <p class="hypertext" data-bs-toggle="modal" data-bs-target="#compliance-modal">Compliance</p>
-                                        <p class="hypertext" data-bs-toggle="modal" data-bs-target="#servicedesk-modal">Service Desk</p>
-                                        <p class="hypertext" data-bs-toggle="modal" data-bs-target="#it-documentation-modal">IT Documentation</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <li class="d-flex align-items-center gap-3" id="mobileTab">
+                        <div><i class="hgi hgi-stroke hgi-bulb sm-nav-icon"></i></div>
+                        <a class="scrollto nav-sm-label" href="#services">Solutions</a>
+                    </li>
+                    <li class="d-flex align-items-center gap-3" id="mobileTab">
+                        <div><i class="hgi hgi-stroke hgi-sharp hgi-contact-02 sm-nav-icon"></i></div>
+                        <a class="  scrollto nav-sm-label" href="#contact">Contact Us</a>
+                    </li>
                     <li class="d-flex align-items-center gap-3" id="mobileTab">
                     <div><i class="hgi hgi-stroke hgi-license sm-nav-icon"></i></div>
                         <a class="scrollto nav-sm-label" href="#news">News</a>
@@ -240,10 +217,7 @@
                         <div><i class="hgi hgi-stroke hgi-sharp hgi-building-02 sm-nav-icon"></i></div>
                         <a class="scrollto nav-sm-label" href="#about-us">About Us</a>
                     </li>
-                    <li class="d-flex align-items-center gap-3" id="mobileTab">
-                        <div><i class="hgi hgi-stroke hgi-sharp hgi-contact-02 sm-nav-icon"></i></div>
-                        <a class="  scrollto nav-sm-label" href="#contact">Contact Us</a>
-                    </li>
+                    
                 </ul>
                 </div>
             </div>
@@ -326,3 +300,25 @@
                         <a class=" scrollto fs-6 fw-medium sm-nav-icon" href="#contact">Contact Us</a>
                     </li>
                 </ul> -->
+
+
+<!-- old solution
+<li class="nav-link-style dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button">
+                                    Solutions
+                                </a>
+                                <ul class="dropdown-menu box-dropdown d-block remove-radius">
+                                    <div class="container px-4">
+                                        <h4 class="text-lg text-blue-1 mb-0 solution-nav">Featured Solutions</h4>
+                                        <div class="d-flex flex-column gap-2 mt-4">
+                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">Endpoint Management</p>
+                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#security-modal">Security</p>
+                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#backup-dr-modal">Backup & DR</p>
+                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#audit-modal">Audit</p>
+                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#compliance-modal">Compliance</p>
+                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#servicedesk-modal">Service Desk</p>
+                                            <p class="hypertext" data-bs-toggle="modal" data-bs-target="#it-documentation-modal">IT Documentation</p>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li> -->

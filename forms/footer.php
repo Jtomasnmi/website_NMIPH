@@ -70,7 +70,7 @@
                         <a class="text-blue-1 text-xs">Kaseya 365 Ops</a>
                     </div>
                     <div class="d-flex flex-column gap-1">
-                        <p class="text-blue-1 fw-bold text-sm">Solution</p>
+                        <p class="text-blue-1 fw-bold text-sm">Solutions</p>
                         <a class="text-blue-1 text-xs" data-bs-toggle="modal" data-bs-target="#rmm-endpoint-modal">Endpoint Management</a>
                         <a class="text-blue-1 text-xs" data-bs-toggle="modal" data-bs-target="#security-modal">Security</a>
                         <a class="text-blue-1 text-xs" data-bs-toggle="modal" data-bs-target="#backup-dr-modal">Backup & DR</a>
