@@ -17,7 +17,10 @@ let modalPageHelper = (function () {
     footerNavClass();
     addSelectOption();
     appendColorKaseyaBanner();
-    querySelectId();
+    // createCircle();
+    AddTitleLineStyle();
+    AddKaseyaPackage();
+    appendKaseya365HrCard();
   };
 
   let clickEvent = function () {
@@ -116,10 +119,9 @@ let modalPageHelper = (function () {
   const appendColorKaseyaBanner = () => {
     $(window).on("load", function () {
       $.each(constant.K365EndpointUserBanner, function (i, value) {
-        $("#kaseya365 #".concat(value.logoSelector).concat(" figure")).css(
-          "background-image",
-          value.svgColor
-        );
+        $(
+          "#kaseya365 #".concat(value.logoSelector).concat(" figure svg g")
+        ).attr("fill", "#f6f6f6");
       });
     });
   };
@@ -127,10 +129,8 @@ let modalPageHelper = (function () {
   async function addSelectOption() {
     $(window).on("load", function () {
       const primaryProduct = constant.GetDemoSolution.filter(
-        (item, i) => item.isMainProduct
+        (item, i) => item.isParent
       );
-
-      console.log(primaryProduct);
 
       NMICore.AppendDataElement.AddSelectOption(
         constant.RequiredProductLabel.selectId,
@@ -139,15 +139,36 @@ let modalPageHelper = (function () {
     });
   }
 
-  async function querySelectId() {
+  async function AddTitleLineStyle() {
     $(window).on("load", function () {
-      $(".get-demo .form-group").on("click", function (event) {
-        let value = event.target.id;
+      $(".section-title").append(
+        $('<hr class="hr-main hr-blue">').css("width", "17rem")
+      );
+    });
+  }
 
-        if (value === "main-select") {
-          let a = $("#select-sub-product-selector select").first().val();
-        }
+  async function AddKaseyaPackage() {
+    $(window).on("load", function () {
+      $.each(constant.K365EndpointUserBanner, function (i, value) {
+        let packageSelector = value.targetModal.concat(i);
+        $.each(value.packages, function (i, package) {
+          $("#".concat(packageSelector)).append("<p>" + package + "</p>");
+        });
       });
+    });
+  }
+
+  async function appendKaseya365HrCard() {
+    $(window).on("load", function () {
+      if ($(window).width() > 1023) {
+        $.each(constant.K365EndpointUserBanner, function (i) {
+          if (i + 1 < $(constant.K365EndpointUserBanner).length) {
+            $("#".concat(i + 1)).append(
+              '<hr class="hr-main hr-vertical hr-orange">'
+            );
+          }
+        });
+      }
     });
   }
 

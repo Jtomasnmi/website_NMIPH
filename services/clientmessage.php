@@ -18,7 +18,7 @@
                 $clientdetailid,
                 $createdatetime
             );
-       
+
             $InsertId = $this->db_conn->InsertData($query,$paramType,$paramValue);
             
             if($InsertId){

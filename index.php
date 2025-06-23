@@ -25,6 +25,10 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/toastr/css/toastr.min.css" rel="stylesheet">
+
+  <!-- Huge Icon -->
+  <!-- <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css" /> -->
+   <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
   
 
   <!-- Template Main CSS File -->
@@ -38,14 +42,15 @@
   <!-- ======= Banner Section ======= -->
       <?php include 'forms/main/banner.php';?>
   <main id="main">
+    <!-- ======= Product Section ======= -->
+      <?php include 'forms/main/platform.php';?>
+    <!-- ======= Solution Section ======= -->
+      <?php include 'forms/main/solutions.php';?>
     <!-- ======= News Section ======= -->
-      <?php include 'forms/main/news.php';?>
+      <!-- <?php include 'forms/main/news.php';?> -->
     <!-- ======= Profile Section ======= -->
-      <?php include 'forms/main/profile.php';?>
     <!-- ======= Careers Section ======= -->
-      <?php include 'forms/main/careers.php';?>
-    <!-- ======= Contact Section ======= -->
-      <?php include 'forms/main/contact.php';?>
+      <!-- <?php include 'forms/main/careers.php';?> -->
     <!-- ======= Cookies ======= -->
     <?php include 'forms/cookies/cookie.php';?>
   </main>
@@ -86,6 +91,7 @@
   <script src="assets/js/nmicore.js"></script>
   <script src="assets/js/transaction/insert-data.js"></script>
   <script src="assets/js/transaction/get-data.js"></script>
+  <script src="assets/js/nmi-component-integration.js"></script>
 
 
   <script>
@@ -94,7 +100,7 @@
      modalPageHelper.init();
      tabPageHelper.init();
      insertData.init();
-     getData.init();
+     getData.init()
   </script>
 </body>
 </html>

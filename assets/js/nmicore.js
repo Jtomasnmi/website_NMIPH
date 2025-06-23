@@ -38,49 +38,58 @@ var NMICore = (function () {
       });
     };
 
-    var get = function (
-      _url,
-      keyChecker = null,
-      appendElementId = null,
-      appendedElementTag = null
-    ) {
-      $.get({
-        url: _url,
-        success: function (data) {
-          data = JSON.parse(data);
+    // var get = function (
+    //   _url,
+    //   keyChecker = null,
+    //   appendElementId = null,
+    //   appendedElementTag = null
+    // ) {
+    //   $.get({
+    //     url: _url,
+    //     success: function (data) {
+    //       data = JSON.parse(data);
 
-          $(data).each(function (key, value) {
-            data = value;
+    //       $(data).each(function (key, value) {
+    //         data = value;
 
-            $.each(data, function (key, value) {
-              if (
-                key === keyChecker &&
-                keyChecker !== null &&
-                value.indexOf(",") != -1
-              ) {
-                var array = value.split(",");
+    //         $.each(data, function (key, value) {
+    //           if (keyChecker === constant.KeyChecker.cvData) {
+    //           }
+    //           if (
+    //             key === keyChecker &&
+    //             keyChecker !== null &&
+    //             value.indexOf(",") != -1
+    //           ) {
+    //             var array = value.split(",");
 
-                $.each(array, function (i) {
-                  if (key === constant.KeyChecker.dCoreValues) {
-                    $("#" + appendElementId).append(
-                      $("<" + appendedElementTag + ">").text(array[i])
-                    );
-                  }
-
-                  if (key === constant.KeyChecker.fdDescription) {
-                    $("#" + appendElementId).append(
-                      $(
-                        `<li class="footer-inf" data-bs-toggle="modal" data-bs-target="${constant.FooterNav[i]}">`
-                      ).text(array[i])
-                    );
-                  }
-                });
-              } else {
-                $("[name=" + "'c-" + key + "']").text(value);
-              }
-            });
-          });
-        },
+    //             $.each(array, function (i) {
+    //               if (key === constant.KeyChecker.fdDescription) {
+    //                 $("#" + appendElementId).append(
+    //                   $(
+    //                     `<li class="footer-inf" data-bs-toggle="modal" data-bs-target="${constant.FooterNav[i]}">`
+    //                   ).text(array[i])
+    //                 );
+    //               }
+    //             });
+    //           } else {
+    //             $("[name=" + "'c-" + key + "']").text(value);
+    //           }
+    //         });
+    //       });
+    //     },
+    //   });
+    // };
+    var get = function (_url) {
+      return new Promise(function (resolve, reject) {
+        $.get(_url).done(function (data) {
+          try {
+            const response = JSON.parse(data);
+            resolve(response);
+          } catch (error) {
+            console.error("JSON parse error:", error);
+            reject(error);
+          }
+        });
       });
     };
 
@@ -103,6 +112,7 @@ var NMICore = (function () {
         }
 
         var elementObject = $("#" + elementId.replace("/", ""));
+        console.log(elementObject);
 
         elementObject.next().remove(".diverror");
         elementObject.parent().next().remove(".diverror");
@@ -187,36 +197,6 @@ var NMICore = (function () {
       });
     };
 
-    var appendValidateSelectElement = function (
-      parentId,
-      childId,
-      isValid,
-      previousValue,
-      thisValue,
-      dataLength,
-      selectId,
-      component,
-      data
-    ) {
-      // $("#".concat(parentId)).change(function () {
-      let valid = typeof isValid === "undefined" ? true : false;
-      if (valid) {
-        if (dataLength > 0) {
-          $("#".concat(childId)).append(component);
-          NMICore.AppendDataElement.AddSelectOption(selectId, data);
-        }
-      } else {
-        if (previousValue !== thisValue) {
-          $("#".concat(constant.OptionalProductLabel.id)).empty();
-          if (dataLength > 0) {
-            $("#".concat(childId)).append(component);
-            NMICore.AppendDataElement.AddSelectOption(selectId, data);
-          }
-        }
-      }
-      // });
-    };
-
     var addElement = function (id, component) {
       $("#".concat(id)).append(component);
     };
@@ -267,6 +247,11 @@ var NMICore = (function () {
           result.id,
           constant.OptionalProductLabel.label
         );
+        const manageEndpointQty = componentFunction.selectOption(
+          "_".concat(constant.ManageEndpointLabel.selectId),
+          constant.ManageEndpointLabel.selectId,
+          constant.ManageEndpointLabel.label
+        );
 
         const validateValue = NMICore.AppendDataElement.ValidateValueElement(
           previousValue,
@@ -275,6 +260,12 @@ var NMICore = (function () {
 
         const validateLength = NMICore.AppendDataElement.CheckDataLengthElement(
           result.subProduct.length
+        );
+
+        const selectCheckBox = componentFunction.CheckBoxLabel(
+          result.id,
+          constant.CheckBoxLabel.description,
+          result.alias
         );
 
         if (validateValue && validateLength) {
@@ -287,6 +278,25 @@ var NMICore = (function () {
           NMICore.AppendDataElement.AppendOnChange(result.id);
         }
 
+        if (!validateLength && result.alias) {
+          NMICore.AppendDataElement.AddElement(
+            constant.CheckBoxLabel.id,
+            selectCheckBox
+          );
+        }
+
+        if (thisValue === "RMM/Endpoint Management") {
+          NMICore.AppendDataElement.AddElement(
+            constant.ManageEndpointLabel.id,
+            manageEndpointQty
+          );
+
+          NMICore.AppendDataElement.AddSelectOption(
+            constant.ManageEndpointLabel.selectId,
+            constant.EndpointQtyManage
+          );
+        }
+
         NMICore.AppendDataElement.RemoveElement(
           previousValue,
           targetId,
@@ -296,75 +306,28 @@ var NMICore = (function () {
     };
 
     var removeElement = function (product, targetId, counts) {
-      console.log(counts);
-
       if (product) {
-        let toRemove = constant.GetDemoSolution.find(
-          (item, i) => item.name === product
+        const id = $(
+          "#select-sub-product-selector #_".concat(targetId)
+        ).index();
+
+        const withAliasId = constant.GetDemoSolution.find(
+          (v, i) => v.name === product
         );
 
-        // console.log(targetId);
-
-        const id = $("#select-sub-product-selector, div").index(
-          "#_".concat(targetId)
-        );
-        // const id = $("#select-sub-product-selector _".concat(targetId)).val();
-        // console.log(id);
-
-        let indexToRemove = counts - id;
-
-        // if (counts > 1) {
         $("#select-sub-product-selector div")
           .slice(id + 1, counts)
           .remove();
-        // }
-        // $("#_".concat(toRemove.id)).remove();
+
+        $("#".concat(withAliasId.id)).remove();
+      }
+      if (product === "RMM/Endpoint Management") {
+        $("#_".concat(constant.ManageEndpointLabel.selectId)).remove();
       }
     };
 
-    // var appendSelectElement = function (parentId) {
-    //   let previousValue = "";
-    //   let thisValue = $("#".concat(parentId)).val();
-
-    //   $("#".concat(parentId)).change(function () {
-    //     // tansfer value of thisValue to previousValue
-    //     previousValue = thisValue;
-    //     thisValue = $(this).val();
-
-    //     let isValid = previousValue === "" ? true : false;
-
-    //     // find if the this value have sub product
-    //     let result = constant.GetDemoSolution.find(
-    //       (item, i) => thisValue === item.name
-    //     );
-
-    //     let selectComponent = componentFunction.SelectOption(
-    //       result.id,
-    //       constant.OptionalProductLabel.label
-    //     );
-
-    //     if (isValid) {
-    //       if (result.subProduct.length > 0) {
-    //         $("#".concat(constant.OptionalProductLabel.id)).append(
-    //           selectComponent
-    //         );
-    //       }
-    //     } else {
-    //       if (previousValue !== thisValue) {
-    //         $("#".concat(constant.OptionalProductLabel.id)).empty();
-    //         if (result.subProduct.length > 0) {
-    //           $("#".concat(constant.OptionalProductLabel.id)).append(
-    //             selectComponent
-    //           );
-    //         }
-    //       }
-    //     }
-    //   });
-    // };
-
     return {
       AddSelectOption: addSelectOption,
-      AppendValidateSelectElement: appendValidateSelectElement,
       AddElement: addElement,
       ValidateValueElement: validateValueElement,
       CheckDataLengthElement: checkDataLengthElement,
