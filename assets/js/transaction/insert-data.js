@@ -4,7 +4,9 @@ let insertData = (function () {
   };
 
   async function clickEvent() {
-    AddData();
+    $(window).on("load", function () {
+      AddData();
+    });
   }
 
   async function AddData() {

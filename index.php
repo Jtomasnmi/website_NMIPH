@@ -51,8 +51,6 @@
     <!-- ======= Profile Section ======= -->
     <!-- ======= Careers Section ======= -->
       <!-- <?php include 'forms/main/careers.php';?> -->
-    <!-- ======= Contact Section ======= -->
-      <?php include 'forms/main/contact.php';?>
     <!-- ======= Cookies ======= -->
     <?php include 'forms/cookies/cookie.php';?>
   </main>
@@ -93,6 +91,7 @@
   <script src="assets/js/nmicore.js"></script>
   <script src="assets/js/transaction/insert-data.js"></script>
   <script src="assets/js/transaction/get-data.js"></script>
+  <script src="assets/js/nmi-component-integration.js"></script>
 
 
   <script>
@@ -101,7 +100,7 @@
      modalPageHelper.init();
      tabPageHelper.init();
      insertData.init();
-     getData.init();
+     getData.init()
   </script>
 </body>
 </html>

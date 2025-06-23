@@ -46,12 +46,9 @@ echo '
     <div class="hero-content">
         <div class="container" data-aos="zoom-out" data-aos-delay="100">
             <div class="hero-title-container">
-                <h2 class="hero-label font-nulshock">NMI</h2>
-                <div class="nmi-thugline">
-                    <h5>trusted cybersecurity leader</h5>
-                </div>
-                <p class="nmi-thugline-desc">NMI is the exclusive distributor of Kaseya in the Philippines, and a trusted cybersecurity leader.</p>
-                <div class="get-start-alignment"><a href="#about" class="btn-get-started scrollto">Request A Free Demo <span><i class="bi bi-arrow-down-short"></i></span></a></div>
+                <h5 class="nmi-thugline">trusted cybersecurity leader</h5>
+                <p class="nmi-thugline-desc">NMI is the exclusive distributor of Kaseya in the Philippines, <br> and a trusted cybersecurity leader.</p>
+                <div class="get-start-alignment"><a href="#about" class="btn-get-started scrollto" data-bs-toggle="modal" data-bs-target="#get-a-demo">get a demo</a></div>
             </div>
         </div>
     </div>

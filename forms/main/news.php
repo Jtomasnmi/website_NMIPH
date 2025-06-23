@@ -101,7 +101,7 @@
     //     </form>
     // </section>';
         '
-    <section id="news" class="about">
+    <section id="new" class="about">
             <form id="frmCompanyNewsDetailForm" role="form">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title">

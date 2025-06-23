@@ -38,49 +38,58 @@ var NMICore = (function () {
       });
     };
 
-    var get = function (
-      _url,
-      keyChecker = null,
-      appendElementId = null,
-      appendedElementTag = null
-    ) {
-      $.get({
-        url: _url,
-        success: function (data) {
-          data = JSON.parse(data);
+    // var get = function (
+    //   _url,
+    //   keyChecker = null,
+    //   appendElementId = null,
+    //   appendedElementTag = null
+    // ) {
+    //   $.get({
+    //     url: _url,
+    //     success: function (data) {
+    //       data = JSON.parse(data);
 
-          $(data).each(function (key, value) {
-            data = value;
+    //       $(data).each(function (key, value) {
+    //         data = value;
 
-            $.each(data, function (key, value) {
-              if (
-                key === keyChecker &&
-                keyChecker !== null &&
-                value.indexOf(",") != -1
-              ) {
-                var array = value.split(",");
+    //         $.each(data, function (key, value) {
+    //           if (keyChecker === constant.KeyChecker.cvData) {
+    //           }
+    //           if (
+    //             key === keyChecker &&
+    //             keyChecker !== null &&
+    //             value.indexOf(",") != -1
+    //           ) {
+    //             var array = value.split(",");
 
-                $.each(array, function (i) {
-                  if (key === constant.KeyChecker.dCoreValues) {
-                    $("#" + appendElementId).append(
-                      $("<" + appendedElementTag + ">").text(array[i])
-                    );
-                  }
-
-                  if (key === constant.KeyChecker.fdDescription) {
-                    $("#" + appendElementId).append(
-                      $(
-                        `<li class="footer-inf" data-bs-toggle="modal" data-bs-target="${constant.FooterNav[i]}">`
-                      ).text(array[i])
-                    );
-                  }
-                });
-              } else {
-                $("[name=" + "'c-" + key + "']").text(value);
-              }
-            });
-          });
-        },
+    //             $.each(array, function (i) {
+    //               if (key === constant.KeyChecker.fdDescription) {
+    //                 $("#" + appendElementId).append(
+    //                   $(
+    //                     `<li class="footer-inf" data-bs-toggle="modal" data-bs-target="${constant.FooterNav[i]}">`
+    //                   ).text(array[i])
+    //                 );
+    //               }
+    //             });
+    //           } else {
+    //             $("[name=" + "'c-" + key + "']").text(value);
+    //           }
+    //         });
+    //       });
+    //     },
+    //   });
+    // };
+    var get = function (_url) {
+      return new Promise(function (resolve, reject) {
+        $.get(_url).done(function (data) {
+          try {
+            const response = JSON.parse(data);
+            resolve(response);
+          } catch (error) {
+            console.error("JSON parse error:", error);
+            reject(error);
+          }
+        });
       });
     };
 
@@ -103,6 +112,7 @@ var NMICore = (function () {
         }
 
         var elementObject = $("#" + elementId.replace("/", ""));
+        console.log(elementObject);
 
         elementObject.next().remove(".diverror");
         elementObject.parent().next().remove(".diverror");

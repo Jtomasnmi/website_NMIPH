@@ -14,15 +14,6 @@ a {
   text-decoration: none;
 }
 
-@font-face {
-  font-family: "Nulshock";
-  src: url("./../custom-font/nulshock.woff2") format("woff2"),
-    url("./../custom-font/nulshock.woff") format("woff"),
-    url("./../custom-font/nulshock.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 .font-nulshock {
   font-family: "Nulshock", sans-serif;
 }
@@ -118,6 +109,14 @@ h6 {
   /* border-bottom: 2px solid #0073e6; */
 }
 
+.nav-link-style {
+  cursor: pointer;
+}
+
+#header .dropdown-menu {
+  --bs-dropdown-link-active-bg: none !important;
+}
+
 /* .nav-alignment { */
 /* d-flex align-items-center justify-content-center ps-3 pe-4 py-3 */
 /* display: inline-flex;
@@ -146,10 +145,13 @@ h6 {
 .sub-navigation-item {
   font-size: 15px;
   font-weight: 400;
+  cursor: pointer;
+  background-color: none !important;
 }
 .sub-navigation-item:hover {
   font-weight: bold;
   color: #012d6c;
+  background-color: none !important;
 }
 .dropdown-menu {
   border-radius: 0 !important;
@@ -195,7 +197,7 @@ h6 {
   --bs-btn-padding-y: 0.25rem;
   --bs-btn-padding-x: 0.5rem;
   --bs-btn-font-size: 0.75rem;
-  color: #f6f6f6;
+  color: #012d6c;
   border-radius: 0% !important;
   padding: 0.5rem 1rem;
   font-weight: 500;
@@ -205,7 +207,7 @@ h6 {
 
 .get-start-btn:hover {
   cursor: pointer;
-  color: #f6f6f6;
+  color: #012d6c;
   background-color: #ff6600de;
 }
 
@@ -469,6 +471,7 @@ h6 {
   background-color: #f6f6f6;
   background: linear-gradient(to bottom, #f6f6f6 0%, #050606 100%);
   -webkit-background-clip: text;
+  background-clip: none;
   -webkit-text-fill-color: transparent;
   opacity: 0.4;
   text-align: center;
@@ -497,13 +500,7 @@ h6 {
 }
 
 .nmi-thugline {
-  position: absolute;
-  top: 12px;
-  left: 0;
-  padding: 0 3rem;
   color: #f6f6f6;
-}
-.nmi-thugline h5 {
   font-size: 23px;
   text-align: center;
   text-transform: uppercase;
@@ -512,7 +509,6 @@ h6 {
   font-size: 13px;
   text-align: center;
   color: #f6f6f6;
-  margin-top: 3.5rem;
 }
 
 .hero-product {
@@ -563,14 +559,15 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
 
 #hero .btn-get-started {
   font-family: "Raleway", sans-serif;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 14px;
   display: inline-block;
   padding: 10px;
   transition: 0.5s;
   margin: 10px 0px;
-  color: #f6f6f6;
+  color: #012d6c;
   background-color: #ff6600;
+  text-transform: uppercase;
 }
 
 #hero .btn-get-started:hover {
@@ -721,6 +718,19 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
   text-align: center;
   font-size: 14px;
 }
+
+.solution-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.solution-content-modal {
+  order: 1;
+}
+.solution-img-modal {
+  order: 2;
+}
 /* .section-bg {
   padding-top: 40px;
   padding: 120px 0;
@@ -822,6 +832,15 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
   z-index: 10;
 }
 
+.about-grid {
+  display: grid;
+}
+.about-grid .img-align-start {
+  order: 1;
+}
+.about-grid .description {
+  order: 2;
+}
 .about-grid .col-span-1 .card {
   margin-top: 2rem;
 }
@@ -860,6 +879,10 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
   color: #4b4a4a;
 }
 
+.about-first-letter::first-letter {
+  font-size: 22px;
+  color: #ff6600;
+}
 /* .about .news-content-alignment .content .about-btn {
   padding: 8px 30px 9px 30px;
   color: #fff;
@@ -1772,14 +1795,13 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
 
 /* .php-email-form {
   padding: 0px 1rem;
-  border-radius: 4px;
-} */
+  border-radius: 4px;#} */
 
-.contact .php-email-form {
+.-form .php-email-form {
   margin-top: 2rem;
 }
 
-.contact .php-email-form .input-grid {
+.-form .php-email-form .input-grid {
   display: grid;
   grid-template-columns: 1;
   gap: 0.5rem;
@@ -1791,7 +1813,7 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
   text-transform: uppercase;
 }
 
-.contact .php-email-form .error-message {
+.-form .php-email-form .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -1812,11 +1834,11 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
   margin-bottom: 0rem !important;
 }
 
-.contact .php-email-form .error-message br + br {
+#contact-form .php-email-form .error-message br + br {
   margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+#contact-form .php-email-form .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -1825,14 +1847,14 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
   font-weight: 600;
 }
 
-.contact .php-email-form .loading {
+#contact-form .php-email-form .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
 
-.contact .php-email-form .loading:before {
+#contact-form .php-email-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -1844,39 +1866,39 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
   animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form .form-group {
+#contact-form .php-email-form .form-group {
   margin-bottom: 13px;
 }
 
-.contact .php-email-form label {
+#contact-form .php-email-form label {
   font-size: 14px;
   font-weight: bold;
 }
 
-.contact .php-email-form span {
+#contact-form .php-email-form span {
   color: #ff0000;
 }
 
-.contact .php-email-form input,
-.contact .php-email-form textarea {
+#contact-form .php-email-form input,
+#contact-form .php-email-form textarea {
   box-shadow: none;
   font-size: 14px;
 }
 
-.contact .php-email-form input:focus,
-.contact .php-email-form textarea:focus {
+#contact-form .php-email-form input:focus,
+#contact-form .php-email-form textarea:focus {
   border-color: #111111;
 }
 
-.contact .php-email-form input {
+#contact-form .php-email-form input {
   padding: 4px 15px;
 }
 
-.contact .php-email-form textarea {
+#contact-form .php-email-form textarea {
   padding: 12px 15px;
 }
 
-.contact .php-email-form button[type="submit"] {
+#contact-form #btnInsertData {
   /* background: #e03a3c; */
   border: 0;
   padding: 10px 40px;
@@ -1886,10 +1908,15 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
   background-color: #ff6600;
 }
 
-.contact .php-email-form button[type="submit"]:hover {
+#contact-form #btnInsertData:hover {
   /* background: #e35052; */
   background: #ff6600de;
   cursor: pointer;
+}
+
+#contact-form .modal-body {
+  height: 25rem !important;
+  overflow-y: auto;
 }
 
 .contact-icon-aligment p {
@@ -1900,6 +1927,17 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
   align-items: center !important;
   gap: 1rem;
   margin-top: 0.5rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-action {
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes animate-loading {
@@ -2429,8 +2467,7 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
   background: #111111;
 } */
 .footer-logo {
-  width: 15rem;
-  margin-top: -0.7rem;
+  width: 50% !important;
 }
 .footer-top {
   padding: 60px 0 30px 0;
@@ -2446,12 +2483,12 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
 
 .footer-top .footer-grid {
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   padding: 0 1rem;
   position: relative;
 }
 .footer-top .footer-contact p {
-  text-align: left;
+  text-align: justify;
   font-family: "Raleway", sans-serif;
 }
 
@@ -2617,6 +2654,20 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
 #footer .social-links a:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.social-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.user-consent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.user-consent-list {
+  font-size: 14px;
 }
 
 /* ==========================
@@ -2815,9 +2866,7 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
 /* solutions/service offered each modal */
 
 /* ------ RMM & ENDPOINT MANAGEMENT ----- */
-.rmm .modal-header {
-  background-color: #012d6c;
-}
+
 .rmm .modal-content {
   background-color: #f6f6f6;
 }
@@ -2840,17 +2889,30 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
 }
 
 .solution-content {
-  margin-top: 3rem;
+  background-color: #012d6c;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 1rem;
-  background-color: #012d6c;
-  padding: 1rem;
+  align-items: center;
+  margin: 3rem 0;
 }
 .solution-content p {
-  font-size: 15px;
-  color: #f6f6f6d8;
+  color: #f6f6f6e7;
   text-align: justify;
+}
+
+.solution-bg {
+  position: relative;
+}
+
+.img-opacity {
+  opacity: 0.5;
+  height: 12rem;
+}
+.solution-icons-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .solution-h5 {
@@ -2860,9 +2922,10 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
 }
 
 .product-h5 {
-  color: #f6f6f6;
   font-weight: bold;
   font-size: 22px;
+  text-align: center;
+  color: #f6f6f6;
 }
 
 .solution-icon {
@@ -2870,42 +2933,12 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
   background-color: transparent;
   border-radius: 50%;
   padding: 0.7rem;
-  font-size: 25px;
+  font-size: 85px;
   box-shadow: 0 10px 15px -3px #0456aa, 0 4px 6px -4px #0456aa;
 }
 
-/* --- SECURITY --- */
-.security .modal-header {
-  background-color: #515151;
-}
-
-/* --- Backup & DR --- */
-.backup-dr .modal-header {
-  background-color: #012d6c;
-}
-
-/* --- audit --- */
-.audit .modal-header {
-  background-color: rgb(230, 115, 8);
-}
-
-/* --- compliance --- */
-.compliance .modal-header {
-  background-color: #169b54;
-}
-
-/* --- service desk --- */
-.service-d .modal-header {
-  background-color: #5a7da0;
-}
-
-/* --- it documentation --- */
-.it-doc .modal-header {
-  background-color: rgb(194, 126, 154);
-}
-
-.solution-heading {
-  display: block;
+.solution-modal-header {
+  background-color: #012d6c !important;
 }
 
 .solution-figure {
@@ -3154,6 +3187,19 @@ section {
 
 .social-links {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.hover-animate {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hover-animate:hover {
+  transform: translateY(-5px);
+  opacity: 0.9;
+}
+
+.text-justify {
+  text-align: justify;
 }

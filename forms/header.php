@@ -161,21 +161,21 @@
                             <li class="nav-link-style"><a class="scrollto" href="#hero">Home</a></li>
                             <li class="nav-link-style"><a class="scrollto" href="#platform">Platform</a></li>
                             <li class="nav-link-style"><a class="scrollto" href="#solutions">Solutions</a></li>
-                            <li class="nav-link-style"><a class="scrollto" href="#contact">Contact Us</a></li>
+                            <li class="nav-link-style"><a class="scrollto" data-bs-toggle="modal" data-bs-target="#contact-form">Contact Us</a></li>
                             <li><button id="get-demo-btn" class="btn get-start-btn scrollto" data-bs-toggle="modal" data-bs-target="#get-a-demo">Get A Demo</button>
                     </li>
                         </ul>
                     </nav>
-                </div>
-                <div class="d-flex align-items-center gap-4">
-                    <div class="dropdown-center toggle-md">
-                        <i class="hgi hgi-stroke hgi-menu-07 about-us-nav" id="nav-dropdown" data-bs-toggle="dropdown"></i>
-                        <div class="dropdown-menu" aria-labelledby="nav-dropdown">
-                            <a class="dropdown-item sub-navigation-item text-blue-1" href="#">News</a>
-                            <a class="dropdown-item sub-navigation-item text-blue-1" href="#">About Us</a>
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="dropdown-center toggle-md">
+                            <i class="hgi hgi-stroke hgi-menu-07 about-us-nav" id="nav-dropdown" data-bs-toggle="dropdown"></i>
+                            <div class="dropdown-menu" aria-labelledby="nav-dropdown">
+                                <a class="dropdown-item sub-navigation-item text-blue-1"  data-bs-toggle="modal" data-bs-target="#news">News</a>
+                                <a class="dropdown-item sub-navigation-item text-blue-1" data-bs-toggle="modal" data-bs-target="#profile">About Us</a>
+                            </div>
                         </div>
+                        <i id="toggleSmNav" class="hgi hgi-stroke hgi-menu-01 toggle-sm-nav" data-bs-toggle="modal" data-bs-target="#smallNavModal"></i>
                     </div>
-                    <i id="toggleSmNav" class="hgi hgi-stroke hgi-menu-01 toggle-sm-nav" data-bs-toggle="modal" data-bs-target="#smallNavModal"></i>
                 </div>
                 
             </div>
@@ -199,11 +199,11 @@
                     </li>
                     <li class="d-flex align-items-center gap-3" id="mobileTab">
                         <div><i class="hgi hgi-stroke hgi-git-merge sm-nav-icon"></i></div>
-                        <a class="scrollto nav-sm-label" href="#products">Products</a>
+                        <a class="scrollto nav-sm-label" href="#platform">Platform</a>
                     </li>
                     <li class="d-flex align-items-center gap-3" id="mobileTab">
                         <div><i class="hgi hgi-stroke hgi-bulb sm-nav-icon"></i></div>
-                        <a class="scrollto nav-sm-label" href="#services">Solutions</a>
+                        <a class="scrollto nav-sm-label" href="#solutions">Solutions</a>
                     </li>
                     <li class="d-flex align-items-center gap-3" id="mobileTab">
                         <div><i class="hgi hgi-stroke hgi-sharp hgi-contact-02 sm-nav-icon"></i></div>
@@ -211,13 +211,12 @@
                     </li>
                     <li class="d-flex align-items-center gap-3" id="mobileTab">
                     <div><i class="hgi hgi-stroke hgi-license sm-nav-icon"></i></div>
-                        <a class="scrollto nav-sm-label" href="#news">News</a>
+                        <a class="scrollto nav-sm-label" data-bs-toggle="modal" data-bs-target="#news">News</a>
                     </li>
                     <li class="d-flex align-items-center gap-3" id="mobileTab">
                         <div><i class="hgi hgi-stroke hgi-sharp hgi-building-02 sm-nav-icon"></i></div>
-                        <a class="scrollto nav-sm-label" href="#about-us">About Us</a>
+                        <a class="scrollto nav-sm-label" data-bs-toggle="modal" data-bs-target="#profile">About Us</a>
                     </li>
-                    
                 </ul>
                 </div>
             </div>
@@ -300,7 +299,6 @@
                         <a class=" scrollto fs-6 fw-medium sm-nav-icon" href="#contact">Contact Us</a>
                     </li>
                 </ul> -->
-
 
 <!-- old solution
 <li class="nav-link-style dropdown">

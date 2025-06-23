@@ -1,4 +1,4 @@
-let componentFunction = (function () {
+let _compFunc = (function () {
   const k365Card = (title, desc, pro, qck) => {
     return $(
       '<div class="card onboarding-card mb-2">' +
@@ -192,6 +192,52 @@ let componentFunction = (function () {
     );
   };
 
+  const solutionTypeCard = (type, content, icon) => {
+    return $(
+      '<div class="solution-content hover-animate">' +
+        '<div class="container">' +
+        '<h5 class="mt-4 product-h5">' +
+        type +
+        "</h5>" +
+        "<p>" +
+        content +
+        "</p>" +
+        "</div>" +
+        '<div class="solution-bg">' +
+        '<img src="assets/img/nmi_solutions/solution-icon-bg.jpg" alt="" class="ratio ratio-1x1 img-opacity" />' +
+        '<div class="solution-icons-container">' +
+        '<i class="' +
+        icon +
+        ' solution-icon"></i>' +
+        "</div>" +
+        "</div>" +
+        "</div>"
+    );
+  };
+
+  const coreValuesCard = (iconClass, label, description) => {
+    return $(
+      `<div class="card card-core-values" data-aos="fade-up" data-aos-delay="100">
+      <div class="container card-body">
+        <div>
+          <i class="` +
+        iconClass +
+        ` icon-size"></i>
+          <p class="text-blue-1 fw-bold mt-3 about-first-letter">
+           ` +
+        label +
+        `
+          </p>
+          <p class="core-value-p">` +
+        description +
+        `
+          </p>
+        </div>
+      </div>
+    </div>`
+    );
+  };
+
   return {
     k365Card: k365Card,
     solutionCard: solutionCard,
@@ -202,5 +248,7 @@ let componentFunction = (function () {
     selectOption: selectOption,
     imgElement: imgElement,
     CheckBoxLabel: checkBoxLabel,
+    SolutionTypeCard: solutionTypeCard,
+    CoreValuesCard: coreValuesCard,
   };
 })();
