@@ -9,7 +9,7 @@
                     </div>
                     <button type="button" class="btn btn-info get-started-btn scrollto accept-cookies">Accept Cookies</button>
                 </div>
-            </div>      
+            </div>
         </div>';
 ?>
 <!-- <span class="get-started-btn scrollto accept-cookies btn-cookies cookie-float-right">Accept Cookies</span> -->

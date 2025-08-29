@@ -14,6 +14,7 @@ let constant = (function () {
     companyFormId: "frmCompanyDetailForm",
     companyProfileDetailFormId: "frmCompanyProfileDetailForm",
     companyNewsDetailFormId: "frmCompanyNewsDetailForm",
+    getDemoForm: "frmGetDemoForm",
   };
 
   let methodType = {
@@ -40,12 +41,14 @@ let constant = (function () {
   };
 
   let webButton = {
-    btnInsertData: "btnInsertData",
+    btnContactForm: "btnContactForm",
+    btnDemoForm: "btnDemoForm",
   };
 
   let grpElemHolder = {
     clientDetail: "grpClientDetail",
     messageDetail: "grpClientMesage",
+    demoDetail: "grpClientDemo",
   };
 
   let keyChecker = {
@@ -204,6 +207,7 @@ let constant = (function () {
 
   const k365EndpointUserBanner = [
     {
+      id: "endpoint",
       logo: "./assets/img/nmi-k-365/k365-endpoint.png",
       desc: "The Complete Package For Your Endpoint",
       btnLabel: "Explore Kaseya 365 Endpoint",
@@ -219,6 +223,7 @@ let constant = (function () {
       ],
     },
     {
+      id: "user",
       logo: "./assets/img/nmi-k-365/k365-user.png",
       desc: "Fortified Further Your Cyber Landscape",
       btnLabel: "Explore Kaseya 365 User",
@@ -236,6 +241,7 @@ let constant = (function () {
       ],
     },
     {
+      id: "ops",
       logo: "./assets/img/nmi-k-365/k365-ops.png",
       desc: "Top Performance Through AI-Driven Authomation",
       btnLabel: "Explore Kaseya 365 Ops",
@@ -255,6 +261,7 @@ let constant = (function () {
   let solutionsBanner = [
     {
       targetModal: "#rmm-endpoint-modal",
+      imgSrc: "./assets/img/nmi_solutions/NMIEndpointIcon.png",
       label: "Endpoint Management",
       description:
         "Take control of your IT environment from anywhere with intuitive solutions that adapt to your needs.",
@@ -281,6 +288,7 @@ let constant = (function () {
     },
     {
       targetModal: "#backup-dr-modal",
+      imgSrc: "./assets/img/nmi_solutions/NMIBackupIcon.png",
       label: "Backup And Recovery",
       description:
         "Protect your data effortlessly, regardless of where it lives",
@@ -313,6 +321,7 @@ let constant = (function () {
     },
     {
       targetModal: "#security-modal",
+      imgSrc: "./assets/img/nmi_solutions/NMISecurityIcon.png",
       label: "Security",
       description:
         "Protect your organization with layered security across cloud, endpoints, networks and users in a single solution.",
@@ -375,6 +384,7 @@ let constant = (function () {
     },
     {
       targetModal: "#it-operations-modal",
+      imgSrc: "./assets/img/nmi_solutions/NMIOperationsIcon.png",
       label: "IT Operations",
       description:
         "Automate workflows, optimize service delivery and streamline the entire quote-to-cash process to reduce friction and boost productivity.",
@@ -425,6 +435,7 @@ let constant = (function () {
     },
     {
       targetModal: "#it-risk-management-modal",
+      imgSrc: "./assets/img/nmi_solutions/NMIITOperationsIcon.png",
       label: "IT Risk Management",
       description:
         "Protect your organization with layered security across cloud, endpoints, networks and users in a single solution.",
@@ -463,6 +474,7 @@ let constant = (function () {
     },
     {
       targetModal: "#networking-modal",
+      imgSrc: "./assets/img/nmi_solutions/NMINetworkingIcon.png",
       label: "Networking",
       description:
         "Provide seamless connectivity, reduce downtime and keep your team productive.",
@@ -559,7 +571,7 @@ let constant = (function () {
     {
       id: 1,
       name: "RMM/Endpoint Management",
-      subProduct: [2, 3, 4, 5],
+      subProduct: [9, 3, 4, 5],
       isParent: true,
       alias: "",
     },
@@ -761,32 +773,111 @@ let constant = (function () {
 
   let automationProp = [
     {
-      id: "_automationEdr",
-      tab: "pills-edr-tab",
+      id: "_rmm",
+      tab: "pills-rmm",
+      img: "./assets/img/nmi-k-365/k365-endpoint/endpointPill_rmm.png",
+      title: "Remote Monitoring and Management (RMM)",
+      description: "Get complete visibility and control over every endpoint.",
+      isPro: false,
+      product: [
+        {
+          name: "Datto RMM",
+          link: "https://www.datto.com/products/rmm/",
+        },
+        {
+          name: "VSA",
+          link: "https://www.kaseya.com/products/rmm-software/",
+        },
+      ],
     },
     {
-      id: "_automationEvents",
-      tab: "pills-events-tab",
+      id: "_patch_management",
+      tab: "pills-patch-management",
+      img: "./assets/img/nmi-k-365/k365-endpoint/endpointPill_patch.webp",
+      title: "Patch Management",
+      description:
+        "Keep every device secure and up to date effortlessly with advanced software management",
+      isPro: false,
+      product: [
+        {
+          name: "VSA",
+          link: "https://www.kaseya.com/products/rmm-software/",
+        },
+      ],
     },
     {
-      id: "_automationPolicy",
-      tab: "pills-policy-tab",
+      id: "_antivirus",
+      tab: "pills-antivirus",
+      img: "./assets/img/nmi-k-365/k365-endpoint/endpointPill_antivirus.webp",
+      title: "Antivirus",
+      description:
+        "Proactively protect your business from sophisticated cyberthreats with advance threat protection and global threat intelligence.",
+      isPro: false,
+      product: [
+        {
+          name: "Datto AV",
+          link: "https://www.datto.com/products/antivirus-software/",
+        },
+      ],
     },
     {
-      id: "_automationPatching",
-      tab: "pills-patching-tab",
+      id: "_endpoint",
+      tab: "pills-endpoint",
+      img: "./assets/img/nmi-k-365/k365-endpoint/endpointPill_edr.webp",
+      title: "Endpoint Detection & Response (EDR)",
+      description:
+        "Identify, contain and neutralize threats with intelligent endpoint protection.",
+      isPro: false,
+      product: [
+        {
+          name: "Datto EDR",
+          link: "https://www.datto.com/products/antivirus-software/",
+        },
+      ],
     },
     {
-      id: "_automationBackIns",
-      tab: "pills-backIns-tab",
+      id: "_ransomeware",
+      tab: "pills-ransomeware",
+      img: "./assets/img/nmi-k-365/k365-endpoint/endpointPill_ransomeware.webp",
+      title: "Ransomware Detection",
+      description:
+        "Prevent ransomware from gaining a foothold in your network with continuous monitoring and intelligent threat detection.",
+      isPro: false,
+      product: [
+        {
+          name: "Datto RMM",
+          link: "https://www.datto.com/products/rmm/",
+        },
+        {
+          name: "VSA",
+          link: "https://www.kaseya.com/products/rmm-software/",
+        },
+      ],
     },
     {
-      id: "_automationRocketcyber",
-      tab: "pills-rocketCyber-tab",
+      id: "_backup_auto",
+      tab: "pills-backup_auto",
+      img: "./assets/img/nmi-k-365/k365-endpoint/endpointPill_backup.png",
+      title: "Endpoint Backup",
+      description:
+        "Worry less about data loss with automated, encrypted endpoint backups that optimize performance and enable quick recovery",
+      isPro: false,
+      product: [
+        {
+          name: "Datto Endpoint Backup",
+          link: "https://www.datto.com/products/endpoint-backup/",
+        },
+      ],
     },
     {
-      id: "_automationHealthStatus",
-      tab: "pills-healthStatus-tab",
+      id: "_mdr",
+      tab: "pills-mdr",
+      img: "./assets/img/nmi-k-365/k365-endpoint/endpointPill_mdr.webp",
+      title: "Managed detection & response (MDR)",
+      description:
+        "Get advanced threat protection with security experts who monitor, detect and respond 24/7.",
+      isPro: true,
+      product: [{ name: "RocketCyber", link: "https://www.rocketcyber.com/" }],
     },
   ];
 
@@ -832,6 +923,17 @@ let constant = (function () {
     },
   ];
 
+  const phLocationId = {
+    regionID: "contact #region-select",
+    provinceID: "contact #province-select",
+    municipalityID: "contact #municipality-select",
+    barangayID: "contact #barangay-select",
+  };
+  const k365EndpointPillsTab = {
+    tabId: "v-pills-tab",
+    contentId: "v-pills-tabContent",
+  };
+
   return {
     MapPosition: mapPosition,
     MapTitle: mapTitle,
@@ -864,5 +966,7 @@ let constant = (function () {
     EndpointQtyManage: endpointQtyManage,
     ManageEndpointLabel: manageEndpointLabel,
     CheckBoxLabel: checkBoxLabel,
+    PhLocationId: phLocationId,
+    K365EndpointPillsTab: k365EndpointPillsTab,
   };
 })();

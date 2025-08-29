@@ -1,7 +1,6 @@
 let modalPageHelper = (function () {
   let init = function () {
     loadEvent();
-    clickEvent();
   };
 
   let loadEvent = function () {
@@ -9,7 +8,6 @@ let modalPageHelper = (function () {
       GetInitTabPage();
     });
 
-    loadK365ChildTabAutomation();
     hoverTooltip();
     appendOnId();
     loadK365onBoardTbl();
@@ -17,14 +15,14 @@ let modalPageHelper = (function () {
     footerNavClass();
     addSelectOption();
     appendColorKaseyaBanner();
-    // createCircle();
     AddTitleLineStyle();
     AddKaseyaPackage();
     appendKaseya365HrCard();
-  };
-
-  let clickEvent = function () {
-    click365AutomationTab();
+    removeValidation();
+    addRegionOption();
+    addProvinceOption();
+    addMunicipalityOption();
+    addBarangayOption();
   };
 
   async function initModalPage() {
@@ -55,38 +53,38 @@ let modalPageHelper = (function () {
     });
   }
 
-  async function loadK365ChildTabAutomation() {
-    $(window).on("load", function () {
-      constant.AutomationProp.map(({ id, _ }, i) => {
-        let div = $("<div>", { id: id }).appendTo(
-          "#k365AutomationEDR-selector"
-        );
+  // async function loadK365ChildTabAutomation() {
+  //   $(window).on("load", function () {
+  //     constant.AutomationProp.map(({ id, _ }, i) => {
+  //       let div = $("<div>", { id: id }).appendTo(
+  //         "#k365AutomationEDR-selector"
+  //       );
 
-        i === 0 ? div.attr("hidden", false) : div.attr("hidden", true);
+  //       i === 0 ? div.attr("hidden", false) : div.attr("hidden", true);
 
-        $("#" + id).load("k365-automation-tabs/" + id + ".html");
-      });
-    });
-  }
+  //       $("#" + id).load("k365-automation-tabs/" + id + ".html");
+  //     });
+  //   });
+  // }
 
-  function click365AutomationTab() {
-    $(function () {
-      $.each(constant.AutomationProp, function (i, value) {
-        $("#" + value.tab).click(function () {
-          let active = constant.AutomationProp.find(({ id, _ }, i) => {
-            return !$("#" + id).is(":hidden");
-          });
+  // function click365AutomationTab() {
+  //   $(function () {
+  //     $.each(constant.AutomationProp, function (i, value) {
+  //       $("#" + value.tab).click(function () {
+  //         let active = constant.AutomationProp.find(({ id, _ }, i) => {
+  //           return !$("#" + id).is(":hidden");
+  //         });
 
-          $("#" + active.id).attr("hidden", true);
-          $("#" + value.id).attr("hidden", false);
-        });
-      });
-    });
-  }
+  //         $("#" + active.id).attr("hidden", true);
+  //         $("#" + value.id).attr("hidden", false);
+  //       });
+  //     });
+  //   });
+  // }
 
   async function hoverTooltip() {
     $(function () {
-      $(".k365-banner-modals").click(function () {
+      $(".platform-down-icon").click(function () {
         let tooltips = $('[data-bs-toggle="tooltip"]');
         return [...tooltips].map(
           (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
@@ -132,9 +130,12 @@ let modalPageHelper = (function () {
         (item, i) => item.isParent
       );
 
-      NMICore.AppendDataElement.AddSelectOption(
-        constant.RequiredProductLabel.selectId,
-        primaryProduct
+      primaryProduct.map((product, i) =>
+        NMICore.AppendDataElement.AddSelectOption(
+          constant.RequiredProductLabel.selectId,
+          product.name,
+          product.name
+        )
       );
     });
   }
@@ -169,6 +170,129 @@ let modalPageHelper = (function () {
           }
         });
       }
+    });
+  }
+
+  // async function removeValidation() {
+  //   $(function () {
+  //     $(".remove-validation").click(function () {
+  //       $(".diverror").empty();
+  //       $("div #".concat(constant.RequiredProductLabel.id))
+  //         .nextAll("div")
+  //         .empty();
+  //       $(":input").val("").change();
+  //     });
+  //   });
+  // }
+  async function removeValidation() {
+    $(window).on("load", function () {
+      $(".modal-form").on("hidden.bs.modal", function () {
+        $(".diverror").empty();
+        $("div #".concat(constant.RequiredProductLabel.id))
+          .nextAll("div")
+          .empty();
+        $(":input").val("").change();
+      });
+    });
+  }
+
+  async function addRegionOption() {
+    $(window).on("load", function () {
+      phLocationList.RegionProvince.map((region, i) =>
+        NMICore.AppendDataElement.AddSelectOption(
+          constant.PhLocationId.regionID,
+          region.name,
+          region.name
+        )
+      );
+    });
+  }
+
+  async function locationMapper(
+    selectValue,
+    location,
+    locationAttr,
+    attr,
+    _attrId,
+    selectId,
+    _attrName,
+    isObj
+  ) {
+    const dataList = location.find(({ name }) => name === selectValue);
+
+    dataList[locationAttr].map((id, i) => {
+      const result = isObj ? "" : attr.find((data, i) => data[_attrId] === id);
+      const value = isObj ? id : result[_attrName];
+      NMICore.AppendDataElement.AddSelectOption(selectId, value, value);
+    });
+  }
+
+  async function addProvinceOption() {
+    $(window).on("load", function () {
+      $("#".concat(constant.PhLocationId.regionID)).change(function (e) {
+        const value = e.target.value;
+
+        NMICore.AppendDataElement.ResetOption(
+          constant.PhLocationId.provinceID,
+          constant.PhLocationId.municipalityID,
+          constant.PhLocationId.barangayID
+        );
+
+        locationMapper(
+          value,
+          phLocationList.RegionProvince,
+          "provinces",
+          phLocationList.ProvinceMunicipality,
+          "provinceId",
+          constant.PhLocationId.provinceID,
+          "name",
+          false
+        );
+      });
+    });
+  }
+  async function addMunicipalityOption() {
+    $(window).on("load", function () {
+      $("#".concat(constant.PhLocationId.provinceID)).change(function (e) {
+        const value = e.target.value;
+
+        NMICore.AppendDataElement.ResetOption(
+          constant.PhLocationId.municipalityID,
+          constant.PhLocationId.barangayID
+        );
+
+        locationMapper(
+          value,
+          phLocationList.ProvinceMunicipality,
+          "municipalities",
+          phLocationList.municipalityBarangay,
+          "municipalityId",
+          constant.PhLocationId.municipalityID,
+          "name",
+          false
+        );
+      });
+    });
+  }
+
+  async function addBarangayOption() {
+    $(window).on("load", function () {
+      $("#".concat(constant.PhLocationId.municipalityID)).change(function (e) {
+        const value = e.target.value;
+
+        NMICore.AppendDataElement.ResetOption(constant.PhLocationId.barangayID);
+
+        locationMapper(
+          value,
+          phLocationList.municipalityBarangay,
+          "barangays",
+          "",
+          "",
+          constant.PhLocationId.barangayID,
+          "",
+          true
+        );
+      });
     });
   }
 

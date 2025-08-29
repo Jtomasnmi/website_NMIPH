@@ -5,41 +5,58 @@ let insertData = (function () {
 
   async function clickEvent() {
     $(window).on("load", function () {
-      AddData();
+      saveContactForm();
+      saveDemoForm();
     });
   }
 
-  async function AddData() {
-    $("#" + constant.WebButton.btnInsertData).click(function (e) {
+  async function AddData(buttonid, form, objData, ..._urls) {
+    $("#".concat(buttonid)).click(function (e) {
       e.preventDefault();
 
-      if (!NMICore.Validation.ValidateForm(constant.Form.clientFormId)) {
+      let dto = [];
+
+      if (!NMICore.Validation.ValidateForm(form)) {
         return;
       }
 
-      let _urls = [constant.Url.clientDetail, constant.Url.clientMessage];
+      $.each(objData, function (i, value) {
+        let data = NMICore.DataConversion.ConvertArrToObj(value);
+        if (!NMICore.ObjectValidation.IsObjectEmpty(value)) {
+          dto.push(data);
+        }
+      });
 
-      let clientObj = NMICore.DataConversion.ConvertArrToObj(
-        constant.GrpElemHolder.clientDetail
-      );
-      let msgObj = NMICore.DataConversion.ConvertArrToObj(
-        constant.GrpElemHolder.messageDetail
-      );
-
-      if (
-        !NMICore.ObjectValidation.IsObjectEmpty(clientObj) &&
-        !NMICore.ObjectValidation.IsObjectEmpty(msgObj)
-      ) {
-        let dto = [clientObj, msgObj];
-
-        NMICore.Ajax.Post(
-          constant.Form.clientFormId,
-          constant.MethodType.Post,
-          _urls,
-          dto
-        );
+      if (dto.length !== 0) {
+        NMICore.Ajax.Post(form, constant.MethodType.Post, _urls, dto);
       }
     });
+  }
+
+  async function saveContactForm() {
+    let objData = [
+      constant.GrpElemHolder.clientDetail,
+      constant.GrpElemHolder.messageDetail,
+    ];
+
+    AddData(
+      constant.WebButton.btnContactForm,
+      constant.Form.clientFormId,
+      objData,
+      constant.Url.clientDetail,
+      constant.Url.clientMessage
+    );
+  }
+
+  async function saveDemoForm() {
+    let objData = [constant.GrpElemHolder.demoDetail];
+
+    AddData(
+      constant.WebButton.btnDemoForm,
+      constant.Form.getDemoForm,
+      objData,
+      null
+    );
   }
 
   return {

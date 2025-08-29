@@ -52,11 +52,11 @@
             <div class="footer-grid">
                 <div class="footer-contact">
                     <!-- <h3>Presento<span>.</span></h3> -->
-                    <img src="assets/img/logo/NMILogo2025Colored.png" class="ratio ratio-1x1 footer-logo"></img>
+                    <h5 class="footer-title">About Us</h5>
                     <p name="c-FHDescription" class="text-justify text-xs"></p>
                     <div class="social-container">
-                        <p class="text-dark-2 fw-bold text-sm mb-0">Connect with NMI</p>
-                        <div>
+                        <p class="text-blue-1 fw-bold text-sm mb-0">Connect with NMI</p>
+                        <div class="margin-lg">
                             <a href="https://www.facebook.com/profile.php?id=61575203936004" target="_blank"><i class="hgi hgi-stroke hgi-facebook-02 social-icons"></i></a>
                             <a href="https://www.instagram.com/nmiphils/" target="_blank"><i class="hgi hgi-stroke hgi-instagram social-icons"></i></a>
                             <a href="https://www.linkedin.com/company/107103898/admin/page-posts/published/" target="_blank"><i class="hgi hgi-stroke hgi-linkedin-02 social-icons"></i></a>
@@ -94,11 +94,11 @@
                                 <p class="text-blue-1 fw-bold text-sm">Contact Details</p>
                                 <div>
                                     <div class="contact-icon-aligment">
-                                        <i class="hgi hgi-stroke hgi-contact-02"></i>
+                                        <i class="hgi hgi-stroke hgi-contact-02 text-blue-1"></i>
                                         <p name="c-ContactNo" class="text-blue-1 text-xs"></p>
                                     </div>
                                     <div class="contact-icon-aligment">
-                                        <i class="hgi hgi-stroke hgi-mail-01"></i>
+                                        <i class="hgi hgi-stroke hgi-mail-01 text-blue-1"></i>
                                         <p name="c-EmailAddress" class="text-blue-1 text-xs"></p>
                                     </div>
                                 </div>
@@ -106,15 +106,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="background-footer">
+                    <img src="./assets/img/footerImg.png" class="ratio ratio-1x1 "/>
+                </div>
             </div>
             <hr class="mb-5">
             <div class="footer-end">
-                <div class="copyright">
+                <div class="copyright text-blue-1">
                     <p>Copyright &copy; [CopyrightYear] NMI. All Rights Reserved</p>
                 </div>
                 <div class="user-consent">
-                    <a class="user-consent-list" data-bs-toggle="modal" data-bs-target="#terms-conditions">Terms and Condition</a>
-                    <a class="user-consent-list" data-bs-toggle="modal" data-bs-target="#privacy-policy">Privacy and Policy</a>
+                    <a class="user-consent-list text-blue-1" data-bs-toggle="modal" data-bs-target="#terms-conditions">Terms and Condition</a>
+                    <a class="user-consent-list text-blue-1" data-bs-toggle="modal" data-bs-target="#privacy-policy">Privacy and Policy</a>
                 </div>
             </div>
         </div>

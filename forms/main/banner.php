@@ -35,26 +35,42 @@
 //         </div>
 //         </div>
 //         </section>';
-echo '
+echo '   
 <section id="hero">
     <div class="hero-video">
-        <video autoplay muted loop class="ratio ratio-21x9 blur-sm video-aspect">
+        <video autoplay muted loop class="ratio ratio-21x9 blur-sm video-aspect" loading="lazy">
             <source src="assets/videos/NMIBackgroundVideo.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
     </div>
     <div class="hero-content">
-        <div class="container" data-aos="zoom-out" data-aos-delay="100">
+        <div class="container">
             <div class="hero-title-container">
                 <h5 class="nmi-thugline">trusted cybersecurity leader</h5>
-                <p class="nmi-thugline-desc">NMI is the exclusive distributor of Kaseya in the Philippines, <br> and a trusted cybersecurity leader.</p>
-                <div class="get-start-alignment"><a href="#about" class="btn-get-started scrollto" data-bs-toggle="modal" data-bs-target="#get-a-demo">get a demo</a></div>
+                <p class="nmi-thugline-desc">AI - driven solutions to help your business scale efficiently, improve operations, and  achieve top-tier service delivery.</p>
+                <div class="get-start-alignment">
+                    <div class="brochure-cta-container">
+                        <button class="btn-orange btn">
+                            <div>
+                                <h5 class="brochure-label">Unlock the Details</h5>
+                                <p class="brochure-cta">Download Here</p>
+                                <div class="btn-dl">
+                                    <p class="brochure-text-sm">(Company Brochure)</p>
+                                    <i class="hgi hgi-stroke hgi-download-01 dl-icon"></i>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 '
 ?>
+<!-- <button class="btn-orange btn btn-sm rounded-md">
+                                    <p class="brochure-txt">Download Here</p>
+                                </button> -->
 <!-- <div id="banner-solution-selector" class="solution-grid"></div> -->
 <!--  -->
 <!-- <div id="kaseya365" class="kaseya365-banners"> -->
