@@ -112,7 +112,6 @@ var NMICore = (function () {
         }
 
         var elementObject = $("#" + elementId.replace("/", ""));
-        console.log(elementObject);
 
         elementObject.next().remove(".diverror");
         elementObject.parent().next().remove(".diverror");
@@ -189,12 +188,10 @@ var NMICore = (function () {
   })();
 
   var NMICORE_ConfigDataElement = (function () {
-    var addSelectOption = function (id, value) {
-      $.each(value, function (index, item) {
-        $("#".concat(id)).append(
-          '<option value="' + item.name + '">' + item.name + "</option>"
-        );
-      });
+    var addSelectOption = function (id, value, label) {
+      $("#".concat(id)).append(
+        '<option value="' + value + '">' + label + "</option>"
+      );
     };
 
     var addElement = function (id, component) {
@@ -242,12 +239,12 @@ var NMICore = (function () {
           result.subProduct.includes(item.id)
         );
 
-        const selectComponent = componentFunction.selectOption(
+        const selectComponent = _compFunc.selectOption(
           "_".concat(result.id),
           result.id,
           constant.OptionalProductLabel.label
         );
-        const manageEndpointQty = componentFunction.selectOption(
+        const manageEndpointQty = _compFunc.selectOption(
           "_".concat(constant.ManageEndpointLabel.selectId),
           constant.ManageEndpointLabel.selectId,
           constant.ManageEndpointLabel.label
@@ -262,7 +259,7 @@ var NMICore = (function () {
           result.subProduct.length
         );
 
-        const selectCheckBox = componentFunction.CheckBoxLabel(
+        const selectCheckBox = _compFunc.CheckBoxLabel(
           result.id,
           constant.CheckBoxLabel.description,
           result.alias
@@ -274,7 +271,13 @@ var NMICore = (function () {
             selectComponent
           );
 
-          NMICore.AppendDataElement.AddSelectOption(result.id, product);
+          product.map((product, i) =>
+            NMICore.AppendDataElement.AddSelectOption(
+              result.id,
+              product.name,
+              product.name
+            )
+          );
           NMICore.AppendDataElement.AppendOnChange(result.id);
         }
 
@@ -291,9 +294,12 @@ var NMICore = (function () {
             manageEndpointQty
           );
 
-          NMICore.AppendDataElement.AddSelectOption(
-            constant.ManageEndpointLabel.selectId,
-            constant.EndpointQtyManage
+          constant.EndpointQtyManage.map((value, i) =>
+            NMICore.AppendDataElement.AddSelectOption(
+              constant.ManageEndpointLabel.selectId,
+              value.name,
+              value.name
+            )
           );
         }
 
@@ -322,8 +328,18 @@ var NMICore = (function () {
         $("#".concat(withAliasId.id)).remove();
       }
       if (product === "RMM/Endpoint Management") {
-        $("#_".concat(constant.ManageEndpointLabel.selectId)).remove();
+        $("#_".concat(constant.ManageEndpointLabel.selectId)).empty();
       }
+    };
+    var resetOption = function (...selector) {
+      $.each(selector, function (i, value) {
+        $($("#".concat(value)))
+          .children("option")
+          .not(":disabled")
+          .remove();
+
+        $($("#".concat(value))).val("");
+      });
     };
 
     return {
@@ -333,6 +349,7 @@ var NMICore = (function () {
       CheckDataLengthElement: checkDataLengthElement,
       AppendOnChange: appendOnChange,
       RemoveElement: removeElement,
+      ResetOption: resetOption,
     };
   })();
 
@@ -378,6 +395,7 @@ var NMICore = (function () {
       ValidateValueElement: NMICORE_ConfigDataElement.ValidateValueElement,
       CheckDataLengthElement: NMICORE_ConfigDataElement.CheckDataLengthElement,
       AppendOnChange: NMICORE_ConfigDataElement.AppendOnChange,
+      ResetOption: NMICORE_ConfigDataElement.ResetOption,
     },
   };
 })();

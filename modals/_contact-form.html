@@ -1,4 +1,4 @@
-<div id="contact-form" class="modal">
+<div id="contact-form" class="modal modal-form">
   <div class="modal-dialog">
     <div class="modal-content rounded-0">
       <div class="modal-header solution-modal-header rounded-0">
@@ -6,7 +6,7 @@
           Drop us a message
         </h5>
         <i
-          class="bi bi-x-lg text-white fs-5"
+          class="bi bi-x-lg text-white fs-5 remove-validation"
           role="button"
           data-bs-dismiss="modal"
           aria-label="Close"
@@ -27,7 +27,7 @@
                   type="text"
                   name="firstname"
                   class="form-control rounded-0 form-control-sm"
-                  id="Firstname"
+                  id="firstname"
                   placeholder="Enter First Name"
                   req
                 />
@@ -38,7 +38,7 @@
                   type="text"
                   name="lastname"
                   class="form-control rounded-0 form-control-sm"
-                  id="Lname"
+                  id="lastname"
                   placeholder="Enter Last Name"
                   req
                 />
@@ -51,7 +51,7 @@
                   type="text"
                   name="compname"
                   class="form-control rounded-0 form-control-sm"
-                  id="Cname"
+                  id="companyname"
                   placeholder="Enter Company Name"
                   req
                 />
@@ -62,7 +62,7 @@
                   type="text"
                   name="jobdesig"
                   class="form-control rounded-0 form-control-sm"
-                  id="JDesignation"
+                  id="jobdesignation"
                   placeholder="Enter Job Designation"
                   req
                 />
@@ -74,7 +74,7 @@
                 type="text"
                 class="form-control rounded-0"
                 name="compaddress"
-                id="caddress"
+                id="companyaddress"
                 placeholder="Enter Company Address"
                 req
               />
@@ -133,7 +133,12 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button id="btnInsertData" type="submit" class="btn btn-sm">
+          <button
+            id="btnContactForm"
+            type="submit"
+            class="btn btn-sm cls-insert send-contact"
+            insert-data
+          >
             Submit
           </button>
         </div>

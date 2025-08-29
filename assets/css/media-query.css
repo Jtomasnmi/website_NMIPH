@@ -364,7 +364,8 @@
 
   .hero-content {
     position: absolute;
-    top: 25%;
+    /* top: 25%; */
+    top: 23%;
     overflow: hidden;
     transform: translate(0%, -50%);
     width: 100%;
@@ -432,9 +433,7 @@
   .img-opacity {
     height: 15rem;
   }
-  .footer-logo {
-    width: 30% !important;
-  }
+
   .contact-action {
     display: flex;
     flex-direction: row;
@@ -444,17 +443,62 @@
   .social-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 4rem;
+  }
+  .testimonial-bg {
+    position: relative;
+    width: 100%;
+  }
+  .testimonial-img {
+    display: block;
+    opacity: 0.3;
+  }
+  .testimonial-content {
+    position: absolute;
+    top: 2rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .testimonial-containers {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .testimonial-cards {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1) 0 4px 6px -4px
+      rgb(0 0 0 / 0.1);
+    background: transparent;
+  }
+  .background-footer {
+    position: absolute;
+    left: 21rem;
+    bottom: -111px;
+    z-index: -1;
+  }
+  .background-footer img {
+    width: 100%;
+    opacity: 0.2;
   }
 }
 
 @media (min-width: 852px) {
   .hero-content {
     position: absolute;
-    top: 55%;
+    /* top: 55%; */
+    top: 53%;
     overflow: hidden;
     transform: translate(0%, -50%);
     width: 100%;
+  }
+  .contact-form-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
   }
 }
 
@@ -505,14 +549,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 7rem;
   }
-  .footer-logo {
-    width: 50% !important;
-  }
-  .footer-top .footer-contact {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-  }
+
+  /* .footer-top .footer-contact {
+  } */
   #footer .footer-top .footer-end {
     font-size: 12px;
     display: flex;
@@ -749,7 +788,8 @@
   }
   .hero-content {
     position: absolute;
-    top: 40%;
+    /* top: 40%; */
+    top: 37%;
     overflow: hidden;
     transform: translate(0%, 0%);
     width: 100%;
@@ -764,9 +804,10 @@
   .nmi-thugline-desc {
     font-size: 19px;
     text-align: left;
-    padding: 0 30rem 0 0;
+    padding: 0 38rem 0 0;
   }
   .get-start-alignment {
+    margin-top: 3rem;
     display: flex;
     justify-content: left;
   }
@@ -791,12 +832,6 @@
     margin-top: 4rem;
   }
 
-  .kaseya365-title {
-    font-weight: 500;
-    color: #012d6c;
-    text-align: center;
-    font-size: 15px;
-  }
   .kaseya-package-grid p {
     font-size: 13px;
     margin-bottom: 0 !important;
@@ -828,6 +863,50 @@
   }
   .px-title {
     padding: 0 11rem;
+  }
+  .testimonial-bg {
+    position: relative;
+    height: 100vh;
+  }
+  .testimonial-img {
+    display: block;
+    opacity: 0.3;
+    width: 100%;
+  }
+  .testimonial-containers {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .social-container {
+    margin-top: 7rem;
+  }
+  .margin-lg {
+    margin-left: 10px;
+  }
+  .brochure-cta-container {
+    margin-left: 1rem;
+  }
+  .background-footer {
+    position: absolute;
+    left: 34rem;
+    bottom: 92px;
+    z-index: -1;
+  }
+  .background-footer img {
+    width: 84%;
+    opacity: 0.2;
+  }
+  #automation-segmentedTab .automation-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #automation-segmentedTab .pill-content {
+    grid-column: span 2;
+    display: flex;
+    margin: 2rem;
   }
 }
 
@@ -1010,6 +1089,26 @@
     top: 250px;
     rotate: 90deg;
   }
+  .background-footer {
+    position: absolute;
+    left: 50rem;
+    bottom: 150px;
+    z-index: -1;
+  }
+  .background-footer img {
+    width: 80%;
+    opacity: 0.2;
+  }
+  .background-footer {
+    position: absolute;
+    left: 40rem;
+    bottom: 45px;
+    z-index: -1;
+  }
+  .background-footer img {
+    width: 80%;
+    opacity: 0.2;
+  }
 }
 
 @media (max-width: 1281px) {
@@ -1024,10 +1123,7 @@
     margin: 1.5rem -21.7rem 0 !important;
   }
 }
-@media (min-width: 1440px) {
-  .footer-logo {
-    width: 30% !important;
-  }
+@media (min-width: 1400px) {
   .hr-vertical {
     position: absolute;
     left: 184px;
@@ -1040,6 +1136,26 @@
   .kaseya-package-grid p {
     font-size: 15px;
     margin-bottom: 0 !important;
+  }
+  .cookies-overlay {
+    width: 62rem;
+  }
+  .background-footer {
+    position: absolute;
+    left: 46rem;
+    bottom: 35px;
+    z-index: -1;
+  }
+  .background-footer img {
+    width: 70%;
+    opacity: 0.2;
+  }
+  .kaseya365-title {
+    font-size: 25px;
+  }
+  .testimonial-bg {
+    position: relative;
+    height: 80vh;
   }
 }
 

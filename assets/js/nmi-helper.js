@@ -1,64 +1,64 @@
-let webHelper = function(){
+let webHelper = (function () {
   // (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
   //   ({key: "AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao", v: "weekly"});
-    // (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-    // ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly"});
+  // (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+  // ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly"});
 
-    let map,
-        dateNow = new Date(),
-        intYear = dateNow.getFullYear();
+  let map,
+    dateNow = new Date(),
+    intYear = dateNow.getFullYear();
 
-    let init = function(){
-        // initMap();
-        initWebCookies();
-        initgetCopyrightYear();
-    };
+  let init = function () {
+    // initMap();
+    initWebCookies();
+    initgetCopyrightYear();
+  };
 
-    // async function initMap() {
-    //   const position = {
-    //                      lat: constant.MapPosition.lat
-    //                     ,lng: constant.MapPosition.lng
-    //                   };
-    
-    //   const { Map } = await google.maps.importLibrary("maps");
-    //   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+  // async function initMap() {
+  //   const position = {
+  //                      lat: constant.MapPosition.lat
+  //                     ,lng: constant.MapPosition.lng
+  //                   };
 
-    //   map = new Map(document.getElementById("map"), {
-    //     zoom: 4,
-    //     center: position,
-    //     mapId: "DEMO_MAP_ID",
-    //   });
+  //   const { Map } = await google.maps.importLibrary("maps");
+  //   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-    //   const marker = new AdvancedMarkerElement({
-    //       map: map,
-    //       position: position,
-    //       title: constant.MapTitle.title,
-    //   });
-    // }
+  //   map = new Map(document.getElementById("map"), {
+  //     zoom: 4,
+  //     center: position,
+  //     mapId: "DEMO_MAP_ID",
+  //   });
 
-    async function initWebCookies(){
-        if (document.cookie.indexOf("accepted_cookies=") < 0) {
-          $(".cookie-overlay").removeClass("d-none").addClass("d-block");
-        }
+  //   const marker = new AdvancedMarkerElement({
+  //       map: map,
+  //       position: position,
+  //       title: constant.MapTitle.title,
+  //   });
+  // }
 
-        $(".accept-cookies").on("click", function () {
-          document.cookie = "accepted_cookies=yes;";
-          $(".cookie-overlay").removeClass("d-block").addClass("d-none");
-        });
-
-        $(".close-cookies").on("click", function () {
-          $(".cookie-overlay").removeClass("d-block").addClass("d-none");
-        });
+  async function initWebCookies() {
+    if (document.cookie.indexOf("accepted_cookies=") < 0) {
+      $(".cookie-overlay").removeClass("d-none").addClass("d-block");
     }
 
-    async function initgetCopyrightYear(){
-      $(".copyright").each(function() {
-          var text = $(this).text();
-          $(this).text(text.replace('[CopyrightYear]', intYear)); 
-      });
-    }
+    $(".accept-cookies").on("click", function () {
+      document.cookie = "accepted_cookies=yes;";
+      $(".cookie-overlay").removeClass("d-block").addClass("d-none");
+    });
 
-    return{
-       init: init
-    };
-}();
+    $(".close-cookies").on("click", function () {
+      $(".cookie-overlay").removeClass("d-block").addClass("d-none");
+    });
+  }
+
+  async function initgetCopyrightYear() {
+    $(".copyright").each(function () {
+      var text = $(this).text();
+      $(this).text(text.replace("[CopyrightYear]", intYear));
+    });
+  }
+
+  return {
+    init: init,
+  };
+})();

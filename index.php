@@ -32,7 +32,16 @@
 
   <!-- Huge Icon -->
   <!-- <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css" /> -->
-   <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+
+  <!-- tambler icon -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+/>
+
+
+
   
 
   <!-- Template Main CSS File -->
@@ -50,11 +59,10 @@
       <?php include 'forms/main/platform.php';?>
     <!-- ======= Solution Section ======= -->
       <?php include 'forms/main/solutions.php';?>
-    <!-- ======= News Section ======= -->
-      <!-- <?php include 'forms/main/news.php';?> -->
-    <!-- ======= Profile Section ======= -->
-    <!-- ======= Careers Section ======= -->
-      <!-- <?php include 'forms/main/careers.php';?> -->
+    <!-- Client testimonial Section -->
+      <?php include 'forms/main/testimonial.php';?>
+    <!-- ======= Contact Section ======= -->
+      <?php include 'forms/main/contact.php';?>
     <!-- ======= Cookies ======= -->
     <?php include 'forms/cookies/cookie.php';?>
   </main>
@@ -86,6 +94,7 @@
 
   <!-- External JS-->
   <script src="assets/js/nmi-constant.js"></script>
+  <script src="assets/js/phil-location.js"></script>
   <script src="assets/svg/nmi-svg-constant.js"></script>
   <script src="assets/js/nmi-helper.js"></script>
   <script src="assets/js/nmi-component-helper.js"></script>

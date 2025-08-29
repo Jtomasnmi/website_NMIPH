@@ -70,14 +70,7 @@ let _compFunc = (function () {
     );
   };
 
-  const k365BannerCard = (
-    id,
-    packageSelector,
-    src,
-    desc,
-    btnLabel,
-    targetModal
-  ) => {
+  const k365BannerCard = (id, packageSelector, src, desc, targetModal) => {
     return $(
       '<div id="' +
         id +
@@ -92,31 +85,66 @@ let _compFunc = (function () {
         src +
         '" class="ratio ratio-1x1 img-width"/>' +
         "</div>" +
+        '<div class="d-flex justify-content-center align-items-center mb-3">' +
+        '<div><i class="hgi hgi-stroke hgi-arrow-down-01 platform-down-icon" data-bs-toggle="modal" data-bs-target="#' +
+        targetModal +
+        '"></i></div>' +
+        "</div>" +
         '<div id="' +
         packageSelector +
         '" class="kaseya-package-grid">' +
         "</div>" +
         "</div>" +
-        '<div class="card-footer">' +
-        '<div class="d-flex justify-content-center">' +
-        '<button id="k365-card-btn" class="btn btn-sm k365-banner-modals raleway-font" data-bs-toggle="modal" data-bs-target="#' +
-        targetModal +
-        '">' +
-        btnLabel +
-        "</button>" +
-        "</div>" +
-        "</div>" +
         "</div>" +
         "</div>"
     );
+    // return $(
+    //   '<div id="' +
+    //     id +
+    //     '" class="position-relative">' +
+    //     '<div class="card">' +
+    //     '<div class="card-body">' +
+    //     '<p class="kaseya365-title">' +
+    //     desc +
+    //     "</p>" +
+    //     '<div class="d-flex justify-content-center">' +
+    //     '<img src="' +
+    //     src +
+    //     '" class="ratio ratio-1x1 img-width"/>' +
+    //     "</div>" +
+    //     '<div id="' +
+    //     packageSelector +
+    //     '" class="kaseya-package-grid">' +
+    //     "</div>" +
+    //     "</div>" +
+    //     '<div class="card-footer">' +
+    //     '<div class="d-flex justify-content-center">' +
+    //     '<button id="k365-card-btn" class="btn btn-sm k365-banner-modals raleway-font" data-bs-toggle="modal" data-bs-target="#' +
+    //     targetModal +
+    //     '">' +
+    //     btnLabel +
+    //     "</button>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>"
+    // );
   };
 
-  const solutionsBanner = (description, targetModal, label) => {
+  const solutionsBanner = (description, targetModal, label, img) => {
     return $(
       '<div class="card h-100">' +
         '<div class="card-body px-3">' +
+        '<div class="d-flex justify-content-center">' +
+        // '<div class="nmi-solution-img"><img class="ratio ratio-4x3 icon" src="' +
+        // img +
+        // '"/></div>' +
+        '<div class="nmi-solution-icon-div"><img src="' +
+        img +
+        '" class="ratio ratio-1x1 w-25"/></div>' +
+        "</div>" +
         '<div class="solution-card-content">' +
-        '<h5 class="text-white mb-0 solution-label">' +
+        '<h5 class="mb-0 solution-label">' +
         label +
         "</h5>" +
         '<p class="solution-description">' +
@@ -129,6 +157,31 @@ let _compFunc = (function () {
         "</div>" +
         "</div>"
     );
+    // return $(
+    //   '<div class="card h-100">' +
+    //     '<div class="card-body px-3">' +
+    //     '<div class="d-flex justify-content-center">' +
+    //     // '<div class="nmi-solution-img"><img class="ratio ratio-4x3 icon" src="' +
+    //     // img +
+    //     // '"/></div>' +
+    //     '<div class="nmi-solution-icon-div"><i class="' +
+    //     iconName +
+    //     '"></i></div>' +
+    //     "</div>" +
+    //     '<div class="solution-card-content">' +
+    //     '<h5 class="mb-0 solution-label">' +
+    //     label +
+    //     "</h5>" +
+    //     '<p class="solution-description">' +
+    //     description +
+    //     "</p>" +
+    //     '<div><i class="hgi hgi-stroke hgi-arrow-right-01 solution-sm-icon" data-bs-toggle="modal" data-bs-target="' +
+    //     targetModal +
+    //     '"></i></div>' +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>"
+    // );
   };
 
   const getDemoCard = (icon, title, description) => {
@@ -161,8 +214,8 @@ let _compFunc = (function () {
         '<span class="text-danger"> *</span></label>' +
         '<select id="' +
         id +
-        '" class="form-select" aria-label="Default select example" >' +
-        '"<option value="" selected disabled>Select..</option>"' +
+        '" class="form-select" aria-label="Default select example" name="product" req>' +
+        '"<option selected disabled value="">Select..</option>"' +
         "</select>" +
         "</div>"
     );
@@ -238,6 +291,53 @@ let _compFunc = (function () {
     );
   };
 
+  const k365PillsTab = (id, target, label) => {
+    return $(
+      '<button class="nav-link d-flex align-items-center gap-1" id="' +
+        id +
+        '" data-bs-toggle="pill" data-bs-target="#' +
+        target +
+        '" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">' +
+        '<p class="mb-0">' +
+        label +
+        "</p>" +
+        "</button>"
+    );
+  };
+
+  const k365PillsContent = (parentId, id, img, title, label) => {
+    return $(
+      '<div  class="tab-pane fade show text-white" id="' +
+        id +
+        '" role="tabpanel" aria-labelledby="v-pills-home-tab">' +
+        "<div>" +
+        '<h5 class="text-white mb-3 fw-bold">' +
+        'Kaseya 365 <span class="fw-normal">- Endpoint</span>' +
+        "</h5>" +
+        " </div>" +
+        "<div>" +
+        '<img src="' +
+        img +
+        '" alt="' +
+        parentId +
+        '"  class="ratio ratio-21x9" />' +
+        "</div>" +
+        "<div>" +
+        "<h4>" +
+        title +
+        "</h4>" +
+        "<p>" +
+        label +
+        "</p>" +
+        '<p id="automation-product-content" class="d-flex align-items-center gap-1">Products:</p>' +
+        '<button  id="get-demo-btn" class="btn get-start-btn scrollto" data-bs-toggle="modal" data-bs-target="#get-a-demo">' +
+        "Get A Demo" +
+        "</button>" +
+        "</div>" +
+        "</div>"
+    );
+  };
+
   return {
     k365Card: k365Card,
     solutionCard: solutionCard,
@@ -245,10 +345,12 @@ let _compFunc = (function () {
     k365BannerCard: k365BannerCard,
     solutionsBanner: solutionsBanner,
     getDemoCard: getDemoCard,
-    selectOption: selectOption,
     imgElement: imgElement,
     CheckBoxLabel: checkBoxLabel,
     SolutionTypeCard: solutionTypeCard,
     CoreValuesCard: coreValuesCard,
+    selectOption: selectOption,
+    k365PillsTab: k365PillsTab,
+    k365PillsContent: k365PillsContent,
   };
 })();

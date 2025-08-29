@@ -161,9 +161,8 @@
                             <li class="nav-link-style"><a class="scrollto" href="#hero">Home</a></li>
                             <li class="nav-link-style"><a class="scrollto" href="#platform">Platform</a></li>
                             <li class="nav-link-style"><a class="scrollto" href="#solutions">Solutions</a></li>
-                            <li class="nav-link-style"><a class="scrollto" data-bs-toggle="modal" data-bs-target="#contact-form">Contact Us</a></li>
-                            <li><button id="get-demo-btn" class="btn get-start-btn scrollto" data-bs-toggle="modal" data-bs-target="#get-a-demo">Get A Demo</button>
-                    </li>
+                            <li class="nav-link-style"><a class="scrollto" href="#contact">Contact Us</a></li>
+                            <li><button id="get-demo-btn" class="btn get-start-btn scrollto" data-bs-toggle="modal" data-bs-target="#get-a-demo">Get A Demo</button></li>
                         </ul>
                     </nav>
                     <div class="d-flex align-items-center gap-4">
