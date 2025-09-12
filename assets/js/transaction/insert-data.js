@@ -10,9 +10,18 @@ let insertData = (function () {
     });
   }
 
-  async function AddData(buttonid, form, objData, ..._urls) {
+  async function AddData(
+    buttonid,
+    form,
+    objData,
+    optionalClrField,
+    optionalFieldValue,
+    ..._urls
+  ) {
     $("#".concat(buttonid)).click(function (e) {
       e.preventDefault();
+
+      console.log(objData);
 
       let dto = [];
 
@@ -22,13 +31,21 @@ let insertData = (function () {
 
       $.each(objData, function (i, value) {
         let data = NMICore.DataConversion.ConvertArrToObj(value);
+
         if (!NMICore.ObjectValidation.IsObjectEmpty(value)) {
           dto.push(data);
         }
       });
 
       if (dto.length !== 0) {
-        NMICore.Ajax.Post(form, constant.MethodType.Post, _urls, dto);
+        NMICore.Ajax.Post(
+          form,
+          constant.MethodType.Post,
+          _urls,
+          dto,
+          optionalClrField,
+          optionalFieldValue
+        );
       }
     });
   }
@@ -36,15 +53,17 @@ let insertData = (function () {
   async function saveContactForm() {
     let objData = [
       constant.GrpElemHolder.clientDetail,
-      constant.GrpElemHolder.messageDetail,
+      constant.GrpElemHolder.clientCompanyLocation,
     ];
 
     AddData(
       constant.WebButton.btnContactForm,
       constant.Form.clientFormId,
       objData,
+      constant.PhLocationId.CountryID,
+      constant.SpecificClrField[0],
       constant.Url.clientDetail,
-      constant.Url.clientMessage
+      constant.Url.clientCompanyLocation
     );
   }
 
@@ -55,6 +74,8 @@ let insertData = (function () {
       constant.WebButton.btnDemoForm,
       constant.Form.getDemoForm,
       objData,
+      null,
+      null,
       null
     );
   }

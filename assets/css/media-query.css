@@ -445,21 +445,21 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
   }
-  .testimonial-bg {
+  /* .testimonial-bg {
     position: relative;
     width: 100%;
-  }
+  } */
   .testimonial-img {
     display: block;
     opacity: 0.3;
   }
-  .testimonial-content {
+  /* .testimonial-content {
     position: absolute;
     top: 2rem;
     bottom: 0;
     left: 0;
     right: 0;
-  }
+  } */
   .testimonial-containers {
     margin-top: 1rem;
     display: grid;
@@ -864,9 +864,12 @@
   .px-title {
     padding: 0 11rem;
   }
-  .testimonial-bg {
+  /* .testimonial-bg {
     position: relative;
     height: 100vh;
+    } */
+  .testimonial-bg {
+    background: url("./../img/testimonials/testimonialbg.png");
   }
   .testimonial-img {
     display: block;
@@ -874,7 +877,7 @@
     width: 100%;
   }
   .testimonial-containers {
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
@@ -963,13 +966,6 @@
     /* box-shadow: 0 10px 15px -3px #0456aa, 0 4px 6px -4px #0456aa; */
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1) 0 4px 6px -4px
       rgb(0 0 0 / 0.1);
-  }
-  .solution-aligment {
-    /* display: flex;
-    justify-content: center; */
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr); */
-    /* align-items: center; */
   }
 
   .k-365-desc {
@@ -1153,10 +1149,10 @@
   .kaseya365-title {
     font-size: 25px;
   }
-  .testimonial-bg {
+  /* .testimonial-bg {
     position: relative;
     height: 80vh;
-  }
+  } */
 }
 
 /* hero section */

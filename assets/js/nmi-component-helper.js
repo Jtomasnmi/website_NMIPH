@@ -337,6 +337,64 @@ let _compFunc = (function () {
         "</div>"
     );
   };
+  // const testimonialCard = (company, message, client, designation) => {
+  //   return $(
+  //     '<div class="card h-100">' +
+  //       '<div class="card-header">' +
+  //       '<div class="d-flex align-items-center gap-1">' +
+  //       '<i class="hgi hgi-stroke hgi-chatting-01 testimonial-icon"></i>' +
+  //       '<p class="testimonial-author text-xs mb-0 font-bold">' +
+  //       company +
+  //       "</p>" +
+  //       "</div>" +
+  //       "</div>" +
+  //       '<div class="card-body">' +
+  //       '<h6 class="testimonial-description">"' +
+  //       message +
+  //       '"</h6>' +
+  //       "</div>" +
+  //       '<div class="card-footer">' +
+  //       '<p class="testimonial-author font-bold">-' +
+  //       client +
+  //       "</p>" +
+  //       '<p class="testimonial-title text-truncate w-75 jd-selector" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="' +
+  //       designation +
+  //       '">' +
+  //       designation +
+  //       "</p>" +
+  //       "</div>" +
+  //       "</div>"
+  //   );
+  // };
+  const testimonialCard = (company, message, client, designation) => {
+    return $(
+      '<div class="card h-100">' +
+        '<div class="card-header">' +
+        '<i class="hgi hgi-stroke hgi-chatting-01 testimonial-icon"></i>' +
+        "</div>" +
+        '<div class="card-body">' +
+        '<h6 class="testimonial-description">"' +
+        message +
+        '"</h6>' +
+        "</div>" +
+        '<div class="card-footer">' +
+        '<p class="testimonial-author font-bold">-' +
+        client +
+        "</p>" +
+        '<div class="testimonial-designation">' +
+        '<p class="testimonial-title text-truncate jd-selector w-65" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="' +
+        designation +
+        '">' +
+        designation +
+        "</p>" +
+        "</div>" +
+        '<p class="testimonial-company">' +
+        company +
+        "</p>" +
+        "</div>" +
+        "</div>"
+    );
+  };
 
   return {
     k365Card: k365Card,
@@ -352,5 +410,6 @@ let _compFunc = (function () {
     selectOption: selectOption,
     k365PillsTab: k365PillsTab,
     k365PillsContent: k365PillsContent,
+    testimonialCard: testimonialCard,
   };
 })();

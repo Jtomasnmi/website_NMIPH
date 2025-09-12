@@ -92,7 +92,6 @@ let getData = (function () {
     const promise = NMICore.Ajax.Get(constant.Url.companyProfileHeader);
     promise.then((result) => _compInteg.ElementStruct(result));
   }
-  0;
   async function getCompanyProfileDetail() {
     const promise = NMICore.Ajax.Get(constant.Url.companyProfileDetail);
     promise.then((result) => _compInteg.ElementStruct(result));

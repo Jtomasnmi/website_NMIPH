@@ -23,6 +23,7 @@ let constant = (function () {
 
   let url = {
     clientDetail: "controller/clientdetail.php",
+    clientCompanyLocation: "controller/clientcompanylocation.php",
     companyDetail: "controller/companydetail.php",
     clientMessage: "controller/clientmessage.php",
     companyProfileHeader: "controller/companyprofileheader.php",
@@ -32,6 +33,7 @@ let constant = (function () {
     footerHeader: "controller/footerheader.php",
     footerDetail: "controller/footerdetail.php",
     companycoreValuesDetail: "controller/corevalues.php",
+    emailhostdetail: "controller/emailhostdetail.php",
   };
 
   let message = {
@@ -47,7 +49,7 @@ let constant = (function () {
 
   let grpElemHolder = {
     clientDetail: "grpClientDetail",
-    messageDetail: "grpClientMesage",
+    clientCompanyLocation: "grpClientCompLocation",
     demoDetail: "grpClientDemo",
   };
 
@@ -73,12 +75,11 @@ let constant = (function () {
     "get-demo-mod",
     "news-mod",
     "profile-mod",
-    "contact-form-mod",
   ];
 
   const htmlTagList = ["h2", "h3", "h4", "a", "p", "ul"];
 
-  const elemTypeObj = ["input", "textarea"];
+  const elemTypeObj = ["input", "textarea", "select"];
 
   let appendedElementTag = {
     li: "li",
@@ -924,15 +925,62 @@ let constant = (function () {
   ];
 
   const phLocationId = {
+    CountryID: "contact #country-select",
     regionID: "contact #region-select",
     provinceID: "contact #province-select",
     municipalityID: "contact #municipality-select",
     barangayID: "contact #barangay-select",
   };
+
   const k365EndpointPillsTab = {
     tabId: "v-pills-tab",
     contentId: "v-pills-tabContent",
   };
+
+  const testimonialData = [
+    {
+      client: "Arman Pastrana",
+      message: "Keep up the good service.",
+      company: "BCC Global Solutions, Inc.",
+      designation: "IT Manager",
+    },
+    {
+      client: "Arnold Toledo",
+      message:
+        "The technical support services have been excellent so far. Thank you!",
+      company: "Kawasaki Motors Phils. Corp.",
+      designation: "Information Systems – Systems Engineering Supervisor",
+    },
+    {
+      client: "Lyn Bautista",
+      message:
+        "We’re happy with how the engineers are handling things. They’re approachable and responsive.",
+      company: "CARD MRI Information Technology, Inc.",
+      designation: "Deputy Director for Data Center Operations",
+    },
+    {
+      client: "Peter Panelo",
+      message: "The technical support was very responsive.",
+      company: "DEPDev",
+      designation: "CO 1",
+    },
+    {
+      client: "Peter William Chua",
+      message:
+        "The assigned technical support agent was able to resolve our issue. It did not take too much time before they provided the resolution.",
+      company: "Ayala Land Malls Inc.",
+      designation: "IT Associate Manager",
+    },
+    {
+      client: "Dilma Ulasiman",
+      message:
+        "Thank you so much for your usual support, NMI team. Your responsiveness means a lot",
+      company: "Phoenix Petroleum Philippines, Inc.",
+      designation: "IT Application Support",
+    },
+  ];
+
+  const specificClrField = ["PHILIPPINES"];
 
   return {
     MapPosition: mapPosition,
@@ -968,5 +1016,7 @@ let constant = (function () {
     CheckBoxLabel: checkBoxLabel,
     PhLocationId: phLocationId,
     K365EndpointPillsTab: k365EndpointPillsTab,
+    TestimonialData: testimonialData,
+    SpecificClrField: specificClrField,
   };
 })();

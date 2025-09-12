@@ -84,6 +84,7 @@
                             <p class="text-blue-1 fw-bold text-sm">Address</p>
                             <div>
                                 <p name="c-CDAddressDescription" class="text-blue-1 text-xs"></p>
+                                <p name="c-WorkingDays" class="text-blue-1 text-xs mb-0"></p>
                                 <p name="c-OfficeHours" class="text-blue-1 text-xs"></p>
                             </div>
                         </div>
@@ -118,6 +119,7 @@
                 <div class="user-consent">
                     <a class="user-consent-list text-blue-1" data-bs-toggle="modal" data-bs-target="#terms-conditions">Terms and Condition</a>
                     <a class="user-consent-list text-blue-1" data-bs-toggle="modal" data-bs-target="#privacy-policy">Privacy and Policy</a>
+                    <a class="user-consent-list text-blue-1" data-bs-toggle="modal" data-bs-target="#">Diversity and inclusivity</a>
                 </div>
             </div>
         </div>

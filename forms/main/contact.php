@@ -76,7 +76,7 @@ echo
                                                 <label class="form-label">First Name<span> *</span></label>
                                                 <input
                                                 type="text"
-                                                name="firstname"
+                                                name="FirstName"
                                                 class="form-control rounded-0 form-control-sm"
                                                 id="firstname"
                                                 placeholder="eg. Wil"
@@ -87,7 +87,7 @@ echo
                                                 <label class="form-label">Last Name<span> *</span></label>
                                                 <input
                                                 type="text"
-                                                name="lastname"
+                                                name="LastName"
                                                 class="form-control rounded-0 form-control-sm"
                                                 id="lastname"
                                                 placeholder="eg. De Leon"
@@ -100,9 +100,9 @@ echo
                                                 <label class="form-label">Job Function<span> *</span></label>
                                                 <input
                                                 type="text"
-                                                name="jobfunction"
+                                                name="JobDesig"
                                                 class="form-control rounded-0 form-control-sm"
-                                                id="jobfunction"
+                                                id="jobdesig"
                                                 placeholder="eg. CISO"
                                                 req
                                                 />
@@ -111,7 +111,7 @@ echo
                                                 <label class="form-label">Job Level<span> *</span></label>
                                                 <input
                                                 type="text"
-                                                name="joblevel"
+                                                name="JobLevel"
                                                 class="form-control rounded-0 form-control-sm"
                                                 id="joblevel"
                                                 placeholder="eg. Grade 8"
@@ -121,13 +121,13 @@ echo
                                         </div>
                                         <div class="input-grid">
                                             <div class="col form-group">
-                                                <label class="form-label">Company<span> *</span></label>
+                                                <label class="form-label">Contact#<span> *</span></label>
                                                 <input
                                                 type="text"
-                                                name="jobfunction"
+                                                name="ContactNumber"
                                                 class="form-control rounded-0 form-control-sm"
-                                                id="jobfunction"
-                                                placeholder="eg. Silver ABC"
+                                                id="contactnumber"
+                                                placeholder="eg. 09xx 1xx 23xx"
                                                 req
                                                 />
                                             </div>
@@ -135,25 +135,38 @@ echo
                                                 <label class="form-label">Email<span> *</span></label>
                                                 <input
                                                 type="text"
-                                                name="emailaddress"
+                                                name="EmailAddress"
                                                 class="form-control rounded-0 form-control-sm"
-                                                id="email"
+                                                id="emailaddress"
                                                 placeholder="eg. wildeleon@email.com"
                                                 req
                                                 req-email
                                                 />
                                             </div>
                                         </div>
+                                        <div class="col form-group">
+                                            <label class="form-label">Company<span> *</span></label>
+                                            <input
+                                            type="text"
+                                            name="CompName"
+                                            class="form-control rounded-0 form-control-sm"
+                                            id="CompName"
+                                            placeholder="eg. Silver ABC"
+                                            req
+                                            />
+                                        </div>
+                                    </div>
+                                    <div id="grpClientCompLocation">
                                         <div class="input-grid">
                                             <div class="col form-group">
                                                 <label class="form-label">Country <span> *</span></label>
-                                                <select id="country" class="form-select rounded-none" aria-label="Default select example" req>
-                                                    <option value="philippines" selected disabled>Philippines</option>
+                                                <select name="Country" id="country-select" class="form-select form-select-sm rounded-none" aria-label="Default select example" req>
+                                                    <option value="PHILIPPINES" selected>Philippines</option>
                                                 </select>
                                             </div>
                                             <div class="col form-group">
                                                 <label class="form-label">Region<span> *</span></label>
-                                                <select id="region-select" class="form-select rounded-none" aria-label="Default select example" req>
+                                                <select name="Region" id="region-select" class="form-select form-select-sm rounded-none" aria-label="Default select example" req>
                                                     <option selected disabled value="">Select..</option>
                                                 </select>
                                             </div>
@@ -161,13 +174,13 @@ echo
                                         <div class="input-grid">
                                             <div class="col form-group">
                                                 <label class="form-label">Province<span> *</span></label>
-                                                <select id="province-select" name="province" class="form-select rounded-none" aria-label="Default select example" req>
+                                                <select name="Province" id="province-select" class="form-select form-select-sm rounded-none" aria-label="Default select example" req>
                                                     <option selected disabled value="">Select..</option>
                                                 </select>
                                             </div>
                                             <div class="col form-group">
                                                 <label class="form-label">Municipality <span> *</span></label>
-                                                <select id="municipality-select" name="municipality" class="form-select rounded-none" aria-label="Default select example" req> 
+                                                <select name="Municipality" id="municipality-select" class="form-select form-select-sm rounded-none" aria-label="Default select example" req> 
                                                     <option selected disabled value="">Select..</option>
                                                 </select>
                                             </div>
@@ -175,7 +188,7 @@ echo
                                         <div class="input-grid">
                                             <div class="col form-group">
                                                 <label class="form-label">Barangay<span> *</span></label>
-                                                <select id="barangay-select" name="barangay" class="form-select rounded-none" aria-label="Default select example" req>
+                                                <select name="Barangay" id="barangay-select" class="form-select form-select-sm rounded-none" aria-label="Default select example" req>
                                                     <option selected disabled value="">Select..</option>
                                                 </select>
                                             </div>
@@ -183,21 +196,20 @@ echo
                                                 <label class="form-label">Address<span> *</span></label>
                                                 <input
                                                 type="text"
-                                                name="jobfunction"
+                                                name="Address"
                                                 class="form-control rounded-0 form-control-sm"
-                                                id="jobfunction"
+                                                id="address"
                                                 placeholder="eg. 2F asia building ipilpil st."
-                                                req
-                                                />
+                                                req />
+                                            </div>
                                         </div>
-                                        </div>
-                                        
                                     </div>
                                     <button
                                         id="btnContactForm"
                                         type="submit"
                                         class="btn btn-sm cls-insert send-contact mt-4"
                                         insert-data
+                                        send-email
                                     >
                                         Submit
                                     </button>

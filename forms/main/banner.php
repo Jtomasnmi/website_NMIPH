@@ -50,16 +50,17 @@ echo '
                 <p class="nmi-thugline-desc">AI - driven solutions to help your business scale efficiently, improve operations, and  achieve top-tier service delivery.</p>
                 <div class="get-start-alignment">
                     <div class="brochure-cta-container">
-                        <button class="btn-orange btn">
-                            <div>
-                                <h5 class="brochure-label">Unlock the Details</h5>
-                                <p class="brochure-cta">Download Here</p>
-                                <div class="btn-dl">
-                                    <p class="brochure-text-sm">(Company Brochure)</p>
-                                    <i class="hgi hgi-stroke hgi-download-01 dl-icon"></i>
+                        <a href="./assets/attachment/CompanyProfile2025.pdf" download="CompanyProfile2025.pdf">
+                            <button class="btn-orange btn">
+                                <div>
+                                    <h5 class="brochure-label">Unlock the Details</h5>
+                                    <p class="brochure-cta">Download Here</p>
+                                    <div class="btn-dl">
+                                        <p class="brochure-text-sm">(Company Brochure)</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </button>
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

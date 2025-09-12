@@ -23,6 +23,7 @@ let modalPageHelper = (function () {
     addProvinceOption();
     addMunicipalityOption();
     addBarangayOption();
+    hoverTooltipTestimonial();
   };
 
   async function initModalPage() {
@@ -53,38 +54,19 @@ let modalPageHelper = (function () {
     });
   }
 
-  // async function loadK365ChildTabAutomation() {
-  //   $(window).on("load", function () {
-  //     constant.AutomationProp.map(({ id, _ }, i) => {
-  //       let div = $("<div>", { id: id }).appendTo(
-  //         "#k365AutomationEDR-selector"
-  //       );
-
-  //       i === 0 ? div.attr("hidden", false) : div.attr("hidden", true);
-
-  //       $("#" + id).load("k365-automation-tabs/" + id + ".html");
-  //     });
-  //   });
-  // }
-
-  // function click365AutomationTab() {
-  //   $(function () {
-  //     $.each(constant.AutomationProp, function (i, value) {
-  //       $("#" + value.tab).click(function () {
-  //         let active = constant.AutomationProp.find(({ id, _ }, i) => {
-  //           return !$("#" + id).is(":hidden");
-  //         });
-
-  //         $("#" + active.id).attr("hidden", true);
-  //         $("#" + value.id).attr("hidden", false);
-  //       });
-  //     });
-  //   });
-  // }
-
   async function hoverTooltip() {
     $(function () {
       $(".platform-down-icon").click(function () {
+        let tooltips = $('[data-bs-toggle="tooltip"]');
+        return [...tooltips].map(
+          (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+        );
+      });
+    });
+  }
+  async function hoverTooltipTestimonial() {
+    $(window).on("load", function () {
+      $("#testimonial-container .jd-selector").on("mouseover", function () {
         let tooltips = $('[data-bs-toggle="tooltip"]');
         return [...tooltips].map(
           (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
@@ -295,6 +277,7 @@ let modalPageHelper = (function () {
       });
     });
   }
+  async function downloadToaster() {}
 
   return {
     init: init,

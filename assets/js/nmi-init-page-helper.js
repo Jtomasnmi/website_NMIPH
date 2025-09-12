@@ -16,6 +16,7 @@ let initPageHelper = (function () {
     AppendSolutionTypeCard();
     Appendk365EndpointTab();
     Appendk365EnpointTabCont();
+    AppendTestimonialCard();
   };
 
   const K365Card = () => {
@@ -144,14 +145,13 @@ let initPageHelper = (function () {
       });
     });
   }
-
   async function Appendk365EndpointTab() {
     $(window).on("load", function () {
       $.each(constant.AutomationProp, function (i, value) {
         let tabs = _compFunc.k365PillsTab(value.id, value.tab, value.title);
-        $("#".concat(constant.K365EndpointPillsTab.tabId)).append(tabs);
-        $("#".concat(constant.AutomationProp[0].id)).addClass("active");
+        $("#".concat("v-pills-tab")).append(tabs);
 
+        $("#".concat(constant.AutomationProp[0].id)).addClass("active");
         if (value.isPro) {
           $("#".concat(value.id)).prepend(
             '<p class="badge bg-info mb-0">Pro</p>'
@@ -171,22 +171,36 @@ let initPageHelper = (function () {
           value.title,
           value.description
         );
-        $("#".concat(constant.K365EndpointPillsTab.contentId)).append(
-          tabContents
-        );
+        $("#".concat("v-pills-tabContent")).append(tabContents);
         $("#".concat(constant.AutomationProp[0].tab)).addClass("active");
 
         $.each(value.product, function (i, prod) {
-          const prodCss = i === 1 ? "text-primary border-r" : "text-primary";
-          const selector = `#${value.tab} #automation-product-content`;
-
-          $(selector).append(
-            `<a href="${prod.link}" class="${prodCss}" target="_blank">${prod.name}</a>`
+          let productLinkStyle =
+            i === 1 ? "text-primary border-r" : "text-primary";
+          $(`#${value.tab} #automation-product-content`).append(
+            `<a href="${prod.link}" class="${productLinkStyle}" target="_blank">${prod.name}</a>`
           );
         });
       });
     });
   }
+
+  async function AppendTestimonialCard() {
+    $(window).on("load", function () {
+      $.each(constant.TestimonialData, function (i, value) {
+        const cardData = _compFunc.testimonialCard(
+          value.company,
+          value.message,
+          value.client,
+          value.designation
+        );
+        $("#testimonial-selector").append(cardData);
+      });
+    });
+  }
+  // function AddTabActiveClass(id){
+  //   $("#".concat(id.tab)).eq().addClass("active")
+  // }
 
   return {
     init: init,

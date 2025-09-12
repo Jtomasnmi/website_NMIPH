@@ -6,14 +6,15 @@
    $objClient = new ClientDetail();
    $createdatetime = GlobalHelper::GetCurrentDateTime();
    
-   $firstname      = $_REQUEST['firstname'];
-   $lastname       = $_REQUEST['lastname'];
-   $jobdesig       = $_REQUEST['jobdesig'];
-   $compname       = $_REQUEST['compname'];
-   $compaddress    = $_REQUEST['compaddress'];
-   $emailaddress   = $_REQUEST['emailaddress'];
-   $contactno      = $_REQUEST['contactno'];
+   $FirstName      = $_REQUEST['FirstName'];
+   $LastName       = $_REQUEST['LastName'];
+   $JobDesig       = $_REQUEST['JobDesig'];
+   $JobLevel       = $_REQUEST['JobLevel'];
+   $ContactNumber  = $_REQUEST['ContactNumber'];
+   $CompName       = $_REQUEST['CompName'];
+   $EmailAddress   = $_REQUEST['EmailAddress'];
    $createdatetime = $createdatetime;
 
-   $objClient->AddClientInformation($firstname,$lastname,$jobdesig,$compname,$compaddress,$emailaddress,$contactno,$createdatetime);
+   $objClient->AddClientInformation($FirstName,$LastName,$JobDesig,$JobLevel,$ContactNumber,$CompName,$EmailAddress,$createdatetime);
+   echo $FirstName;
 ?>

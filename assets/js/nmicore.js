@@ -1,7 +1,17 @@
 var NMICore = (function () {
   var NMICore_Ajax = (function () {
-    var post = function (formId, methodType, _urls, dto) {
+    var post = function (
+      formId,
+      methodType,
+      _urls,
+      dto,
+      optionalClrField,
+      optionalFieldValue
+    ) {
       var dataPost = $("#" + formId).serialize();
+      var sendEmailAttr = $("button").attr("send-email");
+      var dtoArr = [{ ...dto[0], ...dto[1] }];
+
       if (!dto) {
         dto = dataPost;
       }
@@ -23,9 +33,14 @@ var NMICore = (function () {
               if (data) {
                 toastr.success(constant.Message.dropMsgSuccess);
                 fnClearFieldValue(formId);
+                fnClearSpecificField(optionalClrField, optionalFieldValue);
+                get(constant.Url.emailhostdetail, dtoArr);
               }
-              // toastr.success(constant.Message.dropMsgSuccess);
-              // fnClearFieldValue(formId);
+              // if (sendEmailAttr && dto[0] > 0 && data > 0) {
+              //   executeEmailSender(dto, constant.Url.emailhostdetail);
+              //   console.log(asdadsasd);
+
+              // }
             },
             error: function () {
               toastr.error(constant.Message.dropMsgError);
@@ -79,9 +94,11 @@ var NMICore = (function () {
     //     },
     //   });
     // };
-    var get = function (_url) {
+    var get = function (_url, _value) {
+      const optionalData = _value ? { requestData: _value } : null;
+
       return new Promise(function (resolve, reject) {
-        $.get(_url).done(function (data) {
+        $.get(_url, optionalData).done(function (data) {
           try {
             const response = JSON.parse(data);
             resolve(response);
@@ -161,6 +178,8 @@ var NMICore = (function () {
 
   var NMICore_DataConversion = (function () {
     var convertArrToObj = function (grpName) {
+      console.log(grpName);
+
       let elementarr = [];
 
       $("#" + grpName + " *")
@@ -368,6 +387,10 @@ var NMICore = (function () {
         .find(value)
         .val("");
     });
+  };
+
+  var fnClearSpecificField = function (target, value) {
+    $("#".concat(target)).val(value);
   };
 
   return {

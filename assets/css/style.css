@@ -1503,10 +1503,7 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
-#testimonial {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
+
 .testimonial-img {
   display: none;
 }
@@ -1516,12 +1513,27 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
   align-items: center;
   gap: 1rem;
 }
+.testimonial-containers .card-header {
+  border-bottom: none !important;
+  background: transparent !important;
+}
+.testimonial-containers .card-footer {
+  border-top: none !important;
+  background: transparent !important;
+}
+.testimonial-containers .card-body {
+  height: 7rem !important;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .testimonial-icon {
   font-size: 30px;
   color: #012d6c;
 }
 .testimonial-description {
-  font-size: 13px;
+  font-size: 15px;
   text-align: center;
   font-weight: normal;
   margin: 1rem 0;
@@ -1535,6 +1547,25 @@ background: linear-gradient(0deg, rgba(51, 70, 152, 1) 0%, rgba(246, 246, 246, 1
   margin-bottom: 1rem;
 }
 .testimonial-author {
+  text-align: end;
+  font-size: 13px;
+  margin-bottom: 0 !important;
+}
+.testimonial-title {
+  text-align: end;
+  font-size: 13px;
+  margin-bottom: 0 !important;
+}
+.testimonial-designation {
+  display: flex;
+  justify-content: end;
+}
+.w-65 {
+  width: 65%;
+}
+.testimonial-company {
+  font-size: 13px;
+  margin-bottom: 0 !important;
   text-align: end;
 }
 
@@ -3126,6 +3157,10 @@ section {
 
 .text-blue {
   color: #0073e6;
+}
+
+.font-bold {
+  font-weight: bold;
 }
 
 .certificates {
