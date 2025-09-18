@@ -1,58 +1,4 @@
 <?php
-//     echo '
-//     <section id="contact" class="contact">
-//         <div class="container" data-aos="fade-up">
-//             <div class="container">
-//                 <h2 class="section-label text-blue-1">Contact Us</h2>
-//                 <p class="section-description">We’re here to help you simplify IT management for IT teams that cover every piece of technology a modern business needs to function. Utilize your IT tools more efficiently with software solutions that help you take the complexities out of IT.
-//                 Speak with one of our solution engineers and let’s explore how NMI can help you intelligently solve your technology challenges.</p>
-//                 <div class="contact-action">
-//                     <h6 class="text-blue-1 mt-2">Have a question? Send us a message and we’ll be happy to help.</h6>
-//                     <button type="button" class="btn btn-link text-uppercase">Drop us a message</button>
-//                 </div>              
-//             </div>
-//             <div class="contact-grid">
-//                 <div>
-//                     <form id="frmCompanyDetailForm" role="form" class="contact-panel php-email-form">
-//                         <div class="contact-info">
-//                             <div class="contact-icon-aligment">
-//                                 <div>
-//                                     <i class="hgi hgi-stroke hgi-location-01"></i>
-//                                 </div>
-//                                 <p name="c-Address"> </p>
-//                             </div>
-//                             <div class="contact-icon-aligment">
-//                                 <div>
-//                                     <i class="hgi hgi-stroke hgi-contact-02"></i>
-//                                 </div>
-//                                 <p name="c-ContactNo"> </p>
-//                             </div>
-//                             <div class="contact-icon-aligment">
-//                                 <div>
-//                                     <i class="hgi hgi-stroke hgi-mail-01"></i>
-//                                 </div>
-//                                 <p name="c-EmailAddress"> </p>
-//                             </div>
-//                             <div class="contact-icon-aligment">
-//                                 <div>
-//                                     <i class="hgi hgi-stroke hgi-clock-01"></i>
-//                                 </div>
-//                                 <p name="c-OfficeHours"></p>
-//                             </div>
-//                         </div>
-//                     </form>
-//                 </div>
-//                 <div>
-//                     <form id="frmCompanyDetailForm" role="form" class="contact-panel php-email-form">
-//                         <div class="container ratio ratio-4x3 mt-3">
-//                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.828588472357!2d121.01503087407949!3d14.551792878271815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9119dee9981%3A0x9a1a4d1e85bf66db!2sNM%20Network%20Manager%20Sales%2C%20Inc.!5e0!3m2!1sen!2sph!4v1749608686867!5m2!1sen!2sph" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-//                         </div>
-//                     </form>
-//                 </div>
-//             </div>
-//         </div>
-//     </section>
-// ';
 echo 
 '
     <section id="contact" class="contact solution-container">
@@ -100,9 +46,9 @@ echo
                                                 <label class="form-label">Job Function<span> *</span></label>
                                                 <input
                                                 type="text"
-                                                name="JobDesig"
+                                                name="JobFunction"
                                                 class="form-control rounded-0 form-control-sm"
-                                                id="jobdesig"
+                                                id="jobfunction"
                                                 placeholder="eg. CISO"
                                                 req
                                                 />
