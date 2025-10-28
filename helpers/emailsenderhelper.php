@@ -8,22 +8,21 @@ require_once '../vendor/autoload.php';
 class EmailSenderHelper{
 
     public $mail;
+    public $isSent;
 
-
-    public function __Construct(){
+    public function __construct(){
 
         $this->mail = new PHPMailer(true);
+        $this->isSent = false;
     }
 
-    public function SendEmail($host,$password,$port,$reciever,$mailerEmail,$firstname,$lastname){
-
-        $client = $firstname ." ". $lastname;
-
+    public function SendEmail($host,$mailerEmail,$password,$port,$reciever,$subject,$body){
 
         try{
 
             // Server settings
-            $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            // $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            $this->mail->SMTPDebug = 0;
             $this->mail->isSMTP();
             $this->mail->Host       = $host;
             $this->mail->SMTPAuth   = true;
@@ -38,16 +37,23 @@ class EmailSenderHelper{
 
             //Content
             $this->mail->isHTML(true);
-            $this->mail->Subject = 'test email subject';
-            $this->mail->Body    = 'Thank you contacting us: ' .$client. 'Tubo' ;
+            $this->mail->Subject = $subject;
+            $this->mail->Body    = $body ;
 
             $this->mail->send();
 
-            echo "misig sent";
+            $this->isSent = true;
 
         } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$e->ErrorInfo}";
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";   
         }
+
+        $this->mail->clearAddresses();
+        $this->mail->clearAttachments();
+
+        return $this->isSent;
     }
+
+
 }
 ?>

@@ -25,21 +25,16 @@ let constant = (function () {
     clientDetail: "controller/clientdetail.php",
     clientCompanyLocation: "controller/clientcompanylocation.php",
     companyDetail: "controller/companydetail.php",
-    clientMessage: "controller/clientmessage.php",
-    companyProfileHeader: "controller/companyprofileheader.php",
-    companyProfileDetail: "controller/companyprofiledetail.php",
-    companyNewsHeader: "controller/companynewsheader.php",
-    companyNewsDetail: "controller/companynewsdetail.php",
-    footerHeader: "controller/footerheader.php",
-    footerDetail: "controller/footerdetail.php",
-    companycoreValuesDetail: "controller/corevalues.php",
     emailhostdetail: "controller/emailhostdetail.php",
+    websitepage: "controller/websitepage.php",
   };
 
   let message = {
     dropMsgSuccess:
       "Message was successfully submitted and sent an email confirmation, thank you.",
     dropMsgError: "Registration Failed!",
+    dropMsgProcessing:
+      "Your data is being processed. Please wait for a moment.",
   };
 
   let webButton = {
@@ -63,18 +58,111 @@ let constant = (function () {
     dCoreValueList: "DCoreValueList",
     fdDescriptionList: "FDDescriptionList",
   };
-  let solutions = [
+  let modalId = [
     "rmm-endpoint-mod",
     "security-mod",
     "backup-dr-mod",
     "it-operations-mod",
     "it-risk-management-mod",
     "networking-mod",
-    "k365-content-mod",
-    "k365-user-mod",
+    "kaseya365-endpoint-mod",
+    "kaseya365-user-mod",
+    "kaseya365-ops-mod",
     "get-demo-mod",
     "news-mod",
     "profile-mod",
+    "careers-mod",
+    "diversity-inclusivity-mod",
+  ];
+
+  let modalValue = [
+    {
+      id: [
+        "#Platform #pl-kaseya365-endpoint-platform-modal",
+        "#Footer #f-kaseya365-platform #kaseya365-platform-0",
+      ],
+      attribute: "data-bs-target",
+      value: "#kaseya365-endpoint",
+    },
+    {
+      id: [
+        "#Platform #pl-kaseya365-user-platform-modal",
+        "#Footer #f-kaseya365-platform #kaseya365-platform-1",
+      ],
+      attribute: "data-bs-target",
+      value: "#kaseya365-user",
+    },
+    {
+      id: [
+        "#Platform #pl-kaseya365-ops-platform-modal",
+        "#Footer #f-kaseya365-platform #kaseya365-platform-2",
+      ],
+      attribute: "data-bs-target",
+      value: "#kaseya365-ops",
+    },
+    {
+      id: [
+        "#Solution #s-endpoint-management-card-modal",
+        "#Footer #f-solution #solution-3",
+      ],
+      attribute: "data-bs-target",
+      value: "#rmm-endpoint-modal",
+    },
+    {
+      id: [
+        "#Solution #s-backup-recovery-card-modal",
+        "#Footer #f-solution #solution-4",
+      ],
+      attribute: "data-bs-target",
+      value: "#backup-dr-modal",
+    },
+    {
+      id: [
+        "#Solution #s-security-card-modal",
+        "#Footer #f-solution #solution-5",
+      ],
+      attribute: "data-bs-target",
+      value: "#security-modal",
+    },
+    {
+      id: [
+        "#Solution #s-it-operations-card-modal",
+        "#Footer #f-solution #solution-6",
+      ],
+      attribute: "data-bs-target",
+      value: "#it-operations-modal",
+    },
+    {
+      id: [
+        "#Solution #s-it-risk-management-card-modal",
+        "#Footer #f-solution #solution-7",
+      ],
+      attribute: "data-bs-target",
+      value: "#it-risk-management-modal",
+    },
+    {
+      id: [
+        "#Solution #s-networking-card-modal",
+        "#Footer #f-solution #solution-8",
+      ],
+      attribute: "data-bs-target",
+      value: "#networking-modal",
+    },
+    {
+      id: ["#Footer #f-allrights-reserved #allrights-reserved-14"],
+      attribute: "data-bs-target",
+      value: "#terms-conditions",
+    },
+    {
+      id: ["#Footer #f-allrights-reserved #allrights-reserved-15"],
+      attribute: "data-bs-target",
+      value: "#privacy-policy",
+    },
+    {
+      id: ["#Footer #f-allrights-reserved #allrights-reserved-16"],
+      attribute: "data-bs-target",
+      value: "#diversity-inclusivity",
+    },
   ];
 
   const htmlTagList = ["h2", "h3", "h4", "a", "p", "ul"];
@@ -208,64 +296,26 @@ let constant = (function () {
 
   const k365EndpointUserBanner = [
     {
-      id: "endpoint",
-      logo: "./assets/img/nmi-k-365/k365-endpoint.png",
-      desc: "The Complete Package For Your Endpoint",
-      btnLabel: "Explore Kaseya 365 Endpoint",
+      id: "kaseya365-endpoint-platform",
+      packageListId: "pl-kaseya365-endpoint-platform",
       targetModal: "k365-content-modal",
-      packages: [
-        "RMM",
-        "Patch Management",
-        "Endpoint Detection & Response",
-        "Anti Virus",
-        "Ransomeware Detection",
-        "Endpoint Backup",
-        "Manage Detection & Response",
-      ],
     },
     {
-      id: "user",
-      logo: "./assets/img/nmi-k-365/k365-user.png",
-      desc: "Fortified Further Your Cyber Landscape",
-      btnLabel: "Explore Kaseya 365 User",
+      id: "kaseya365-user-platform",
+      packageListId: "pl-kaseya365-user-platform",
       targetModal: "k365-user-modal",
-      packages: [
-        "Anti-Phishing",
-        "User Awareness Training",
-        "User Susceptibility Testing",
-        "Dark Web  Monitoring",
-        "Saas Application Management",
-        "Saas Event Alerting",
-        "Automatic Saas Account Locking",
-        "Microsoft 365",
-        "Google Workplace Backup",
-      ],
     },
     {
-      id: "ops",
-      logo: "./assets/img/nmi-k-365/k365-ops.png",
-      desc: "Top Performance Through AI-Driven Authomation",
-      btnLabel: "Explore Kaseya 365 Ops",
+      id: "kaseya365-ops-platform",
+      packageListId: "pl-kaseya365-ops-platform",
       targetModal: "k365-ops-modal",
-      packages: [
-        "Professional Services Automation",
-        "Billing & Accounts Receivable",
-        "Qouting & Procurement",
-        "Network Discovery & Password Rotation",
-        "IT Collaboration",
-        "Quarterly Business Reviews",
-        "Executive Reports",
-      ],
     },
   ];
 
   let solutionsBanner = [
     {
+      id: "endpoint-management-card",
       targetModal: "#rmm-endpoint-modal",
-      imgSrc: "./assets/img/nmi_solutions/NMIEndpointIcon.png",
-      label: "Endpoint Management",
-      description:
-        "Take control of your IT environment from anywhere with intuitive solutions that adapt to your needs.",
       types: [
         {
           title: "Remote monitoring and management (RMM)",
@@ -288,11 +338,8 @@ let constant = (function () {
       ],
     },
     {
+      id: "backup-recovery-card",
       targetModal: "#backup-dr-modal",
-      imgSrc: "./assets/img/nmi_solutions/NMIBackupIcon.png",
-      label: "Backup And Recovery",
-      description:
-        "Protect your data effortlessly, regardless of where it lives",
       types: [
         {
           title: "Business continuity and disaster recovery (BCDR)",
@@ -321,11 +368,8 @@ let constant = (function () {
       ],
     },
     {
+      id: "security-card",
       targetModal: "#security-modal",
-      imgSrc: "./assets/img/nmi_solutions/NMISecurityIcon.png",
-      label: "Security",
-      description:
-        "Protect your organization with layered security across cloud, endpoints, networks and users in a single solution.",
       types: [
         {
           title: "Endpoint detection and response (EDR) ",
@@ -384,11 +428,8 @@ let constant = (function () {
       ],
     },
     {
+      id: "it-operations-card",
       targetModal: "#it-operations-modal",
-      imgSrc: "./assets/img/nmi_solutions/NMIOperationsIcon.png",
-      label: "IT Operations",
-      description:
-        "Automate workflows, optimize service delivery and streamline the entire quote-to-cash process to reduce friction and boost productivity.",
       types: [
         {
           title: "Professional services automation (PSA) ",
@@ -435,11 +476,8 @@ let constant = (function () {
       ],
     },
     {
+      id: "it-risk-management-card",
       targetModal: "#it-risk-management-modal",
-      imgSrc: "./assets/img/nmi_solutions/NMIITOperationsIcon.png",
-      label: "IT Risk Management",
-      description:
-        "Protect your organization with layered security across cloud, endpoints, networks and users in a single solution.",
       types: [
         {
           title: "Network assessments ",
@@ -474,11 +512,8 @@ let constant = (function () {
       ],
     },
     {
+      id: "networking-card",
       targetModal: "#networking-modal",
-      imgSrc: "./assets/img/nmi_solutions/NMINetworkingIcon.png",
-      label: "Networking",
-      description:
-        "Provide seamless connectivity, reduce downtime and keep your team productive.",
       types: [
         {
           title: "Wi-Fi access points",
@@ -925,11 +960,11 @@ let constant = (function () {
   ];
 
   const phLocationId = {
-    CountryID: "contact #country-select",
-    regionID: "contact #region-select",
-    provinceID: "contact #province-select",
-    municipalityID: "contact #municipality-select",
-    barangayID: "contact #barangay-select",
+    CountryID: "Contact #country-select",
+    regionID: "Contact #region-select",
+    provinceID: "Contact #province-select",
+    municipalityID: "Contact #municipality-select",
+    barangayID: "Contact #barangay-select",
   };
 
   const k365EndpointPillsTab = {
@@ -981,6 +1016,165 @@ let constant = (function () {
   ];
 
   const specificClrField = ["PHILIPPINES"];
+  const addBanner = "../assets/add_banner/NMICareersAddBanner.png";
+
+  const emailTemplate = [
+    {
+      name: "Marketing",
+      email: "nmidevs@gmail.com",
+      body: "test Dev",
+      subject: "A client contacting us",
+    },
+    {
+      name: "Client",
+      email: "",
+      body: "test Client",
+      subject: "Thank you for contacting NMI Support",
+    },
+  ];
+
+  const toReplaceStr = [
+    "Address",
+    "Barangay",
+    "Municipality",
+    "Province",
+    "FirstName",
+    "LastName",
+    "JobFunction",
+    "CompName",
+    "EmailAddress",
+    "ContactNumber",
+    "HostName",
+  ];
+
+  const perks = [
+    {
+      icon: "fa-solid fa-square-poll-vertical",
+      title: "Growth & Learning",
+      description:
+        "Containuous training and certifications to keep your skills .",
+    },
+    {
+      icon: "fa-solid fa-briefcase",
+      title: "Career Advancement",
+      description: "Clear paths to grow within the .",
+    },
+    {
+      icon: "fa-solid fa-scale-unbalanced",
+      title: "Work-Life Balance",
+      description: "Flexible policies that value your time and well-being.",
+    },
+    {
+      icon: "fa-solid fa-users",
+      title: "Collaborative Culture",
+      description: "A supportive team where ideas and innovation thrive.",
+    },
+    {
+      icon: "fa-solid fa-folder-open",
+      title: "Impactful Work",
+      description: "Contribute to securing business across the Philippines.",
+    },
+    {
+      icon: "fa-solid fa-tags",
+      title: "Competitive Benefits",
+      description:
+        "Attractive compensation, incentives, and rewards for excellence.",
+    },
+  ];
+  const carouselContent = [
+    {
+      name: "Aaron Marasigan",
+      position: "Solutions Engineer",
+      statement:
+        "At Network Manager Inc., every challenge is an opportunity — we create solutions and provide the right systems for success. A few years ago, I wouldn’t have imagined that I’d be helping organizations all over the Philippines strengthen their technology and security. Here at NMI, every project is a chance to innovate, and every solution we provide makes a real difference for our clients. I’ve grown my skills, expanded my knowledge, and worked with an incredible team that’s always ready for the next challenge.",
+      img: "assets/img/testimonials/aaron-testimonial.png",
+    },
+    {
+      name: "Roanne Zavalla",
+      position: "Business Development",
+      statement:
+        "People at NMI are driven by one mission – building strong relationships and ensuring customer success. With every project, we draw on our experience to anticipate needs, solve challenges, and create solutions that help customers thrive. Customer growth is the measure of our success. I am Roann Zavalla, proud to be part of NMI.",
+      img: "assets/img/testimonials/roanne-testimonial.png",
+    },
+    {
+      name: "Christian Manong",
+      position: "Technical Enablement Engineer",
+      statement:
+        "At NMI, we see every challenge as a chance to innovate, building solutions and implementing systems that help our clients thrive. A few years ago, I wouldn’t have imagined that I’d be guiding clients across the Philippines on how to maximize the technology and solutions NMI offers. As a Technical Enablement Engineer, I get to empower organizations by showing them how to use our products effectively — helping them achieve their goals with confidence. Here at NMI, every project is a chance to innovate, and every training session is an opportunity to make a real impact for our clients. I’ve developed new capabilities, deepened my understanding, and worked alongside a remarkable team that never backs down from a challenge.",
+      img: "assets/img/testimonials/christian-testimonial.png",
+    },
+  ];
+  const pageListContainer = [
+    {
+      page: "Platform",
+      listMethod: "k365BannerCard",
+      selector: "#kaseya365",
+    },
+    {
+      page: "Solution",
+      listMethod: "solutionsBanner",
+      selector: "#banner-solution-selector",
+    },
+  ];
+
+  const pageContent = [
+    {
+      page: "Hero",
+      keyLetter: "h-",
+      queryContent: ["content", "file", "attachment"],
+      listElementTag: "",
+      listMethod: "",
+    },
+    {
+      page: "Platform",
+      keyLetter: "pl-",
+      queryContent: ["content", "content_list", "file"],
+      listElementTag: "p",
+      listMethod: "k365BannerCard",
+    },
+    {
+      page: "Solution",
+      keyLetter: "s-",
+      queryContent: ["content", "content_list", "file"],
+      listElementTag: "p",
+      listMethod: "solutionsBanner",
+    },
+    {
+      page: "Testimonial",
+      keyLetter: "t-",
+      queryContent: ["content", "file", "client_testimonial"],
+      listElementTag: "",
+      listMethod: "",
+    },
+    {
+      page: "Contact",
+      keyLetter: "c-",
+      queryContent: ["content", "content_list"],
+      listElementTag: "li",
+      listMethod: "",
+    },
+    {
+      page: "Careers",
+      keyLetter: "ca-",
+      queryContent: ["content"],
+      listElementTag: "",
+      listMethod: "",
+    },
+    {
+      page: "Footer",
+      keyLetter: "f-",
+      queryContent: ["content", "content_list"],
+      listElementTag: "p",
+      listMethod: "",
+    },
+    {
+      page: "kaseya365-endpoint",
+      keyLetter: "k365E-",
+      queryContent: ["content", "file"],
+      listElementTag: "",
+      listMethod: "",
+    },
+  ];
 
   return {
     MapPosition: mapPosition,
@@ -1000,7 +1194,7 @@ let constant = (function () {
     K365OnboardingCard: k365OnboardingCard,
     HrSolutionColor: hrSolutionColor,
     FooterNav: footerNav,
-    Solutions: solutions,
+    ModalId: modalId,
     K365EndpointUserBanner: k365EndpointUserBanner,
     SolutionsBanner: solutionsBanner,
     WhyKaseyaContent: whyKaseyaContent,
@@ -1018,5 +1212,13 @@ let constant = (function () {
     K365EndpointPillsTab: k365EndpointPillsTab,
     TestimonialData: testimonialData,
     SpecificClrField: specificClrField,
+    AddBanner: addBanner,
+    EmailTemplate: emailTemplate,
+    ToReplaceStr: toReplaceStr,
+    Perks: perks,
+    CarouselContent: carouselContent,
+    PageContent: pageContent,
+    PageListContainer: pageListContainer,
+    ModalValue: modalValue,
   };
 })();

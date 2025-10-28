@@ -8,13 +8,13 @@
    
    $FirstName      = $_REQUEST['FirstName'];
    $LastName       = $_REQUEST['LastName'];
-   $JobDesig       = $_REQUEST['JobDesig'];
+   $JobFunction       = $_REQUEST['JobFunction'];
    $JobLevel       = $_REQUEST['JobLevel'];
    $ContactNumber  = $_REQUEST['ContactNumber'];
    $CompName       = $_REQUEST['CompName'];
    $EmailAddress   = $_REQUEST['EmailAddress'];
    $createdatetime = $createdatetime;
 
-   $objClient->AddClientInformation($FirstName,$LastName,$JobDesig,$JobLevel,$ContactNumber,$CompName,$EmailAddress,$createdatetime);
+   $objClient->AddClientInformation($FirstName,$LastName,$JobFunction,$JobLevel,$ContactNumber,$CompName,$EmailAddress,$createdatetime);
    echo $FirstName;
 ?>

@@ -8,9 +8,9 @@
 
         public function __Construct(){
             $this->db_conn = new DBConnection();
-            $this->fhtable = "FooterHeader";
-            $this->fdtable = "FooterDetail";
-            $this->cdtable = "CompanyDetail";
+            $this->fhtable = "footerheader";
+            $this->fdtable = "footerdetail";
+            $this->cdtable = "companydetail";
         }
 
         public function GetFooterDetail(){
@@ -24,7 +24,7 @@
                       ,'ADDRESS' CDAddressTitle
                       ,CD.Address CDAddressDescription
                       ,'PHONE' CDContactNoTitle
-                      ,CD.ContactNo CDContactNoDescription     
+                      ,CD.ContactNo CDContactNoDescription
                      FROM $this->fdtable FD 
                         INNER JOIN $this->fhtable FH ON FD.FooterHeaderId = FH.FooterHeaderId
                         INNER JOIN $this->cdtable CD ON FH.CompanyDetailId = FH.CompanyDetailId

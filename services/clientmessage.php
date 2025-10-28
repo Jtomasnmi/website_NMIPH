@@ -6,7 +6,7 @@
 
         public function __Construct(){
             $this->db_conn = new DBConnection();
-            $this->table = "ClientMessage";
+            $this->table = "clientmessage";
         }
 
         public function AddClientMessage($subject,$message,$clientdetailid,$createdatetime){                

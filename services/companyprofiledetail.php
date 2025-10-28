@@ -6,7 +6,7 @@
 
         public function __Construct(){
             $this->db_conn = new DBConnection();
-            $this->table = "CompanyProfileDetail";
+            $this->table = "companyprofiledetail";
         }
 
         public function GetCompanyProfileDetail(){

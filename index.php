@@ -32,7 +32,10 @@
 
   <!-- Huge Icon -->
   <!-- <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css" /> -->
-  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+  <!-- <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" /> -->
+
+  <!-- fontawesome icon -->
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" rel="stylesheet">
 
   <!-- tambler icon -->
   <link
@@ -63,8 +66,10 @@
       <?php include 'forms/main/testimonial.php';?>
     <!-- ======= Contact Section ======= -->
       <?php include 'forms/main/contact.php';?>
+      
     <!-- ======= Cookies ======= -->
     <?php include 'forms/cookies/cookie.php';?>
+    <?php include 'forms/main/ads.php';?>
   </main>
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -89,7 +94,7 @@
   <script src="assets/vendor/toastr/js/toastr.min.js"></script>
   <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
-  <!-- Template Main JS File -->
+  <!-- Template Main JS File -->    
   <script src="assets/js/main.js"></script>
 
   <!-- External JS-->
@@ -102,8 +107,8 @@
   <script src="assets/js/nmi-page-helper.js"></script>
   <script src="assets/js/nmi-tab-helper.js"></script>
   <script src="assets/js/nmicore.js"></script>
-  <script src="assets/js/transaction/insert-data.js"></script>
-  <script src="assets/js/transaction/get-data.js"></script>
+  <script src="assets/js/transaction/post-data/insert-data.js"></script>
+  <script src="assets/js/transaction/get-data/get-data.js"></script>
   <script src="assets/js/nmi-component-integration.js"></script>
 
 

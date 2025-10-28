@@ -9,13 +9,13 @@
             $this->table = "clientdetail";
         }
         
-        public function AddClientInformation($firstname,$lastname,$jobdesig,$compname,$joblevel,$emailaddress,$contactno,$createdatetime){
-            $query = "INSERT INTO $this->table(FirstName,LastName,JobDesignation,CompanyName,JobLevel,EmailAddress,ContactNo,CreateDateTime) VALUES(?,?,?,?,?,?,?,?)";                           
+        public function AddClientInformation($firstname,$lastname,$jobfunction,$compname,$joblevel,$emailaddress,$contactno,$createdatetime){
+            $query = "INSERT INTO $this->table(FirstName,LastName,JobFunction,CompanyName,JobLevel,EmailAddress,ContactNo,CreateDateTime) VALUES(?,?,?,?,?,?,?,?)";                           
             $paramType = "ssssssss";
             $paramValue = array(
                 $firstname,
                 $lastname,
-                $jobdesig,
+                $jobfunction,
                 $compname,
                 $joblevel,
                 $emailaddress,

@@ -1,11 +1,11 @@
 <?php
     echo
     '
-    <section id="solutions" class="solution-container">
-        <div class="container">
-            <div class="container">
-                <h2 class="section-label text-white">Fortify Your Future with Comprehensive Cybersecurity Solutions</h2>
-                <p class="section-description text-white">In today’s digital landscape, protecting your business from cyber threats is non-negotiable. Our cutting-edge cybersecurity solutions provide a multi-layered defense against ever-evolving risks, ensuring your sensitive data, systems, and reputation stay safe.</p>
+    <section id="Solution" class="solution-container">
+        <div  class="container">
+            <div id="solution-header" class="container">
+                <h2 class="section-label text-white" name="s-title"></h2>
+                <p class="section-description text-white" name="s-description"></p>
             </div>
             <div id="banner-solution-selector" class="new-solution-grid">
             </div>

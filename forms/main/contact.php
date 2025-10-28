@@ -1,12 +1,14 @@
 <?php
 echo 
 '
-    <section id="contact" class="contact solution-container">
+    <section id="Contact" class="contact solution-container">
         <div class="container">
             <div class="contact-form-container">
                 <div>
-                    <h2 class="contact-label">Connect with a security expert.</h2>
-                    <p class="text-white">Fill out the form to share your feedback or request about our solutions.</p>
+                    <div id="contact-header" class="mb-3">
+                        <h2 class="contact-label" name="c-title"></h2>
+                        <p class="text-white" name="c-description"></p>
+                    </div>
                     <div class="card">
                         <div class="card-body">
                             <div class="py-3">
@@ -165,21 +167,11 @@ echo
                     </div>
                 </div>
                 <div class="contact-formbox">
-                    <div>
-                        <h5 class="text-white">Possible questions discussed You can expect:</h5>
+                    <div id="FAQ-list">
+                        <h5 class="text-white" name="c-name"></h5>
                     </div>
                     <div class="mt-3">
-                        <ul class="text-white">
-                            <li class="list-styled">How does the product subscription or licensing work?</li>
-                            <li class="list-styled">How does the POC for these specific solutions work?</li>
-                            <li class="list-styled">How many existing clients using this solutions?</li>
-                            <li class="list-styled">What is your edge to your competitors?</li>
-                            <li class="list-styled">Do government agencies use this product?</li>
-                            <li class="list-styled">Do you provide training to clients?</li>
-                            <li class="list-styled">Do you provide 24/7 support?</li>
-                            <li class="list-styled">Can we integrate this specific product to our existing solution that we\'re using?</li>
-                            <li class="list-styled">What is your SLA in case of support?</li>
-                            <li class="list-styled">How can your solutions help our company?</li>
+                        <ul id="c-FAQ-list" class="text-white">
                         </ul>
                     </div>
                 </div>
@@ -188,3 +180,13 @@ echo
     </section>
 '
 ?>
+<!-- <li class="list-styled"><p>How does the product subscription or licensing work?</p></li>
+                            <li class="list-styled">How does the POC for these specific solutions work?</li>
+                            <li class="list-styled">How many existing clients using this solutions?</li>
+                            <li class="list-styled">What is your edge to your competitors?</li>
+                            <li class="list-styled">Do government agencies use this product?</li>
+                            <li class="list-styled">Do you provide training to clients?</li>
+                            <li class="list-styled">Do you provide 24/7 support?</li>
+                            <li class="list-styled">Can we integrate this specific product to our existing solution that we\'re using?</li>
+                            <li class="list-styled">What is your SLA in case of support?</li>
+                            <li class="list-styled">How can your solutions help our company?</li> -->

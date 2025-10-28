@@ -6,17 +6,18 @@ let initPageHelper = (function () {
   const loadEvent = () => {
     K365Card();
     addColor();
-    K365BannerCard();
-    SolutionsBanner();
+    // K365BannerCard();
+    // SolutionsBanner();
     WhyKaseyaCard();
     WhatHappenNextCard();
     SelectProductOption();
     OptionalSelect();
     AppendImgSrc();
     AppendSolutionTypeCard();
-    Appendk365EndpointTab();
-    Appendk365EnpointTabCont();
-    AppendTestimonialCard();
+    // Appendk365EndpointTab();
+    // Appendk365EnpointTabCont();
+    AppendPerksCard();
+    AppendCarouselItem();
   };
 
   const K365Card = () => {
@@ -42,13 +43,10 @@ let initPageHelper = (function () {
 
   const K365BannerCard = () => {
     $.each(constant.K365EndpointUserBanner, function (index, value) {
-      let packageSelector = value.targetModal.concat(index);
       const cardData = _compFunc.k365BannerCard(
         value.id,
-        packageSelector,
-        value.logo,
-        value.desc,
-        value.targetModal
+        value.targetModal,
+        value.packageListId
       );
       $("#kaseya365").append(cardData);
     });
@@ -57,12 +55,7 @@ let initPageHelper = (function () {
   const SolutionsBanner = () => {
     $(function () {
       $.each(constant.SolutionsBanner, function (index, value) {
-        let solBanner = _compFunc.solutionsBanner(
-          value.description,
-          value.targetModal,
-          value.label,
-          value.imgSrc
-        );
+        let solBanner = _compFunc.solutionsBanner(value.id, value.targetModal);
 
         $("#banner-solution-selector").append(solBanner);
       });
@@ -185,22 +178,43 @@ let initPageHelper = (function () {
     });
   }
 
-  async function AppendTestimonialCard() {
+  async function AppendPerksCard() {
     $(window).on("load", function () {
-      $.each(constant.TestimonialData, function (i, value) {
-        const cardData = _compFunc.testimonialCard(
-          value.company,
-          value.message,
-          value.client,
-          value.designation
+      $.each(constant.Perks, function (i, value) {
+        const cardData = _compFunc.perksCard(
+          value.icon,
+          value.title,
+          value.description
         );
-        $("#testimonial-selector").append(cardData);
+
+        $("#careers #perks-selector").append(cardData);
       });
     });
   }
-  // function AddTabActiveClass(id){
-  //   $("#".concat(id.tab)).eq().addClass("active")
-  // }
+
+  function AppendCarouselItem() {
+    $(window).on("load", function () {
+      $.each(constant.CarouselContent, function (i, value) {
+        const carouselData = _compFunc.carouselItem(
+          value.name,
+          value.position,
+          value.statement,
+          value.img
+        );
+
+        $("#careers #carousel-selector").append(carouselData);
+
+        i === 0
+          ? $("#careers #careers-carousel-item").addClass("active")
+          : $("#careers #careers-carousel-item").addClass();
+      });
+      for (let p = 0; p < 5; p++) {
+        $("#careers #rating-selector").append(
+          '<i class="fa-solid fa-star"></i>'
+        );
+      }
+    });
+  }
 
   return {
     init: init,

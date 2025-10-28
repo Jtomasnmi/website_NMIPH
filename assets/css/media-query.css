@@ -12,14 +12,12 @@
   .logo {
     width: 6rem;
   }
-  /* #hero {
-    text-align: center;
-    padding-top: 58px;
-  } */
+
   .toggle-sm-nav {
     display: block;
-    color: #f6f6f6;
-    font-size: 25px;
+    color: #ff6000;
+    font-weight: bold;
+    font-size: 30px;
   }
   .nav-link-style {
     display: none;
@@ -86,6 +84,15 @@
   .toggle-md {
     display: none;
   }
+  .ads-title {
+    font-size: 10px;
+    font-weight: bold;
+    color: #012d6c;
+    margin-bottom: 0 !important;
+  }
+  .ads-desc {
+    font-size: 6px;
+  }
 }
 @media (min-width: 480px) {
   .k-banner-txt {
@@ -107,6 +114,15 @@
     align-items: center;
     padding: 1rem;
     gap: 1rem;
+  }
+  .ads-title {
+    font-size: 10px;
+    font-weight: bold;
+    color: #012d6c;
+    margin-bottom: 0 !important;
+  }
+  .ads-desc {
+    font-size: 6px;
   }
 }
 
@@ -364,8 +380,7 @@
 
   .hero-content {
     position: absolute;
-    /* top: 25%; */
-    top: 23%;
+    top: 25%;
     overflow: hidden;
     transform: translate(0%, -50%);
     width: 100%;
@@ -378,7 +393,7 @@
   }
   .kaseya365-banners {
     display: grid;
-    gap: 1rem;
+    gap: 1.5rem;
     grid-template-columns: repeat(1, 1fr);
     align-items: center;
     margin-top: 4rem;
@@ -483,6 +498,28 @@
     width: 100%;
     opacity: 0.2;
   }
+
+  .ads-text {
+    position: absolute;
+    z-index: 1;
+    top: 2rem;
+    left: 3rem;
+    width: 50%;
+  }
+  .ads-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #012d6c;
+  }
+  .ads-desc {
+    font-size: 10px;
+  }
+  #careers .perks-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 @media (min-width: 852px) {
@@ -499,6 +536,24 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 2rem;
+  }
+  .ads-container {
+    position: relative;
+  }
+  .ads-text {
+    position: absolute;
+    z-index: 1;
+    top: 3.5rem;
+    left: 5rem;
+    width: 50%;
+  }
+  .ads-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #012d6c;
+  }
+  .ads-desc {
+    font-size: 15px;
   }
 }
 
@@ -826,7 +881,7 @@
   }
   .kaseya365-banners {
     display: grid;
-    gap: 0.1rem;
+    gap: 5px;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     margin-top: 4rem;
@@ -910,6 +965,96 @@
     grid-column: span 2;
     display: flex;
     margin: 2rem;
+  }
+  .ads-text {
+    position: absolute;
+    z-index: 1;
+    top: 2rem;
+    left: 4rem;
+    width: 50%;
+  }
+  .ads-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #012d6c;
+  }
+  .ads-desc {
+    font-size: 15px;
+  }
+  .careers-banner-text {
+    text-align: end;
+  }
+  .careers-icon-banner {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  .job-opening-contianer {
+    display: flex;
+    align-items: center;
+  }
+  .job-title-text {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .badge-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+  }
+  #careers .carousel-description {
+    margin-left: 3rem;
+  }
+
+  #careers .careers-job-send {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+  }
+
+  #careers .employee-story-carousel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+  #careers .employee-name-carousel {
+    text-align: left;
+    font-size: 23px;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+  #careers .employee-title-carousel {
+    text-align: left;
+    font-size: 18px;
+  }
+  #careers .careers-ratings {
+    color: #e69b00;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: start;
+  }
+  #careers .employee-desc-carousel {
+    font-size: 16px;
+    padding: 0 0;
+    margin-top: 2rem;
+    text-align: justify;
+  }
+  #careers .corousel-alignment-img {
+    display: flex;
+    justify-content: end;
+    margin-right: 5rem;
+  }
+  #careers .corousel-alignment-img img {
+    width: 45%;
+  }
+  #careers .employee-story-carousel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -1105,6 +1250,21 @@
     width: 80%;
     opacity: 0.2;
   }
+  .ads-text {
+    position: absolute;
+    z-index: 1;
+    top: 4rem;
+    left: 5rem;
+    width: 50%;
+  }
+  .ads-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #012d6c;
+  }
+  .ads-desc {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 1281px) {
@@ -1149,6 +1309,21 @@
   .kaseya365-title {
     font-size: 25px;
   }
+  .ads-text {
+    position: absolute;
+    z-index: 1;
+    top: 5rem;
+    left: 5rem;
+    width: 50%;
+  }
+  .ads-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #012d6c;
+  }
+  .ads-desc {
+    font-size: 17px;
+  }
   /* .testimonial-bg {
     position: relative;
     height: 80vh;
@@ -1157,17 +1332,13 @@
 
 /* hero section */
 @media (max-width: 768px) {
-  #hero {
-    padding-top: 58px;
-  }
-
-  #hero h1 {
+  #Hero h1 {
     font-size: 28px;
   }
 }
 
 @media (max-height: 500px) {
-  #hero {
+  #Hero {
     height: 120vh;
   }
 }

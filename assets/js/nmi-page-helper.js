@@ -24,10 +24,12 @@ let modalPageHelper = (function () {
     addMunicipalityOption();
     addBarangayOption();
     hoverTooltipTestimonial();
+    appendCarrersMailto();
+    getADemo();
   };
 
   async function initModalPage() {
-    $.each(constant.Solutions, function (i, value) {
+    $.each(constant.ModalId, function (i, value) {
       $("<div>", {
         id: value,
       }).appendTo("#parent-selector");
@@ -45,7 +47,7 @@ let modalPageHelper = (function () {
   }
 
   async function GetInitTabPage() {
-    $.each(constant.Solutions, function (i, value) {
+    $.each(constant.ModalId, function (i, value) {
       value = value.replace("mod", "tab");
 
       $("#" + value.replace("tab", "mod"))
@@ -277,7 +279,31 @@ let modalPageHelper = (function () {
       });
     });
   }
-  async function downloadToaster() {}
+
+  async function appendCarrersMailto() {
+    $(window).on("load", function () {
+      $("#careers #email-hr")
+        .attr("href", "mailto:humanresource@nmiph.com")
+        .append('<p class="mb-0">humanresource@nmiph.com</p>');
+    });
+  }
+
+  function getADemo() {
+    $(window).on("load", function () {
+      $(".get-demo-btn").click(function (event) {
+        event.preventDefault();
+        $("html, body").animate(
+          {
+            scrollTop: $("#Contact").offset().top,
+          },
+          100,
+          function () {
+            window.location.hash = "#Contact";
+          }
+        );
+      });
+    });
+  }
 
   return {
     init: init,

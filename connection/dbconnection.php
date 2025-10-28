@@ -16,6 +16,7 @@
         }
 
         public function RunBaseQuery($query) {
+            $resultset = [];
             $result = $this->Conn->query($query);
 
             if ($result->num_rows > 0) {
@@ -28,6 +29,7 @@
         }
 
         public function RunQuery($query, $param_type, $param_value_array) {
+            $resultset = [];
             $sql = $this->Conn->prepare($query);
             $this->BindQueryParams($sql, $param_type, $param_value_array);
             $sql->execute();

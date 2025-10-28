@@ -3,53 +3,49 @@ var NMICore = (function () {
     var post = function (
       formId,
       methodType,
-      _urls,
+
       dto,
       optionalClrField,
-      optionalFieldValue
+      optionalFieldValue,
+      ..._urls
     ) {
-      var dataPost = $("#" + formId).serialize();
-      var sendEmailAttr = $("button").attr("send-email");
-      var dtoArr = [{ ...dto[0], ...dto[1] }];
+      // var dtoArr = [{ ...dto[0], ...dto[1] }];
 
-      if (!dto) {
-        dto = dataPost;
-      }
+      return new Promise(function (resolve, reject) {
+        try {
+          var dataPost = $("#" + formId).serialize();
+          if (!dto) {
+            dto = dataPost;
+          }
 
-      $.ajax({
-        method: methodType,
-        url: _urls[0],
-        dataType: "html",
-        data: dto[0],
-        success: function (response) {
-          let clientdetaild = response;
-          dto[1]["clientdetailid"] = clientdetaild;
           $.ajax({
             method: methodType,
-            url: _urls[1],
+            url: _urls[0],
             dataType: "html",
-            data: dto[1],
-            success: function (data) {
-              if (data) {
-                toastr.success(constant.Message.dropMsgSuccess);
-                fnClearFieldValue(formId);
-                fnClearSpecificField(optionalClrField, optionalFieldValue);
-                get(constant.Url.emailhostdetail, dtoArr);
-              }
-              // if (sendEmailAttr && dto[0] > 0 && data > 0) {
-              //   executeEmailSender(dto, constant.Url.emailhostdetail);
-              //   console.log(asdadsasd);
-
-              // }
-            },
-            error: function () {
-              toastr.error(constant.Message.dropMsgError);
+            data: dto[0],
+            success: function (response) {
+              let clientdetaild = response;
+              dto[1]["clientdetailid"] = clientdetaild;
+              $.ajax({
+                method: methodType,
+                url: _urls[1],
+                dataType: "html",
+                data: dto[1],
+                success: function (data) {
+                  if (data) {
+                    toastr.info(constant.Message.dropMsgProcessing);
+                    fnClearFieldValue(formId);
+                    fnClearSpecificField(optionalClrField, optionalFieldValue);
+                    resolve(dto);
+                  }
+                },
+              });
             },
           });
-        },
-        error: function () {
-          toastr.error(constant.Message.dropMsgError);
-        },
+        } catch (error) {
+          console.error("JSON parse error:", error);
+          reject(error);
+        }
       });
     };
 
@@ -95,10 +91,10 @@ var NMICore = (function () {
     //   });
     // };
     var get = function (_url, _value) {
-      const optionalData = _value ? { requestData: _value } : null;
+      let data = _value ? { requestData: _value } : null;
 
       return new Promise(function (resolve, reject) {
-        $.get(_url, optionalData).done(function (data) {
+        $.get(_url, data).done(function (data) {
           try {
             const response = JSON.parse(data);
             resolve(response);
@@ -113,7 +109,7 @@ var NMICore = (function () {
     return {
       Post: post,
       Get: get,
-    };
+    };  
   })();
 
   var NMICore_Validation = (function () {
@@ -171,15 +167,29 @@ var NMICore = (function () {
       }
     };
 
+    var emptyDataChecker = function (...data) {
+      let boolArr = [];
+
+      for (value in data) {
+        if (typeof value === "boolean") {
+          boolArr.push(value);
+        }
+        if (value !== null && value !== undefined) {
+          boolArr.push(true);
+        }
+      }
+
+      return boolArr.includes(false) ? false : true;
+    };
+
     return {
       ValidateForm: validateEntry,
+      EmptyDataChecker: emptyDataChecker,
     };
   })();
 
   var NMICore_DataConversion = (function () {
     var convertArrToObj = function (grpName) {
-      console.log(grpName);
-
       let elementarr = [];
 
       $("#" + grpName + " *")
@@ -190,9 +200,27 @@ var NMICore = (function () {
 
       return (obj = Object.fromEntries(elementarr));
     };
+    var filterUniqueValues = function (page, arr) {
+      // create new array limit to name and content_identifier
+      let repeatValue = arr?.map(({ name, content_identifier }) => {
+        return {
+          name,
+          content_identifier,
+          page,
+        };
+      });
+      // eliminate repeatetive data from response
+      let uniqueValues = [
+        ...new Map(
+          repeatValue.map((item) => [JSON.stringify(item), item])
+        ).values(),
+      ];
+      return uniqueValues;
+    };
 
     return {
       ConvertArrToObj: convertArrToObj,
+      FilterUniqueValues: filterUniqueValues,
     };
   })();
 
@@ -372,6 +400,18 @@ var NMICore = (function () {
     };
   })();
 
+  var NMICore_ResponseReturn = (function () {
+    var nmiToaster = function (isSuccess) {
+      isSuccess
+        ? toastr.success(constant.Message.dropMsgSuccess)
+        : toastr.error(constant.Message.dropMsgError);
+    };
+
+    return {
+      NmiToaster: nmiToaster,
+    };
+  })();
+
   var fnValidateEmail = function (email) {
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     if (!emailReg.test(email)) {
@@ -400,9 +440,11 @@ var NMICore = (function () {
     },
     Validation: {
       ValidateForm: NMICore_Validation.ValidateForm,
+      EmptyDataChecker: NMICore_Validation.EmptyDataChecker,
     },
     DataConversion: {
       ConvertArrToObj: NMICore_DataConversion.ConvertArrToObj,
+      FilterUniqueValues: NMICore_DataConversion.FilterUniqueValues,
     },
     ObjectValidation: {
       IsObjectEmpty: NMICore_ObjectValidation.IsObjectEmpty,
@@ -419,6 +461,9 @@ var NMICore = (function () {
       CheckDataLengthElement: NMICORE_ConfigDataElement.CheckDataLengthElement,
       AppendOnChange: NMICORE_ConfigDataElement.AppendOnChange,
       ResetOption: NMICORE_ConfigDataElement.ResetOption,
+    },
+    ReturnResponse: {
+      NmiToaster: NMICore_ResponseReturn.NmiToaster,
     },
   };
 })();

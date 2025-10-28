@@ -69,119 +69,60 @@ let _compFunc = (function () {
         "</div>"
     );
   };
-
-  const k365BannerCard = (id, packageSelector, src, desc, targetModal) => {
+  // id, targetModal, packageListId
+  const k365BannerCard = (id, listSelector, title) => {
     return $(
-      '<div id="' +
+      '<div class="position-relative">' +
+        '<div id="' +
         id +
-        '" class="position-relative">' +
-        '<div class="card">' +
+        '" class="card platform-landing-card">' +
         '<div class="card-body">' +
         '<p class="kaseya365-title">' +
-        desc +
+        title +
         "</p>" +
         '<div class="d-flex justify-content-center">' +
-        '<img src="' +
-        src +
-        '" class="ratio ratio-1x1 img-width"/>' +
+        '<img name="pl-path" class="ratio ratio-1x1 img-width"/>' +
         "</div>" +
         '<div class="d-flex justify-content-center align-items-center mb-3">' +
-        '<div><i class="hgi hgi-stroke hgi-arrow-down-01 platform-down-icon" data-bs-toggle="modal" data-bs-target="#' +
-        targetModal +
-        '"></i></div>' +
+        '<div class="platform-down-icon"><i id="' +
+        listSelector +
+        '-modal" class="fa-solid fa-chevron-down"></i></div>' +
         "</div>" +
         '<div id="' +
-        packageSelector +
+        listSelector +
         '" class="kaseya-package-grid">' +
         "</div>" +
         "</div>" +
         "</div>" +
         "</div>"
     );
-    // return $(
-    //   '<div id="' +
-    //     id +
-    //     '" class="position-relative">' +
-    //     '<div class="card">' +
-    //     '<div class="card-body">' +
-    //     '<p class="kaseya365-title">' +
-    //     desc +
-    //     "</p>" +
-    //     '<div class="d-flex justify-content-center">' +
-    //     '<img src="' +
-    //     src +
-    //     '" class="ratio ratio-1x1 img-width"/>' +
-    //     "</div>" +
-    //     '<div id="' +
-    //     packageSelector +
-    //     '" class="kaseya-package-grid">' +
-    //     "</div>" +
-    //     "</div>" +
-    //     '<div class="card-footer">' +
-    //     '<div class="d-flex justify-content-center">' +
-    //     '<button id="k365-card-btn" class="btn btn-sm k365-banner-modals raleway-font" data-bs-toggle="modal" data-bs-target="#' +
-    //     targetModal +
-    //     '">' +
-    //     btnLabel +
-    //     "</button>" +
-    //     "</div>" +
-    //     "</div>" +
-    //     "</div>" +
-    //     "</div>"
-    // );
   };
 
-  const solutionsBanner = (description, targetModal, label, img) => {
+  // id, targetModal
+  const solutionsBanner = (id, listSelector, title) => {
     return $(
-      '<div class="card h-100">' +
+      '<div id="' +
+        id +
+        '" class="card h-100">' +
         '<div class="card-body px-3">' +
         '<div class="d-flex justify-content-center">' +
-        // '<div class="nmi-solution-img"><img class="ratio ratio-4x3 icon" src="' +
-        // img +
-        // '"/></div>' +
-        '<div class="nmi-solution-icon-div"><img src="' +
-        img +
-        '" class="ratio ratio-1x1 w-25"/></div>' +
+        '<div class="nmi-solution-icon-div"><img class="ratio ratio-1x1 w-25" name="s-path"/></div>' +
         "</div>" +
         '<div class="solution-card-content">' +
         '<h5 class="mb-0 solution-label">' +
-        label +
+        title +
         "</h5>" +
-        '<p class="solution-description">' +
-        description +
-        "</p>" +
-        '<div><i class="hgi hgi-stroke hgi-arrow-right-01 solution-sm-icon" data-bs-toggle="modal" data-bs-target="' +
-        targetModal +
-        '"></i></div>' +
+        '<div id="' +
+        listSelector +
+        '" class="solution-description"></div>' +
+        // '<p class="solution-description" name="s-description"></p>' +
+        '<div class="solution-sm-icon"><i  id="' +
+        listSelector +
+        '-modal" class="fa-solid fa-chevron-down"></i></div>' +
         "</div>" +
         "</div>" +
         "</div>"
     );
-    // return $(
-    //   '<div class="card h-100">' +
-    //     '<div class="card-body px-3">' +
-    //     '<div class="d-flex justify-content-center">' +
-    //     // '<div class="nmi-solution-img"><img class="ratio ratio-4x3 icon" src="' +
-    //     // img +
-    //     // '"/></div>' +
-    //     '<div class="nmi-solution-icon-div"><i class="' +
-    //     iconName +
-    //     '"></i></div>' +
-    //     "</div>" +
-    //     '<div class="solution-card-content">' +
-    //     '<h5 class="mb-0 solution-label">' +
-    //     label +
-    //     "</h5>" +
-    //     '<p class="solution-description">' +
-    //     description +
-    //     "</p>" +
-    //     '<div><i class="hgi hgi-stroke hgi-arrow-right-01 solution-sm-icon" data-bs-toggle="modal" data-bs-target="' +
-    //     targetModal +
-    //     '"></i></div>' +
-    //     "</div>" +
-    //     "</div>" +
-    //     "</div>"
-    // );
   };
 
   const getDemoCard = (icon, title, description) => {
@@ -337,48 +278,19 @@ let _compFunc = (function () {
         "</div>"
     );
   };
-  // const testimonialCard = (company, message, client, designation) => {
-  //   return $(
-  //     '<div class="card h-100">' +
-  //       '<div class="card-header">' +
-  //       '<div class="d-flex align-items-center gap-1">' +
-  //       '<i class="hgi hgi-stroke hgi-chatting-01 testimonial-icon"></i>' +
-  //       '<p class="testimonial-author text-xs mb-0 font-bold">' +
-  //       company +
-  //       "</p>" +
-  //       "</div>" +
-  //       "</div>" +
-  //       '<div class="card-body">' +
-  //       '<h6 class="testimonial-description">"' +
-  //       message +
-  //       '"</h6>' +
-  //       "</div>" +
-  //       '<div class="card-footer">' +
-  //       '<p class="testimonial-author font-bold">-' +
-  //       client +
-  //       "</p>" +
-  //       '<p class="testimonial-title text-truncate w-75 jd-selector" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="' +
-  //       designation +
-  //       '">' +
-  //       designation +
-  //       "</p>" +
-  //       "</div>" +
-  //       "</div>"
-  //   );
-  // };
-  const testimonialCard = (company, message, client, designation) => {
+  const testimonialCard = (feedback, client, designation, company) => {
     return $(
       '<div class="card h-100">' +
         '<div class="card-header">' +
         '<i class="hgi hgi-stroke hgi-chatting-01 testimonial-icon"></i>' +
         "</div>" +
         '<div class="card-body">' +
-        '<h6 class="testimonial-description">"' +
-        message +
-        '"</h6>' +
+        '<h6 class="testimonial-description">' +
+        feedback +
+        "</h6>" +
         "</div>" +
         '<div class="card-footer">' +
-        '<p class="testimonial-author font-bold">-' +
+        '<p class="testimonial-author font-bold">- ' +
         client +
         "</p>" +
         '<div class="testimonial-designation">' +
@@ -395,7 +307,76 @@ let _compFunc = (function () {
         "</div>"
     );
   };
+  const perksCard = (icon, title, description) => {
+    return (
+      '<div class="card h-100">' +
+      '<div class="card-body perks">' +
+      "<div>" +
+      '<i class="' +
+      icon +
+      ' careers-perks"></i>' +
+      '<p class="perks-title">' +
+      title +
+      "</p>" +
+      "<p>" +
+      description +
+      "</p>" +
+      "</div>" +
+      "</div>" +
+      "</div>"
+    );
+  };
 
+  const carouselItem = (name, position, statement, img) => {
+    return (
+      '<div id="careers-carousel-item" class="carousel-item" data-bs-interval="2000">' +
+      '<div class="employee-story-carousel">' +
+      '<div class="carousel-description">' +
+      '<div class="container">' +
+      '<h4 class="employee-name-carousel">' +
+      name +
+      "</h4>" +
+      ' <p class="employee-title-carousel">' +
+      position +
+      "</p>" +
+      '<div id="rating-selector" class="careers-ratings"></div>' +
+      '<div class="employee-desc-carousel">' +
+      statement +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      '<div class="corousel-alignment-img">' +
+      ' <img src="' +
+      img +
+      '" alt="employee_testimonial" class="ratio ratio-1x1 employee-img-carousel"/>' +
+      "</div>" +
+      "</div>" +
+      "</div>"
+    );
+  };
+
+  const platformK365TabsButton = (id, target, label) => {
+    return (
+      '<button class="nav-link navlink-k365" id="' +
+      id +
+      '" data-bs-toggle="pill" data-bs-target="#' +
+      target +
+      '" type="button" role="tab">' +
+      label +
+      "</button>"
+    );
+  };
+  const platformK365TabsContent = (id, label) => {
+    return (
+      '<div class="tab-pane fade tabpane-k365" id="" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">' +
+      '<img alt=""/>' +
+      '<p class="tabpane-description">' +
+      label +
+      "</p>" +
+      '      <p class="tabpane-products"></p>' +
+      "</div>"
+    );
+  };
   return {
     k365Card: k365Card,
     solutionCard: solutionCard,
@@ -411,5 +392,9 @@ let _compFunc = (function () {
     k365PillsTab: k365PillsTab,
     k365PillsContent: k365PillsContent,
     testimonialCard: testimonialCard,
+    perksCard: perksCard,
+    carouselItem: carouselItem,
+    platformK365TabsButton: platformK365TabsButton,
+    platformK365TabsContent: platformK365TabsContent,
   };
 })();

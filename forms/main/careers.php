@@ -1,6 +1,6 @@
 <?php
     echo 
-    '<section id="careers" class="contact section-bg">
+    '<section id="careersss" class="contact section-bg">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>Careers</h2>
